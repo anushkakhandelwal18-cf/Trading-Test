@@ -35,8 +35,8 @@
   import java.util.HashMap;
   import com.cloudframe.app.dto.ProgramContext;
   import com.cloudframe.app.mstpb002.dto.*;
-  import com.cloudframe.app.mstpb002.dto.Sqlca;
   import com.cloudframe.app.mstpb002.dto.LsSecurityIo;
+  import com.cloudframe.app.mstpb002.dto.Sqlca;
   import com.cloudframe.app.mstpb002.dto.Dcltbtrdsec;
   import com.cloudframe.app.mstpb002.dto.Work;
   import com.cloudframe.app.common.CONSTANTS;
@@ -199,7 +199,7 @@ GetSecurityOutCtx methodOut = methodIn.getGetSecurityOutCtx();
           methodOut.setSecFigi(methodOut.getLsFigi());
 //  cobolCode::SELECT SEC_CURRENCY , SEC_DESCRIPTION , SEC_SYMBOL , SEC_SHARE_CLASS_FIGI , SEC_TYPE FROM TBTRDSEC WHERE SEC_FIGI = ?
 //  SELECT SEC_CURRENCY , SEC_DESCRIPTION , SEC_SYMBOL , SEC_SHARE_CLASS_FIGI , SEC_TYPE FROM TBTRDSEC WHERE SEC_FIGI = ?
-          mstpb002Repository.selectTbtrdsec(programCtx.getSqlca(),methodOut.getDcltbtrdsec());
+          mstpb002Repository.selectTbtrdsec(methodOut.getDcltbtrdsec(),programCtx.getSqlca());
           // MOVE SQLCODE TO WS-SQLCODE
           //  FORMAT1016334848 = "----"
           methodOut.setSqlcode_Ws(CFUtil.cobolNumberFormatter(CONSTANTS.FORMAT1016334848,String.valueOf(methodOut.getSqlcode()).toCharArray()));

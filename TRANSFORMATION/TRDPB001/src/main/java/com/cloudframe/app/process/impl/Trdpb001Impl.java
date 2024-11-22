@@ -45,16 +45,16 @@
   import com.cloudframe.app.dto.ProgramContext;
   import com.cloudframe.app.trdpb001.dto.*;
   import com.cloudframe.app.trdpb001.dto.Parm;
-  import com.cloudframe.app.trdpb001.dto.Sqlca;
   import com.cloudframe.app.trdpb001.dto.Dcltbtrdord;
-  import com.cloudframe.app.trdpb001.dto.Dcltbtrdlog;
-  import com.cloudframe.app.trdpb001.dto.Dcltbtrdsum;
-  import com.cloudframe.app.trdpb001.dto.ExceptionRecordLenGroup;
-  import com.cloudframe.app.trdpb001.dto.TrdOrderPair;
-  import com.cloudframe.app.trdpb001.dto.CustomerSummaryRec;
+  import com.cloudframe.app.trdpb001.dto.Sqlca;
   import com.cloudframe.app.trdpb001.dto.Dcltbtrdstq;
+  import com.cloudframe.app.trdpb001.dto.ExceptionRecordLenGroup;
   import com.cloudframe.app.trdpb001.dto.ExceptionRecord;
   import com.cloudframe.app.trdpb001.dto.Dcltbtrdmac;
+  import com.cloudframe.app.trdpb001.dto.TrdOrderPair;
+  import com.cloudframe.app.trdpb001.dto.CustomerSummaryRec;
+  import com.cloudframe.app.trdpb001.dto.Dcltbtrdsum;
+  import com.cloudframe.app.trdpb001.dto.Dcltbtrdlog;
   import com.cloudframe.app.trdpb001.dto.Work;
   import com.cloudframe.app.common.CONSTANTS;
   import com.cloudframe.app.common.SQLS;
@@ -340,7 +340,7 @@ MainlineOutCtx methodOut = methodIn.getMainlineOutCtx();
           methodOut.setLogEndTs(  (char[])updated.get("string"));
 //  cobolCode::INSERT INTO TBTRDLOG VALUES ( ? , ? , ? , ? )
 //  INSERT INTO TBTRDLOG VALUES ( ? , ? , ? , ? )
-          trdpb001Repository.insert(methodOut.getDcltbtrdlog(),programCtx.getSqlca());
+          trdpb001Repository.insert(programCtx.getSqlca(),methodOut.getDcltbtrdlog());
 //  cobolCode::EVALUATE TRUE
 //  EVALUATE TRUE
           if  (	( methodOut.getSqlcode() == 0 )) { 
@@ -349,7 +349,7 @@ MainlineOutCtx methodOut = methodIn.getMainlineOutCtx();
           else if  (	( methodOut.getSqlcode() == -803 )) { 
 //  cobolCode::UPDATE TBTRDLOG SET LOG_END_TS = ? WHERE LOG_TRANSACTION = ? AND LOG_CURRENCY = ?
 //  UPDATE TBTRDLOG SET LOG_END_TS = ? WHERE LOG_TRANSACTION = ? AND LOG_CURRENCY = ?
-              trdpb001Repository.updateTbtrdlog1(methodOut.getDcltbtrdlog(),programCtx.getSqlca());
+              trdpb001Repository.updateTbtrdlog1(programCtx.getSqlca(),methodOut.getDcltbtrdlog());
 //  cobolCode::IF SQLCODE NOT = 0 THEN
 //  IF SQLCODE NOT = 0 THEN
               if (	( methodOut.getSqlcode() != 0 )) { 
@@ -891,7 +891,7 @@ UpdateOrderOutCtx methodOut = methodIn.getUpdateOrderOutCtx();
               methodOut.setSqlcode(0);
 //  cobolCode::UPDATE TBTRDORD SET ORD_STATUS = ? WHERE ORD_CURRENCY = ? AND ORD_TRADING_XCHNG = ? AND ORD_TRADEID = ? AND ORD_FIGI = ? AND ORD_BUY_SELL_IND = ?
 //  UPDATE TBTRDORD SET ORD_STATUS = ? WHERE ORD_CURRENCY = ? AND ORD_TRADING_XCHNG = ? AND ORD_TRADEID = ? AND ORD_FIGI = ? AND ORD_BUY_SELL_IND = ?
-              trdpb001Repository.updateTbtrdord(programCtx.getSqlca(),methodIn.getDcltbtrdord());
+              trdpb001Repository.updateTbtrdord(methodIn.getDcltbtrdord(),programCtx.getSqlca());
 //  cobolCode::IF SQLCODE = -911 OR -913 THEN
 //  IF SQLCODE = -911 OR -913 THEN
               if (	( methodOut.getSqlcode() == -911 ) || 	( methodOut.getSqlcode() == -913 )) { 

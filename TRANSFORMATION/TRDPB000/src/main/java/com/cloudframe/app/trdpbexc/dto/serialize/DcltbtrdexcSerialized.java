@@ -4,7 +4,7 @@ package com.cloudframe.app.trdpbexc.dto.serialize;
 *  The class DcltbtrdexcSerialized is used to define offsets in order to serialize
 *  in a fixed String
 *  @author CloudFrame Inc.
-*  created on 2024-11-21 at 07:15. using version 5.0.0.153
+*  created on 2024-11-22 at 10:30. using version 5.0.0.158
 **/
 
 import org.slf4j.Logger;

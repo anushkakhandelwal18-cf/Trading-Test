@@ -8,6 +8,7 @@ import com.cloudframe.app.data.Field;
 import com.cloudframe.app.trdpbexc.TrdpbexcCtx.AbendDumpOutCtx;
 
 
+import com.cloudframe.app.dto.ProgramContext;
 
 public interface Trdpbexc {
     /**
@@ -45,7 +46,7 @@ public interface Trdpbexc {
 	 *
 	 * @return return code of the program
 	 */
-     public int call(Object[] parameters) throws Exception;
+     public int call(ProgramContext programCtx, Object[] parameters) throws Exception;
 
      /**
 	 * This will invoke the program given Field parameters from
@@ -53,5 +54,5 @@ public interface Trdpbexc {
 	 *
 	 * @return return code of the program
 	 */
-     public int call(Field... parameters) throws Exception;
+     public int call(ProgramContext programCtx, Field... parameters) throws Exception;
 }

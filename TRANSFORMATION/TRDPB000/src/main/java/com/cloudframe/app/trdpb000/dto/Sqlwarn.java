@@ -3,7 +3,7 @@ package com.cloudframe.app.trdpb000.dto;
 /**
 *  The class Sqlwarn is used to handle fields declared in it
 *  @author CloudFrame Inc.
-*  created on 2024-11-21 at 07:15. using version 5.0.0.153
+*  created on 2024-11-22 at 10:29. using version 5.0.0.158
 **/
 
 

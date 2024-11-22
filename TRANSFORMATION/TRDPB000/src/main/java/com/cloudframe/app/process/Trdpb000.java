@@ -34,6 +34,7 @@ import com.cloudframe.app.trdpb000.Trdpb000Ctx.SellerMoneyAccountOutCtx;
 import com.cloudframe.app.trdpb000.Trdpb000Ctx.UpdateOrderInCtx;
 
 
+import com.cloudframe.app.dto.ProgramContext;
 
 public interface Trdpb000 {
     /**
@@ -162,7 +163,7 @@ public interface Trdpb000 {
 	 *
 	 * @return return code of the program
 	 */
-     public int call(Object[] parameters) throws Exception;
+     public int call(ProgramContext programCtx, Object[] parameters) throws Exception;
 
      /**
 	 * This will invoke the program given Field parameters from
@@ -170,5 +171,5 @@ public interface Trdpb000 {
 	 *
 	 * @return return code of the program
 	 */
-     public int call(Field... parameters) throws Exception;
+     public int call(ProgramContext programCtx, Field... parameters) throws Exception;
 }

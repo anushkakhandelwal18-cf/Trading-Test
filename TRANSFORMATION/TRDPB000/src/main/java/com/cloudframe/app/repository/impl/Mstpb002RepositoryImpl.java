@@ -51,7 +51,7 @@ public class Mstpb002RepositoryImpl implements Mstpb002Repository {
 ******     WHERE                                                   
 ******           SEC_FIGI   = :SEC-FIGI                            
 **/
-    public void selectTbtrdsec(Sqlca sqlca, Dcltbtrdsec dcltbtrdsec) throws Exception {
+    public void selectTbtrdsec(Dcltbtrdsec dcltbtrdsec, Sqlca sqlca) throws Exception {
 try {
 	// SELECT 
 	// reset SQLCODE

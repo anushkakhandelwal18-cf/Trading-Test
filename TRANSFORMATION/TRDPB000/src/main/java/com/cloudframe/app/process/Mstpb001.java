@@ -7,6 +7,7 @@ import com.cloudframe.app.mstpb001.Mstpb001Ctx;
 import com.cloudframe.app.mstpb001.Mstpb001Ctx.MainlineOutCtx;
 
 
+import com.cloudframe.app.dto.ProgramContext;
 
 public interface Mstpb001 {
     /**
@@ -44,7 +45,7 @@ public interface Mstpb001 {
 	 *
 	 * @return return code of the program
 	 */
-     public int call(Object[] parameters) throws Exception;
+     public int call(ProgramContext programCtx, Object[] parameters) throws Exception;
 
      /**
 	 * This will invoke the program given Field parameters from
@@ -52,5 +53,5 @@ public interface Mstpb001 {
 	 *
 	 * @return return code of the program
 	 */
-     public int call(Field... parameters) throws Exception;
+     public int call(ProgramContext programCtx, Field... parameters) throws Exception;
 }

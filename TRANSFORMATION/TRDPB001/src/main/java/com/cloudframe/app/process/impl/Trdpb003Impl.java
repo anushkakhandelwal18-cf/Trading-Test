@@ -37,11 +37,11 @@
   import com.cloudframe.app.process.*;
   import com.cloudframe.app.dto.ProgramContext;
   import com.cloudframe.app.trdpb003.dto.*;
-  import com.cloudframe.app.trdpb003.dto.TrdOrderPair;
   import com.cloudframe.app.trdpb003.dto.Sqlca;
-  import com.cloudframe.app.trdpb003.dto.Dcltbtrdmac;
-  import com.cloudframe.app.trdpb003.dto.ExceptionRecordLenGroup;
+  import com.cloudframe.app.trdpb003.dto.TrdOrderPair;
   import com.cloudframe.app.trdpb003.dto.ExceptionRecord;
+  import com.cloudframe.app.trdpb003.dto.ExceptionRecordLenGroup;
+  import com.cloudframe.app.trdpb003.dto.Dcltbtrdmac;
   import com.cloudframe.app.trdpb003.dto.Work;
   import com.cloudframe.app.common.CONSTANTS;
   import com.cloudframe.app.common.SQLS;

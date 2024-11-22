@@ -9,51 +9,51 @@ public interface Trdpb000Repository {
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm sqlca
-* @parm dcltbtrdlog
+     * @parm dcltbtrdlog
+* @parm sqlca
      */
-    public void insert(Sqlca sqlca, Dcltbtrdlog dcltbtrdlog) throws Exception;
+    public void insert(Dcltbtrdlog dcltbtrdlog, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm sqlca
-* @parm dcltbtrdlog
+     * @parm dcltbtrdlog
+* @parm sqlca
      */
-    public void updateTbtrdlog(Sqlca sqlca, Dcltbtrdlog dcltbtrdlog) throws Exception;
+    public void updateTbtrdlog(Dcltbtrdlog dcltbtrdlog, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm sqlca
-* @parm dcltbtrdlog
+     * @parm dcltbtrdlog
+* @parm sqlca
      */
-    public void updateTbtrdlog1(Sqlca sqlca, Dcltbtrdlog dcltbtrdlog) throws Exception;
+    public void updateTbtrdlog1(Dcltbtrdlog dcltbtrdlog, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a open query.
      *
-     * @parm sqlca
-* @parm dcltbtrdord
+     * @parm dcltbtrdord
+* @parm sqlca
      * @return 
      */
-    public ResultSet openBuySideOrdersTrdpb000(Sqlca sqlca, Dcltbtrdord dcltbtrdord) throws Exception;
+    public ResultSet openBuySideOrdersTrdpb000(Dcltbtrdord dcltbtrdord, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a fetch query.
      *
-     * @parm sqlca
-* @parm dcltbtrdord
+     * @parm dcltbtrdord
+* @parm sqlca
      */
-    public void fetchBuySideOrdersTrdpb000(ResultSet buySideOrdersResultSet, Sqlca sqlca, Dcltbtrdord dcltbtrdord) throws Exception;
+    public void fetchBuySideOrdersTrdpb000(ResultSet buySideOrdersResultSet, Dcltbtrdord dcltbtrdord, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a fetch query.
      *
-     * @parm sqlca
-* @parm dcltbtrdord
+     * @parm dcltbtrdord
+* @parm sqlca
      */
-    public void fetchBuySideOrders1Trdpb000(ResultSet buySideOrdersResultSet, Sqlca sqlca, Dcltbtrdord dcltbtrdord) throws Exception;
+    public void fetchBuySideOrders1Trdpb000(ResultSet buySideOrdersResultSet, Dcltbtrdord dcltbtrdord, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a close query.
@@ -65,26 +65,26 @@ public interface Trdpb000Repository {
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm sqlca
-* @parm dcltbtrdord
+     * @parm dcltbtrdord
+* @parm sqlca
      */
-    public void selectTbtrdord(Sqlca sqlca, Dcltbtrdord dcltbtrdord) throws Exception;
+    public void selectTbtrdord(Dcltbtrdord dcltbtrdord, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm sqlca
-* @parm dcltbtrdsac
+     * @parm dcltbtrdsac
+* @parm sqlca
      */
-    public void selectTbtrdsac(Sqlca sqlca, Dcltbtrdsac dcltbtrdsac) throws Exception;
+    public void selectTbtrdsac(Dcltbtrdsac dcltbtrdsac, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm sqlca
-* @parm dcltbtrdsac
+     * @parm dcltbtrdsac
+* @parm sqlca
      */
-    public void selectTbtrdsac1(Sqlca sqlca, Dcltbtrdsac dcltbtrdsac) throws Exception;
+    public void selectTbtrdsac1(Dcltbtrdsac dcltbtrdsac, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
@@ -105,35 +105,35 @@ public interface Trdpb000Repository {
     /**
      * This method will handle the sql operations for a batch-insert query.
      *
-     * @parm sqlca
-* @parm settlmentQueueTable
+     * @parm settlmentQueueTable
+* @parm sqlca
      */
-    public void insertTbtrdstq(Sqlca sqlca, SettlmentQueueTable settlmentQueueTable) throws Exception;
+    public void insertTbtrdstq(SettlmentQueueTable settlmentQueueTable, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm sqlca
-* @parm dcltbtrdord
+     * @parm dcltbtrdord
+* @parm sqlca
      */
-    public void updateTbtrdord(Sqlca sqlca, Dcltbtrdord dcltbtrdord) throws Exception;
+    public void updateTbtrdord(Dcltbtrdord dcltbtrdord, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a open query.
      *
-     * @parm sqlca
-* @parm dcltbtrdsum
+     * @parm dcltbtrdsum
+* @parm sqlca
      * @return 
      */
-    public ResultSet openSummaryCsrTrdpb000(Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception;
+    public ResultSet openSummaryCsrTrdpb000(Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a fetch query.
      *
-     * @parm sqlca
-* @parm dcltbtrdsum
+     * @parm dcltbtrdsum
+* @parm sqlca
      */
-    public void fetchSummaryCsrTrdpb000(ResultSet summaryCsrResultSet, Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception;
+    public void fetchSummaryCsrTrdpb000(ResultSet summaryCsrResultSet, Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
@@ -146,18 +146,18 @@ public interface Trdpb000Repository {
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm sqlca
-* @parm dcltbtrdsum
+     * @parm dcltbtrdsum
+* @parm sqlca
      */
-    public void insert1(Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception;
+    public void insert1(Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm sqlca
-* @parm dcltbtrdsum
+     * @parm dcltbtrdsum
+* @parm sqlca
      */
-    public void updateTbtrdsum(Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception;
+    public void updateTbtrdsum(Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a close query.

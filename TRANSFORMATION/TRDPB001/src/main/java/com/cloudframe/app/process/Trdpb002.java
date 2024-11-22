@@ -9,6 +9,7 @@ import com.cloudframe.app.data.Field;
 import com.cloudframe.app.trdpb002.Trdpb002Ctx.ReportExceptionInCtx;
 
 
+import com.cloudframe.app.dto.ProgramContext;
 
 public interface Trdpb002 {
     /**
@@ -53,7 +54,7 @@ public interface Trdpb002 {
 	 *
 	 * @return return code of the program
 	 */
-     public int call(Object[] parameters) throws Exception;
+     public int call(ProgramContext programCtx, Object[] parameters) throws Exception;
 
      /**
 	 * This will invoke the program given Field parameters from
@@ -61,5 +62,5 @@ public interface Trdpb002 {
 	 *
 	 * @return return code of the program
 	 */
-     public int call(Field... parameters) throws Exception;
+     public int call(ProgramContext programCtx, Field... parameters) throws Exception;
 }

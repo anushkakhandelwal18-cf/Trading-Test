@@ -35,8 +35,8 @@
   import java.util.HashMap;
   import com.cloudframe.app.dto.ProgramContext;
   import com.cloudframe.app.mstpb001.dto.*;
-  import com.cloudframe.app.mstpb001.dto.LsCustomerIo;
   import com.cloudframe.app.mstpb001.dto.Sqlca;
+  import com.cloudframe.app.mstpb001.dto.LsCustomerIo;
   import com.cloudframe.app.mstpb001.dto.Dcltbtrdcus;
   import com.cloudframe.app.mstpb001.dto.Work;
   import com.cloudframe.app.common.CONSTANTS;
@@ -190,7 +190,7 @@ GetCustomerOutCtx methodOut = methodIn.getGetCustomerOutCtx();
           methodOut.setCusCustomerId(methodOut.getLsCustomerId());
 //  cobolCode::SELECT CUS_CURRENCY , CUS_DESCRIPTION , CUS_STATUS FROM TBTRDCUS WHERE CUS_CUSTOMER_ID = ?
 //  SELECT CUS_CURRENCY , CUS_DESCRIPTION , CUS_STATUS FROM TBTRDCUS WHERE CUS_CUSTOMER_ID = ?
-          mstpb001Repository.selectTbtrdcus(programCtx.getSqlca(),methodOut.getDcltbtrdcus());
+          mstpb001Repository.selectTbtrdcus(methodOut.getDcltbtrdcus(),programCtx.getSqlca());
           // MOVE SQLCODE TO WS-SQLCODE
           //  FORMAT1016334848 = "----"
           methodOut.setSqlcode_Ws(CFUtil.cobolNumberFormatter(CONSTANTS.FORMAT1016334848,String.valueOf(methodOut.getSqlcode()).toCharArray()));

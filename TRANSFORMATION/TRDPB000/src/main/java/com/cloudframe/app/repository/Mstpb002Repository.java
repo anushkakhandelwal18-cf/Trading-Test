@@ -8,9 +8,9 @@ public interface Mstpb002Repository {
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm sqlca
-* @parm dcltbtrdsec
+     * @parm dcltbtrdsec
+* @parm sqlca
      */
-    public void selectTbtrdsec(Sqlca sqlca, Dcltbtrdsec dcltbtrdsec) throws Exception;
+    public void selectTbtrdsec(Dcltbtrdsec dcltbtrdsec, Sqlca sqlca) throws Exception;
 
 }

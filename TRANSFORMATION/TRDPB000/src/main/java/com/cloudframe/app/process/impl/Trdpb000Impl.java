@@ -51,20 +51,20 @@
   import java.math.RoundingMode;
   import com.cloudframe.app.dto.ProgramContext;
   import com.cloudframe.app.trdpb000.dto.*;
+  import com.cloudframe.app.trdpb000.dto.SettlmentQueueTable;
   import com.cloudframe.app.trdpb000.dto.Sqlca;
   import com.cloudframe.app.trdpb000.dto.Parm;
-  import com.cloudframe.app.trdpb000.dto.SettlmentQueueTable;
-  import com.cloudframe.app.trdpb000.dto.ExceptionRecord;
-  import com.cloudframe.app.trdpb000.dto.Dcltbtrdsac;
-  import com.cloudframe.app.trdpb000.dto.TrdOrderPair;
+  import com.cloudframe.app.trdpb000.dto.CustomerIo;
   import com.cloudframe.app.trdpb000.dto.Dcltbtrdlog;
   import com.cloudframe.app.trdpb000.dto.CustomerSummaryRec;
-  import com.cloudframe.app.trdpb000.dto.ExceptionRecordLenGroup;
-  import com.cloudframe.app.trdpb000.dto.SecurityIo;
   import com.cloudframe.app.trdpb000.dto.Dcltbtrdsum;
+  import com.cloudframe.app.trdpb000.dto.ExceptionRecord;
+  import com.cloudframe.app.trdpb000.dto.TrdOrderPair;
+  import com.cloudframe.app.trdpb000.dto.ExceptionRecordLenGroup;
+  import com.cloudframe.app.trdpb000.dto.Dcltbtrdsac;
   import com.cloudframe.app.trdpb000.dto.Dcltbtrdord;
   import com.cloudframe.app.trdpb000.dto.Dcltbtrdmac;
-  import com.cloudframe.app.trdpb000.dto.CustomerIo;
+  import com.cloudframe.app.trdpb000.dto.SecurityIo;
   import com.cloudframe.app.trdpb000.dto.Work;
   import com.cloudframe.app.common.CONSTANTS;
   import com.cloudframe.app.common.SQLS;
@@ -303,7 +303,7 @@ MainlineOutCtx methodOut = methodIn.getMainlineOutCtx();
           methodOut.setLogEndTs(  (char[])updated.get("string"));
 //  cobolCode::INSERT INTO TBTRDLOG VALUES ( ? , ? , ? , ? )
 //  INSERT INTO TBTRDLOG VALUES ( ? , ? , ? , ? )
-          trdpb000Repository.insert(programCtx.getSqlca(),methodOut.getDcltbtrdlog());
+          trdpb000Repository.insert(methodOut.getDcltbtrdlog(),programCtx.getSqlca());
 //  cobolCode::EVALUATE TRUE
 //  EVALUATE TRUE
           if  (	( methodOut.getSqlcode() == 0 )) { 
@@ -312,7 +312,7 @@ MainlineOutCtx methodOut = methodIn.getMainlineOutCtx();
           else if  (	( methodOut.getSqlcode() == -803 )) { 
 //  cobolCode::UPDATE TBTRDLOG SET LOG_END_TS = ? WHERE LOG_TRANSACTION = ? AND LOG_CURRENCY = ?
 //  UPDATE TBTRDLOG SET LOG_END_TS = ? WHERE LOG_TRANSACTION = ? AND LOG_CURRENCY = ?
-              trdpb000Repository.updateTbtrdlog1(programCtx.getSqlca(),methodOut.getDcltbtrdlog());
+              trdpb000Repository.updateTbtrdlog1(methodOut.getDcltbtrdlog(),programCtx.getSqlca());
 //  cobolCode::IF SQLCODE NOT = 0 THEN
 //  IF SQLCODE NOT = 0 THEN
               if (	( methodOut.getSqlcode() != 0 )) { 
@@ -528,7 +528,7 @@ OrderAcceptanceOutCtx methodOut = methodIn.getOrderAcceptanceOutCtx();
           methodOut.setOrdStatus(methodOut.getOrderStatus());
 //  cobolCode::SELECT ORD_TRADEID , ORD_BUY_SELL_IND , ORD_CUSTOMER_ID , ORD_FIGI , ORD_QUANTITY , ORD_CURRENCY , ORD_AMOUNT FROM TBTRDORD WHERE ORD_CURRENCY = ? AND ORD_TRADING_XCHNG = ? AND ORD_BUY_SELL_IND = 'B' AND ORD_STATUS = ?
 //  SELECT ORD_TRADEID , ORD_BUY_SELL_IND , ORD_CUSTOMER_ID , ORD_FIGI , ORD_QUANTITY , ORD_CURRENCY , ORD_AMOUNT FROM TBTRDORD WHERE ORD_CURRENCY = ? AND ORD_TRADING_XCHNG = ? AND ORD_BUY_SELL_IND = 'B' AND ORD_STATUS = ?
-          programCtx.setBuySideOrdersResultSet(trdpb000Repository.openBuySideOrdersTrdpb000(programCtx.getSqlca(),methodOut.getDcltbtrdord()));
+          programCtx.setBuySideOrdersResultSet(trdpb000Repository.openBuySideOrdersTrdpb000(methodOut.getDcltbtrdord(),programCtx.getSqlca()));
 
 // *
 //  cobolCode::IF SQLCODE NOT = 0 THEN
@@ -557,7 +557,7 @@ OrderAcceptanceOutCtx methodOut = methodIn.getOrderAcceptanceOutCtx();
           }
 //  cobolCode::FETCH BUY_SIDE_ORDERS INTO ? , ? , ? , ? , ? , ? , ?
 //  FETCH BUY_SIDE_ORDERS INTO ? , ? , ? , ? , ? , ? , ?
-          trdpb000Repository.fetchBuySideOrdersTrdpb000(programCtx.getBuySideOrdersResultSet(),programCtx.getSqlca(),methodOut.getDcltbtrdord());
+          trdpb000Repository.fetchBuySideOrdersTrdpb000(programCtx.getBuySideOrdersResultSet(),methodOut.getDcltbtrdord(),programCtx.getSqlca());
 
 // *
 //  cobolCode::IF SQLCODE = 100 THEN
@@ -728,7 +728,7 @@ OrderAcceptanceOutCtx methodOut = methodIn.getOrderAcceptanceOutCtx();
               }
 //  cobolCode::FETCH BUY_SIDE_ORDERS INTO ? , ? , ? , ? , ? , ? , ?
 //  FETCH BUY_SIDE_ORDERS INTO ? , ? , ? , ? , ? , ? , ?
-              trdpb000Repository.fetchBuySideOrders1Trdpb000(programCtx.getBuySideOrdersResultSet(),programCtx.getSqlca(),methodOut.getDcltbtrdord());
+              trdpb000Repository.fetchBuySideOrders1Trdpb000(programCtx.getBuySideOrdersResultSet(),methodOut.getDcltbtrdord(),programCtx.getSqlca());
 
 // *
 //  cobolCode::EVALUATE TRUE
@@ -878,7 +878,7 @@ GetSellSideOrderOutCtx methodOut = methodIn.getGetSellSideOrderOutCtx();
           methodOut.setOrdBuySellInd(CONSTANTS.LITERAL_S);
 //  cobolCode::SELECT ORD_CUSTOMER_ID , ORD_STATUS FROM TBTRDORD WHERE ORD_CURRENCY = ? AND ORD_TRADING_XCHNG = ? AND ORD_TRADEID = ? AND ORD_FIGI = ? AND ORD_BUY_SELL_IND = ? WITH UR
 //  SELECT ORD_CUSTOMER_ID , ORD_STATUS FROM TBTRDORD WHERE ORD_CURRENCY = ? AND ORD_TRADING_XCHNG = ? AND ORD_TRADEID = ? AND ORD_FIGI = ? AND ORD_BUY_SELL_IND = ? WITH UR
-          trdpb000Repository.selectTbtrdord(programCtx.getSqlca(),methodOut.getDcltbtrdord());
+          trdpb000Repository.selectTbtrdord(methodOut.getDcltbtrdord(),programCtx.getSqlca());
 //  cobolCode::EVALUATE SQLCODE
 //  EVALUATE SQLCODE
           switch(methodOut.getSqlcode()){
@@ -1557,7 +1557,7 @@ BuyerSecAccountOutCtx methodOut = methodIn.getBuyerSecAccountOutCtx();
           methodOut.setSacCurrency(methodOut.getTrdCurrency());
 //  cobolCode::SELECT SAC_NUMBER , SAC_STATUS FROM TBTRDSAC WHERE SAC_CUSTOMER_ID = ? AND SAC_CURRENCY = ? WITH UR
 //  SELECT SAC_NUMBER , SAC_STATUS FROM TBTRDSAC WHERE SAC_CUSTOMER_ID = ? AND SAC_CURRENCY = ? WITH UR
-          trdpb000Repository.selectTbtrdsac(programCtx.getSqlca(),methodOut.getDcltbtrdsac());
+          trdpb000Repository.selectTbtrdsac(methodOut.getDcltbtrdsac(),programCtx.getSqlca());
           // MOVE SQLCODE TO WS-SQLCODE
           //  FORMAT1016334848 = "----"
           methodOut.setSqlcode_Ws(CFUtil.cobolNumberFormatter(CONSTANTS.FORMAT1016334848,String.valueOf(methodOut.getSqlcode()).toCharArray()));
@@ -1797,7 +1797,7 @@ SellerSecAccountOutCtx methodOut = methodIn.getSellerSecAccountOutCtx();
           methodOut.setSacCurrency(methodOut.getTrdCurrency());
 //  cobolCode::SELECT SAC_NUMBER , SAC_STATUS FROM TBTRDSAC WHERE SAC_CUSTOMER_ID = ? AND SAC_CURRENCY = ? WITH UR
 //  SELECT SAC_NUMBER , SAC_STATUS FROM TBTRDSAC WHERE SAC_CUSTOMER_ID = ? AND SAC_CURRENCY = ? WITH UR
-          trdpb000Repository.selectTbtrdsac1(programCtx.getSqlca(),methodOut.getDcltbtrdsac());
+          trdpb000Repository.selectTbtrdsac1(methodOut.getDcltbtrdsac(),programCtx.getSqlca());
           // MOVE SQLCODE TO WS-SQLCODE
           //  FORMAT1016334848 = "----"
           methodOut.setSqlcode_Ws(CFUtil.cobolNumberFormatter(CONSTANTS.FORMAT1016334848,String.valueOf(methodOut.getSqlcode()).toCharArray()));
@@ -2594,7 +2594,7 @@ Trdpb000Ctx programCtx = methodIn.getTrdpb000Ctx();
 InsertToStqOutCtx methodOut = methodIn.getInsertToStqOutCtx();
 //  cobolCode::INSERT INTO TBTRDSTQ ( STQ_CURRENCY , STQ_TRADE_DATA ) VALUES ( ? , ? ) FOR ? ROWS NOT ATOMIC CONTINUE ON SQLEXCEPTION
 //  INSERT INTO TBTRDSTQ ( STQ_CURRENCY , STQ_TRADE_DATA ) VALUES ( ? , ? ) FOR ? ROWS NOT ATOMIC CONTINUE ON SQLEXCEPTION
-          trdpb000Repository.insertTbtrdstq(programCtx.getSqlca(),methodIn.getSettlmentQueueTable());
+          trdpb000Repository.insertTbtrdstq(methodIn.getSettlmentQueueTable(),programCtx.getSqlca());
 
 // *
 //  cobolCode::EVALUATE SQLCODE
@@ -2682,7 +2682,7 @@ UpdateOrderOutCtx methodOut = methodIn.getUpdateOrderOutCtx();
               methodOut.setSqlcode(0);
 //  cobolCode::UPDATE TBTRDORD SET ORD_STATUS = ? WHERE ORD_CURRENCY = ? AND ORD_TRADING_XCHNG = ? AND ORD_TRADEID = ? AND ORD_FIGI = ? AND ORD_BUY_SELL_IND = ?
 //  UPDATE TBTRDORD SET ORD_STATUS = ? WHERE ORD_CURRENCY = ? AND ORD_TRADING_XCHNG = ? AND ORD_TRADEID = ? AND ORD_FIGI = ? AND ORD_BUY_SELL_IND = ?
-              trdpb000Repository.updateTbtrdord(programCtx.getSqlca(),methodIn.getDcltbtrdord());
+              trdpb000Repository.updateTbtrdord(methodIn.getDcltbtrdord(),programCtx.getSqlca());
 //  cobolCode::IF SQLCODE = -911 OR -913 THEN
 //  IF SQLCODE = -911 OR -913 THEN
               if (	( methodOut.getSqlcode() == -911 ) || 	( methodOut.getSqlcode() == -913 )) { 
@@ -2896,7 +2896,7 @@ LogSummaryOutCtx methodOut = methodIn.getLogSummaryOutCtx();
           methodOut.setSumCustomerId(methodOut.getSummaryCustomerId());
 //  cobolCode::SELECT SUM_CUSTOMER_ID , SUM_OVERDUE , SUM_REJECTED , SUM_SETTLED , SUM_CURRENCY , SUM_OPEN_BALANCE , SUM_TOTAL_DEBIT , SUM_TOTAL_CREDIT , SUM_CLOSE_BALANCE FROM TBTRDSUM WHERE SUM_CUSTOMER_ID = ? FOR UPDATE OF SUM_OVERDUE , SUM_REJECTED , SUM_SETTLED , SUM_CURRENCY , SUM_OPEN_BALANCE , SUM_TOTAL_DEBIT , SUM_TOTAL_CREDIT , SUM_CLOSE_BALANCE
 //  SELECT SUM_CUSTOMER_ID , SUM_OVERDUE , SUM_REJECTED , SUM_SETTLED , SUM_CURRENCY , SUM_OPEN_BALANCE , SUM_TOTAL_DEBIT , SUM_TOTAL_CREDIT , SUM_CLOSE_BALANCE FROM TBTRDSUM WHERE SUM_CUSTOMER_ID = ? FOR UPDATE OF SUM_OVERDUE , SUM_REJECTED , SUM_SETTLED , SUM_CURRENCY , SUM_OPEN_BALANCE , SUM_TOTAL_DEBIT , SUM_TOTAL_CREDIT , SUM_CLOSE_BALANCE
-          programCtx.setSummaryCsrResultSet(trdpb000Repository.openSummaryCsrTrdpb000(programCtx.getSqlca(),methodOut.getDcltbtrdsum()));
+          programCtx.setSummaryCsrResultSet(trdpb000Repository.openSummaryCsrTrdpb000(methodOut.getDcltbtrdsum(),programCtx.getSqlca()));
 //  cobolCode::IF SQLCODE NOT = 0 THEN
 //  IF SQLCODE NOT = 0 THEN
           if (	( methodOut.getSqlcode() != 0 )) { 
@@ -2923,7 +2923,7 @@ LogSummaryOutCtx methodOut = methodIn.getLogSummaryOutCtx();
           }
 //  cobolCode::FETCH SUMMARY_CSR INTO ? , ? , ? , ? , ? , ? , ? , ? , ?
 //  FETCH SUMMARY_CSR INTO ? , ? , ? , ? , ? , ? , ? , ? , ?
-          trdpb000Repository.fetchSummaryCsrTrdpb000(programCtx.getSummaryCsrResultSet(),programCtx.getSqlca(),methodOut.getDcltbtrdsum());
+          trdpb000Repository.fetchSummaryCsrTrdpb000(programCtx.getSummaryCsrResultSet(),methodOut.getDcltbtrdsum(),programCtx.getSqlca());
 //  cobolCode::IF SQLCODE = 0 OR 100 THEN
 //  IF SQLCODE = 0 OR 100 THEN
 //  cobolCode::ELSE
@@ -3086,14 +3086,14 @@ LogSummaryOutCtx methodOut = methodIn.getLogSummaryOutCtx();
               methodOut.getDcltbtrdsum().setString(methodOut.getCustomerSummaryRec().getCharArray());
 //  cobolCode::INSERT INTO TBTRDSUM VALUES ( ? , ? , ? , ? , ? , ? , ? , ? , ? )
 //  INSERT INTO TBTRDSUM VALUES ( ? , ? , ? , ? , ? , ? , ? , ? , ? )
-              trdpb000Repository.insert1(programCtx.getSqlca(),methodOut.getDcltbtrdsum());
+              trdpb000Repository.insert1(methodOut.getDcltbtrdsum(),programCtx.getSqlca());
           }
 //  cobolCode::ELSE
 //  ELSE
           else { 
 //  cobolCode::UPDATE TBTRDSUM SET SUM_OVERDUE = ? , SUM_REJECTED = ? , SUM_SETTLED = ? , SUM_CURRENCY = ? , SUM_OPEN_BALANCE = ? , SUM_TOTAL_DEBIT = ? , SUM_TOTAL_CREDIT = ? , SUM_CLOSE_BALANCE = ? WHERE SUM_CUSTOMER_ID = ?
 //  UPDATE TBTRDSUM SET SUM_OVERDUE = ? , SUM_REJECTED = ? , SUM_SETTLED = ? , SUM_CURRENCY = ? , SUM_OPEN_BALANCE = ? , SUM_TOTAL_DEBIT = ? , SUM_TOTAL_CREDIT = ? , SUM_CLOSE_BALANCE = ? WHERE SUM_CUSTOMER_ID = ?
-              trdpb000Repository.updateTbtrdsum(programCtx.getSqlca(),methodOut.getDcltbtrdsum());
+              trdpb000Repository.updateTbtrdsum(methodOut.getDcltbtrdsum(),programCtx.getSqlca());
           }
 
 // *            Where current of summary_csr

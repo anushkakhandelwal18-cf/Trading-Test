@@ -3,7 +3,7 @@ package com.cloudframe.app.trdpb003.dto;
 /**
 *  The class Dcltbtrdmac is used to handle fields declared in it
 *  @author CloudFrame Inc.
-*  created on 2024-11-21 at 07:17. using version 5.0.0.153
+*  created on 2024-11-22 at 10:31. using version 5.0.0.158
 **/
 
 

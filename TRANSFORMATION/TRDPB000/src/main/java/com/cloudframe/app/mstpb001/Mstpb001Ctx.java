@@ -19,10 +19,10 @@ import com.cloudframe.app.mstpb001.dto.Sqlca;
 public class Mstpb001Ctx implements ProgramContext, Cloneable {
     GlobalExecutorCtx globalCtx;
 
-    LsCustomerIo lsCustomerIo;
-    Sqlca sqlca;
-    Dcltbtrdcus dcltbtrdcus;
     Work work;
+    Dcltbtrdcus dcltbtrdcus;
+    Sqlca sqlca;
+    LsCustomerIo lsCustomerIo;
 
 
     private int rc;
@@ -56,27 +56,16 @@ public class Mstpb001Ctx implements ProgramContext, Cloneable {
     }
 
 
-    public LsCustomerIo getLsCustomerIo() {
-        if (lsCustomerIo == null) {
-            lsCustomerIo = new LsCustomerIo();
+    public Work getWork() {
+        if (work == null) {
+            work = new Work();
         }
 
-        return lsCustomerIo;
+        return work;
     }
 
-    public void setLsCustomerIo(LsCustomerIo lsCustomerIo) {
-        this.lsCustomerIo = lsCustomerIo;
-    }
-    public Sqlca getSqlca() {
-        if (sqlca == null) {
-            sqlca = new Sqlca();
-        }
-
-        return sqlca;
-    }
-
-    public void setSqlca(Sqlca sqlca) {
-        this.sqlca = sqlca;
+    public void setWork(Work work) {
+        this.work = work;
     }
     public Dcltbtrdcus getDcltbtrdcus() {
         if (dcltbtrdcus == null) {
@@ -89,16 +78,27 @@ public class Mstpb001Ctx implements ProgramContext, Cloneable {
     public void setDcltbtrdcus(Dcltbtrdcus dcltbtrdcus) {
         this.dcltbtrdcus = dcltbtrdcus;
     }
-    public Work getWork() {
-        if (work == null) {
-            work = new Work();
+    public Sqlca getSqlca() {
+        if (sqlca == null) {
+            sqlca = new Sqlca();
         }
 
-        return work;
+        return sqlca;
     }
 
-    public void setWork(Work work) {
-        this.work = work;
+    public void setSqlca(Sqlca sqlca) {
+        this.sqlca = sqlca;
+    }
+    public LsCustomerIo getLsCustomerIo() {
+        if (lsCustomerIo == null) {
+            lsCustomerIo = new LsCustomerIo();
+        }
+
+        return lsCustomerIo;
+    }
+
+    public void setLsCustomerIo(LsCustomerIo lsCustomerIo) {
+        this.lsCustomerIo = lsCustomerIo;
     }
 
 
@@ -111,23 +111,23 @@ public class Mstpb001Ctx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += lsCustomerIo.hashCode();
-        str += sqlca.hashCode();
-        str += dcltbtrdcus.hashCode();
         str += work.hashCode();
+        str += dcltbtrdcus.hashCode();
+        str += sqlca.hashCode();
+        str += lsCustomerIo.hashCode();
        return str.hashCode();
     }
 
     public Mstpb001Ctx clone() {
         Mstpb001Ctx cloneObj = new Mstpb001Ctx();
-        cloneObj.lsCustomerIo = new LsCustomerIo();
-        cloneObj.lsCustomerIo.set(lsCustomerIo.getClonedField());
-        cloneObj.sqlca = new Sqlca();
-        cloneObj.sqlca.set(sqlca.getClonedField());
-        cloneObj.dcltbtrdcus = new Dcltbtrdcus();
-        cloneObj.dcltbtrdcus.set(dcltbtrdcus.getClonedField());
         cloneObj.work = new Work();
         cloneObj.work.set(work.getClonedField());
+        cloneObj.dcltbtrdcus = new Dcltbtrdcus();
+        cloneObj.dcltbtrdcus.set(dcltbtrdcus.getClonedField());
+        cloneObj.sqlca = new Sqlca();
+        cloneObj.sqlca.set(sqlca.getClonedField());
+        cloneObj.lsCustomerIo = new LsCustomerIo();
+        cloneObj.lsCustomerIo.set(lsCustomerIo.getClonedField());
         return cloneObj;
     }
 
@@ -172,6 +172,20 @@ public class Mstpb001Ctx implements ProgramContext, Cloneable {
      public class MainlineOutCtx implements Cloneable {
      LsCustomerIo lsCustomerIo = Mstpb001Ctx.this.getLsCustomerIo();
 
+	/**
+	 *	Test condition "S" for isCustomerException88()
+	 *	@return  Returns true if isCustomerException88() is "S"
+	 */
+   public boolean isCustomerException88() throws CFException {
+      return lsCustomerIo.isCustomerException88();
+   }
+
+	/**
+	*  set values "S"
+	*/
+   	public void setCustomerException88True()  throws CFException{  			
+    	lsCustomerIo.setCustomerException88True();
+   	}
 	/**
 	 *	Returns the value of lsCustomerErrorMsg
 	 *	@return lsCustomerErrorMsg
@@ -240,20 +254,6 @@ public class Mstpb001Ctx implements ProgramContext, Cloneable {
       lsCustomerIo.setLsCustomerErrorMsg(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
-	/**
-	 *	Test condition "S" for isCustomerException88()
-	 *	@return  Returns true if isCustomerException88() is "S"
-	 */
-   public boolean isCustomerException88() throws CFException {
-      return lsCustomerIo.isCustomerException88();
-   }
-
-	/**
-	*  set values "S"
-	*/
-   	public void setCustomerException88True()  throws CFException{  			
-    	lsCustomerIo.setCustomerException88True();
-   	}
 
         public Mstpb001Ctx getMstpb001Ctx() {
             return Mstpb001Ctx.this;
@@ -286,78 +286,10 @@ public class Mstpb001Ctx implements ProgramContext, Cloneable {
             return new MainlineOutCtx();
     }
      public class GetCustomerInCtx implements Cloneable {
-     LsCustomerIo lsCustomerIo = Mstpb001Ctx.this.getLsCustomerIo();
-     Sqlca sqlca = Mstpb001Ctx.this.getSqlca();
-     Dcltbtrdcus dcltbtrdcus = Mstpb001Ctx.this.getDcltbtrdcus();
      Work work = Mstpb001Ctx.this.getWork();
-
-	/**
-	 *	Returns the value of cusStatus
-	 *	@return cusStatus
-	 */
-   public char[] getCusStatus() throws CFException  {              
-   		return dcltbtrdcus.getCusStatus();
-   }
-
-  
-	/**
-	*  set variable cusStatus
-	*  @param value
-	**/
-   public void setCusStatus(char[] value) throws CFException {
-      dcltbtrdcus.setCusStatus(value);
-   } 
-
-     /**
-	 * 	Update CusStatus 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setCusStatus(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdcus.setCusStatus(source, sourceIndex);
-   	
-   }
-   
-   public void setCusStatus(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdcus.setCusStatus(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update CusStatus 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setCusStatus(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdcus.setCusStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update CusStatus with another Field
-	 *	@param value
-	 */
-   public void setCusStatus(Field source) {
-      dcltbtrdcus.setCusStatus(source);
-   }  
-   
-     /**
-	 * 	Update CusStatus 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setCusStatus(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdcus.setCusStatus(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update CusStatus 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setCusStatus(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdcus.setCusStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
+     Dcltbtrdcus dcltbtrdcus = Mstpb001Ctx.this.getDcltbtrdcus();
+     Sqlca sqlca = Mstpb001Ctx.this.getSqlca();
+     LsCustomerIo lsCustomerIo = Mstpb001Ctx.this.getLsCustomerIo();
 
 	/**
 	 *	Returns the value of sqlwarn
@@ -419,6 +351,74 @@ public class Mstpb001Ctx implements ProgramContext, Cloneable {
 	 */
    public void setSqlwarn(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
    	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of cusDescription
+	 *	@return cusDescription
+	 */
+   public char[] getCusDescription() throws CFException  {              
+   		return dcltbtrdcus.getCusDescription();
+   }
+
+  
+	/**
+	*  set variable cusDescription
+	*  @param value
+	**/
+   public void setCusDescription(char[] value) throws CFException {
+      dcltbtrdcus.setCusDescription(value);
+   } 
+
+     /**
+	 * 	Update CusDescription 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setCusDescription(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdcus.setCusDescription(source, sourceIndex);
+   	
+   }
+   
+   public void setCusDescription(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdcus.setCusDescription(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update CusDescription 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setCusDescription(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdcus.setCusDescription(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update CusDescription with another Field
+	 *	@param value
+	 */
+   public void setCusDescription(Field source) {
+      dcltbtrdcus.setCusDescription(source);
+   }  
+   
+     /**
+	 * 	Update CusDescription 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setCusDescription(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdcus.setCusDescription(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update CusDescription 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setCusDescription(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdcus.setCusDescription(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -490,15 +490,6 @@ public class Mstpb001Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of sqlca
-	 *	@return sqlca
-	 */   
-	 public Sqlca getSqlca() {
-   	return sqlca;
-   }
-
-
-	/**
 	 *	Returns the value of sqlcode
 	 *	@return sqlcode
 	 */
@@ -540,6 +531,92 @@ public class Mstpb001Ctx implements ProgramContext, Cloneable {
 	public void setSqlerrd(int index,long number)  throws CFException{
 		sqlca.setSqlerrd((index),(int)number);
 	}
+
+
+	/**
+	 *	Returns the value of dcltbtrdcus
+	 *	@return dcltbtrdcus
+	 */   
+	 public Dcltbtrdcus getDcltbtrdcus() {
+   	return dcltbtrdcus;
+   }
+
+
+	/**
+	 *	Returns the value of cusCurrency
+	 *	@return cusCurrency
+	 */
+   public char[] getCusCurrency() throws CFException  {              
+   		return dcltbtrdcus.getCusCurrency();
+   }
+
+  
+	/**
+	*  set variable cusCurrency
+	*  @param value
+	**/
+   public void setCusCurrency(char[] value) throws CFException {
+      dcltbtrdcus.setCusCurrency(value);
+   } 
+
+     /**
+	 * 	Update CusCurrency 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setCusCurrency(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdcus.setCusCurrency(source, sourceIndex);
+   	
+   }
+   
+   public void setCusCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdcus.setCusCurrency(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update CusCurrency 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setCusCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdcus.setCusCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update CusCurrency with another Field
+	 *	@param value
+	 */
+   public void setCusCurrency(Field source) {
+      dcltbtrdcus.setCusCurrency(source);
+   }  
+   
+     /**
+	 * 	Update CusCurrency 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setCusCurrency(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdcus.setCusCurrency(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update CusCurrency 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setCusCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdcus.setCusCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sqlca
+	 *	@return sqlca
+	 */   
+	 public Sqlca getSqlca() {
+   	return sqlca;
+   }
 
 
 	/**
@@ -611,148 +688,71 @@ public class Mstpb001Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of cusCurrency
-	 *	@return cusCurrency
+	 *	Returns the value of cusStatus
+	 *	@return cusStatus
 	 */
-   public char[] getCusCurrency() throws CFException  {              
-   		return dcltbtrdcus.getCusCurrency();
+   public char[] getCusStatus() throws CFException  {              
+   		return dcltbtrdcus.getCusStatus();
    }
 
   
 	/**
-	*  set variable cusCurrency
+	*  set variable cusStatus
 	*  @param value
 	**/
-   public void setCusCurrency(char[] value) throws CFException {
-      dcltbtrdcus.setCusCurrency(value);
+   public void setCusStatus(char[] value) throws CFException {
+      dcltbtrdcus.setCusStatus(value);
    } 
 
      /**
-	 * 	Update CusCurrency 
+	 * 	Update CusStatus 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setCusCurrency(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdcus.setCusCurrency(source, sourceIndex);
+   public void setCusStatus(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdcus.setCusStatus(source, sourceIndex);
    	
    }
    
-   public void setCusCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdcus.setCusCurrency(source, sourceIndex, sourceLen);
+   public void setCusStatus(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdcus.setCusStatus(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update CusCurrency 
+	 * 	Update CusStatus 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setCusCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdcus.setCusCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setCusStatus(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdcus.setCusStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update CusCurrency with another Field
+	 * 	Update CusStatus with another Field
 	 *	@param value
 	 */
-   public void setCusCurrency(Field source) {
-      dcltbtrdcus.setCusCurrency(source);
+   public void setCusStatus(Field source) {
+      dcltbtrdcus.setCusStatus(source);
    }  
    
      /**
-	 * 	Update CusCurrency 
+	 * 	Update CusStatus 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setCusCurrency(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdcus.setCusCurrency(source, sourceIndex, sourceLen);   	
+   public void setCusStatus(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdcus.setCusStatus(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update CusCurrency 
+	 * 	Update CusStatus 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setCusCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdcus.setCusCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of dcltbtrdcus
-	 *	@return dcltbtrdcus
-	 */   
-	 public Dcltbtrdcus getDcltbtrdcus() {
-   	return dcltbtrdcus;
-   }
-
-
-	/**
-	 *	Returns the value of cusDescription
-	 *	@return cusDescription
-	 */
-   public char[] getCusDescription() throws CFException  {              
-   		return dcltbtrdcus.getCusDescription();
-   }
-
-  
-	/**
-	*  set variable cusDescription
-	*  @param value
-	**/
-   public void setCusDescription(char[] value) throws CFException {
-      dcltbtrdcus.setCusDescription(value);
-   } 
-
-     /**
-	 * 	Update CusDescription 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setCusDescription(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdcus.setCusDescription(source, sourceIndex);
-   	
-   }
-   
-   public void setCusDescription(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdcus.setCusDescription(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update CusDescription 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setCusDescription(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdcus.setCusDescription(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update CusDescription with another Field
-	 *	@param value
-	 */
-   public void setCusDescription(Field source) {
-      dcltbtrdcus.setCusDescription(source);
-   }  
-   
-     /**
-	 * 	Update CusDescription 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setCusDescription(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdcus.setCusDescription(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update CusDescription 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setCusDescription(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdcus.setCusDescription(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setCusStatus(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdcus.setCusStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 
@@ -773,23 +773,23 @@ public class Mstpb001Ctx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += lsCustomerIo.hashCode();
-        str += sqlca.hashCode();
-        str += dcltbtrdcus.hashCode();
         str += work.hashCode();
+        str += dcltbtrdcus.hashCode();
+        str += sqlca.hashCode();
+        str += lsCustomerIo.hashCode();
        return str.hashCode();
     }
 
     public GetCustomerInCtx clone() {
         GetCustomerInCtx cloneObj = new GetCustomerInCtx();
-        cloneObj.lsCustomerIo = new LsCustomerIo();
-        cloneObj.lsCustomerIo.set(lsCustomerIo.getClonedField());
-        cloneObj.sqlca = new Sqlca();
-        cloneObj.sqlca.set(sqlca.getClonedField());
-        cloneObj.dcltbtrdcus = new Dcltbtrdcus();
-        cloneObj.dcltbtrdcus.set(dcltbtrdcus.getClonedField());
         cloneObj.work = new Work();
         cloneObj.work.set(work.getClonedField());
+        cloneObj.dcltbtrdcus = new Dcltbtrdcus();
+        cloneObj.dcltbtrdcus.set(dcltbtrdcus.getClonedField());
+        cloneObj.sqlca = new Sqlca();
+        cloneObj.sqlca.set(sqlca.getClonedField());
+        cloneObj.lsCustomerIo = new LsCustomerIo();
+        cloneObj.lsCustomerIo.set(lsCustomerIo.getClonedField());
         return cloneObj;
     }
 
@@ -799,244 +799,77 @@ public class Mstpb001Ctx implements ProgramContext, Cloneable {
             return new GetCustomerInCtx();
     }
      public class GetCustomerOutCtx implements Cloneable {
-     LsCustomerIo lsCustomerIo = Mstpb001Ctx.this.getLsCustomerIo();
-     Sqlca sqlca = Mstpb001Ctx.this.getSqlca();
-     Dcltbtrdcus dcltbtrdcus = Mstpb001Ctx.this.getDcltbtrdcus();
      Work work = Mstpb001Ctx.this.getWork();
+     Dcltbtrdcus dcltbtrdcus = Mstpb001Ctx.this.getDcltbtrdcus();
+     Sqlca sqlca = Mstpb001Ctx.this.getSqlca();
+     LsCustomerIo lsCustomerIo = Mstpb001Ctx.this.getLsCustomerIo();
 
 	/**
-	 *	Returns the value of lsCustomerId
-	 *	@return lsCustomerId
+	 *	Returns the value of cusCustomerId
+	 *	@return cusCustomerId
 	 */
-   public char[] getLsCustomerId() throws CFException  {              
-   		return lsCustomerIo.getLsCustomerId();
+   public char[] getCusCustomerId() throws CFException  {              
+   		return dcltbtrdcus.getCusCustomerId();
    }
 
   
 	/**
-	*  set variable lsCustomerId
+	*  set variable cusCustomerId
 	*  @param value
 	**/
-   public void setLsCustomerId(char[] value) throws CFException {
-      lsCustomerIo.setLsCustomerId(value);
+   public void setCusCustomerId(char[] value) throws CFException {
+      dcltbtrdcus.setCusCustomerId(value);
    } 
 
      /**
-	 * 	Update LsCustomerId 
+	 * 	Update CusCustomerId 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setLsCustomerId(char[] source, int sourceIndex) throws CFException {
-      lsCustomerIo.setLsCustomerId(source, sourceIndex);
+   public void setCusCustomerId(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdcus.setCusCustomerId(source, sourceIndex);
    	
    }
    
-   public void setLsCustomerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      lsCustomerIo.setLsCustomerId(source, sourceIndex, sourceLen);
+   public void setCusCustomerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdcus.setCusCustomerId(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update LsCustomerId 
+	 * 	Update CusCustomerId 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setLsCustomerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      lsCustomerIo.setLsCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setCusCustomerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdcus.setCusCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update LsCustomerId with another Field
+	 * 	Update CusCustomerId with another Field
 	 *	@param value
 	 */
-   public void setLsCustomerId(Field source) {
-      lsCustomerIo.setLsCustomerId(source);
+   public void setCusCustomerId(Field source) {
+      dcltbtrdcus.setCusCustomerId(source);
    }  
    
      /**
-	 * 	Update LsCustomerId 
+	 * 	Update CusCustomerId 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setLsCustomerId(Field source, int sourceIndex,int sourceLen) {
-      lsCustomerIo.setLsCustomerId(source, sourceIndex, sourceLen);   	
+   public void setCusCustomerId(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdcus.setCusCustomerId(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update LsCustomerId 
+	 * 	Update CusCustomerId 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setLsCustomerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      lsCustomerIo.setLsCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of sqlca
-	 *	@return sqlca
-	 */   
-	 public Sqlca getSqlca() {
-   	return sqlca;
-   }
-
-
-	/**
-	 *	Returns the value of lsCustomerCurrency
-	 *	@return lsCustomerCurrency
-	 */
-   public char[] getLsCustomerCurrency() throws CFException  {              
-   		return lsCustomerIo.getLsCustomerCurrency();
-   }
-
-  
-	/**
-	*  set variable lsCustomerCurrency
-	*  @param value
-	**/
-   public void setLsCustomerCurrency(char[] value) throws CFException {
-      lsCustomerIo.setLsCustomerCurrency(value);
-   } 
-
-     /**
-	 * 	Update LsCustomerCurrency 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setLsCustomerCurrency(char[] source, int sourceIndex) throws CFException {
-      lsCustomerIo.setLsCustomerCurrency(source, sourceIndex);
-   	
-   }
-   
-   public void setLsCustomerCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      lsCustomerIo.setLsCustomerCurrency(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update LsCustomerCurrency 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setLsCustomerCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      lsCustomerIo.setLsCustomerCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update LsCustomerCurrency with another Field
-	 *	@param value
-	 */
-   public void setLsCustomerCurrency(Field source) {
-      lsCustomerIo.setLsCustomerCurrency(source);
-   }  
-   
-     /**
-	 * 	Update LsCustomerCurrency 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setLsCustomerCurrency(Field source, int sourceIndex,int sourceLen) {
-      lsCustomerIo.setLsCustomerCurrency(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update LsCustomerCurrency 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setLsCustomerCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      lsCustomerIo.setLsCustomerCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of sqlcode
-	 *	@return sqlcode
-	 */
-	public int getSqlcode() throws CFException {        
-   		return sqlca.getSqlcode();
-	}
-	
-	/**
-	 * 	Update Sqlcode with the passed value
-	 *	@param number
-	 */
-	public void setSqlcode(int number)  throws CFException{
-		sqlca.setSqlcode(number);
-	}
-
-
-	public void setSqlcode(long number)  throws CFException{
-		sqlca.setSqlcode((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of cusDescription
-	 *	@return cusDescription
-	 */
-   public char[] getCusDescription() throws CFException  {              
-   		return dcltbtrdcus.getCusDescription();
-   }
-
-  
-	/**
-	*  set variable cusDescription
-	*  @param value
-	**/
-   public void setCusDescription(char[] value) throws CFException {
-      dcltbtrdcus.setCusDescription(value);
-   } 
-
-     /**
-	 * 	Update CusDescription 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setCusDescription(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdcus.setCusDescription(source, sourceIndex);
-   	
-   }
-   
-   public void setCusDescription(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdcus.setCusDescription(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update CusDescription 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setCusDescription(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdcus.setCusDescription(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update CusDescription with another Field
-	 *	@param value
-	 */
-   public void setCusDescription(Field source) {
-      dcltbtrdcus.setCusDescription(source);
-   }  
-   
-     /**
-	 * 	Update CusDescription 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setCusDescription(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdcus.setCusDescription(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update CusDescription 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setCusDescription(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdcus.setCusDescription(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setCusCustomerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdcus.setCusCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -1108,6 +941,270 @@ public class Mstpb001Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
+	 *	Returns the value of cusDescription
+	 *	@return cusDescription
+	 */
+   public char[] getCusDescription() throws CFException  {              
+   		return dcltbtrdcus.getCusDescription();
+   }
+
+  
+	/**
+	*  set variable cusDescription
+	*  @param value
+	**/
+   public void setCusDescription(char[] value) throws CFException {
+      dcltbtrdcus.setCusDescription(value);
+   } 
+
+     /**
+	 * 	Update CusDescription 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setCusDescription(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdcus.setCusDescription(source, sourceIndex);
+   	
+   }
+   
+   public void setCusDescription(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdcus.setCusDescription(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update CusDescription 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setCusDescription(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdcus.setCusDescription(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update CusDescription with another Field
+	 *	@param value
+	 */
+   public void setCusDescription(Field source) {
+      dcltbtrdcus.setCusDescription(source);
+   }  
+   
+     /**
+	 * 	Update CusDescription 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setCusDescription(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdcus.setCusDescription(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update CusDescription 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setCusDescription(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdcus.setCusDescription(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Test condition "S" for isCustomerException88()
+	 *	@return  Returns true if isCustomerException88() is "S"
+	 */
+   public boolean isCustomerException88() throws CFException {
+      return lsCustomerIo.isCustomerException88();
+   }
+
+	/**
+	*  set values "S"
+	*/
+   	public void setCustomerException88True()  throws CFException{  			
+    	lsCustomerIo.setCustomerException88True();
+   	}
+	/**
+	 *	Returns the value of lsCustomerId
+	 *	@return lsCustomerId
+	 */
+   public char[] getLsCustomerId() throws CFException  {              
+   		return lsCustomerIo.getLsCustomerId();
+   }
+
+  
+	/**
+	*  set variable lsCustomerId
+	*  @param value
+	**/
+   public void setLsCustomerId(char[] value) throws CFException {
+      lsCustomerIo.setLsCustomerId(value);
+   } 
+
+     /**
+	 * 	Update LsCustomerId 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setLsCustomerId(char[] source, int sourceIndex) throws CFException {
+      lsCustomerIo.setLsCustomerId(source, sourceIndex);
+   	
+   }
+   
+   public void setLsCustomerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      lsCustomerIo.setLsCustomerId(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update LsCustomerId 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setLsCustomerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      lsCustomerIo.setLsCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update LsCustomerId with another Field
+	 *	@param value
+	 */
+   public void setLsCustomerId(Field source) {
+      lsCustomerIo.setLsCustomerId(source);
+   }  
+   
+     /**
+	 * 	Update LsCustomerId 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setLsCustomerId(Field source, int sourceIndex,int sourceLen) {
+      lsCustomerIo.setLsCustomerId(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update LsCustomerId 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setLsCustomerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      lsCustomerIo.setLsCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of dcltbtrdcus
+	 *	@return dcltbtrdcus
+	 */   
+	 public Dcltbtrdcus getDcltbtrdcus() {
+   	return dcltbtrdcus;
+   }
+
+
+	/**
+	 *	Returns the value of cusCurrency
+	 *	@return cusCurrency
+	 */
+   public char[] getCusCurrency() throws CFException  {              
+   		return dcltbtrdcus.getCusCurrency();
+   }
+
+  
+	/**
+	*  set variable cusCurrency
+	*  @param value
+	**/
+   public void setCusCurrency(char[] value) throws CFException {
+      dcltbtrdcus.setCusCurrency(value);
+   } 
+
+     /**
+	 * 	Update CusCurrency 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setCusCurrency(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdcus.setCusCurrency(source, sourceIndex);
+   	
+   }
+   
+   public void setCusCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdcus.setCusCurrency(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update CusCurrency 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setCusCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdcus.setCusCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update CusCurrency with another Field
+	 *	@param value
+	 */
+   public void setCusCurrency(Field source) {
+      dcltbtrdcus.setCusCurrency(source);
+   }  
+   
+     /**
+	 * 	Update CusCurrency 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setCusCurrency(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdcus.setCusCurrency(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update CusCurrency 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setCusCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdcus.setCusCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Test condition "N" for isCustomerNotFound88()
+	 *	@return  Returns true if isCustomerNotFound88() is "N"
+	 */
+   public boolean isCustomerNotFound88() throws CFException {
+      return lsCustomerIo.isCustomerNotFound88();
+   }
+
+	/**
+	*  set values "N"
+	*/
+   	public void setCustomerNotFound88True()  throws CFException{  			
+    	lsCustomerIo.setCustomerNotFound88True();
+   	}
+	/**
+	 *	Returns the value of sqlca
+	 *	@return sqlca
+	 */   
+	 public Sqlca getSqlca() {
+   	return sqlca;
+   }
+
+
+	/**
+	 *	Test condition "I" for isCustomerInactive88()
+	 *	@return  Returns true if isCustomerInactive88() is "I"
+	 */
+   public boolean isCustomerInactive88() throws CFException {
+      return lsCustomerIo.isCustomerInactive88();
+   }
+
+	/**
+	*  set values "I"
+	*/
+   	public void setCustomerInactive88True()  throws CFException{  			
+    	lsCustomerIo.setCustomerInactive88True();
+   	}
+	/**
 	 *	Returns the value of lsCustomerDescription
 	 *	@return lsCustomerDescription
 	 */
@@ -1173,6 +1270,96 @@ public class Mstpb001Ctx implements ProgramContext, Cloneable {
 	 */
    public void setLsCustomerDescription(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
       lsCustomerIo.setLsCustomerDescription(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sqlcode
+	 *	@return sqlcode
+	 */
+	public int getSqlcode() throws CFException {        
+   		return sqlca.getSqlcode();
+	}
+	
+	/**
+	 * 	Update Sqlcode with the passed value
+	 *	@param number
+	 */
+	public void setSqlcode(int number)  throws CFException{
+		sqlca.setSqlcode(number);
+	}
+
+
+	public void setSqlcode(long number)  throws CFException{
+		sqlca.setSqlcode((int)number);
+	}
+
+
+	/**
+	 *	Returns the value of lsCustomerCurrency
+	 *	@return lsCustomerCurrency
+	 */
+   public char[] getLsCustomerCurrency() throws CFException  {              
+   		return lsCustomerIo.getLsCustomerCurrency();
+   }
+
+  
+	/**
+	*  set variable lsCustomerCurrency
+	*  @param value
+	**/
+   public void setLsCustomerCurrency(char[] value) throws CFException {
+      lsCustomerIo.setLsCustomerCurrency(value);
+   } 
+
+     /**
+	 * 	Update LsCustomerCurrency 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setLsCustomerCurrency(char[] source, int sourceIndex) throws CFException {
+      lsCustomerIo.setLsCustomerCurrency(source, sourceIndex);
+   	
+   }
+   
+   public void setLsCustomerCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      lsCustomerIo.setLsCustomerCurrency(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update LsCustomerCurrency 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setLsCustomerCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      lsCustomerIo.setLsCustomerCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update LsCustomerCurrency with another Field
+	 *	@param value
+	 */
+   public void setLsCustomerCurrency(Field source) {
+      lsCustomerIo.setLsCustomerCurrency(source);
+   }  
+   
+     /**
+	 * 	Update LsCustomerCurrency 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setLsCustomerCurrency(Field source, int sourceIndex,int sourceLen) {
+      lsCustomerIo.setLsCustomerCurrency(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update LsCustomerCurrency 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setLsCustomerCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      lsCustomerIo.setLsCustomerCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -1244,165 +1431,6 @@ public class Mstpb001Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of cusCustomerId
-	 *	@return cusCustomerId
-	 */
-   public char[] getCusCustomerId() throws CFException  {              
-   		return dcltbtrdcus.getCusCustomerId();
-   }
-
-  
-	/**
-	*  set variable cusCustomerId
-	*  @param value
-	**/
-   public void setCusCustomerId(char[] value) throws CFException {
-      dcltbtrdcus.setCusCustomerId(value);
-   } 
-
-     /**
-	 * 	Update CusCustomerId 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setCusCustomerId(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdcus.setCusCustomerId(source, sourceIndex);
-   	
-   }
-   
-   public void setCusCustomerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdcus.setCusCustomerId(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update CusCustomerId 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setCusCustomerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdcus.setCusCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update CusCustomerId with another Field
-	 *	@param value
-	 */
-   public void setCusCustomerId(Field source) {
-      dcltbtrdcus.setCusCustomerId(source);
-   }  
-   
-     /**
-	 * 	Update CusCustomerId 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setCusCustomerId(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdcus.setCusCustomerId(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update CusCustomerId 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setCusCustomerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdcus.setCusCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of cusCurrency
-	 *	@return cusCurrency
-	 */
-   public char[] getCusCurrency() throws CFException  {              
-   		return dcltbtrdcus.getCusCurrency();
-   }
-
-  
-	/**
-	*  set variable cusCurrency
-	*  @param value
-	**/
-   public void setCusCurrency(char[] value) throws CFException {
-      dcltbtrdcus.setCusCurrency(value);
-   } 
-
-     /**
-	 * 	Update CusCurrency 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setCusCurrency(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdcus.setCusCurrency(source, sourceIndex);
-   	
-   }
-   
-   public void setCusCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdcus.setCusCurrency(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update CusCurrency 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setCusCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdcus.setCusCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update CusCurrency with another Field
-	 *	@param value
-	 */
-   public void setCusCurrency(Field source) {
-      dcltbtrdcus.setCusCurrency(source);
-   }  
-   
-     /**
-	 * 	Update CusCurrency 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setCusCurrency(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdcus.setCusCurrency(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update CusCurrency 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setCusCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdcus.setCusCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of dcltbtrdcus
-	 *	@return dcltbtrdcus
-	 */   
-	 public Dcltbtrdcus getDcltbtrdcus() {
-   	return dcltbtrdcus;
-   }
-
-
-	/**
-	 *	Test condition "I" for isCustomerInactive88()
-	 *	@return  Returns true if isCustomerInactive88() is "I"
-	 */
-   public boolean isCustomerInactive88() throws CFException {
-      return lsCustomerIo.isCustomerInactive88();
-   }
-
-	/**
-	*  set values "I"
-	*/
-   	public void setCustomerInactive88True()  throws CFException{  			
-    	lsCustomerIo.setCustomerInactive88True();
-   	}
-	/**
 	 *	Test condition "A" for isCustomerActive88()
 	 *	@return  Returns true if isCustomerActive88() is "A"
 	 */
@@ -1415,34 +1443,6 @@ public class Mstpb001Ctx implements ProgramContext, Cloneable {
 	*/
    	public void setCustomerActive88True()  throws CFException{  			
     	lsCustomerIo.setCustomerActive88True();
-   	}
-	/**
-	 *	Test condition "S" for isCustomerException88()
-	 *	@return  Returns true if isCustomerException88() is "S"
-	 */
-   public boolean isCustomerException88() throws CFException {
-      return lsCustomerIo.isCustomerException88();
-   }
-
-	/**
-	*  set values "S"
-	*/
-   	public void setCustomerException88True()  throws CFException{  			
-    	lsCustomerIo.setCustomerException88True();
-   	}
-	/**
-	 *	Test condition "N" for isCustomerNotFound88()
-	 *	@return  Returns true if isCustomerNotFound88() is "N"
-	 */
-   public boolean isCustomerNotFound88() throws CFException {
-      return lsCustomerIo.isCustomerNotFound88();
-   }
-
-	/**
-	*  set values "N"
-	*/
-   	public void setCustomerNotFound88True()  throws CFException{  			
-    	lsCustomerIo.setCustomerNotFound88True();
    	}
 
         public Mstpb001Ctx getMstpb001Ctx() {
@@ -1459,23 +1459,23 @@ public class Mstpb001Ctx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += lsCustomerIo.hashCode();
-        str += sqlca.hashCode();
-        str += dcltbtrdcus.hashCode();
         str += work.hashCode();
+        str += dcltbtrdcus.hashCode();
+        str += sqlca.hashCode();
+        str += lsCustomerIo.hashCode();
        return str.hashCode();
     }
 
     public GetCustomerOutCtx clone() {
         GetCustomerOutCtx cloneObj = new GetCustomerOutCtx();
-        cloneObj.lsCustomerIo = new LsCustomerIo();
-        cloneObj.lsCustomerIo.set(lsCustomerIo.getClonedField());
-        cloneObj.sqlca = new Sqlca();
-        cloneObj.sqlca.set(sqlca.getClonedField());
-        cloneObj.dcltbtrdcus = new Dcltbtrdcus();
-        cloneObj.dcltbtrdcus.set(dcltbtrdcus.getClonedField());
         cloneObj.work = new Work();
         cloneObj.work.set(work.getClonedField());
+        cloneObj.dcltbtrdcus = new Dcltbtrdcus();
+        cloneObj.dcltbtrdcus.set(dcltbtrdcus.getClonedField());
+        cloneObj.sqlca = new Sqlca();
+        cloneObj.sqlca.set(sqlca.getClonedField());
+        cloneObj.lsCustomerIo = new LsCustomerIo();
+        cloneObj.lsCustomerIo.set(lsCustomerIo.getClonedField());
         return cloneObj;
     }
 
