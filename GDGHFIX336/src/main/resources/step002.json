@@ -1,0 +1,9 @@
+{
+  "iebgener" : [ {
+    "action" : "copyFile",
+    "input" : [ "STEP002.IEBGENER.Sysut1" ],
+    "inputType" : [ "QSAM" ],
+    "output" : [ "STEP002.IEBGENER.Sysut2" ],
+    "outputType" : [ "QSAM" ]
+  } ]
+}
