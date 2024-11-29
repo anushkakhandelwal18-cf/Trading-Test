@@ -1,0 +1,48 @@
+[ {
+  "stepName" : "DELETE",
+  "progName" : "IEFBR14",
+  "dataSetInfos" : [ {
+    "ddName" : "RUNLOG",
+    "fileNames" : [ "CLOUDFRM.TRADING.BATCHDB2.RUNLOG.REPORT.MF" ]
+  }, {
+    "ddName" : "SUMMARY",
+    "fileNames" : [ "CLOUDFRM.TRADING.BATCHDB2.SUMMARY.REPORT.MF" ]
+  }, {
+    "ddName" : "EXCPTION",
+    "fileNames" : [ "CLOUDFRM.TRADING.BATCHDB2.EXCPTION.REPORT.MF" ]
+  } ]
+}, {
+  "stepName" : "STEP01",
+  "progName" : "TRDPB004",
+  "dataSetInfos" : [ {
+    "ddName" : "STEPLIB",
+    "fileNames" : [ "DSNC10.DBCG.SDSNEXIT", "DSNC10.SDSNLOAD", "CLOUDFRM.TRADING.BATCHDB2.LOADLIB" ]
+  }, {
+    "ddName" : "SYSUDUMP",
+    "fileNames" : [ "SYSOUT" ]
+  }, {
+    "ddName" : "SYSPRINT",
+    "fileNames" : [ "SYSOUT" ]
+  }, {
+    "ddName" : "SYSTSPRT",
+    "fileNames" : [ "SYSOUT" ]
+  }, {
+    "ddName" : "SYSOUT",
+    "fileNames" : [ "SYSOUT" ]
+  }, {
+    "ddName" : "SYSTSIN",
+    "fileNames" : [ "instream/STEP01.EXECRPT.SYSTSIN" ]
+  }, {
+    "ddName" : "RUNLOG",
+    "fileNames" : [ "CLOUDFRM.TRADING.BATCHDB2.RUNLOG.REPORT.MF" ]
+  }, {
+    "ddName" : "SUMMARY",
+    "fileNames" : [ "CLOUDFRM.TRADING.BATCHDB2.SUMMARY.REPORT.MF" ]
+  }, {
+    "ddName" : "EXCPTION",
+    "fileNames" : [ "CLOUDFRM.TRADING.BATCHDB2.EXCPTION.REPORT.MF" ]
+  }, {
+    "ddName" : "SYSTSIN",
+    "fileNames" : [ "instream/STEP01.EXECRPT.SYSTSIN" ]
+  } ]
+} ]
