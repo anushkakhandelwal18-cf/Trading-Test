@@ -39,7 +39,7 @@
 		<dependency>
             <groupId>com.cloudframe</groupId>
             <artifactId>dcio</artifactId>
-            <version>4.0.0.160</version>
+            <version>4.0.0.161</version>
         </dependency>
 	</dependencies>
 	
