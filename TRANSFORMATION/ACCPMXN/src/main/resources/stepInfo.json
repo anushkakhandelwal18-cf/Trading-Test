@@ -1,0 +1,23 @@
+[ {
+  "stepName" : "STEP01",
+  "progName" : "TRDPB000",
+  "dataSetInfos" : [ {
+    "ddName" : "STEPLIB",
+    "fileNames" : [ "DSNC10.DBCG.SDSNEXIT", "DSNC10.SDSNLOAD", "CLOUDFRM.TRADING.BATCHDB2.LOADLIB" ]
+  }, {
+    "ddName" : "SYSUDUMP",
+    "fileNames" : [ "SYSOUT" ]
+  }, {
+    "ddName" : "SYSPRINT",
+    "fileNames" : [ "SYSOUT" ]
+  }, {
+    "ddName" : "SYSTSPRT",
+    "fileNames" : [ "SYSOUT" ]
+  }, {
+    "ddName" : "SYSOUT",
+    "fileNames" : [ "SYSOUT" ]
+  }, {
+    "ddName" : "SYSTSIN",
+    "fileNames" : [ "instream/STEP01.ACCPMXN.SYSTSIN", "instream/STEP01.ACCPMXN.SYSTSIN" ]
+  } ]
+} ]
