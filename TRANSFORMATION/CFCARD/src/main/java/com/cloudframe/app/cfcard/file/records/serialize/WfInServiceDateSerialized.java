@@ -4,7 +4,7 @@ package com.cloudframe.app.cfcard.file.records.serialize;
 *  The class WfInServiceDateSerialized is used to define offsets in order to serialize
 *  in a fixed String
 *  @author CloudFrame Inc.
-*  created on 2024-11-30 at 09:29. using version 5.0.0.161
+*  created on 2024-11-30 at 09:39. using version 5.0.0.161
 **/
 
 import org.slf4j.Logger;

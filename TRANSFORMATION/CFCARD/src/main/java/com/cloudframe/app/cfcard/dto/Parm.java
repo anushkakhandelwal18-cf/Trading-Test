@@ -3,7 +3,7 @@ package com.cloudframe.app.cfcard.dto;
 /**
 *  The class Parm is used to handle fields declared in it
 *  @author CloudFrame Inc.
-*  created on 2024-11-30 at 09:29. using version 5.0.0.161
+*  created on 2024-11-30 at 09:39. using version 5.0.0.161
 **/
 
 
