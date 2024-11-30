@@ -3,7 +3,7 @@ package com.cloudframe.app.cfcard.file.records;
 /**
 *  The class WfOutput is used to handle fields declared in it
 *  @author CloudFrame Inc.
-*  created on 2024-11-30 at 12:48. using version 5.0.0.161
+*  created on 2024-11-30 at 14:36. using version 5.0.0.161
 **/
 
 
