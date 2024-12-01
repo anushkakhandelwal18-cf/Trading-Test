@@ -3,7 +3,7 @@ package com.cloudframe.app.cfcard.file.records;
 /**
 *  The class WfInServiceDate is used to handle fields declared in it
 *  @author CloudFrame Inc.
-*  created on 2024-11-30 at 14:41. using version 5.0.0.161
+*  created on 2024-12-01 at 10:18. using version 5.0.0.161
 **/
 
 

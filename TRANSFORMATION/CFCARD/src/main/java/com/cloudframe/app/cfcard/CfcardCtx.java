@@ -10,17 +10,17 @@ import com.cloudframe.app.exception.CFException;
 
 import com.cloudframe.app.cfcard.file.records.WfRecord;
 import com.cloudframe.app.cfcard.dto.Work;
-import com.cloudframe.app.cfcard.file.records.WfOutput;
 import com.cloudframe.app.cfcard.dto.Parm;
+import com.cloudframe.app.cfcard.file.records.WfOutput;
 
 
 @Context
 public class CfcardCtx implements ProgramContext, Cloneable {
     GlobalExecutorCtx globalCtx;
 
-    WfOutput wfOutput;
-    WfRecord wfRecord;
     Parm parm;
+    WfRecord wfRecord;
+    WfOutput wfOutput;
     Work work;
 
 
@@ -55,16 +55,16 @@ public class CfcardCtx implements ProgramContext, Cloneable {
     }
 
 
-    public WfOutput getWfOutput() {
-        if (wfOutput == null) {
-            wfOutput = new WfOutput();
+    public Parm getParm() {
+        if (parm == null) {
+            parm = new Parm();
         }
 
-        return wfOutput;
+        return parm;
     }
 
-    public void setWfOutput(WfOutput wfOutput) {
-        this.wfOutput = wfOutput;
+    public void setParm(Parm parm) {
+        this.parm = parm;
     }
     public WfRecord getWfRecord() {
         if (wfRecord == null) {
@@ -77,16 +77,16 @@ public class CfcardCtx implements ProgramContext, Cloneable {
     public void setWfRecord(WfRecord wfRecord) {
         this.wfRecord = wfRecord;
     }
-    public Parm getParm() {
-        if (parm == null) {
-            parm = new Parm();
+    public WfOutput getWfOutput() {
+        if (wfOutput == null) {
+            wfOutput = new WfOutput();
         }
 
-        return parm;
+        return wfOutput;
     }
 
-    public void setParm(Parm parm) {
-        this.parm = parm;
+    public void setWfOutput(WfOutput wfOutput) {
+        this.wfOutput = wfOutput;
     }
     public Work getWork() {
         if (work == null) {
@@ -110,21 +110,21 @@ public class CfcardCtx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += wfOutput.hashCode();
-        str += wfRecord.hashCode();
         str += parm.hashCode();
+        str += wfRecord.hashCode();
+        str += wfOutput.hashCode();
         str += work.hashCode();
        return str.hashCode();
     }
 
     public CfcardCtx clone() {
         CfcardCtx cloneObj = new CfcardCtx();
-        cloneObj.wfOutput = new WfOutput();
-        cloneObj.wfOutput.set(wfOutput.getClonedField());
-        cloneObj.wfRecord = new WfRecord();
-        cloneObj.wfRecord.set(wfRecord.getClonedField());
         cloneObj.parm = new Parm();
         cloneObj.parm.set(parm.getClonedField());
+        cloneObj.wfRecord = new WfRecord();
+        cloneObj.wfRecord.set(wfRecord.getClonedField());
+        cloneObj.wfOutput = new WfOutput();
+        cloneObj.wfOutput.set(wfOutput.getClonedField());
         cloneObj.work = new Work();
         cloneObj.work.set(work.getClonedField());
         return cloneObj;
@@ -277,18 +277,9 @@ public class CfcardCtx implements ProgramContext, Cloneable {
             return new MainlineInCtx();
     }
      public class InitializeInCtx implements Cloneable {
-     WfOutput wfOutput = CfcardCtx.this.getWfOutput();
      WfRecord wfRecord = CfcardCtx.this.getWfRecord();
+     WfOutput wfOutput = CfcardCtx.this.getWfOutput();
      Work work = CfcardCtx.this.getWork();
-
-	/**
-	 *	Returns the value of wfOutput
-	 *	@return wfOutput
-	 */   
-	 public WfOutput getWfOutput() {
-   	return wfOutput;
-   }
-
 
 	/**
 	 *	Returns the value of wfRecord
@@ -296,6 +287,15 @@ public class CfcardCtx implements ProgramContext, Cloneable {
 	 */   
 	 public WfRecord getWfRecord() {
    	return wfRecord;
+   }
+
+
+	/**
+	 *	Returns the value of wfOutput
+	 *	@return wfOutput
+	 */   
+	 public WfOutput getWfOutput() {
+   	return wfOutput;
    }
 
 
@@ -317,18 +317,18 @@ public class CfcardCtx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += wfOutput.hashCode();
         str += wfRecord.hashCode();
+        str += wfOutput.hashCode();
         str += work.hashCode();
        return str.hashCode();
     }
 
     public InitializeInCtx clone() {
         InitializeInCtx cloneObj = new InitializeInCtx();
-        cloneObj.wfOutput = new WfOutput();
-        cloneObj.wfOutput.set(wfOutput.getClonedField());
         cloneObj.wfRecord = new WfRecord();
         cloneObj.wfRecord.set(wfRecord.getClonedField());
+        cloneObj.wfOutput = new WfOutput();
+        cloneObj.wfOutput.set(wfOutput.getClonedField());
         cloneObj.work = new Work();
         cloneObj.work.set(work.getClonedField());
         return cloneObj;
@@ -340,9 +340,26 @@ public class CfcardCtx implements ProgramContext, Cloneable {
             return new InitializeInCtx();
     }
      public class InitializeOutCtx implements Cloneable {
-     WfOutput wfOutput = CfcardCtx.this.getWfOutput();
      WfRecord wfRecord = CfcardCtx.this.getWfRecord();
+     WfOutput wfOutput = CfcardCtx.this.getWfOutput();
      Work work = CfcardCtx.this.getWork();
+
+	/**
+	 *	Returns the value of outpStatus
+	 *	@return outpStatus
+	 */
+   public char[] getOutpStatus() throws CFException  {              
+   		return work.getOutpStatus();
+   }
+
+  
+	/**
+	*  set variable outpStatus
+	*  @param value
+	**/
+   public void setOutpStatus(char[] value) throws CFException {
+      work.setOutpStatus(value);
+   } 
 
 	/**
 	 *	Returns the value of outpCntW
@@ -397,20 +414,20 @@ public class CfcardCtx implements ProgramContext, Cloneable {
 	}	
 
 	/**
-	 *	Returns the value of outpStatus
-	 *	@return outpStatus
+	 *	Returns the value of inp1Status
+	 *	@return inp1Status
 	 */
-   public char[] getOutpStatus() throws CFException  {              
-   		return work.getOutpStatus();
+   public char[] getInp1Status() throws CFException  {              
+   		return work.getInp1Status();
    }
 
   
 	/**
-	*  set variable outpStatus
+	*  set variable inp1Status
 	*  @param value
 	**/
-   public void setOutpStatus(char[] value) throws CFException {
-      work.setOutpStatus(value);
+   public void setInp1Status(char[] value) throws CFException {
+      work.setInp1Status(value);
    } 
 
 	/**
@@ -465,23 +482,6 @@ public class CfcardCtx implements ProgramContext, Cloneable {
 		work.setInp1Cnt(value);
 	}	
 
-	/**
-	 *	Returns the value of inp1Status
-	 *	@return inp1Status
-	 */
-   public char[] getInp1Status() throws CFException  {              
-   		return work.getInp1Status();
-   }
-
-  
-	/**
-	*  set variable inp1Status
-	*  @param value
-	**/
-   public void setInp1Status(char[] value) throws CFException {
-      work.setInp1Status(value);
-   } 
-
 
         public CfcardCtx getCfcardCtx() {
             return CfcardCtx.this;
@@ -497,18 +497,18 @@ public class CfcardCtx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += wfOutput.hashCode();
         str += wfRecord.hashCode();
+        str += wfOutput.hashCode();
         str += work.hashCode();
        return str.hashCode();
     }
 
     public InitializeOutCtx clone() {
         InitializeOutCtx cloneObj = new InitializeOutCtx();
-        cloneObj.wfOutput = new WfOutput();
-        cloneObj.wfOutput.set(wfOutput.getClonedField());
         cloneObj.wfRecord = new WfRecord();
         cloneObj.wfRecord.set(wfRecord.getClonedField());
+        cloneObj.wfOutput = new WfOutput();
+        cloneObj.wfOutput.set(wfOutput.getClonedField());
         cloneObj.work = new Work();
         cloneObj.work.set(work.getClonedField());
         return cloneObj;
@@ -581,56 +581,21 @@ public class CfcardCtx implements ProgramContext, Cloneable {
 	}	
 
 	/**
-	 *	Returns the value of inp1Cnt
-	 *	@return inp1Cnt
+	 *	Returns the value of currentCard
+	 *	@return currentCard
 	 */
-	public long getInp1Cnt() throws CFException {
-   		return work.getInp1Cnt();
-	}
+   public char[] getCurrentCard() throws CFException  {              
+   		return work.getCurrentCard();
+   }
 
-
+  
 	/**
-	 *	Returns String value of inp1Cnt
-	 *	@return inp1Cnt
-	 */
-	public char[]  getInp1CntString() throws CFException {
-	     return String.valueOf(work.getInp1CntString()).toCharArray();
-	}
-
-	 /**
-	 *  This method allows testing if there is a numeric value stored in the serialized String
-	 *	@return true if numeric value is stored in the string
-	 */
-	public boolean inp1CntIsNumeric()  throws CFException{
-	    return work.inp1CntIsNumeric();
-	}
-
-	/**
-	 * 	Update Inp1Cnt with the passed value
-	 *	@param number
-	 */
-	public void setInp1Cnt(long number)  throws CFException{
-		work.setInp1Cnt(number);
-	}
-	
-
-	
-	/**
-	 * 	Update Inp1Cnt with the passed value
-	 *	@param value (String or char[])
-	 */
-	public void setInp1Cnt(char[] value)  throws CFException {
-		work.setInp1Cnt(value);
-	}
-	
-	/**
-	 * 	Update Inp1Cnt with the passed value 
-	 *
-	 *	@param value (String or char[])
-	 */
-	public void setInp1CntString(char[] value)  throws CFException{
-		work.setInp1Cnt(value);
-	}	
+	*  set variable currentCard
+	*  @param value
+	**/
+   public void setCurrentCard(char[] value) throws CFException {
+      work.setCurrentCard(value);
+   } 
 
 	/**
 	 *	Returns the value of wfInCardNumber
@@ -701,21 +666,56 @@ public class CfcardCtx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of currentCard
-	 *	@return currentCard
+	 *	Returns the value of inp1Cnt
+	 *	@return inp1Cnt
 	 */
-   public char[] getCurrentCard() throws CFException  {              
-   		return work.getCurrentCard();
-   }
+	public long getInp1Cnt() throws CFException {
+   		return work.getInp1Cnt();
+	}
 
-  
+
 	/**
-	*  set variable currentCard
-	*  @param value
-	**/
-   public void setCurrentCard(char[] value) throws CFException {
-      work.setCurrentCard(value);
-   } 
+	 *	Returns String value of inp1Cnt
+	 *	@return inp1Cnt
+	 */
+	public char[]  getInp1CntString() throws CFException {
+	     return String.valueOf(work.getInp1CntString()).toCharArray();
+	}
+
+	 /**
+	 *  This method allows testing if there is a numeric value stored in the serialized String
+	 *	@return true if numeric value is stored in the string
+	 */
+	public boolean inp1CntIsNumeric()  throws CFException{
+	    return work.inp1CntIsNumeric();
+	}
+
+	/**
+	 * 	Update Inp1Cnt with the passed value
+	 *	@param number
+	 */
+	public void setInp1Cnt(long number)  throws CFException{
+		work.setInp1Cnt(number);
+	}
+	
+
+	
+	/**
+	 * 	Update Inp1Cnt with the passed value
+	 *	@param value (String or char[])
+	 */
+	public void setInp1Cnt(char[] value)  throws CFException {
+		work.setInp1Cnt(value);
+	}
+	
+	/**
+	 * 	Update Inp1Cnt with the passed value 
+	 *
+	 *	@param value (String or char[])
+	 */
+	public void setInp1CntString(char[] value)  throws CFException{
+		work.setInp1Cnt(value);
+	}	
 
 
         public CfcardCtx getCfcardCtx() {
@@ -761,52 +761,6 @@ public class CfcardCtx implements ProgramContext, Cloneable {
      WfRecord wfRecord = CfcardCtx.this.getWfRecord();
      Parm parm = CfcardCtx.this.getParm();
      Work work = CfcardCtx.this.getWork();
-
-	/**
-	 *	Returns the value of wfInBalance
-	 *	@return wfInBalance
-	 */
-	public BigDecimal getWfInBalance() throws CFException {
-   		return wfRecord.getWfInBalance();
-	}
-
-    /**
-	 *	Returns the String value of wfInBalance
-	 *	@return wfInBalance
-	 */
-	public char[]  getWfInBalanceActualString()  throws CFException{
-	    return wfRecord.getWfInBalanceActualString();
-	}
-
-	 /**
-     *	Returns String value of wfInBalance
-     *	@return wfInBalance
-     */
-    public char[]  getWfInBalanceString() throws CFException {
-         return wfRecord.getWfInBalanceString();
-    }
-     /**
-     *  This method allows testing if there is a numeric value stored in the serialized String
-     *	@return true if numeric value is stored in the string
-     */
-    public boolean wfInBalanceIsNumeric() {
-        return wfRecord.wfInBalanceIsNumeric();
-    }
-	/**
-	 * 	Update WfInBalance with the passed number
-	 *	@param number
-	 */
-	public void setWfInBalance(BigDecimal number)  throws CFException{
-		wfRecord.setWfInBalance(number);
-   }
-
-	/**
-	 * 	Update WfInBalance with the passed value
-	 *	@param value (String or char[]);
-	 */
-	public void setWfInBalance(char[] value)  throws CFException{
-		wfRecord.setWfInBalance(value);
-	}   
 
 	/**
 	 *	Returns the value of wfRecord
@@ -855,126 +809,6 @@ public class CfcardCtx implements ProgramContext, Cloneable {
 	public void setOutTotal(char[] value)  throws CFException{
 		work.setOutTotal(value);
 	}   
-
-	/**
-	 *	Returns the value of inp1Cnt
-	 *	@return inp1Cnt
-	 */
-	public long getInp1Cnt() throws CFException {
-   		return work.getInp1Cnt();
-	}
-
-
-	/**
-	 *	Returns String value of inp1Cnt
-	 *	@return inp1Cnt
-	 */
-	public char[]  getInp1CntString() throws CFException {
-	     return String.valueOf(work.getInp1CntString()).toCharArray();
-	}
-
-	 /**
-	 *  This method allows testing if there is a numeric value stored in the serialized String
-	 *	@return true if numeric value is stored in the string
-	 */
-	public boolean inp1CntIsNumeric()  throws CFException{
-	    return work.inp1CntIsNumeric();
-	}
-
-	/**
-	 * 	Update Inp1Cnt with the passed value
-	 *	@param number
-	 */
-	public void setInp1Cnt(long number)  throws CFException{
-		work.setInp1Cnt(number);
-	}
-	
-
-	
-	/**
-	 * 	Update Inp1Cnt with the passed value
-	 *	@param value (String or char[])
-	 */
-	public void setInp1Cnt(char[] value)  throws CFException {
-		work.setInp1Cnt(value);
-	}
-	
-	/**
-	 * 	Update Inp1Cnt with the passed value 
-	 *
-	 *	@param value (String or char[])
-	 */
-	public void setInp1CntString(char[] value)  throws CFException{
-		work.setInp1Cnt(value);
-	}	
-
-	/**
-	 *	Returns the value of wfInCardNumber
-	 *	@return wfInCardNumber
-	 */
-   public char[] getWfInCardNumber() throws CFException  {              
-   		return wfRecord.getWfInCardNumber();
-   }
-
-  
-	/**
-	*  set variable wfInCardNumber
-	*  @param value
-	**/
-   public void setWfInCardNumber(char[] value) throws CFException {
-      wfRecord.setWfInCardNumber(value);
-   } 
-
-     /**
-	 * 	Update WfInCardNumber 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setWfInCardNumber(char[] source, int sourceIndex) throws CFException {
-      wfRecord.setWfInCardNumber(source, sourceIndex);
-   	
-   }
-   
-   public void setWfInCardNumber(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      wfRecord.setWfInCardNumber(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update WfInCardNumber 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setWfInCardNumber(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      wfRecord.setWfInCardNumber(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update WfInCardNumber with another Field
-	 *	@param value
-	 */
-   public void setWfInCardNumber(Field source) {
-      wfRecord.setWfInCardNumber(source);
-   }  
-   
-     /**
-	 * 	Update WfInCardNumber 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setWfInCardNumber(Field source, int sourceIndex,int sourceLen) {
-      wfRecord.setWfInCardNumber(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update WfInCardNumber 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setWfInCardNumber(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      wfRecord.setWfInCardNumber(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
 
 	/**
 	 *	Returns the value of wfInServiceMm
@@ -1045,23 +879,6 @@ public class CfcardCtx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of inp1Status
-	 *	@return inp1Status
-	 */
-   public char[] getInp1Status() throws CFException  {              
-   		return work.getInp1Status();
-   }
-
-  
-	/**
-	*  set variable inp1Status
-	*  @param value
-	**/
-   public void setInp1Status(char[] value) throws CFException {
-      work.setInp1Status(value);
-   } 
-
-	/**
 	 *	Test condition "P" for isProcessed()
 	 *	@return  Returns true if isProcessed() is "P"
 	 */
@@ -1091,6 +908,189 @@ public class CfcardCtx implements ProgramContext, Cloneable {
    public void setCurrentCard(char[] value) throws CFException {
       work.setCurrentCard(value);
    } 
+
+	/**
+	 *	Returns the value of wfInCardNumber
+	 *	@return wfInCardNumber
+	 */
+   public char[] getWfInCardNumber() throws CFException  {              
+   		return wfRecord.getWfInCardNumber();
+   }
+
+  
+	/**
+	*  set variable wfInCardNumber
+	*  @param value
+	**/
+   public void setWfInCardNumber(char[] value) throws CFException {
+      wfRecord.setWfInCardNumber(value);
+   } 
+
+     /**
+	 * 	Update WfInCardNumber 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setWfInCardNumber(char[] source, int sourceIndex) throws CFException {
+      wfRecord.setWfInCardNumber(source, sourceIndex);
+   	
+   }
+   
+   public void setWfInCardNumber(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      wfRecord.setWfInCardNumber(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update WfInCardNumber 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setWfInCardNumber(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      wfRecord.setWfInCardNumber(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update WfInCardNumber with another Field
+	 *	@param value
+	 */
+   public void setWfInCardNumber(Field source) {
+      wfRecord.setWfInCardNumber(source);
+   }  
+   
+     /**
+	 * 	Update WfInCardNumber 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setWfInCardNumber(Field source, int sourceIndex,int sourceLen) {
+      wfRecord.setWfInCardNumber(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update WfInCardNumber 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setWfInCardNumber(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      wfRecord.setWfInCardNumber(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of inp1Status
+	 *	@return inp1Status
+	 */
+   public char[] getInp1Status() throws CFException  {              
+   		return work.getInp1Status();
+   }
+
+  
+	/**
+	*  set variable inp1Status
+	*  @param value
+	**/
+   public void setInp1Status(char[] value) throws CFException {
+      work.setInp1Status(value);
+   } 
+
+	/**
+	 *	Returns the value of inp1Cnt
+	 *	@return inp1Cnt
+	 */
+	public long getInp1Cnt() throws CFException {
+   		return work.getInp1Cnt();
+	}
+
+
+	/**
+	 *	Returns String value of inp1Cnt
+	 *	@return inp1Cnt
+	 */
+	public char[]  getInp1CntString() throws CFException {
+	     return String.valueOf(work.getInp1CntString()).toCharArray();
+	}
+
+	 /**
+	 *  This method allows testing if there is a numeric value stored in the serialized String
+	 *	@return true if numeric value is stored in the string
+	 */
+	public boolean inp1CntIsNumeric()  throws CFException{
+	    return work.inp1CntIsNumeric();
+	}
+
+	/**
+	 * 	Update Inp1Cnt with the passed value
+	 *	@param number
+	 */
+	public void setInp1Cnt(long number)  throws CFException{
+		work.setInp1Cnt(number);
+	}
+	
+
+	
+	/**
+	 * 	Update Inp1Cnt with the passed value
+	 *	@param value (String or char[])
+	 */
+	public void setInp1Cnt(char[] value)  throws CFException {
+		work.setInp1Cnt(value);
+	}
+	
+	/**
+	 * 	Update Inp1Cnt with the passed value 
+	 *
+	 *	@param value (String or char[])
+	 */
+	public void setInp1CntString(char[] value)  throws CFException{
+		work.setInp1Cnt(value);
+	}	
+
+	/**
+	 *	Returns the value of wfInBalance
+	 *	@return wfInBalance
+	 */
+	public BigDecimal getWfInBalance() throws CFException {
+   		return wfRecord.getWfInBalance();
+	}
+
+    /**
+	 *	Returns the String value of wfInBalance
+	 *	@return wfInBalance
+	 */
+	public char[]  getWfInBalanceActualString()  throws CFException{
+	    return wfRecord.getWfInBalanceActualString();
+	}
+
+	 /**
+     *	Returns String value of wfInBalance
+     *	@return wfInBalance
+     */
+    public char[]  getWfInBalanceString() throws CFException {
+         return wfRecord.getWfInBalanceString();
+    }
+     /**
+     *  This method allows testing if there is a numeric value stored in the serialized String
+     *	@return true if numeric value is stored in the string
+     */
+    public boolean wfInBalanceIsNumeric() {
+        return wfRecord.wfInBalanceIsNumeric();
+    }
+	/**
+	 * 	Update WfInBalance with the passed number
+	 *	@param number
+	 */
+	public void setWfInBalance(BigDecimal number)  throws CFException{
+		wfRecord.setWfInBalance(number);
+   }
+
+	/**
+	 * 	Update WfInBalance with the passed value
+	 *	@param value (String or char[]);
+	 */
+	public void setWfInBalance(char[] value)  throws CFException{
+		wfRecord.setWfInBalance(value);
+	}   
 
 
         public CfcardCtx getCfcardCtx() {
@@ -1130,57 +1130,9 @@ public class CfcardCtx implements ProgramContext, Cloneable {
             return new ProcessRecordOutCtx();
     }
      public class WriteFileInCtx implements Cloneable {
-     WfOutput wfOutput = CfcardCtx.this.getWfOutput();
      Parm parm = CfcardCtx.this.getParm();
+     WfOutput wfOutput = CfcardCtx.this.getWfOutput();
      Work work = CfcardCtx.this.getWork();
-
-	/**
-	 *	Returns the value of wfOutput
-	 *	@return wfOutput
-	 */   
-	 public WfOutput getWfOutput() {
-   	return wfOutput;
-   }
-
-
-	/**
-	 *	Returns the value of outTotal
-	 *	@return outTotal
-	 */
-	public BigDecimal getOutTotal() throws CFException {
-   		return work.getOutTotal();
-	}
-
-
-	 /**
-     *	Returns String value of outTotal
-     *	@return outTotal
-     */
-    public char[]  getOutTotalString() throws CFException {
-         return work.getOutTotalString();
-    }
-     /**
-     *  This method allows testing if there is a numeric value stored in the serialized String
-     *	@return true if numeric value is stored in the string
-     */
-    public boolean outTotalIsNumeric() {
-        return work.outTotalIsNumeric();
-    }
-	/**
-	 * 	Update OutTotal with the passed number
-	 *	@param number
-	 */
-	public void setOutTotal(BigDecimal number)  throws CFException{
-		work.setOutTotal(number);
-   }
-
-	/**
-	 * 	Update OutTotal with the passed value
-	 *	@param value (String or char[]);
-	 */
-	public void setOutTotal(char[] value)  throws CFException{
-		work.setOutTotal(value);
-	}   
 
 	/**
 	 *	Returns the value of parmMonth
@@ -1237,6 +1189,54 @@ public class CfcardCtx implements ProgramContext, Cloneable {
 	public void setParmMonthString(char[] value)  throws CFException{
 		parm.setParmMonth(value);
 	}	
+
+	/**
+	 *	Returns the value of outTotal
+	 *	@return outTotal
+	 */
+	public BigDecimal getOutTotal() throws CFException {
+   		return work.getOutTotal();
+	}
+
+
+	 /**
+     *	Returns String value of outTotal
+     *	@return outTotal
+     */
+    public char[]  getOutTotalString() throws CFException {
+         return work.getOutTotalString();
+    }
+     /**
+     *  This method allows testing if there is a numeric value stored in the serialized String
+     *	@return true if numeric value is stored in the string
+     */
+    public boolean outTotalIsNumeric() {
+        return work.outTotalIsNumeric();
+    }
+	/**
+	 * 	Update OutTotal with the passed number
+	 *	@param number
+	 */
+	public void setOutTotal(BigDecimal number)  throws CFException{
+		work.setOutTotal(number);
+   }
+
+	/**
+	 * 	Update OutTotal with the passed value
+	 *	@param value (String or char[]);
+	 */
+	public void setOutTotal(char[] value)  throws CFException{
+		work.setOutTotal(value);
+	}   
+
+	/**
+	 *	Returns the value of wfOutput
+	 *	@return wfOutput
+	 */   
+	 public WfOutput getWfOutput() {
+   	return wfOutput;
+   }
+
 
 	/**
 	 *	Returns the value of outpCntW
@@ -1325,18 +1325,18 @@ public class CfcardCtx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += wfOutput.hashCode();
         str += parm.hashCode();
+        str += wfOutput.hashCode();
         str += work.hashCode();
        return str.hashCode();
     }
 
     public WriteFileInCtx clone() {
         WriteFileInCtx cloneObj = new WriteFileInCtx();
-        cloneObj.wfOutput = new WfOutput();
-        cloneObj.wfOutput.set(wfOutput.getClonedField());
         cloneObj.parm = new Parm();
         cloneObj.parm.set(parm.getClonedField());
+        cloneObj.wfOutput = new WfOutput();
+        cloneObj.wfOutput.set(wfOutput.getClonedField());
         cloneObj.work = new Work();
         cloneObj.work.set(work.getClonedField());
         return cloneObj;
@@ -1348,9 +1348,121 @@ public class CfcardCtx implements ProgramContext, Cloneable {
             return new WriteFileInCtx();
     }
      public class WriteFileOutCtx implements Cloneable {
-     WfOutput wfOutput = CfcardCtx.this.getWfOutput();
      Parm parm = CfcardCtx.this.getParm();
+     WfOutput wfOutput = CfcardCtx.this.getWfOutput();
      Work work = CfcardCtx.this.getWork();
+
+	/**
+	 *	Returns the value of parmMonth
+	 *	@return parmMonth
+	 */
+	public int getParmMonth() throws CFException {
+   		return parm.getParmMonth();
+	}
+
+
+	/**
+	 *	Returns String value of parmMonth
+	 *	@return parmMonth
+	 */
+	public char[]  getParmMonthString() throws CFException {
+	     return String.valueOf(parm.getParmMonthString()).toCharArray();
+	}
+
+	 /**
+	 *  This method allows testing if there is a numeric value stored in the serialized String
+	 *	@return true if numeric value is stored in the string
+	 */
+	public boolean parmMonthIsNumeric()  throws CFException{
+	    return parm.parmMonthIsNumeric();
+	}
+
+	/**
+	 * 	Update ParmMonth with the passed value
+	 *	@param number
+	 */
+	public void setParmMonth(int number)  throws CFException{
+		parm.setParmMonth(number);
+	}
+	
+
+	public void setParmMonth(long number)  throws CFException{
+	    parm.setParmMonth(number);
+	}
+	
+	
+	/**
+	 * 	Update ParmMonth with the passed value
+	 *	@param value (String or char[])
+	 */
+	public void setParmMonth(char[] value)  throws CFException {
+		parm.setParmMonth(value);
+	}
+	
+	/**
+	 * 	Update ParmMonth with the passed value 
+	 *
+	 *	@param value (String or char[])
+	 */
+	public void setParmMonthString(char[] value)  throws CFException{
+		parm.setParmMonth(value);
+	}	
+
+	/**
+	 *	Returns the value of outTotal
+	 *	@return outTotal
+	 */
+	public BigDecimal getOutTotal() throws CFException {
+   		return work.getOutTotal();
+	}
+
+
+	 /**
+     *	Returns String value of outTotal
+     *	@return outTotal
+     */
+    public char[]  getOutTotalString() throws CFException {
+         return work.getOutTotalString();
+    }
+     /**
+     *  This method allows testing if there is a numeric value stored in the serialized String
+     *	@return true if numeric value is stored in the string
+     */
+    public boolean outTotalIsNumeric() {
+        return work.outTotalIsNumeric();
+    }
+	/**
+	 * 	Update OutTotal with the passed number
+	 *	@param number
+	 */
+	public void setOutTotal(BigDecimal number)  throws CFException{
+		work.setOutTotal(number);
+   }
+
+	/**
+	 * 	Update OutTotal with the passed value
+	 *	@param value (String or char[]);
+	 */
+	public void setOutTotal(char[] value)  throws CFException{
+		work.setOutTotal(value);
+	}   
+
+	/**
+	 *	Returns the value of outpStatus
+	 *	@return outpStatus
+	 */
+   public char[] getOutpStatus() throws CFException  {              
+   		return work.getOutpStatus();
+   }
+
+  
+	/**
+	*  set variable outpStatus
+	*  @param value
+	**/
+   public void setOutpStatus(char[] value) throws CFException {
+      work.setOutpStatus(value);
+   } 
 
 	/**
 	 *	Returns the value of wfOutput
@@ -1360,6 +1472,75 @@ public class CfcardCtx implements ProgramContext, Cloneable {
    	return wfOutput;
    }
 
+
+	/**
+	 *	Returns the value of outpCntW
+	 *	@return outpCntW
+	 */
+	public long getOutpCntW() throws CFException {
+   		return work.getOutpCntW();
+	}
+
+
+	/**
+	 *	Returns String value of outpCntW
+	 *	@return outpCntW
+	 */
+	public char[]  getOutpCntWString() throws CFException {
+	     return String.valueOf(work.getOutpCntWString()).toCharArray();
+	}
+
+	 /**
+	 *  This method allows testing if there is a numeric value stored in the serialized String
+	 *	@return true if numeric value is stored in the string
+	 */
+	public boolean outpCntWIsNumeric()  throws CFException{
+	    return work.outpCntWIsNumeric();
+	}
+
+	/**
+	 * 	Update OutpCntW with the passed value
+	 *	@param number
+	 */
+	public void setOutpCntW(long number)  throws CFException{
+		work.setOutpCntW(number);
+	}
+	
+
+	
+	/**
+	 * 	Update OutpCntW with the passed value
+	 *	@param value (String or char[])
+	 */
+	public void setOutpCntW(char[] value)  throws CFException {
+		work.setOutpCntW(value);
+	}
+	
+	/**
+	 * 	Update OutpCntW with the passed value 
+	 *
+	 *	@param value (String or char[])
+	 */
+	public void setOutpCntWString(char[] value)  throws CFException{
+		work.setOutpCntW(value);
+	}	
+
+	/**
+	 *	Returns the value of currentCard
+	 *	@return currentCard
+	 */
+   public char[] getCurrentCard() throws CFException  {              
+   		return work.getCurrentCard();
+   }
+
+  
+	/**
+	*  set variable currentCard
+	*  @param value
+	**/
+   public void setCurrentCard(char[] value) throws CFException {
+      work.setCurrentCard(value);
+   } 
 
 	/**
 	 *	Returns the value of wfOutCardNumber
@@ -1430,153 +1611,6 @@ public class CfcardCtx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of outTotal
-	 *	@return outTotal
-	 */
-	public BigDecimal getOutTotal() throws CFException {
-   		return work.getOutTotal();
-	}
-
-
-	 /**
-     *	Returns String value of outTotal
-     *	@return outTotal
-     */
-    public char[]  getOutTotalString() throws CFException {
-         return work.getOutTotalString();
-    }
-     /**
-     *  This method allows testing if there is a numeric value stored in the serialized String
-     *	@return true if numeric value is stored in the string
-     */
-    public boolean outTotalIsNumeric() {
-        return work.outTotalIsNumeric();
-    }
-	/**
-	 * 	Update OutTotal with the passed number
-	 *	@param number
-	 */
-	public void setOutTotal(BigDecimal number)  throws CFException{
-		work.setOutTotal(number);
-   }
-
-	/**
-	 * 	Update OutTotal with the passed value
-	 *	@param value (String or char[]);
-	 */
-	public void setOutTotal(char[] value)  throws CFException{
-		work.setOutTotal(value);
-	}   
-
-	/**
-	 *	Returns the value of parmMonth
-	 *	@return parmMonth
-	 */
-	public int getParmMonth() throws CFException {
-   		return parm.getParmMonth();
-	}
-
-
-	/**
-	 *	Returns String value of parmMonth
-	 *	@return parmMonth
-	 */
-	public char[]  getParmMonthString() throws CFException {
-	     return String.valueOf(parm.getParmMonthString()).toCharArray();
-	}
-
-	 /**
-	 *  This method allows testing if there is a numeric value stored in the serialized String
-	 *	@return true if numeric value is stored in the string
-	 */
-	public boolean parmMonthIsNumeric()  throws CFException{
-	    return parm.parmMonthIsNumeric();
-	}
-
-	/**
-	 * 	Update ParmMonth with the passed value
-	 *	@param number
-	 */
-	public void setParmMonth(int number)  throws CFException{
-		parm.setParmMonth(number);
-	}
-	
-
-	public void setParmMonth(long number)  throws CFException{
-	    parm.setParmMonth(number);
-	}
-	
-	
-	/**
-	 * 	Update ParmMonth with the passed value
-	 *	@param value (String or char[])
-	 */
-	public void setParmMonth(char[] value)  throws CFException {
-		parm.setParmMonth(value);
-	}
-	
-	/**
-	 * 	Update ParmMonth with the passed value 
-	 *
-	 *	@param value (String or char[])
-	 */
-	public void setParmMonthString(char[] value)  throws CFException{
-		parm.setParmMonth(value);
-	}	
-
-	/**
-	 *	Returns the value of outpCntW
-	 *	@return outpCntW
-	 */
-	public long getOutpCntW() throws CFException {
-   		return work.getOutpCntW();
-	}
-
-
-	/**
-	 *	Returns String value of outpCntW
-	 *	@return outpCntW
-	 */
-	public char[]  getOutpCntWString() throws CFException {
-	     return String.valueOf(work.getOutpCntWString()).toCharArray();
-	}
-
-	 /**
-	 *  This method allows testing if there is a numeric value stored in the serialized String
-	 *	@return true if numeric value is stored in the string
-	 */
-	public boolean outpCntWIsNumeric()  throws CFException{
-	    return work.outpCntWIsNumeric();
-	}
-
-	/**
-	 * 	Update OutpCntW with the passed value
-	 *	@param number
-	 */
-	public void setOutpCntW(long number)  throws CFException{
-		work.setOutpCntW(number);
-	}
-	
-
-	
-	/**
-	 * 	Update OutpCntW with the passed value
-	 *	@param value (String or char[])
-	 */
-	public void setOutpCntW(char[] value)  throws CFException {
-		work.setOutpCntW(value);
-	}
-	
-	/**
-	 * 	Update OutpCntW with the passed value 
-	 *
-	 *	@param value (String or char[])
-	 */
-	public void setOutpCntWString(char[] value)  throws CFException{
-		work.setOutpCntW(value);
-	}	
-
-	/**
 	 *	Returns the value of wfOutServiceMm
 	 *	@return wfOutServiceMm
 	 */
@@ -1633,40 +1667,6 @@ public class CfcardCtx implements ProgramContext, Cloneable {
 	}	
 
 	/**
-	 *	Returns the value of outpStatus
-	 *	@return outpStatus
-	 */
-   public char[] getOutpStatus() throws CFException  {              
-   		return work.getOutpStatus();
-   }
-
-  
-	/**
-	*  set variable outpStatus
-	*  @param value
-	**/
-   public void setOutpStatus(char[] value) throws CFException {
-      work.setOutpStatus(value);
-   } 
-
-	/**
-	 *	Returns the value of currentCard
-	 *	@return currentCard
-	 */
-   public char[] getCurrentCard() throws CFException  {              
-   		return work.getCurrentCard();
-   }
-
-  
-	/**
-	*  set variable currentCard
-	*  @param value
-	**/
-   public void setCurrentCard(char[] value) throws CFException {
-      work.setCurrentCard(value);
-   } 
-
-	/**
 	 *	Returns the value of wfOutTotal
 	 *	@return wfOutTotal
 	 */
@@ -1720,18 +1720,18 @@ public class CfcardCtx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += wfOutput.hashCode();
         str += parm.hashCode();
+        str += wfOutput.hashCode();
         str += work.hashCode();
        return str.hashCode();
     }
 
     public WriteFileOutCtx clone() {
         WriteFileOutCtx cloneObj = new WriteFileOutCtx();
-        cloneObj.wfOutput = new WfOutput();
-        cloneObj.wfOutput.set(wfOutput.getClonedField());
         cloneObj.parm = new Parm();
         cloneObj.parm.set(parm.getClonedField());
+        cloneObj.wfOutput = new WfOutput();
+        cloneObj.wfOutput.set(wfOutput.getClonedField());
         cloneObj.work = new Work();
         cloneObj.work.set(work.getClonedField());
         return cloneObj;
@@ -1744,6 +1744,23 @@ public class CfcardCtx implements ProgramContext, Cloneable {
     }
      public class TerminateInCtx implements Cloneable {
      Work work = CfcardCtx.this.getWork();
+
+	/**
+	 *	Returns the value of outpStatus
+	 *	@return outpStatus
+	 */
+   public char[] getOutpStatus() throws CFException  {              
+   		return work.getOutpStatus();
+   }
+
+  
+	/**
+	*  set variable outpStatus
+	*  @param value
+	**/
+   public void setOutpStatus(char[] value) throws CFException {
+      work.setOutpStatus(value);
+   } 
 
 	/**
 	 *	Returns the value of outpCntW
@@ -1798,20 +1815,20 @@ public class CfcardCtx implements ProgramContext, Cloneable {
 	}	
 
 	/**
-	 *	Returns the value of outpStatus
-	 *	@return outpStatus
+	 *	Returns the value of currentCard
+	 *	@return currentCard
 	 */
-   public char[] getOutpStatus() throws CFException  {              
-   		return work.getOutpStatus();
+   public char[] getCurrentCard() throws CFException  {              
+   		return work.getCurrentCard();
    }
 
   
 	/**
-	*  set variable outpStatus
+	*  set variable currentCard
 	*  @param value
 	**/
-   public void setOutpStatus(char[] value) throws CFException {
-      work.setOutpStatus(value);
+   public void setCurrentCard(char[] value) throws CFException {
+      work.setCurrentCard(value);
    } 
 
 	/**
@@ -1829,23 +1846,6 @@ public class CfcardCtx implements ProgramContext, Cloneable {
 	**/
    public void setInp1Status(char[] value) throws CFException {
       work.setInp1Status(value);
-   } 
-
-	/**
-	 *	Returns the value of currentCard
-	 *	@return currentCard
-	 */
-   public char[] getCurrentCard() throws CFException  {              
-   		return work.getCurrentCard();
-   }
-
-  
-	/**
-	*  set variable currentCard
-	*  @param value
-	**/
-   public void setCurrentCard(char[] value) throws CFException {
-      work.setCurrentCard(value);
    } 
 
 
