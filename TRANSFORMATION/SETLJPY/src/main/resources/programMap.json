@@ -1,0 +1,13 @@
+[ {
+  "parent" : "trdpb001",
+  "children" : [ "trdpb002", "trdpb003", "trdpbexc" ]
+}, {
+  "parent" : "trdpb002",
+  "children" : [ "trdpbexc" ]
+}, {
+  "parent" : "trdpbexc",
+  "children" : [ ]
+}, {
+  "parent" : "trdpb003",
+  "children" : [ "trdpbexc" ]
+} ]
