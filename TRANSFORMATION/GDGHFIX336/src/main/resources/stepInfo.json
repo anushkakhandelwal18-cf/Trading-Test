@@ -1,0 +1,42 @@
+[ {
+  "stepName" : "STEP001",
+  "progName" : "SORT",
+  "dataSetInfos" : [ {
+    "ddName" : "SORTIN",
+    "fileNames" : [ "CLOUDFRM.SF.P3GX.PRSF2130.SORT.IN" ]
+  }, {
+    "ddName" : "SORTOUT",
+    "fileNames" : [ "CLOUDFRM.SF.P3GX.PRSF2130.REBATE(+1)" ]
+  }, {
+    "ddName" : "SORTWK01",
+    "fileNames" : [ ]
+  }, {
+    "ddName" : "SORTWK02",
+    "fileNames" : [ ]
+  }, {
+    "ddName" : "SORTWK03",
+    "fileNames" : [ ]
+  }, {
+    "ddName" : "SYSOUT",
+    "fileNames" : [ "SYSOUT" ]
+  }, {
+    "ddName" : "SYSIN",
+    "fileNames" : [ ]
+  } ]
+}, {
+  "stepName" : "STEP002",
+  "progName" : "IEBGENER",
+  "dataSetInfos" : [ {
+    "ddName" : "SYSPRINT",
+    "fileNames" : [ "SYSOUT" ]
+  }, {
+    "ddName" : "SYSUT1",
+    "fileNames" : [ "CLOUDFRM.SF.P3GX.PRSF2130.REBATE(0)" ]
+  }, {
+    "ddName" : "SYSUT2",
+    "fileNames" : [ "CLOUDFRM.SF.P3GX.PRSF2130.REBATE(+1)" ]
+  }, {
+    "ddName" : "SYSIN",
+    "fileNames" : [ "DUMMY" ]
+  } ]
+} ]
