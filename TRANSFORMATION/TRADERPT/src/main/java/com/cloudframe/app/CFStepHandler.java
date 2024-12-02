@@ -127,6 +127,9 @@ return canExecute;
             case "delete":  /* setting the disp position for file(s) info for this step(DELETE). */
  		    	   		SpringContextHandler.handleDispPostion("DELETE.IEFBR14.Reporder","DELETE.IEFBR14.Reporder.DISP");
             break;
+            case "step01":  /* setting the appropriate file(s) info for this step(STEP01). */
+ 		    	   		SpringContextHandler.setFileDispPosition("trdpb006_reporder", "TRDPB006.Reporder.DISP");
+            break;
                 default: break;
         }
 }
