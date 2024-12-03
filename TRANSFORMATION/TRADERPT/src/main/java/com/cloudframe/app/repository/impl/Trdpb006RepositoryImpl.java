@@ -104,7 +104,7 @@ return clientOrdersResultSet;
 ******         ,:ORD-STATUS                                        
 ******         ,:WS-BUYER-SELLER-CUST-ID                           
 **/
-    public void fetchClientOrdersTrdpb006(ResultSet clientOrdersResultSet, Sqlca sqlca, Dcltbtrdcus dcltbtrdcus, Work work, Dcltbtrdord dcltbtrdord, Dcltbtrdsec dcltbtrdsec) throws Exception {
+    public void fetchClientOrdersTrdpb006(ResultSet clientOrdersResultSet, Work work, Dcltbtrdord dcltbtrdord, Dcltbtrdcus dcltbtrdcus, Sqlca sqlca, Dcltbtrdsec dcltbtrdsec) throws Exception {
 try {
 	boolean hasResults = clientOrdersResultSet.next();
 	if (hasResults) {

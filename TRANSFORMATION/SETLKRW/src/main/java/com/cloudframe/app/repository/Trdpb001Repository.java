@@ -66,51 +66,51 @@ public interface Trdpb001Repository {
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm dcltbtrdord
-* @parm sqlca
+     * @parm sqlca
+* @parm dcltbtrdord
      */
-    public void updateTbtrdord(Dcltbtrdord dcltbtrdord, Sqlca sqlca) throws Exception;
+    public void updateTbtrdord(Sqlca sqlca, Dcltbtrdord dcltbtrdord) throws Exception;
 
     /**
      * This method will handle the sql operations for a open query.
      *
-     * @parm dcltbtrdsum
-* @parm sqlca
+     * @parm sqlca
+* @parm dcltbtrdsum
      * @return 
      */
-    public ResultSet openSummaryCsrTrdpb001(Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception;
+    public ResultSet openSummaryCsrTrdpb001(Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception;
 
     /**
      * This method will handle the sql operations for a fetch query.
      *
-     * @parm dcltbtrdsum
-* @parm sqlca
+     * @parm sqlca
+* @parm dcltbtrdsum
      */
-    public void fetchSummaryCsrTrdpb001(ResultSet summaryCsrResultSet, Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception;
+    public void fetchSummaryCsrTrdpb001(ResultSet summaryCsrResultSet, Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm dcltbtrdmac
-* @parm sqlca
+     * @parm sqlca
+* @parm dcltbtrdmac
      */
-    public void selectTbtrdmac(Dcltbtrdmac dcltbtrdmac, Sqlca sqlca) throws Exception;
+    public void selectTbtrdmac(Sqlca sqlca, Dcltbtrdmac dcltbtrdmac) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm dcltbtrdsum
-* @parm sqlca
+     * @parm sqlca
+* @parm dcltbtrdsum
      */
-    public void insert1(Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception;
+    public void insert1(Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm dcltbtrdsum
-* @parm sqlca
+     * @parm sqlca
+* @parm dcltbtrdsum
      */
-    public void updateTbtrdsum(Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception;
+    public void updateTbtrdsum(Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception;
 
     /**
      * This method will handle the sql operations for a close query.

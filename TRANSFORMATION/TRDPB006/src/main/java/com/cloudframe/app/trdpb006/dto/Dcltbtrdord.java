@@ -3,7 +3,7 @@ package com.cloudframe.app.trdpb006.dto;
 /**
 *  The class Dcltbtrdord is used to handle fields declared in it
 *  @author CloudFrame Inc.
-*  created on 2024-12-03 at 15:03. using version 5.0.0.163
+*  created on 2024-12-03 at 15:38. using version 5.0.0.163
 **/
 
 

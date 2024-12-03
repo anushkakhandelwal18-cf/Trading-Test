@@ -49,14 +49,14 @@ import com.cloudframe.app.dto.trdpb001.*;
 import com.cloudframe.app.dto.trdpb001.Dcltbtrdord;
 import com.cloudframe.app.dto.trdpb001.Sqlca;
 import com.cloudframe.app.dto.trdpb001.Parm;
-import com.cloudframe.app.dto.trdpb001.TrdOrderPair;
-import com.cloudframe.app.dto.trdpb001.ExceptionRecordLenGroup;
 import com.cloudframe.app.dto.trdpb001.Dcltbtrdmac;
-import com.cloudframe.app.dto.trdpb001.Dcltbtrdlog;
-import com.cloudframe.app.dto.trdpb001.ExceptionRecord;
 import com.cloudframe.app.dto.trdpb001.Dcltbtrdsum;
-import com.cloudframe.app.dto.trdpb001.CustomerSummaryRec;
+import com.cloudframe.app.dto.trdpb001.TrdOrderPair;
 import com.cloudframe.app.dto.trdpb001.Dcltbtrdstq;
+import com.cloudframe.app.dto.trdpb001.CustomerSummaryRec;
+import com.cloudframe.app.dto.trdpb001.Dcltbtrdlog;
+import com.cloudframe.app.dto.trdpb001.ExceptionRecordLenGroup;
+import com.cloudframe.app.dto.trdpb001.ExceptionRecord;
 import com.cloudframe.app.dto.trdpb001.Work;
   import com.cloudframe.app.common.CONSTANTS;
   import com.cloudframe.app.common.SQLS;
@@ -310,14 +310,14 @@ MainlineOutCtx methodOut = methodIn.getMainlineOutCtx();
           updated = updateString(methodOut.getLogEndTs() ,joinCharArray);
           methodOut.setLogEndTs(  (char[])updated.get("string"));
 //  cobolCode::INSERT INTO TBTRDLOG VALUES ( ? , ? , ? , ? )
-          trdpb001Repository.insert(programCtx.getSqlca(),methodOut.getDcltbtrdlog());
+          trdpb001Repository.insert(methodOut.getDcltbtrdlog(),programCtx.getSqlca());
 //  cobolCode::EVALUATE TRUE
           if  (	( methodOut.getSqlcode() == 0 )) { 
               ;
           }
           else if  (	( methodOut.getSqlcode() == -803 )) { 
 //  cobolCode::UPDATE TBTRDLOG SET LOG_END_TS = ? WHERE LOG_TRANSACTION = ? AND LOG_CURRENCY = ?
-              trdpb001Repository.updateTbtrdlog1(programCtx.getSqlca(),methodOut.getDcltbtrdlog());
+              trdpb001Repository.updateTbtrdlog1(methodOut.getDcltbtrdlog(),programCtx.getSqlca());
 //  cobolCode::IF SQLCODE NOT = 0 THEN
               if (	( methodOut.getSqlcode() != 0 )) { 
                   //  FORMAT1016334848 = "----"
@@ -977,7 +977,7 @@ LogSummaryOutCtx methodOut = methodIn.getLogSummaryOutCtx();
 //  cobolCode::MOVE WS-SUMMARY-CUSTOMER-ID TO SUM-CUSTOMER-ID
           methodOut.setSumCustomerId(methodOut.getSummaryCustomerId());
 //  cobolCode::SELECT SUM_CUSTOMER_ID , SUM_OVERDUE , SUM_REJECTED , SUM_SETTLED , SUM_CURRENCY , SUM_OPEN_BALANCE , SUM_TOTAL_DEBIT , SUM_TOTAL_CREDIT , SUM_CLOSE_BALANCE FROM TBTRDSUM WHERE SUM_CUSTOMER_ID = ? FOR UPDATE OF SUM_OVERDUE , SUM_REJECTED , SUM_SETTLED , SUM_CURRENCY , SUM_OPEN_BALANCE , SUM_TOTAL_DEBIT , SUM_TOTAL_CREDIT , SUM_CLOSE_BALANCE
-          programCtx.setSummaryCsrResultSet(trdpb001Repository.openSummaryCsrTrdpb001(methodOut.getDcltbtrdsum(),programCtx.getSqlca()));
+          programCtx.setSummaryCsrResultSet(trdpb001Repository.openSummaryCsrTrdpb001(programCtx.getSqlca(),methodOut.getDcltbtrdsum()));
 //  cobolCode::IF SQLCODE NOT = 0 THEN
           if (	( methodOut.getSqlcode() != 0 )) { 
               //  FORMAT1016334848 = "----"
@@ -997,7 +997,7 @@ LogSummaryOutCtx methodOut = methodIn.getLogSummaryOutCtx();
               reportException(programCtx.getReportExceptionInCtx());/*9000-REPORT-EXCEPTION*/
           }
 //  cobolCode::FETCH SUMMARY_CSR INTO ? , ? , ? , ? , ? , ? , ? , ? , ?
-          trdpb001Repository.fetchSummaryCsrTrdpb001(programCtx.getSummaryCsrResultSet(),methodOut.getDcltbtrdsum(),programCtx.getSqlca());
+          trdpb001Repository.fetchSummaryCsrTrdpb001(programCtx.getSummaryCsrResultSet(),programCtx.getSqlca(),methodOut.getDcltbtrdsum());
 //  cobolCode::IF SQLCODE = 0 OR 100 THEN
 //  cobolCode::ELSE
           if (	( methodOut.getSqlcode() != 0 ) && 	( methodOut.getSqlcode() != 100 )) { 
@@ -1056,7 +1056,7 @@ LogSummaryOutCtx methodOut = methodIn.getLogSummaryOutCtx();
                   methodOut.setMacNumber(methodOut.getTrdSellerMoneyAccNum());
               }
 //  cobolCode::SELECT MAC_BALANCE FROM TBTRDMAC WHERE MAC_CURRENCY = ? AND MAC_NUMBER = ? WITH UR
-              trdpb001Repository.selectTbtrdmac(programCtx.getSqlca(),methodOut.getDcltbtrdmac());
+              trdpb001Repository.selectTbtrdmac(methodOut.getDcltbtrdmac(),programCtx.getSqlca());
 //  cobolCode::IF SQLCODE = 0 THEN
               if (	( methodOut.getSqlcode() == 0 )) { 
 //  cobolCode::IF TRD-BUYER-ID = SUM-CUSTOMER-ID
@@ -1122,12 +1122,12 @@ LogSummaryOutCtx methodOut = methodIn.getLogSummaryOutCtx();
 // * Insert   customer summary
               methodOut.getDcltbtrdsum().setString(methodOut.getCustomerSummaryRec().getCharArray());
 //  cobolCode::INSERT INTO TBTRDSUM VALUES ( ? , ? , ? , ? , ? , ? , ? , ? , ? )
-              trdpb001Repository.insert1(methodOut.getDcltbtrdsum(),programCtx.getSqlca());
+              trdpb001Repository.insert1(programCtx.getSqlca(),methodOut.getDcltbtrdsum());
           }
 //  cobolCode::ELSE
           else { 
 //  cobolCode::UPDATE TBTRDSUM SET SUM_OVERDUE = ? , SUM_REJECTED = ? , SUM_SETTLED = ? , SUM_CURRENCY = ? , SUM_OPEN_BALANCE = ? , SUM_TOTAL_DEBIT = ? , SUM_TOTAL_CREDIT = ? , SUM_CLOSE_BALANCE = ? WHERE SUM_CUSTOMER_ID = ?
-              trdpb001Repository.updateTbtrdsum(methodOut.getDcltbtrdsum(),programCtx.getSqlca());
+              trdpb001Repository.updateTbtrdsum(programCtx.getSqlca(),methodOut.getDcltbtrdsum());
           }
 
 // *            Where current of summary_csr

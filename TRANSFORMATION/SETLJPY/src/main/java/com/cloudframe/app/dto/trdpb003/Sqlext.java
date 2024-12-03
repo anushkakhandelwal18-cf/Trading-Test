@@ -3,7 +3,7 @@ package com.cloudframe.app.dto.trdpb003;
 /**
 *  The class Sqlext is used to handle fields declared in it
 *  @author CloudFrame Inc.
-*  created on 2024-12-03 at 13:38. using version 5.0.0.162
+*  created on 2024-12-03 at 15:40. using version 5.0.0.163
 **/
 
 

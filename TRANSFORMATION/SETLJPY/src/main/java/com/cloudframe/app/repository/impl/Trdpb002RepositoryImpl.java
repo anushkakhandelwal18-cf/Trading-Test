@@ -48,7 +48,7 @@ static final short NOT_NULL = (short)0;
 ******        AND POS_FIGI          = :POS-FIGI                    
 ******       FOR UPDATE OF POS_BALANCE                             
 **/
-    public ResultSet openPosBookingTrdpb002(Sqlca sqlca, Dcltbtrdpos dcltbtrdpos) throws Exception {
+    public ResultSet openPosBookingTrdpb002(Dcltbtrdpos dcltbtrdpos, Sqlca sqlca) throws Exception {
 ResultSet posBookingResultSet = null;
 try {
 	//OPEN CURSOR
@@ -75,7 +75,7 @@ return posBookingResultSet;
 ******    FETCH POS_BOOKING                                        
 ******     INTO :POS-BALANCE                                       
 **/
-    public void fetchPosBookingTrdpb002(ResultSet posBookingResultSet, Sqlca sqlca, Dcltbtrdpos dcltbtrdpos) throws Exception {
+    public void fetchPosBookingTrdpb002(ResultSet posBookingResultSet, Dcltbtrdpos dcltbtrdpos, Sqlca sqlca) throws Exception {
 try {
 	boolean hasResults = posBookingResultSet.next();
 	if (hasResults) {
@@ -126,7 +126,7 @@ catch (SQLException e) {
 ******          AND POS_SAC_NUMBER   = :POS-SAC-NUMBER             
 ******          AND POS_FIGI         = :POS-FIGI                   
 **/
-    public void updateTbtrdpos(Sqlca sqlca, Dcltbtrdpos dcltbtrdpos) throws Exception {
+    public void updateTbtrdpos(Dcltbtrdpos dcltbtrdpos, Sqlca sqlca) throws Exception {
 
 try {
     // INSRT/UPDATE

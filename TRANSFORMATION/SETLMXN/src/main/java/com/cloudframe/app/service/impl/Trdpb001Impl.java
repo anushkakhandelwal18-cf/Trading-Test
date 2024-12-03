@@ -47,15 +47,15 @@ import com.cloudframe.app.business.Trdpbexc;
   import com.cloudframe.app.dto.ProgramContext;
 import com.cloudframe.app.dto.trdpb001.*;
 import com.cloudframe.app.dto.trdpb001.Parm;
-import com.cloudframe.app.dto.trdpb001.Sqlca;
 import com.cloudframe.app.dto.trdpb001.Dcltbtrdord;
-import com.cloudframe.app.dto.trdpb001.TrdOrderPair;
+import com.cloudframe.app.dto.trdpb001.Sqlca;
 import com.cloudframe.app.dto.trdpb001.ExceptionRecord;
 import com.cloudframe.app.dto.trdpb001.Dcltbtrdmac;
-import com.cloudframe.app.dto.trdpb001.Dcltbtrdstq;
-import com.cloudframe.app.dto.trdpb001.Dcltbtrdlog;
-import com.cloudframe.app.dto.trdpb001.Dcltbtrdsum;
 import com.cloudframe.app.dto.trdpb001.CustomerSummaryRec;
+import com.cloudframe.app.dto.trdpb001.TrdOrderPair;
+import com.cloudframe.app.dto.trdpb001.Dcltbtrdsum;
+import com.cloudframe.app.dto.trdpb001.Dcltbtrdlog;
+import com.cloudframe.app.dto.trdpb001.Dcltbtrdstq;
 import com.cloudframe.app.dto.trdpb001.ExceptionRecordLenGroup;
 import com.cloudframe.app.dto.trdpb001.Work;
   import com.cloudframe.app.common.CONSTANTS;
@@ -256,7 +256,7 @@ MainlineOutCtx methodOut = methodIn.getMainlineOutCtx();
           methodOut.setContinueSettlement88True(); 
           
 //  cobolCode::SELECT STQ_ID , STQ_TRADE_DATA FROM TBTRDSTQ WHERE STQ_CURRENCY = ? ORDER BY STQ_CURRENCY ASC , STQ_ID ASC
-          programCtx.setSettlementQueueResultSet(trdpb001Repository.openSettlementQueueTrdpb001(methodIn.getDcltbtrdstq(),programCtx.getSqlca()));
+          programCtx.setSettlementQueueResultSet(trdpb001Repository.openSettlementQueueTrdpb001(programCtx.getSqlca(),methodIn.getDcltbtrdstq()));
 
 // *
 //  cobolCode::IF SQLCODE NOT = 0 THEN
@@ -310,14 +310,14 @@ MainlineOutCtx methodOut = methodIn.getMainlineOutCtx();
           updated = updateString(methodOut.getLogEndTs() ,joinCharArray);
           methodOut.setLogEndTs(  (char[])updated.get("string"));
 //  cobolCode::INSERT INTO TBTRDLOG VALUES ( ? , ? , ? , ? )
-          trdpb001Repository.insert(methodOut.getDcltbtrdlog(),programCtx.getSqlca());
+          trdpb001Repository.insert(programCtx.getSqlca(),methodOut.getDcltbtrdlog());
 //  cobolCode::EVALUATE TRUE
           if  (	( methodOut.getSqlcode() == 0 )) { 
               ;
           }
           else if  (	( methodOut.getSqlcode() == -803 )) { 
 //  cobolCode::UPDATE TBTRDLOG SET LOG_END_TS = ? WHERE LOG_TRANSACTION = ? AND LOG_CURRENCY = ?
-              trdpb001Repository.updateTbtrdlog1(methodOut.getDcltbtrdlog(),programCtx.getSqlca());
+              trdpb001Repository.updateTbtrdlog1(programCtx.getSqlca(),methodOut.getDcltbtrdlog());
 //  cobolCode::IF SQLCODE NOT = 0 THEN
               if (	( methodOut.getSqlcode() != 0 )) { 
                   //  FORMAT1016334848 = "----"
@@ -678,7 +678,7 @@ Trdpb001Ctx programCtx = methodIn.getTrdpb001Ctx();
 //Added variable to get the output context in place.
 ReadFromStlmtQueueOutCtx methodOut = methodIn.getReadFromStlmtQueueOutCtx();
 //  cobolCode::FETCH SETTLEMENT_QUEUE INTO ? , ?
-          trdpb001Repository.fetchSettlementQueueTrdpb001(programCtx.getSettlementQueueResultSet(),methodOut.getDcltbtrdstq(),programCtx.getSqlca());
+          trdpb001Repository.fetchSettlementQueueTrdpb001(programCtx.getSettlementQueueResultSet(),programCtx.getSqlca(),methodOut.getDcltbtrdstq());
 
 // *
 //  cobolCode::EVALUATE SQLCODE
@@ -687,7 +687,7 @@ ReadFromStlmtQueueOutCtx methodOut = methodIn.getReadFromStlmtQueueOutCtx();
 //  cobolCode::MOVE STQ-TRADE-DATA TO TRD-ORDER-PAIR
               methodOut.getTrdOrderPair().setString(methodOut.getStqTradeData());
 //  cobolCode::DELETE FROM TBTRDSTQ WHERE STQ_CURRENCY = ? AND STQ_ID = ?
-              trdpb001Repository.deleteTbtrdstq1(methodOut.getDcltbtrdstq(),programCtx.getSqlca());
+              trdpb001Repository.deleteTbtrdstq1(programCtx.getSqlca(),methodOut.getDcltbtrdstq());
 //  cobolCode::IF SQLCODE NOT = 0 THEN
               if (	( methodOut.getSqlcode() != 0 )) { 
                   //  FORMAT1016334848 = "----"
@@ -784,7 +784,7 @@ UpdateOrderOutCtx methodOut = methodIn.getUpdateOrderOutCtx();
           while ((!(methodOut.isSqlDone()) )) {
               methodOut.setSqlcode(0);
 //  cobolCode::UPDATE TBTRDORD SET ORD_STATUS = ? WHERE ORD_CURRENCY = ? AND ORD_TRADING_XCHNG = ? AND ORD_TRADEID = ? AND ORD_FIGI = ? AND ORD_BUY_SELL_IND = ?
-              trdpb001Repository.updateTbtrdord(programCtx.getSqlca(),methodIn.getDcltbtrdord());
+              trdpb001Repository.updateTbtrdord(methodIn.getDcltbtrdord(),programCtx.getSqlca());
 //  cobolCode::IF SQLCODE = -911 OR -913 THEN
               if (	( methodOut.getSqlcode() == -911 ) || 	( methodOut.getSqlcode() == -913 )) { 
 //  cobolCode::SET RETRY-SQL TO TRUE

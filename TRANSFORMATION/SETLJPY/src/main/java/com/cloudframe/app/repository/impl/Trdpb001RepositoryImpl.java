@@ -47,7 +47,7 @@ static final short NOT_NULL = (short)0;
 ******            STQ_CURRENCY      = :STQ-CURRENCY                
 ******     ORDER BY STQ_CURRENCY ASC, STQ_ID  ASC                  
 **/
-    public ResultSet openSettlementQueueTrdpb001(Sqlca sqlca, Dcltbtrdstq dcltbtrdstq) throws Exception {
+    public ResultSet openSettlementQueueTrdpb001(Dcltbtrdstq dcltbtrdstq, Sqlca sqlca) throws Exception {
 ResultSet settlementQueueResultSet = null;
 try {
 	//OPEN CURSOR
@@ -79,7 +79,7 @@ return settlementQueueResultSet;
 ******    ,:LOG-END-TS                                             
 ******   )                                                         
 **/
-    public void insert(Sqlca sqlca, Dcltbtrdlog dcltbtrdlog) throws Exception {
+    public void insert(Dcltbtrdlog dcltbtrdlog, Sqlca sqlca) throws Exception {
 
 try {
     // INSRT/UPDATE
@@ -110,7 +110,7 @@ try {
 ******           WHERE LOG_TRANSACTION = :LOG-TRANSACTION          
 ******             AND LOG_CURRENCY    = :LOG-CURRENCY             
 **/
-    public void updateTbtrdlog(Sqlca sqlca, Dcltbtrdlog dcltbtrdlog) throws Exception {
+    public void updateTbtrdlog(Dcltbtrdlog dcltbtrdlog, Sqlca sqlca) throws Exception {
 
 try {
     // INSRT/UPDATE
@@ -144,7 +144,7 @@ try {
 ******           WHERE LOG_TRANSACTION = :LOG-TRANSACTION          
 ******             AND LOG_CURRENCY    = :LOG-CURRENCY             
 **/
-    public void updateTbtrdlog1(Sqlca sqlca, Dcltbtrdlog dcltbtrdlog) throws Exception {
+    public void updateTbtrdlog1(Dcltbtrdlog dcltbtrdlog, Sqlca sqlca) throws Exception {
 
 try {
     // INSRT/UPDATE
@@ -177,7 +177,7 @@ try {
 ******     INTO :STQ-ID                                            
 ******         ,:STQ-TRADE-DATA                                    
 **/
-    public void fetchSettlementQueueTrdpb001(ResultSet settlementQueueResultSet, Sqlca sqlca, Dcltbtrdstq dcltbtrdstq) throws Exception {
+    public void fetchSettlementQueueTrdpb001(ResultSet settlementQueueResultSet, Dcltbtrdstq dcltbtrdstq, Sqlca sqlca) throws Exception {
 try {
 	boolean hasResults = settlementQueueResultSet.next();
 	if (hasResults) {
@@ -233,7 +233,7 @@ catch (SQLException e) {
 ******                   STQ_CURRENCY      = :STQ-CURRENCY         
 ******               AND STQ_ID            = :STQ-ID               
 **/
-    public void deleteTbtrdstq(Sqlca sqlca, Dcltbtrdstq dcltbtrdstq) throws Exception {
+    public void deleteTbtrdstq(Dcltbtrdstq dcltbtrdstq, Sqlca sqlca) throws Exception {
 try {
 	// DELETE 
 	// reset SQLCODE
@@ -268,7 +268,7 @@ catch(Exception e) {
 ******                   STQ_CURRENCY      = :STQ-CURRENCY         
 ******               AND STQ_ID            = :STQ-ID               
 **/
-    public void deleteTbtrdstq1(Sqlca sqlca, Dcltbtrdstq dcltbtrdstq) throws Exception {
+    public void deleteTbtrdstq1(Dcltbtrdstq dcltbtrdstq, Sqlca sqlca) throws Exception {
 try {
 	// DELETE 
 	// reset SQLCODE

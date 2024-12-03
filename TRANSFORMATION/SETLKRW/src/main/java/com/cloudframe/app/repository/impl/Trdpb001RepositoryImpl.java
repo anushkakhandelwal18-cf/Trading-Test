@@ -305,7 +305,7 @@ catch(Exception e) {
 ******       AND   ORD_FIGI          = :ORD-FIGI                   
 ******       AND   ORD_BUY_SELL_IND  = :ORD-BUY-SELL-IND           
 **/
-    public void updateTbtrdord(Dcltbtrdord dcltbtrdord, Sqlca sqlca) throws Exception {
+    public void updateTbtrdord(Sqlca sqlca, Dcltbtrdord dcltbtrdord) throws Exception {
 
 try {
     // INSRT/UPDATE
@@ -357,7 +357,7 @@ try {
 ******         ,SUM_TOTAL_CREDIT                                   
 ******         ,SUM_CLOSE_BALANCE                                  
 **/
-    public ResultSet openSummaryCsrTrdpb001(Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception {
+    public ResultSet openSummaryCsrTrdpb001(Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception {
 ResultSet summaryCsrResultSet = null;
 try {
 	//OPEN CURSOR
@@ -392,7 +392,7 @@ return summaryCsrResultSet;
 ******          ,:SUM-TOTAL-CREDIT                                 
 ******          ,:SUM-CLOSE-BALANCE                                
 **/
-    public void fetchSummaryCsrTrdpb001(ResultSet summaryCsrResultSet, Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception {
+    public void fetchSummaryCsrTrdpb001(ResultSet summaryCsrResultSet, Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception {
 try {
 	boolean hasResults = summaryCsrResultSet.next();
 	if (hasResults) {
@@ -531,7 +531,7 @@ catch (SQLException e) {
 ******         AND MAC_NUMBER     = :MAC-NUMBER                    
 ******         WITH UR                                             
 **/
-    public void selectTbtrdmac(Dcltbtrdmac dcltbtrdmac, Sqlca sqlca) throws Exception {
+    public void selectTbtrdmac(Sqlca sqlca, Dcltbtrdmac dcltbtrdmac) throws Exception {
 try {
 	// SELECT 
 	// reset SQLCODE
@@ -598,7 +598,7 @@ catch(Exception e) {
 ******         ,:SUM-CLOSE-BALANCE                                 
 ******        )                                                    
 **/
-    public void insert1(Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception {
+    public void insert1(Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception {
 
 try {
     // INSRT/UPDATE
@@ -637,7 +637,7 @@ try {
 ******        WHERE                                                
 ******           SUM_CUSTOMER_ID = :SUM-CUSTOMER-ID                
 **/
-    public void updateTbtrdsum(Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception {
+    public void updateTbtrdsum(Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception {
 
 try {
     // INSRT/UPDATE

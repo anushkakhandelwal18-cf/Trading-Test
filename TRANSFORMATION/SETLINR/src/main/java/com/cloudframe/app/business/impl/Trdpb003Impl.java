@@ -42,8 +42,8 @@ import com.cloudframe.app.dto.trdpb003.*;
 import com.cloudframe.app.dto.trdpb003.TrdOrderPair;
 import com.cloudframe.app.dto.trdpb003.Sqlca;
 import com.cloudframe.app.dto.trdpb003.Dcltbtrdmac;
-import com.cloudframe.app.dto.trdpb003.ExceptionRecord;
 import com.cloudframe.app.dto.trdpb003.ExceptionRecordLenGroup;
+import com.cloudframe.app.dto.trdpb003.ExceptionRecord;
 import com.cloudframe.app.dto.trdpb003.Work;
   import com.cloudframe.app.common.CONSTANTS;
   import com.cloudframe.app.common.SQLS;
@@ -220,7 +220,7 @@ MacBookingOutCtx methodOut = methodIn.getMacBookingOutCtx();
               methodOut.setMacNumber(methodOut.getTrdBuyerMoneyAccNum());
           }
 //  cobolCode::SELECT MAC_BALANCE FROM TBTRDMAC WHERE MAC_CURRENCY = ? AND MAC_NUMBER = ? FOR UPDATE OF MAC_BALANCE
-          programCtx.setMacBookingResultSet(trdpb003Repository.openMacBookingTrdpb003(programCtx.getSqlca(),methodOut.getDcltbtrdmac()));
+          programCtx.setMacBookingResultSet(trdpb003Repository.openMacBookingTrdpb003(methodOut.getDcltbtrdmac(),programCtx.getSqlca()));
 
 // *
 //  cobolCode::IF SQLCODE NOT = 0 THEN
@@ -248,7 +248,7 @@ return methodOut;
 //cobolCodeEnds::GO TO 1000-EXIT
           }
 //  cobolCode::FETCH MAC_BOOKING INTO ?
-          trdpb003Repository.fetchMacBookingTrdpb003(programCtx.getMacBookingResultSet(),programCtx.getSqlca(),methodOut.getDcltbtrdmac());
+          trdpb003Repository.fetchMacBookingTrdpb003(programCtx.getMacBookingResultSet(),methodOut.getDcltbtrdmac(),programCtx.getSqlca());
 
 // *
 //  cobolCode::IF SQLCODE = 0 THEN
@@ -264,7 +264,7 @@ return methodOut;
                   methodOut.setMacBalance(methodOut.getMacBalance().subtract(methodIn.getTrdOrderAmount()));
               }
 //  cobolCode::UPDATE TBTRDMAC SET MAC_BALANCE = ? WHERE MAC_CURRENCY = ? AND MAC_NUMBER = ?
-              trdpb003Repository.updateTbtrdmac(programCtx.getSqlca(),methodOut.getDcltbtrdmac());
+              trdpb003Repository.updateTbtrdmac(methodOut.getDcltbtrdmac(),programCtx.getSqlca());
 
 // *            Where current of mac_booking
 //  cobolCode::IF SQLCODE = 0 THEN

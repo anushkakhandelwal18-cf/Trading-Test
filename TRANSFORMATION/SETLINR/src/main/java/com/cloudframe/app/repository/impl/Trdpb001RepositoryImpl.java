@@ -79,7 +79,7 @@ return settlementQueueResultSet;
 ******    ,:LOG-END-TS                                             
 ******   )                                                         
 **/
-    public void insert(Sqlca sqlca, Dcltbtrdlog dcltbtrdlog) throws Exception {
+    public void insert(Dcltbtrdlog dcltbtrdlog, Sqlca sqlca) throws Exception {
 
 try {
     // INSRT/UPDATE
@@ -110,7 +110,7 @@ try {
 ******           WHERE LOG_TRANSACTION = :LOG-TRANSACTION          
 ******             AND LOG_CURRENCY    = :LOG-CURRENCY             
 **/
-    public void updateTbtrdlog(Sqlca sqlca, Dcltbtrdlog dcltbtrdlog) throws Exception {
+    public void updateTbtrdlog(Dcltbtrdlog dcltbtrdlog, Sqlca sqlca) throws Exception {
 
 try {
     // INSRT/UPDATE
@@ -144,7 +144,7 @@ try {
 ******           WHERE LOG_TRANSACTION = :LOG-TRANSACTION          
 ******             AND LOG_CURRENCY    = :LOG-CURRENCY             
 **/
-    public void updateTbtrdlog1(Sqlca sqlca, Dcltbtrdlog dcltbtrdlog) throws Exception {
+    public void updateTbtrdlog1(Dcltbtrdlog dcltbtrdlog, Sqlca sqlca) throws Exception {
 
 try {
     // INSRT/UPDATE
@@ -357,7 +357,7 @@ try {
 ******         ,SUM_TOTAL_CREDIT                                   
 ******         ,SUM_CLOSE_BALANCE                                  
 **/
-    public ResultSet openSummaryCsrTrdpb001(Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception {
+    public ResultSet openSummaryCsrTrdpb001(Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception {
 ResultSet summaryCsrResultSet = null;
 try {
 	//OPEN CURSOR
@@ -392,7 +392,7 @@ return summaryCsrResultSet;
 ******          ,:SUM-TOTAL-CREDIT                                 
 ******          ,:SUM-CLOSE-BALANCE                                
 **/
-    public void fetchSummaryCsrTrdpb001(ResultSet summaryCsrResultSet, Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception {
+    public void fetchSummaryCsrTrdpb001(ResultSet summaryCsrResultSet, Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception {
 try {
 	boolean hasResults = summaryCsrResultSet.next();
 	if (hasResults) {
@@ -531,7 +531,7 @@ catch (SQLException e) {
 ******         AND MAC_NUMBER     = :MAC-NUMBER                    
 ******         WITH UR                                             
 **/
-    public void selectTbtrdmac(Sqlca sqlca, Dcltbtrdmac dcltbtrdmac) throws Exception {
+    public void selectTbtrdmac(Dcltbtrdmac dcltbtrdmac, Sqlca sqlca) throws Exception {
 try {
 	// SELECT 
 	// reset SQLCODE
@@ -598,7 +598,7 @@ catch(Exception e) {
 ******         ,:SUM-CLOSE-BALANCE                                 
 ******        )                                                    
 **/
-    public void insert1(Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception {
+    public void insert1(Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception {
 
 try {
     // INSRT/UPDATE
@@ -637,7 +637,7 @@ try {
 ******        WHERE                                                
 ******           SUM_CUSTOMER_ID = :SUM-CUSTOMER-ID                
 **/
-    public void updateTbtrdsum(Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception {
+    public void updateTbtrdsum(Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception {
 
 try {
     // INSRT/UPDATE

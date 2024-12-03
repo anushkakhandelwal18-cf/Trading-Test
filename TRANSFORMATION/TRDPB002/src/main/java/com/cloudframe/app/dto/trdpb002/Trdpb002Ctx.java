@@ -23,11 +23,11 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
     GlobalExecutorCtx globalCtx;
 
     TrdOrderPair trdOrderPair;
-    Dcltbtrdpos dcltbtrdpos;
     ExceptionRecordLenGroup exceptionRecordLenGroup;
+    ExceptionRecord exceptionRecord;
+    Dcltbtrdpos dcltbtrdpos;
     Sqlca sqlca;
     Work work;
-    ExceptionRecord exceptionRecord;
 
 
     private int rc;
@@ -81,17 +81,6 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
     public void setTrdOrderPair(TrdOrderPair trdOrderPair) {
         this.trdOrderPair = trdOrderPair;
     }
-    public Dcltbtrdpos getDcltbtrdpos() {
-        if (dcltbtrdpos == null) {
-            dcltbtrdpos = new Dcltbtrdpos();
-        }
-
-        return dcltbtrdpos;
-    }
-
-    public void setDcltbtrdpos(Dcltbtrdpos dcltbtrdpos) {
-        this.dcltbtrdpos = dcltbtrdpos;
-    }
     public ExceptionRecordLenGroup getExceptionRecordLenGroup() {
         if (exceptionRecordLenGroup == null) {
             exceptionRecordLenGroup = new ExceptionRecordLenGroup();
@@ -102,6 +91,28 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
 
     public void setExceptionRecordLenGroup(ExceptionRecordLenGroup exceptionRecordLenGroup) {
         this.exceptionRecordLenGroup = exceptionRecordLenGroup;
+    }
+    public ExceptionRecord getExceptionRecord() {
+        if (exceptionRecord == null) {
+            exceptionRecord = new ExceptionRecord();
+        }
+
+        return exceptionRecord;
+    }
+
+    public void setExceptionRecord(ExceptionRecord exceptionRecord) {
+        this.exceptionRecord = exceptionRecord;
+    }
+    public Dcltbtrdpos getDcltbtrdpos() {
+        if (dcltbtrdpos == null) {
+            dcltbtrdpos = new Dcltbtrdpos();
+        }
+
+        return dcltbtrdpos;
+    }
+
+    public void setDcltbtrdpos(Dcltbtrdpos dcltbtrdpos) {
+        this.dcltbtrdpos = dcltbtrdpos;
     }
     public Sqlca getSqlca() {
         if (sqlca == null) {
@@ -125,17 +136,6 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
     public void setWork(Work work) {
         this.work = work;
     }
-    public ExceptionRecord getExceptionRecord() {
-        if (exceptionRecord == null) {
-            exceptionRecord = new ExceptionRecord();
-        }
-
-        return exceptionRecord;
-    }
-
-    public void setExceptionRecord(ExceptionRecord exceptionRecord) {
-        this.exceptionRecord = exceptionRecord;
-    }
 
 
     @Override
@@ -148,11 +148,11 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
     public int hashCode() {
         String str = "";
         str += trdOrderPair.hashCode();
-        str += dcltbtrdpos.hashCode();
         str += exceptionRecordLenGroup.hashCode();
+        str += exceptionRecord.hashCode();
+        str += dcltbtrdpos.hashCode();
         str += sqlca.hashCode();
         str += work.hashCode();
-        str += exceptionRecord.hashCode();
        return str.hashCode();
     }
 
@@ -160,16 +160,16 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
         Trdpb002Ctx cloneObj = new Trdpb002Ctx();
         cloneObj.trdOrderPair = new TrdOrderPair();
         cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
-        cloneObj.dcltbtrdpos = new Dcltbtrdpos();
-        cloneObj.dcltbtrdpos.set(dcltbtrdpos.getClonedField());
         cloneObj.exceptionRecordLenGroup = new ExceptionRecordLenGroup();
         cloneObj.exceptionRecordLenGroup.set(exceptionRecordLenGroup.getClonedField());
+        cloneObj.exceptionRecord = new ExceptionRecord();
+        cloneObj.exceptionRecord.set(exceptionRecord.getClonedField());
+        cloneObj.dcltbtrdpos = new Dcltbtrdpos();
+        cloneObj.dcltbtrdpos.set(dcltbtrdpos.getClonedField());
         cloneObj.sqlca = new Sqlca();
         cloneObj.sqlca.set(sqlca.getClonedField());
         cloneObj.work = new Work();
         cloneObj.work.set(work.getClonedField());
-        cloneObj.exceptionRecord = new ExceptionRecord();
-        cloneObj.exceptionRecord.set(exceptionRecord.getClonedField());
         return cloneObj;
     }
 
@@ -216,18 +216,18 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
      Work work = Trdpb002Ctx.this.getWork();
 
 	/**
-	 *	Test condition "D" for isDebitSeller()
-	 *	@return  Returns true if isDebitSeller() is "D"
+	 *	Test condition "S" for isTrdSacBookingDone()
+	 *	@return  Returns true if isTrdSacBookingDone() is "S"
 	 */
-   public boolean isDebitSeller() throws CFException {
-      return work.isDebitSeller();
+   public boolean isTrdSacBookingDone() throws CFException {
+      return trdOrderPair.isTrdSacBookingDone();
    }
 
 	/**
-	*  set values "D"
+	*  set values "S"
 	*/
-   	public void setDebitSellerTrue()  throws CFException{  			
-    	work.setDebitSellerTrue();
+   	public void setTrdSacBookingDoneTrue()  throws CFException{  			
+    	trdOrderPair.setTrdSacBookingDoneTrue();
    	}
 	/**
 	 *	Test condition "F" for isTrdSacBookingFailed()
@@ -244,18 +244,18 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
     	trdOrderPair.setTrdSacBookingFailedTrue();
    	}
 	/**
-	 *	Test condition "S" for isTrdSacBookingDone()
-	 *	@return  Returns true if isTrdSacBookingDone() is "S"
+	 *	Test condition "D" for isDebitSeller()
+	 *	@return  Returns true if isDebitSeller() is "D"
 	 */
-   public boolean isTrdSacBookingDone() throws CFException {
-      return trdOrderPair.isTrdSacBookingDone();
+   public boolean isDebitSeller() throws CFException {
+      return work.isDebitSeller();
    }
 
 	/**
-	*  set values "S"
+	*  set values "D"
 	*/
-   	public void setTrdSacBookingDoneTrue()  throws CFException{  			
-    	trdOrderPair.setTrdSacBookingDoneTrue();
+   	public void setDebitSellerTrue()  throws CFException{  			
+    	work.setDebitSellerTrue();
    	}
 	/**
 	 *	Test condition "C" for isCreditBuyer()
@@ -308,85 +308,8 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
      public class SacBookingInCtx implements Cloneable {
      TrdOrderPair trdOrderPair = Trdpb002Ctx.this.getTrdOrderPair();
      Dcltbtrdpos dcltbtrdpos = Trdpb002Ctx.this.getDcltbtrdpos();
-     Work work = Trdpb002Ctx.this.getWork();
      Sqlca sqlca = Trdpb002Ctx.this.getSqlca();
-
-	/**
-	 *	Returns the value of trdCurrency
-	 *	@return trdCurrency
-	 */
-   public char[] getTrdCurrency() throws CFException  {              
-   		return trdOrderPair.getTrdCurrency();
-   }
-
-  
-	/**
-	*  set variable trdCurrency
-	*  @param value
-	**/
-   public void setTrdCurrency(char[] value) throws CFException {
-      trdOrderPair.setTrdCurrency(value);
-   } 
-
-     /**
-	 * 	Update TrdCurrency 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdCurrency(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdCurrency(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdCurrency with another Field
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source) {
-      trdOrderPair.setTrdCurrency(source);
-   }  
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of dcltbtrdpos
-	 *	@return dcltbtrdpos
-	 */   
-	 public Dcltbtrdpos getDcltbtrdpos() {
-   	return dcltbtrdpos;
-   }
-
+     Work work = Trdpb002Ctx.this.getWork();
 
 	public BigDecimal getTrdOrderQty() throws CFException{      
    		return trdOrderPair.getTrdOrderQty();
@@ -403,6 +326,59 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
 	public void setTrdOrderQty(BigDecimal number)  throws CFException{
 		trdOrderPair.setTrdOrderQty(number);
    }
+
+	/**
+	 *	Returns the value of dcltbtrdpos
+	 *	@return dcltbtrdpos
+	 */   
+	 public Dcltbtrdpos getDcltbtrdpos() {
+   	return dcltbtrdpos;
+   }
+
+
+	/**
+	 *	Returns the value of sqlerrd
+	 *	@return sqlerrd
+	 */
+	public int getSqlerrd(int index) throws CFException {        
+   		return sqlca.getSqlerrd((index));
+	}
+	
+	/**
+	 * 	Update Sqlerrd with the passed value
+	 *	@param number
+	 */
+	public void setSqlerrd(int index,int number)  throws CFException{
+		sqlca.setSqlerrd((index),number);
+	}
+
+
+	public void setSqlerrd(int index,long number)  throws CFException{
+		sqlca.setSqlerrd((index),(int)number);
+	}
+
+
+	/**
+	 *	Returns the value of trdBuyerSecAccNum
+	 *	@return trdBuyerSecAccNum
+	 */
+	public int getTrdBuyerSecAccNum() throws CFException {        
+   		return trdOrderPair.getTrdBuyerSecAccNum();
+	}
+	
+	/**
+	 * 	Update TrdBuyerSecAccNum with the passed value
+	 *	@param number
+	 */
+	public void setTrdBuyerSecAccNum(int number)  throws CFException{
+		trdOrderPair.setTrdBuyerSecAccNum(number);
+	}
+
+
+	public void setTrdBuyerSecAccNum(long number)  throws CFException{
+		trdOrderPair.setTrdBuyerSecAccNum((int)number);
+	}
+
 
 	/**
 	 *	Returns the value of trdFigi
@@ -473,102 +449,6 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of sqlcode
-	 *	@return sqlcode
-	 */
-	public int getSqlcode() throws CFException {        
-   		return sqlca.getSqlcode();
-	}
-	
-	/**
-	 * 	Update Sqlcode with the passed value
-	 *	@param number
-	 */
-	public void setSqlcode(int number)  throws CFException{
-		sqlca.setSqlcode(number);
-	}
-
-
-	public void setSqlcode(long number)  throws CFException{
-		sqlca.setSqlcode((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of sqlerrd
-	 *	@return sqlerrd
-	 */
-	public int getSqlerrd(int index) throws CFException {        
-   		return sqlca.getSqlerrd((index));
-	}
-	
-	/**
-	 * 	Update Sqlerrd with the passed value
-	 *	@param number
-	 */
-	public void setSqlerrd(int index,int number)  throws CFException{
-		sqlca.setSqlerrd((index),number);
-	}
-
-
-	public void setSqlerrd(int index,long number)  throws CFException{
-		sqlca.setSqlerrd((index),(int)number);
-	}
-
-
-	public BigDecimal getPosBalance() throws CFException{      
-   		return dcltbtrdpos.getPosBalance();
-	}
-
-    public char[] getPosBalanceString() throws CFException {
-          return  dcltbtrdpos.getPosBalance().toPlainString().toCharArray();
-    }
-	
-	/**
-	 * 	Update PosBalance with the passed number
-	 *	@param number
-	 */
-	public void setPosBalance(BigDecimal number)  throws CFException{
-		dcltbtrdpos.setPosBalance(number);
-   }
-
-	/**
-	 *	Returns the value of trdBuyerSecAccNum
-	 *	@return trdBuyerSecAccNum
-	 */
-	public int getTrdBuyerSecAccNum() throws CFException {        
-   		return trdOrderPair.getTrdBuyerSecAccNum();
-	}
-	
-	/**
-	 * 	Update TrdBuyerSecAccNum with the passed value
-	 *	@param number
-	 */
-	public void setTrdBuyerSecAccNum(int number)  throws CFException{
-		trdOrderPair.setTrdBuyerSecAccNum(number);
-	}
-
-
-	public void setTrdBuyerSecAccNum(long number)  throws CFException{
-		trdOrderPair.setTrdBuyerSecAccNum((int)number);
-	}
-
-
-	/**
-	 *	Test condition "D" for isDebitSeller()
-	 *	@return  Returns true if isDebitSeller() is "D"
-	 */
-   public boolean isDebitSeller() throws CFException {
-      return work.isDebitSeller();
-   }
-
-	/**
-	*  set values "D"
-	*/
-   	public void setDebitSellerTrue()  throws CFException{  			
-    	work.setDebitSellerTrue();
-   	}
-	/**
 	 *	Returns the value of sqlerrmc
 	 *	@return sqlerrmc
 	 */
@@ -637,6 +517,119 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
+	 *	Test condition "D" for isDebitSeller()
+	 *	@return  Returns true if isDebitSeller() is "D"
+	 */
+   public boolean isDebitSeller() throws CFException {
+      return work.isDebitSeller();
+   }
+
+	/**
+	*  set values "D"
+	*/
+   	public void setDebitSellerTrue()  throws CFException{  			
+    	work.setDebitSellerTrue();
+   	}
+	/**
+	 *	Returns the value of sqlcode
+	 *	@return sqlcode
+	 */
+	public int getSqlcode() throws CFException {        
+   		return sqlca.getSqlcode();
+	}
+	
+	/**
+	 * 	Update Sqlcode with the passed value
+	 *	@param number
+	 */
+	public void setSqlcode(int number)  throws CFException{
+		sqlca.setSqlcode(number);
+	}
+
+
+	public void setSqlcode(long number)  throws CFException{
+		sqlca.setSqlcode((int)number);
+	}
+
+
+	/**
+	 *	Returns the value of sqlca
+	 *	@return sqlca
+	 */   
+	 public Sqlca getSqlca() {
+   	return sqlca;
+   }
+
+
+	/**
+	 *	Returns the value of trdCurrency
+	 *	@return trdCurrency
+	 */
+   public char[] getTrdCurrency() throws CFException  {              
+   		return trdOrderPair.getTrdCurrency();
+   }
+
+  
+	/**
+	*  set variable trdCurrency
+	*  @param value
+	**/
+   public void setTrdCurrency(char[] value) throws CFException {
+      trdOrderPair.setTrdCurrency(value);
+   } 
+
+     /**
+	 * 	Update TrdCurrency 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdCurrency(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdCurrency(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdCurrency 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdCurrency with another Field
+	 *	@param value
+	 */
+   public void setTrdCurrency(Field source) {
+      trdOrderPair.setTrdCurrency(source);
+   }  
+   
+     /**
+	 * 	Update TrdCurrency 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdCurrency 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
 	 *	Returns the value of trdSellerSecAccNum
 	 *	@return trdSellerSecAccNum
 	 */
@@ -657,6 +650,22 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
 		trdOrderPair.setTrdSellerSecAccNum((int)number);
 	}
 
+
+	public BigDecimal getPosBalance() throws CFException{      
+   		return dcltbtrdpos.getPosBalance();
+	}
+
+    public char[] getPosBalanceString() throws CFException {
+          return  dcltbtrdpos.getPosBalance().toPlainString().toCharArray();
+    }
+	
+	/**
+	 * 	Update PosBalance with the passed number
+	 *	@param number
+	 */
+	public void setPosBalance(BigDecimal number)  throws CFException{
+		dcltbtrdpos.setPosBalance(number);
+   }
 
 	/**
 	 *	Returns the value of sqlwarn
@@ -720,15 +729,6 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
    	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
-	/**
-	 *	Returns the value of sqlca
-	 *	@return sqlca
-	 */   
-	 public Sqlca getSqlca() {
-   	return sqlca;
-   }
-
-
 
         public Trdpb002Ctx getTrdpb002Ctx() {
             return Trdpb002Ctx.this;
@@ -749,8 +749,8 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
         String str = "";
         str += trdOrderPair.hashCode();
         str += dcltbtrdpos.hashCode();
-        str += work.hashCode();
         str += sqlca.hashCode();
+        str += work.hashCode();
        return str.hashCode();
     }
 
@@ -760,10 +760,10 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
         cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
         cloneObj.dcltbtrdpos = new Dcltbtrdpos();
         cloneObj.dcltbtrdpos.set(dcltbtrdpos.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
         cloneObj.sqlca = new Sqlca();
         cloneObj.sqlca.set(sqlca.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
         return cloneObj;
     }
 
@@ -775,8 +775,99 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
      public class SacBookingOutCtx implements Cloneable {
      TrdOrderPair trdOrderPair = Trdpb002Ctx.this.getTrdOrderPair();
      Dcltbtrdpos dcltbtrdpos = Trdpb002Ctx.this.getDcltbtrdpos();
-     Work work = Trdpb002Ctx.this.getWork();
      Sqlca sqlca = Trdpb002Ctx.this.getSqlca();
+     Work work = Trdpb002Ctx.this.getWork();
+
+	/**
+	 *	Test condition "S" for isTrdSacBookingDone()
+	 *	@return  Returns true if isTrdSacBookingDone() is "S"
+	 */
+   public boolean isTrdSacBookingDone() throws CFException {
+      return trdOrderPair.isTrdSacBookingDone();
+   }
+
+	/**
+	*  set values "S"
+	*/
+   	public void setTrdSacBookingDoneTrue()  throws CFException{  			
+    	trdOrderPair.setTrdSacBookingDoneTrue();
+   	}
+	/**
+	 *	Returns the value of posFigi
+	 *	@return posFigi
+	 */
+   public char[] getPosFigi() throws CFException  {              
+   		return dcltbtrdpos.getPosFigi();
+   }
+
+  
+	/**
+	*  set variable posFigi
+	*  @param value
+	**/
+   public void setPosFigi(char[] value) throws CFException {
+      dcltbtrdpos.setPosFigi(value);
+   } 
+
+     /**
+	 * 	Update PosFigi 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setPosFigi(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdpos.setPosFigi(source, sourceIndex);
+   	
+   }
+   
+   public void setPosFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdpos.setPosFigi(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update PosFigi 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setPosFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdpos.setPosFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update PosFigi with another Field
+	 *	@param value
+	 */
+   public void setPosFigi(Field source) {
+      dcltbtrdpos.setPosFigi(source);
+   }  
+   
+     /**
+	 * 	Update PosFigi 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setPosFigi(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdpos.setPosFigi(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update PosFigi 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setPosFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdpos.setPosFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of dcltbtrdpos
+	 *	@return dcltbtrdpos
+	 */   
+	 public Dcltbtrdpos getDcltbtrdpos() {
+   	return dcltbtrdpos;
+   }
+
 
 	/**
 	 *	Returns the value of posCurrency
@@ -847,133 +938,6 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of trdCurrency
-	 *	@return trdCurrency
-	 */
-   public char[] getTrdCurrency() throws CFException  {              
-   		return trdOrderPair.getTrdCurrency();
-   }
-
-  
-	/**
-	*  set variable trdCurrency
-	*  @param value
-	**/
-   public void setTrdCurrency(char[] value) throws CFException {
-      trdOrderPair.setTrdCurrency(value);
-   } 
-
-     /**
-	 * 	Update TrdCurrency 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdCurrency(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdCurrency(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdCurrency with another Field
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source) {
-      trdOrderPair.setTrdCurrency(source);
-   }  
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Test condition "F" for isTrdSacBookingFailed()
-	 *	@return  Returns true if isTrdSacBookingFailed() is "F"
-	 */
-   public boolean isTrdSacBookingFailed() throws CFException {
-      return trdOrderPair.isTrdSacBookingFailed();
-   }
-
-	/**
-	*  set values "F"
-	*/
-   	public void setTrdSacBookingFailedTrue()  throws CFException{  			
-    	trdOrderPair.setTrdSacBookingFailedTrue();
-   	}
-	/**
-	 *	Returns the value of dcltbtrdpos
-	 *	@return dcltbtrdpos
-	 */   
-	 public Dcltbtrdpos getDcltbtrdpos() {
-   	return dcltbtrdpos;
-   }
-
-
-	/**
-	 *	Test condition "D" for isDataException()
-	 *	@return  Returns true if isDataException() is "D"
-	 */
-   public boolean isDataException() throws CFException {
-      return work.isDataException();
-   }
-
-	/**
-	*  set values "D"
-	*/
-   	public void setDataExceptionTrue()  throws CFException{  			
-    	work.setDataExceptionTrue();
-   	}
-	/**
-	 *	Returns the value of posSacNumber
-	 *	@return posSacNumber
-	 */
-	public int getPosSacNumber() throws CFException {        
-   		return dcltbtrdpos.getPosSacNumber();
-	}
-	
-	/**
-	 * 	Update PosSacNumber with the passed value
-	 *	@param number
-	 */
-	public void setPosSacNumber(int number)  throws CFException{
-		dcltbtrdpos.setPosSacNumber(number);
-	}
-
-
-	public void setPosSacNumber(long number)  throws CFException{
-		dcltbtrdpos.setPosSacNumber((int)number);
-	}
-
-
-	/**
 	 *	Returns the value of sqlcode_Ws
 	 *	@return sqlcode_Ws
 	 */
@@ -1041,6 +1005,64 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
       work.setSqlcode_Ws(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
+	/**
+	 *	Returns the value of posSacNumber
+	 *	@return posSacNumber
+	 */
+	public int getPosSacNumber() throws CFException {        
+   		return dcltbtrdpos.getPosSacNumber();
+	}
+	
+	/**
+	 * 	Update PosSacNumber with the passed value
+	 *	@param number
+	 */
+	public void setPosSacNumber(int number)  throws CFException{
+		dcltbtrdpos.setPosSacNumber(number);
+	}
+
+
+	public void setPosSacNumber(long number)  throws CFException{
+		dcltbtrdpos.setPosSacNumber((int)number);
+	}
+
+
+	/**
+	 *	Returns the value of trdBuyerSecAccNum
+	 *	@return trdBuyerSecAccNum
+	 */
+	public int getTrdBuyerSecAccNum() throws CFException {        
+   		return trdOrderPair.getTrdBuyerSecAccNum();
+	}
+	
+	/**
+	 * 	Update TrdBuyerSecAccNum with the passed value
+	 *	@param number
+	 */
+	public void setTrdBuyerSecAccNum(int number)  throws CFException{
+		trdOrderPair.setTrdBuyerSecAccNum(number);
+	}
+
+
+	public void setTrdBuyerSecAccNum(long number)  throws CFException{
+		trdOrderPair.setTrdBuyerSecAccNum((int)number);
+	}
+
+
+	/**
+	 *	Test condition "D" for isDataException()
+	 *	@return  Returns true if isDataException() is "D"
+	 */
+   public boolean isDataException() throws CFException {
+      return work.isDataException();
+   }
+
+	/**
+	*  set values "D"
+	*/
+   	public void setDataExceptionTrue()  throws CFException{  			
+    	work.setDataExceptionTrue();
+   	}
 	/**
 	 *	Returns the value of trdFigi
 	 *	@return trdFigi
@@ -1110,6 +1132,20 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
+	 *	Test condition "F" for isTrdSacBookingFailed()
+	 *	@return  Returns true if isTrdSacBookingFailed() is "F"
+	 */
+   public boolean isTrdSacBookingFailed() throws CFException {
+      return trdOrderPair.isTrdSacBookingFailed();
+   }
+
+	/**
+	*  set values "F"
+	*/
+   	public void setTrdSacBookingFailedTrue()  throws CFException{  			
+    	trdOrderPair.setTrdSacBookingFailedTrue();
+   	}
+	/**
 	 *	Returns the value of sqlcode
 	 *	@return sqlcode
 	 */
@@ -1131,143 +1167,83 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
 	}
 
 
-	public BigDecimal getPosBalance() throws CFException{      
-   		return dcltbtrdpos.getPosBalance();
-	}
-
-    public char[] getPosBalanceString() throws CFException {
-          return  dcltbtrdpos.getPosBalance().toPlainString().toCharArray();
-    }
-	
 	/**
-	 * 	Update PosBalance with the passed number
-	 *	@param number
-	 */
-	public void setPosBalance(BigDecimal number)  throws CFException{
-		dcltbtrdpos.setPosBalance(number);
+	 *	Returns the value of sqlca
+	 *	@return sqlca
+	 */   
+	 public Sqlca getSqlca() {
+   	return sqlca;
    }
 
-	/**
-	 *	Returns the value of trdBuyerSecAccNum
-	 *	@return trdBuyerSecAccNum
-	 */
-	public int getTrdBuyerSecAccNum() throws CFException {        
-   		return trdOrderPair.getTrdBuyerSecAccNum();
-	}
-	
-	/**
-	 * 	Update TrdBuyerSecAccNum with the passed value
-	 *	@param number
-	 */
-	public void setTrdBuyerSecAccNum(int number)  throws CFException{
-		trdOrderPair.setTrdBuyerSecAccNum(number);
-	}
-
-
-	public void setTrdBuyerSecAccNum(long number)  throws CFException{
-		trdOrderPair.setTrdBuyerSecAccNum((int)number);
-	}
-
 
 	/**
-	 *	Returns the value of exception
-	 *	@return exception
+	 *	Returns the value of trdCurrency
+	 *	@return trdCurrency
 	 */
-   public char[] getException() throws CFException  {              
-   		return work.getException();
+   public char[] getTrdCurrency() throws CFException  {              
+   		return trdOrderPair.getTrdCurrency();
    }
 
   
 	/**
-	*  set variable exception
+	*  set variable trdCurrency
 	*  @param value
 	**/
-   public void setException(char[] value) throws CFException {
-      work.setException(value);
-   } 
-
-	/**
-	 *	Returns the value of posFigi
-	 *	@return posFigi
-	 */
-   public char[] getPosFigi() throws CFException  {              
-   		return dcltbtrdpos.getPosFigi();
-   }
-
-  
-	/**
-	*  set variable posFigi
-	*  @param value
-	**/
-   public void setPosFigi(char[] value) throws CFException {
-      dcltbtrdpos.setPosFigi(value);
+   public void setTrdCurrency(char[] value) throws CFException {
+      trdOrderPair.setTrdCurrency(value);
    } 
 
      /**
-	 * 	Update PosFigi 
+	 * 	Update TrdCurrency 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setPosFigi(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdpos.setPosFigi(source, sourceIndex);
+   public void setTrdCurrency(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdCurrency(source, sourceIndex);
    	
    }
    
-   public void setPosFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdpos.setPosFigi(source, sourceIndex, sourceLen);
+   public void setTrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update PosFigi 
+	 * 	Update TrdCurrency 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setPosFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdpos.setPosFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update PosFigi with another Field
+	 * 	Update TrdCurrency with another Field
 	 *	@param value
 	 */
-   public void setPosFigi(Field source) {
-      dcltbtrdpos.setPosFigi(source);
+   public void setTrdCurrency(Field source) {
+      trdOrderPair.setTrdCurrency(source);
    }  
    
      /**
-	 * 	Update PosFigi 
+	 * 	Update TrdCurrency 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setPosFigi(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdpos.setPosFigi(source, sourceIndex, sourceLen);   	
+   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update PosFigi 
+	 * 	Update TrdCurrency 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setPosFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdpos.setPosFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
-	/**
-	 *	Test condition "S" for isTrdSacBookingDone()
-	 *	@return  Returns true if isTrdSacBookingDone() is "S"
-	 */
-   public boolean isTrdSacBookingDone() throws CFException {
-      return trdOrderPair.isTrdSacBookingDone();
-   }
-
-	/**
-	*  set values "S"
-	*/
-   	public void setTrdSacBookingDoneTrue()  throws CFException{  			
-    	trdOrderPair.setTrdSacBookingDoneTrue();
-   	}
 	/**
 	 *	Returns the value of trdSellerSecAccNum
 	 *	@return trdSellerSecAccNum
@@ -1290,14 +1266,38 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
 	}
 
 
+	public BigDecimal getPosBalance() throws CFException{      
+   		return dcltbtrdpos.getPosBalance();
+	}
+
+    public char[] getPosBalanceString() throws CFException {
+          return  dcltbtrdpos.getPosBalance().toPlainString().toCharArray();
+    }
+	
 	/**
-	 *	Returns the value of sqlca
-	 *	@return sqlca
-	 */   
-	 public Sqlca getSqlca() {
-   	return sqlca;
+	 * 	Update PosBalance with the passed number
+	 *	@param number
+	 */
+	public void setPosBalance(BigDecimal number)  throws CFException{
+		dcltbtrdpos.setPosBalance(number);
    }
 
+	/**
+	 *	Returns the value of exception
+	 *	@return exception
+	 */
+   public char[] getException() throws CFException  {              
+   		return work.getException();
+   }
+
+  
+	/**
+	*  set variable exception
+	*  @param value
+	**/
+   public void setException(char[] value) throws CFException {
+      work.setException(value);
+   } 
 
 
         public Trdpb002Ctx getTrdpb002Ctx() {
@@ -1316,8 +1316,8 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
         String str = "";
         str += trdOrderPair.hashCode();
         str += dcltbtrdpos.hashCode();
-        str += work.hashCode();
         str += sqlca.hashCode();
+        str += work.hashCode();
        return str.hashCode();
     }
 
@@ -1327,10 +1327,10 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
         cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
         cloneObj.dcltbtrdpos = new Dcltbtrdpos();
         cloneObj.dcltbtrdpos.set(dcltbtrdpos.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
         cloneObj.sqlca = new Sqlca();
         cloneObj.sqlca.set(sqlca.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
         return cloneObj;
     }
 
@@ -1341,25 +1341,8 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
     }
      public class ReportExceptionInCtx implements Cloneable {
      ExceptionRecordLenGroup exceptionRecordLenGroup = Trdpb002Ctx.this.getExceptionRecordLenGroup();
-     Work work = Trdpb002Ctx.this.getWork();
      ExceptionRecord exceptionRecord = Trdpb002Ctx.this.getExceptionRecord();
-
-	/**
-	 *	Returns the value of exceptionHandler
-	 *	@return exceptionHandler
-	 */
-   public char[] getExceptionHandler() throws CFException  {              
-   		return work.getExceptionHandler();
-   }
-
-  
-	/**
-	*  set variable exceptionHandler
-	*  @param value
-	**/
-   public void setExceptionHandler(char[] value) throws CFException {
-      work.setExceptionHandler(value);
-   } 
+     Work work = Trdpb002Ctx.this.getWork();
 
 	/**
 	 *	Test condition "D" for isDataException()
@@ -1374,6 +1357,52 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
 	*/
    	public void setDataExceptionTrue()  throws CFException{  			
     	work.setDataExceptionTrue();
+   	}
+	/**
+	 *	Returns the value of exceptionRecordLenGroup
+	 *	@return exceptionRecordLenGroup
+	 */   
+	 public ExceptionRecordLenGroup getExceptionRecordLenGroup() {
+   	return exceptionRecordLenGroup;
+   }
+
+
+	/**
+	 *	Returns the value of exceptionRecord
+	 *	@return exceptionRecord
+	 */   
+	 public ExceptionRecord getExceptionRecord() {
+   	return exceptionRecord;
+   }
+
+
+	/**
+	 *	Test condition "A" for isApplException()
+	 *	@return  Returns true if isApplException() is "A"
+	 */
+   public boolean isApplException() throws CFException {
+      return work.isApplException();
+   }
+
+	/**
+	*  set values "A"
+	*/
+   	public void setApplExceptionTrue()  throws CFException{  			
+    	work.setApplExceptionTrue();
+   	}
+	/**
+	 *	Test condition "S" for isSystemException()
+	 *	@return  Returns true if isSystemException() is "S"
+	 */
+   public boolean isSystemException() throws CFException {
+      return work.isSystemException();
+   }
+
+	/**
+	*  set values "S"
+	*/
+   	public void setSystemExceptionTrue()  throws CFException{  			
+    	work.setSystemExceptionTrue();
    	}
 	/**
 	 *	Returns the value of exception
@@ -1393,50 +1422,21 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
    } 
 
 	/**
-	 *	Test condition "A" for isApplException()
-	 *	@return  Returns true if isApplException() is "A"
+	 *	Returns the value of exceptionHandler
+	 *	@return exceptionHandler
 	 */
-   public boolean isApplException() throws CFException {
-      return work.isApplException();
+   public char[] getExceptionHandler() throws CFException  {              
+   		return work.getExceptionHandler();
    }
 
+  
 	/**
-	*  set values "A"
-	*/
-   	public void setApplExceptionTrue()  throws CFException{  			
-    	work.setApplExceptionTrue();
-   	}
-	/**
-	 *	Returns the value of exceptionRecordLenGroup
-	 *	@return exceptionRecordLenGroup
-	 */   
-	 public ExceptionRecordLenGroup getExceptionRecordLenGroup() {
-   	return exceptionRecordLenGroup;
-   }
-
-
-	/**
-	 *	Test condition "S" for isSystemException()
-	 *	@return  Returns true if isSystemException() is "S"
-	 */
-   public boolean isSystemException() throws CFException {
-      return work.isSystemException();
-   }
-
-	/**
-	*  set values "S"
-	*/
-   	public void setSystemExceptionTrue()  throws CFException{  			
-    	work.setSystemExceptionTrue();
-   	}
-	/**
-	 *	Returns the value of exceptionRecord
-	 *	@return exceptionRecord
-	 */   
-	 public ExceptionRecord getExceptionRecord() {
-   	return exceptionRecord;
-   }
-
+	*  set variable exceptionHandler
+	*  @param value
+	**/
+   public void setExceptionHandler(char[] value) throws CFException {
+      work.setExceptionHandler(value);
+   } 
 
 
         public Trdpb002Ctx getTrdpb002Ctx() {
@@ -1457,8 +1457,8 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
     public int hashCode() {
         String str = "";
         str += exceptionRecordLenGroup.hashCode();
-        str += work.hashCode();
         str += exceptionRecord.hashCode();
+        str += work.hashCode();
        return str.hashCode();
     }
 
@@ -1466,10 +1466,10 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
         ReportExceptionInCtx cloneObj = new ReportExceptionInCtx();
         cloneObj.exceptionRecordLenGroup = new ExceptionRecordLenGroup();
         cloneObj.exceptionRecordLenGroup.set(exceptionRecordLenGroup.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
         cloneObj.exceptionRecord = new ExceptionRecord();
         cloneObj.exceptionRecord.set(exceptionRecord.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
         return cloneObj;
     }
 
@@ -1480,8 +1480,69 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
     }
      public class ReportExceptionOutCtx implements Cloneable {
      ExceptionRecordLenGroup exceptionRecordLenGroup = Trdpb002Ctx.this.getExceptionRecordLenGroup();
-     Work work = Trdpb002Ctx.this.getWork();
      ExceptionRecord exceptionRecord = Trdpb002Ctx.this.getExceptionRecord();
+     Work work = Trdpb002Ctx.this.getWork();
+
+	/**
+	 *	Returns the value of exceptionRecordLenGroup
+	 *	@return exceptionRecordLenGroup
+	 */   
+	 public ExceptionRecordLenGroup getExceptionRecordLenGroup() {
+   	return exceptionRecordLenGroup;
+   }
+
+
+	/**
+	 *	Returns the value of exceptionRecord
+	 *	@return exceptionRecord
+	 */   
+	 public ExceptionRecord getExceptionRecord() {
+   	return exceptionRecord;
+   }
+
+
+	/**
+	 *	Returns the value of exceptionRecordLen
+	 *	@return exceptionRecordLen
+	 */
+	public short getExceptionRecordLen() throws CFException {        
+   		return exceptionRecordLenGroup.getExceptionRecordLen();
+	}
+	
+	/**
+	 * 	Update ExceptionRecordLen with the passed value
+	 *	@param number
+	 */
+	public void setExceptionRecordLen(short number)  throws CFException{
+		exceptionRecordLenGroup.setExceptionRecordLen(number);
+	}
+
+	public void setExceptionRecordLen(int number)  throws CFException{
+		exceptionRecordLenGroup.setExceptionRecordLen((short)number);
+	}
+
+	public void setExceptionRecordLen(long number)  throws CFException{
+		exceptionRecordLenGroup.setExceptionRecordLen((short)number);
+	}
+
+
+
+	/**
+	 *	Returns the value of exception
+	 *	@return exception
+	 */
+   public char[] getException() throws CFException  {              
+   		return work.getException();
+   }
+
+  
+	/**
+	*  set variable exception
+	*  @param value
+	**/
+   public void setException(char[] value) throws CFException {
+      work.setException(value);
+   } 
 
 	/**
 	 *	Returns the value of exceptionDesc
@@ -1550,67 +1611,6 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
    public void setExceptionDesc(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
       exceptionRecord.setExceptionDesc(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
-
-	/**
-	 *	Returns the value of exception
-	 *	@return exception
-	 */
-   public char[] getException() throws CFException  {              
-   		return work.getException();
-   }
-
-  
-	/**
-	*  set variable exception
-	*  @param value
-	**/
-   public void setException(char[] value) throws CFException {
-      work.setException(value);
-   } 
-
-	/**
-	 *	Returns the value of exceptionRecordLen
-	 *	@return exceptionRecordLen
-	 */
-	public short getExceptionRecordLen() throws CFException {        
-   		return exceptionRecordLenGroup.getExceptionRecordLen();
-	}
-	
-	/**
-	 * 	Update ExceptionRecordLen with the passed value
-	 *	@param number
-	 */
-	public void setExceptionRecordLen(short number)  throws CFException{
-		exceptionRecordLenGroup.setExceptionRecordLen(number);
-	}
-
-	public void setExceptionRecordLen(int number)  throws CFException{
-		exceptionRecordLenGroup.setExceptionRecordLen((short)number);
-	}
-
-	public void setExceptionRecordLen(long number)  throws CFException{
-		exceptionRecordLenGroup.setExceptionRecordLen((short)number);
-	}
-
-
-
-	/**
-	 *	Returns the value of exceptionRecordLenGroup
-	 *	@return exceptionRecordLenGroup
-	 */   
-	 public ExceptionRecordLenGroup getExceptionRecordLenGroup() {
-   	return exceptionRecordLenGroup;
-   }
-
-
-	/**
-	 *	Returns the value of exceptionRecord
-	 *	@return exceptionRecord
-	 */   
-	 public ExceptionRecord getExceptionRecord() {
-   	return exceptionRecord;
-   }
-
 
 	/**
 	 *	Returns the value of exceptionType
@@ -1696,8 +1696,8 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
     public int hashCode() {
         String str = "";
         str += exceptionRecordLenGroup.hashCode();
-        str += work.hashCode();
         str += exceptionRecord.hashCode();
+        str += work.hashCode();
        return str.hashCode();
     }
 
@@ -1705,10 +1705,10 @@ public class Trdpb002Ctx implements ProgramContext, Cloneable {
         ReportExceptionOutCtx cloneObj = new ReportExceptionOutCtx();
         cloneObj.exceptionRecordLenGroup = new ExceptionRecordLenGroup();
         cloneObj.exceptionRecordLenGroup.set(exceptionRecordLenGroup.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
         cloneObj.exceptionRecord = new ExceptionRecord();
         cloneObj.exceptionRecord.set(exceptionRecord.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
         return cloneObj;
     }
 

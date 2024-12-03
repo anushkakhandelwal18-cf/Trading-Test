@@ -47,7 +47,7 @@ static final short NOT_NULL = (short)0;
 ******        AND MAC_NUMBER        = :MAC-NUMBER                  
 ******       FOR UPDATE OF MAC_BALANCE                             
 **/
-    public ResultSet openMacBookingTrdpb003(Sqlca sqlca, Dcltbtrdmac dcltbtrdmac) throws Exception {
+    public ResultSet openMacBookingTrdpb003(Dcltbtrdmac dcltbtrdmac, Sqlca sqlca) throws Exception {
 ResultSet macBookingResultSet = null;
 try {
 	//OPEN CURSOR
@@ -74,7 +74,7 @@ return macBookingResultSet;
 ******    FETCH MAC_BOOKING                                        
 ******     INTO :MAC-BALANCE                                       
 **/
-    public void fetchMacBookingTrdpb003(ResultSet macBookingResultSet, Sqlca sqlca, Dcltbtrdmac dcltbtrdmac) throws Exception {
+    public void fetchMacBookingTrdpb003(ResultSet macBookingResultSet, Dcltbtrdmac dcltbtrdmac, Sqlca sqlca) throws Exception {
 try {
 	boolean hasResults = macBookingResultSet.next();
 	if (hasResults) {
@@ -124,7 +124,7 @@ catch (SQLException e) {
 ******        WHERE MAC_CURRENCY     = :MAC-CURRENCY               
 ******          AND MAC_NUMBER       = :MAC-NUMBER                 
 **/
-    public void updateTbtrdmac(Sqlca sqlca, Dcltbtrdmac dcltbtrdmac) throws Exception {
+    public void updateTbtrdmac(Dcltbtrdmac dcltbtrdmac, Sqlca sqlca) throws Exception {
 
 try {
     // INSRT/UPDATE

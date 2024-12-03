@@ -28,10 +28,10 @@ import com.cloudframe.app.business.Trdpbexc;
   import com.cloudframe.app.dto.ProgramContext;
   import com.cloudframe.app.data.Field;
 import com.cloudframe.app.dto.trdpbexc.*;
-import com.cloudframe.app.dto.trdpbexc.ExceptionRecord;
-import com.cloudframe.app.dto.trdpbexc.Dcltbtrdexc;
 import com.cloudframe.app.dto.trdpbexc.Sqlca;
+import com.cloudframe.app.dto.trdpbexc.Dcltbtrdexc;
 import com.cloudframe.app.dto.trdpbexc.ExceptionRecordLenGroup;
+import com.cloudframe.app.dto.trdpbexc.ExceptionRecord;
 import com.cloudframe.app.dto.trdpbexc.Work;
   import com.cloudframe.app.common.CONSTANTS;
   import com.cloudframe.app.common.SQLS;
@@ -165,7 +165,7 @@ MainlineOutCtx methodOut = methodIn.getMainlineOutCtx();
 //  cobolCode::MOVE EXCEPTION-DESC TO EXC-DESCRIPTION-TEXT
           methodOut.setExcDescriptionText(methodOut.getExceptionDesc());
 //  cobolCode::INSERT INTO TBTRDEXC ( EXC_TYPE , EXC_DESCRIPTION ) VALUES ( ? , ? )
-          trdpbexcRepository.insertTbtrdexc(methodIn.getDcltbtrdexc(),programCtx.getSqlca());
+          trdpbexcRepository.insertTbtrdexc(programCtx.getSqlca(),methodIn.getDcltbtrdexc());
 //  cobolCode::EVALUATE SQLCODE
           switch(methodOut.getSqlcode()){
           	case 0:
@@ -176,7 +176,7 @@ MainlineOutCtx methodOut = methodIn.getMainlineOutCtx();
 //  cobolCode::PERFORM UNTIL SQLCODE = 0
               while ((	( methodOut.getSqlcode() != 0 ))) {
 //  cobolCode::INSERT INTO TBTRDEXC ( EXC_TYPE , EXC_DESCRIPTION ) VALUES ( ? , ? )
-                  trdpbexcRepository.insertTbtrdexc2(methodIn.getDcltbtrdexc(),programCtx.getSqlca());
+                  trdpbexcRepository.insertTbtrdexc2(programCtx.getSqlca(),methodIn.getDcltbtrdexc());
               }
           break;
           default :

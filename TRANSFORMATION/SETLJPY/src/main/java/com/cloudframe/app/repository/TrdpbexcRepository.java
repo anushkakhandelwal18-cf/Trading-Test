@@ -8,25 +8,25 @@ public interface TrdpbexcRepository {
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm sqlca
-* @parm dcltbtrdexc
+     * @parm dcltbtrdexc
+* @parm sqlca
      */
-    public void insertTbtrdexc(Sqlca sqlca, Dcltbtrdexc dcltbtrdexc) throws Exception;
+    public void insertTbtrdexc(Dcltbtrdexc dcltbtrdexc, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm sqlca
-* @parm dcltbtrdexc
+     * @parm dcltbtrdexc
+* @parm sqlca
      */
-    public void insertTbtrdexc1(Sqlca sqlca, Dcltbtrdexc dcltbtrdexc) throws Exception;
+    public void insertTbtrdexc1(Dcltbtrdexc dcltbtrdexc, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm sqlca
-* @parm dcltbtrdexc
+     * @parm dcltbtrdexc
+* @parm sqlca
      */
-    public void insertTbtrdexc2(Sqlca sqlca, Dcltbtrdexc dcltbtrdexc) throws Exception;
+    public void insertTbtrdexc2(Dcltbtrdexc dcltbtrdexc, Sqlca sqlca) throws Exception;
 
 }

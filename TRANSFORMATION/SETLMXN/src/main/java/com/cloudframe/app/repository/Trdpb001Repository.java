@@ -9,67 +9,67 @@ public interface Trdpb001Repository {
     /**
      * This method will handle the sql operations for a open query.
      *
-     * @parm dcltbtrdstq
-* @parm sqlca
+     * @parm sqlca
+* @parm dcltbtrdstq
      * @return 
      */
-    public ResultSet openSettlementQueueTrdpb001(Dcltbtrdstq dcltbtrdstq, Sqlca sqlca) throws Exception;
-
-    /**
-     * This method will handle the sql operations for a update query.
-     *
-     * @parm dcltbtrdlog
-* @parm sqlca
-     */
-    public void insert(Dcltbtrdlog dcltbtrdlog, Sqlca sqlca) throws Exception;
-
-    /**
-     * This method will handle the sql operations for a update query.
-     *
-     * @parm dcltbtrdlog
-* @parm sqlca
-     */
-    public void updateTbtrdlog(Dcltbtrdlog dcltbtrdlog, Sqlca sqlca) throws Exception;
-
-    /**
-     * This method will handle the sql operations for a update query.
-     *
-     * @parm dcltbtrdlog
-* @parm sqlca
-     */
-    public void updateTbtrdlog1(Dcltbtrdlog dcltbtrdlog, Sqlca sqlca) throws Exception;
-
-    /**
-     * This method will handle the sql operations for a fetch query.
-     *
-     * @parm dcltbtrdstq
-* @parm sqlca
-     */
-    public void fetchSettlementQueueTrdpb001(ResultSet settlementQueueResultSet, Dcltbtrdstq dcltbtrdstq, Sqlca sqlca) throws Exception;
-
-    /**
-     * This method will handle the sql operations for a update query.
-     *
-     * @parm dcltbtrdstq
-* @parm sqlca
-     */
-    public void deleteTbtrdstq(Dcltbtrdstq dcltbtrdstq, Sqlca sqlca) throws Exception;
-
-    /**
-     * This method will handle the sql operations for a update query.
-     *
-     * @parm dcltbtrdstq
-* @parm sqlca
-     */
-    public void deleteTbtrdstq1(Dcltbtrdstq dcltbtrdstq, Sqlca sqlca) throws Exception;
+    public ResultSet openSettlementQueueTrdpb001(Sqlca sqlca, Dcltbtrdstq dcltbtrdstq) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
      *
      * @parm sqlca
-* @parm dcltbtrdord
+* @parm dcltbtrdlog
      */
-    public void updateTbtrdord(Sqlca sqlca, Dcltbtrdord dcltbtrdord) throws Exception;
+    public void insert(Sqlca sqlca, Dcltbtrdlog dcltbtrdlog) throws Exception;
+
+    /**
+     * This method will handle the sql operations for a update query.
+     *
+     * @parm sqlca
+* @parm dcltbtrdlog
+     */
+    public void updateTbtrdlog(Sqlca sqlca, Dcltbtrdlog dcltbtrdlog) throws Exception;
+
+    /**
+     * This method will handle the sql operations for a update query.
+     *
+     * @parm sqlca
+* @parm dcltbtrdlog
+     */
+    public void updateTbtrdlog1(Sqlca sqlca, Dcltbtrdlog dcltbtrdlog) throws Exception;
+
+    /**
+     * This method will handle the sql operations for a fetch query.
+     *
+     * @parm sqlca
+* @parm dcltbtrdstq
+     */
+    public void fetchSettlementQueueTrdpb001(ResultSet settlementQueueResultSet, Sqlca sqlca, Dcltbtrdstq dcltbtrdstq) throws Exception;
+
+    /**
+     * This method will handle the sql operations for a update query.
+     *
+     * @parm sqlca
+* @parm dcltbtrdstq
+     */
+    public void deleteTbtrdstq(Sqlca sqlca, Dcltbtrdstq dcltbtrdstq) throws Exception;
+
+    /**
+     * This method will handle the sql operations for a update query.
+     *
+     * @parm sqlca
+* @parm dcltbtrdstq
+     */
+    public void deleteTbtrdstq1(Sqlca sqlca, Dcltbtrdstq dcltbtrdstq) throws Exception;
+
+    /**
+     * This method will handle the sql operations for a update query.
+     *
+     * @parm dcltbtrdord
+* @parm sqlca
+     */
+    public void updateTbtrdord(Dcltbtrdord dcltbtrdord, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a open query.

@@ -8,9 +8,9 @@ public interface Mstpb001Repository {
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm dcltbtrdcus
-* @parm sqlca
+     * @parm sqlca
+* @parm dcltbtrdcus
      */
-    public void selectTbtrdcus(Dcltbtrdcus dcltbtrdcus, Sqlca sqlca) throws Exception;
+    public void selectTbtrdcus(Sqlca sqlca, Dcltbtrdcus dcltbtrdcus) throws Exception;
 
 }

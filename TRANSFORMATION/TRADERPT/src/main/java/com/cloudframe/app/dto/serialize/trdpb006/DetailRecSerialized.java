@@ -4,7 +4,7 @@ package com.cloudframe.app.dto.serialize.trdpb006;
 *  The class DetailRecSerialized is used to define offsets in order to serialize
 *  in a fixed String
 *  @author CloudFrame Inc.
-*  created on 2024-12-03 at 15:03. using version 5.0.0.163
+*  created on 2024-12-03 at 15:39. using version 5.0.0.163
 **/
 
 import org.slf4j.Logger;

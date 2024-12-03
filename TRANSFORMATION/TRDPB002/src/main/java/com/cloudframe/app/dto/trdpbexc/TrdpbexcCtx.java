@@ -21,11 +21,11 @@ import com.cloudframe.app.exception.CFException;
 public class TrdpbexcCtx implements ProgramContext, Cloneable {
     GlobalExecutorCtx globalCtx;
 
-    Sqlca sqlca;
     Dcltbtrdexc dcltbtrdexc;
-    Work work;
     ExceptionRecord exceptionRecord;
     ExceptionRecordLenGroup exceptionRecordLenGroup;
+    Work work;
+    Sqlca sqlca;
 
 
     private int rc;
@@ -59,17 +59,6 @@ public class TrdpbexcCtx implements ProgramContext, Cloneable {
     }
 
 
-    public Sqlca getSqlca() {
-        if (sqlca == null) {
-            sqlca = new Sqlca();
-        }
-
-        return sqlca;
-    }
-
-    public void setSqlca(Sqlca sqlca) {
-        this.sqlca = sqlca;
-    }
     public Dcltbtrdexc getDcltbtrdexc() {
         if (dcltbtrdexc == null) {
             dcltbtrdexc = new Dcltbtrdexc();
@@ -80,17 +69,6 @@ public class TrdpbexcCtx implements ProgramContext, Cloneable {
 
     public void setDcltbtrdexc(Dcltbtrdexc dcltbtrdexc) {
         this.dcltbtrdexc = dcltbtrdexc;
-    }
-    public Work getWork() {
-        if (work == null) {
-            work = new Work();
-        }
-
-        return work;
-    }
-
-    public void setWork(Work work) {
-        this.work = work;
     }
     public ExceptionRecord getExceptionRecord() {
         if (exceptionRecord == null) {
@@ -114,6 +92,28 @@ public class TrdpbexcCtx implements ProgramContext, Cloneable {
     public void setExceptionRecordLenGroup(ExceptionRecordLenGroup exceptionRecordLenGroup) {
         this.exceptionRecordLenGroup = exceptionRecordLenGroup;
     }
+    public Work getWork() {
+        if (work == null) {
+            work = new Work();
+        }
+
+        return work;
+    }
+
+    public void setWork(Work work) {
+        this.work = work;
+    }
+    public Sqlca getSqlca() {
+        if (sqlca == null) {
+            sqlca = new Sqlca();
+        }
+
+        return sqlca;
+    }
+
+    public void setSqlca(Sqlca sqlca) {
+        this.sqlca = sqlca;
+    }
 
 
     @Override
@@ -125,26 +125,26 @@ public class TrdpbexcCtx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += sqlca.hashCode();
         str += dcltbtrdexc.hashCode();
-        str += work.hashCode();
         str += exceptionRecord.hashCode();
         str += exceptionRecordLenGroup.hashCode();
+        str += work.hashCode();
+        str += sqlca.hashCode();
        return str.hashCode();
     }
 
     public TrdpbexcCtx clone() {
         TrdpbexcCtx cloneObj = new TrdpbexcCtx();
-        cloneObj.sqlca = new Sqlca();
-        cloneObj.sqlca.set(sqlca.getClonedField());
         cloneObj.dcltbtrdexc = new Dcltbtrdexc();
         cloneObj.dcltbtrdexc.set(dcltbtrdexc.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
         cloneObj.exceptionRecord = new ExceptionRecord();
         cloneObj.exceptionRecord.set(exceptionRecord.getClonedField());
         cloneObj.exceptionRecordLenGroup = new ExceptionRecordLenGroup();
         cloneObj.exceptionRecordLenGroup.set(exceptionRecordLenGroup.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        cloneObj.sqlca = new Sqlca();
+        cloneObj.sqlca.set(sqlca.getClonedField());
         return cloneObj;
     }
 
@@ -191,104 +191,42 @@ public class TrdpbexcCtx implements ProgramContext, Cloneable {
             return new ProcessInCtx();
     }
      public class MainlineInCtx implements Cloneable {
-     Sqlca sqlca = TrdpbexcCtx.this.getSqlca();
      Dcltbtrdexc dcltbtrdexc = TrdpbexcCtx.this.getDcltbtrdexc();
-     Work work = TrdpbexcCtx.this.getWork();
      ExceptionRecord exceptionRecord = TrdpbexcCtx.this.getExceptionRecord();
      ExceptionRecordLenGroup exceptionRecordLenGroup = TrdpbexcCtx.this.getExceptionRecordLenGroup();
+     Work work = TrdpbexcCtx.this.getWork();
+     Sqlca sqlca = TrdpbexcCtx.this.getSqlca();
 
 	/**
-	 *	Returns the value of sqlca
-	 *	@return sqlca
-	 */   
-	 public Sqlca getSqlca() {
-   	return sqlca;
-   }
-
-
-	/**
-	 *	Returns the value of sqlerrd
-	 *	@return sqlerrd
+	 *	Returns the value of sqlcode
+	 *	@return sqlcode
 	 */
-	public int getSqlerrd(int index) throws CFException {        
-   		return sqlca.getSqlerrd((index));
+	public int getSqlcode() throws CFException {        
+   		return sqlca.getSqlcode();
 	}
 	
 	/**
-	 * 	Update Sqlerrd with the passed value
+	 * 	Update Sqlcode with the passed value
 	 *	@param number
 	 */
-	public void setSqlerrd(int index,int number)  throws CFException{
-		sqlca.setSqlerrd((index),number);
+	public void setSqlcode(int number)  throws CFException{
+		sqlca.setSqlcode(number);
 	}
 
 
-	public void setSqlerrd(int index,long number)  throws CFException{
-		sqlca.setSqlerrd((index),(int)number);
+	public void setSqlcode(long number)  throws CFException{
+		sqlca.setSqlcode((int)number);
 	}
 
 
 	/**
-	 *	Returns the value of excDescription
-	 *	@return excDescription
+	 *	Returns the value of dcltbtrdexc
+	 *	@return dcltbtrdexc
 	 */   
-	 public ExcDescription getExcDescription() {
-   	return dcltbtrdexc.getExcDescription();
+	 public Dcltbtrdexc getDcltbtrdexc() {
+   	return dcltbtrdexc;
    }
 
-   /**
-	* 	Update ExcDescription with the passed value
-	*	@param value
-	*/
-   public void setExcDescription(char[] value) throws CFException {
-      dcltbtrdexc.setExcDescription(value);
-   }   
-
-     /**
-	 * 	Update ExcDescription 
-	 *     with a String from an offset and length             
-	 *	@param value
-	 */
-   public void setExcDescription(char[] source, int sourceIndex,int sourceLen) throws CFException {
-   	dcltbtrdexc.setExcDescription(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update ExcDescription 
-	 *     with a String from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setExcDescription(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-   	dcltbtrdexc.setExcDescription(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update ExcDescription with another Field
-	 *	@param value
-	 */
-   public void setExcDescription(Field source) {
-   	dcltbtrdexc.setExcDescription(source);
-   }  
-   
-     /**
-	 * 	Update ExcDescription 
-	 *     with another Field from an offset and length             
-	 *	@param value
-	 */
-   public void setExcDescription(Field source, int sourceIndex,int sourceLen) {
-   	dcltbtrdexc.setExcDescription(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update ExcDescription 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setExcDescription(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-   	dcltbtrdexc.setExcDescription(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
 
 	/**
 	 *	Returns the value of sqlwarn
@@ -421,61 +359,170 @@ public class TrdpbexcCtx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of dcltbtrdexc
-	 *	@return dcltbtrdexc
+	 *	Returns the value of excDescription
+	 *	@return excDescription
 	 */   
-	 public Dcltbtrdexc getDcltbtrdexc() {
-   	return dcltbtrdexc;
+	 public ExcDescription getExcDescription() {
+   	return dcltbtrdexc.getExcDescription();
    }
 
+   /**
+	* 	Update ExcDescription with the passed value
+	*	@param value
+	*/
+   public void setExcDescription(char[] value) throws CFException {
+      dcltbtrdexc.setExcDescription(value);
+   }   
+
+     /**
+	 * 	Update ExcDescription 
+	 *     with a String from an offset and length             
+	 *	@param value
+	 */
+   public void setExcDescription(char[] source, int sourceIndex,int sourceLen) throws CFException {
+   	dcltbtrdexc.setExcDescription(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update ExcDescription 
+	 *     with a String from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setExcDescription(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+   	dcltbtrdexc.setExcDescription(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update ExcDescription with another Field
+	 *	@param value
+	 */
+   public void setExcDescription(Field source) {
+   	dcltbtrdexc.setExcDescription(source);
+   }  
+   
+     /**
+	 * 	Update ExcDescription 
+	 *     with another Field from an offset and length             
+	 *	@param value
+	 */
+   public void setExcDescription(Field source, int sourceIndex,int sourceLen) {
+   	dcltbtrdexc.setExcDescription(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update ExcDescription 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setExcDescription(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+   	dcltbtrdexc.setExcDescription(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
 
 	/**
-	 *	Returns the value of exceptionRecordLen
-	 *	@return exceptionRecordLen
+	 *	Test condition "DATA" for isExceptionData()
+	 *	@return  Returns true if isExceptionData() is "DATA"
 	 */
-	public short getExceptionRecordLen() throws CFException {        
-   		return exceptionRecordLenGroup.getExceptionRecordLen();
+   public boolean isExceptionData() throws CFException {
+      return exceptionRecord.isExceptionData();
+   }
+
+	/**
+	*  set values "DATA"
+	*/
+   	public void setExceptionDataTrue()  throws CFException{  			
+    	exceptionRecord.setExceptionDataTrue();
+   	}
+	/**
+	 *	Returns the value of sqlerrd
+	 *	@return sqlerrd
+	 */
+	public int getSqlerrd(int index) throws CFException {        
+   		return sqlca.getSqlerrd((index));
 	}
 	
 	/**
-	 * 	Update ExceptionRecordLen with the passed value
+	 * 	Update Sqlerrd with the passed value
 	 *	@param number
 	 */
-	public void setExceptionRecordLen(short number)  throws CFException{
-		exceptionRecordLenGroup.setExceptionRecordLen(number);
+	public void setSqlerrd(int index,int number)  throws CFException{
+		sqlca.setSqlerrd((index),number);
 	}
 
-	public void setExceptionRecordLen(int number)  throws CFException{
-		exceptionRecordLenGroup.setExceptionRecordLen((short)number);
-	}
 
-	public void setExceptionRecordLen(long number)  throws CFException{
-		exceptionRecordLenGroup.setExceptionRecordLen((short)number);
+	public void setSqlerrd(int index,long number)  throws CFException{
+		sqlca.setSqlerrd((index),(int)number);
 	}
-
 
 
 	/**
-	 *	Returns the value of sqlcode
-	 *	@return sqlcode
+	 *	Returns the value of exceptionType
+	 *	@return exceptionType
 	 */
-	public int getSqlcode() throws CFException {        
-   		return sqlca.getSqlcode();
-	}
-	
+   public char[] getExceptionType() throws CFException  {              
+   		return exceptionRecord.getExceptionType();
+   }
+
+  
 	/**
-	 * 	Update Sqlcode with the passed value
-	 *	@param number
+	*  set variable exceptionType
+	*  @param value
+	**/
+   public void setExceptionType(char[] value) throws CFException {
+      exceptionRecord.setExceptionType(value);
+   } 
+
+     /**
+	 * 	Update ExceptionType 
+	 *     with a char[] from an offset and length             
+	 *	@param value
 	 */
-	public void setSqlcode(int number)  throws CFException{
-		sqlca.setSqlcode(number);
-	}
-
-
-	public void setSqlcode(long number)  throws CFException{
-		sqlca.setSqlcode((int)number);
-	}
-
+   public void setExceptionType(char[] source, int sourceIndex) throws CFException {
+      exceptionRecord.setExceptionType(source, sourceIndex);
+   	
+   }
+   
+   public void setExceptionType(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      exceptionRecord.setExceptionType(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update ExceptionType 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setExceptionType(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      exceptionRecord.setExceptionType(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update ExceptionType with another Field
+	 *	@param value
+	 */
+   public void setExceptionType(Field source) {
+      exceptionRecord.setExceptionType(source);
+   }  
+   
+     /**
+	 * 	Update ExceptionType 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setExceptionType(Field source, int sourceIndex,int sourceLen) {
+      exceptionRecord.setExceptionType(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update ExceptionType 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setExceptionType(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      exceptionRecord.setExceptionType(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
 
 	/**
 	 *	Returns the value of sqlerrmc
@@ -546,141 +593,6 @@ public class TrdpbexcCtx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of exceptionType
-	 *	@return exceptionType
-	 */
-   public char[] getExceptionType() throws CFException  {              
-   		return exceptionRecord.getExceptionType();
-   }
-
-  
-	/**
-	*  set variable exceptionType
-	*  @param value
-	**/
-   public void setExceptionType(char[] value) throws CFException {
-      exceptionRecord.setExceptionType(value);
-   } 
-
-     /**
-	 * 	Update ExceptionType 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setExceptionType(char[] source, int sourceIndex) throws CFException {
-      exceptionRecord.setExceptionType(source, sourceIndex);
-   	
-   }
-   
-   public void setExceptionType(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      exceptionRecord.setExceptionType(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update ExceptionType 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setExceptionType(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      exceptionRecord.setExceptionType(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update ExceptionType with another Field
-	 *	@param value
-	 */
-   public void setExceptionType(Field source) {
-      exceptionRecord.setExceptionType(source);
-   }  
-   
-     /**
-	 * 	Update ExceptionType 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setExceptionType(Field source, int sourceIndex,int sourceLen) {
-      exceptionRecord.setExceptionType(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update ExceptionType 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setExceptionType(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      exceptionRecord.setExceptionType(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Test condition "DATA" for isExceptionData()
-	 *	@return  Returns true if isExceptionData() is "DATA"
-	 */
-   public boolean isExceptionData() throws CFException {
-      return exceptionRecord.isExceptionData();
-   }
-
-	/**
-	*  set values "DATA"
-	*/
-   	public void setExceptionDataTrue()  throws CFException{  			
-    	exceptionRecord.setExceptionDataTrue();
-   	}
-
-        public TrdpbexcCtx getTrdpbexcCtx() {
-            return TrdpbexcCtx.this;
-        }
-
-        public MainlineOutCtx getMainlineOutCtx() {
-            return new MainlineOutCtx();
-        }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null) return false;
-        return this.hashCode() == o.hashCode();
-    }
-
-    @Override
-    public int hashCode() {
-        String str = "";
-        str += sqlca.hashCode();
-        str += dcltbtrdexc.hashCode();
-        str += work.hashCode();
-        str += exceptionRecord.hashCode();
-        str += exceptionRecordLenGroup.hashCode();
-       return str.hashCode();
-    }
-
-    public MainlineInCtx clone() {
-        MainlineInCtx cloneObj = new MainlineInCtx();
-        cloneObj.sqlca = new Sqlca();
-        cloneObj.sqlca.set(sqlca.getClonedField());
-        cloneObj.dcltbtrdexc = new Dcltbtrdexc();
-        cloneObj.dcltbtrdexc.set(dcltbtrdexc.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
-        cloneObj.exceptionRecord = new ExceptionRecord();
-        cloneObj.exceptionRecord.set(exceptionRecord.getClonedField());
-        cloneObj.exceptionRecordLenGroup = new ExceptionRecordLenGroup();
-        cloneObj.exceptionRecordLenGroup.set(exceptionRecordLenGroup.getClonedField());
-        return cloneObj;
-    }
-
-    }
-
-    public MainlineInCtx getMainlineInCtx() {
-            return new MainlineInCtx();
-    }
-     public class MainlineOutCtx implements Cloneable {
-     Sqlca sqlca = TrdpbexcCtx.this.getSqlca();
-     Dcltbtrdexc dcltbtrdexc = TrdpbexcCtx.this.getDcltbtrdexc();
-     Work work = TrdpbexcCtx.this.getWork();
-     ExceptionRecord exceptionRecord = TrdpbexcCtx.this.getExceptionRecord();
-     ExceptionRecordLenGroup exceptionRecordLenGroup = TrdpbexcCtx.this.getExceptionRecordLenGroup();
-
-	/**
 	 *	Returns the value of sqlca
 	 *	@return sqlca
 	 */   
@@ -688,74 +600,6 @@ public class TrdpbexcCtx implements ProgramContext, Cloneable {
    	return sqlca;
    }
 
-
-	/**
-	 *	Returns the value of exceptionDesc
-	 *	@return exceptionDesc
-	 */
-   public char[] getExceptionDesc() throws CFException  {              
-   		return exceptionRecord.getExceptionDesc();
-   }
-
-  
-	/**
-	*  set variable exceptionDesc
-	*  @param value
-	**/
-   public void setExceptionDesc(char[] value) throws CFException {
-      exceptionRecord.setExceptionDesc(value);
-   } 
-
-     /**
-	 * 	Update ExceptionDesc 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setExceptionDesc(char[] source, int sourceIndex) throws CFException {
-      exceptionRecord.setExceptionDesc(source, sourceIndex);
-   	
-   }
-   
-   public void setExceptionDesc(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      exceptionRecord.setExceptionDesc(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update ExceptionDesc 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setExceptionDesc(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      exceptionRecord.setExceptionDesc(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update ExceptionDesc with another Field
-	 *	@param value
-	 */
-   public void setExceptionDesc(Field source) {
-      exceptionRecord.setExceptionDesc(source);
-   }  
-   
-     /**
-	 * 	Update ExceptionDesc 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setExceptionDesc(Field source, int sourceIndex,int sourceLen) {
-      exceptionRecord.setExceptionDesc(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update ExceptionDesc 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setExceptionDesc(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      exceptionRecord.setExceptionDesc(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
 
 	/**
 	 *	Returns the value of exceptionRecordLen
@@ -783,73 +627,58 @@ public class TrdpbexcCtx implements ProgramContext, Cloneable {
 
 
 
-	/**
-	 *	Returns the value of excDescriptionText
-	 *	@return excDescriptionText
-	 */
-   public char[] getExcDescriptionText() throws CFException  {              
-   		return dcltbtrdexc.getExcDescription().getExcDescriptionText();
-   }
 
-  
-	/**
-	*  set variable excDescriptionText
-	*  @param value
-	**/
-   public void setExcDescriptionText(char[] value) throws CFException {
-      dcltbtrdexc.getExcDescription().setExcDescriptionText(value);
-   } 
+        public TrdpbexcCtx getTrdpbexcCtx() {
+            return TrdpbexcCtx.this;
+        }
 
-     /**
-	 * 	Update ExcDescriptionText 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setExcDescriptionText(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdexc.getExcDescription().setExcDescriptionText(source, sourceIndex);
-   	
-   }
-   
-   public void setExcDescriptionText(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdexc.getExcDescription().setExcDescriptionText(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update ExcDescriptionText 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setExcDescriptionText(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdexc.getExcDescription().setExcDescriptionText(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update ExcDescriptionText with another Field
-	 *	@param value
-	 */
-   public void setExcDescriptionText(Field source) {
-      dcltbtrdexc.getExcDescription().setExcDescriptionText(source);
-   }  
-   
-     /**
-	 * 	Update ExcDescriptionText 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setExcDescriptionText(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdexc.getExcDescription().setExcDescriptionText(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update ExcDescriptionText 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setExcDescriptionText(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdexc.getExcDescription().setExcDescriptionText(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
+        public MainlineOutCtx getMainlineOutCtx() {
+            return new MainlineOutCtx();
+        }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) return false;
+        return this.hashCode() == o.hashCode();
+    }
+
+    @Override
+    public int hashCode() {
+        String str = "";
+        str += dcltbtrdexc.hashCode();
+        str += exceptionRecord.hashCode();
+        str += exceptionRecordLenGroup.hashCode();
+        str += work.hashCode();
+        str += sqlca.hashCode();
+       return str.hashCode();
+    }
+
+    public MainlineInCtx clone() {
+        MainlineInCtx cloneObj = new MainlineInCtx();
+        cloneObj.dcltbtrdexc = new Dcltbtrdexc();
+        cloneObj.dcltbtrdexc.set(dcltbtrdexc.getClonedField());
+        cloneObj.exceptionRecord = new ExceptionRecord();
+        cloneObj.exceptionRecord.set(exceptionRecord.getClonedField());
+        cloneObj.exceptionRecordLenGroup = new ExceptionRecordLenGroup();
+        cloneObj.exceptionRecordLenGroup.set(exceptionRecordLenGroup.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        cloneObj.sqlca = new Sqlca();
+        cloneObj.sqlca.set(sqlca.getClonedField());
+        return cloneObj;
+    }
+
+    }
+
+    public MainlineInCtx getMainlineInCtx() {
+            return new MainlineInCtx();
+    }
+     public class MainlineOutCtx implements Cloneable {
+     Dcltbtrdexc dcltbtrdexc = TrdpbexcCtx.this.getDcltbtrdexc();
+     ExceptionRecord exceptionRecord = TrdpbexcCtx.this.getExceptionRecord();
+     ExceptionRecordLenGroup exceptionRecordLenGroup = TrdpbexcCtx.this.getExceptionRecordLenGroup();
+     Work work = TrdpbexcCtx.this.getWork();
+     Sqlca sqlca = TrdpbexcCtx.this.getSqlca();
 
 	/**
 	 *	Returns the value of sqlcode
@@ -942,213 +771,72 @@ public class TrdpbexcCtx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of exceptionType
-	 *	@return exceptionType
+	 *	Returns the value of exceptionDesc
+	 *	@return exceptionDesc
 	 */
-   public char[] getExceptionType() throws CFException  {              
-   		return exceptionRecord.getExceptionType();
+   public char[] getExceptionDesc() throws CFException  {              
+   		return exceptionRecord.getExceptionDesc();
    }
 
   
 	/**
-	*  set variable exceptionType
+	*  set variable exceptionDesc
 	*  @param value
 	**/
-   public void setExceptionType(char[] value) throws CFException {
-      exceptionRecord.setExceptionType(value);
+   public void setExceptionDesc(char[] value) throws CFException {
+      exceptionRecord.setExceptionDesc(value);
    } 
 
      /**
-	 * 	Update ExceptionType 
+	 * 	Update ExceptionDesc 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setExceptionType(char[] source, int sourceIndex) throws CFException {
-      exceptionRecord.setExceptionType(source, sourceIndex);
+   public void setExceptionDesc(char[] source, int sourceIndex) throws CFException {
+      exceptionRecord.setExceptionDesc(source, sourceIndex);
    	
    }
    
-   public void setExceptionType(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      exceptionRecord.setExceptionType(source, sourceIndex, sourceLen);
+   public void setExceptionDesc(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      exceptionRecord.setExceptionDesc(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update ExceptionType 
+	 * 	Update ExceptionDesc 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setExceptionType(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      exceptionRecord.setExceptionType(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setExceptionDesc(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      exceptionRecord.setExceptionDesc(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update ExceptionType with another Field
+	 * 	Update ExceptionDesc with another Field
 	 *	@param value
 	 */
-   public void setExceptionType(Field source) {
-      exceptionRecord.setExceptionType(source);
+   public void setExceptionDesc(Field source) {
+      exceptionRecord.setExceptionDesc(source);
    }  
    
      /**
-	 * 	Update ExceptionType 
+	 * 	Update ExceptionDesc 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setExceptionType(Field source, int sourceIndex,int sourceLen) {
-      exceptionRecord.setExceptionType(source, sourceIndex, sourceLen);   	
+   public void setExceptionDesc(Field source, int sourceIndex,int sourceLen) {
+      exceptionRecord.setExceptionDesc(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update ExceptionType 
+	 * 	Update ExceptionDesc 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setExceptionType(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      exceptionRecord.setExceptionType(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setExceptionDesc(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      exceptionRecord.setExceptionDesc(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
-
-	/**
-	 *	Returns the value of excDescriptionLen
-	 *	@return excDescriptionLen
-	 */
-	public short getExcDescriptionLen() throws CFException {        
-   		return dcltbtrdexc.getExcDescription().getExcDescriptionLen();
-	}
-	
-	/**
-	 * 	Update ExcDescriptionLen with the passed value
-	 *	@param number
-	 */
-	public void setExcDescriptionLen(short number)  throws CFException{
-		dcltbtrdexc.getExcDescription().setExcDescriptionLen(number);
-	}
-
-	public void setExcDescriptionLen(int number)  throws CFException{
-		dcltbtrdexc.getExcDescription().setExcDescriptionLen((short)number);
-	}
-
-	public void setExcDescriptionLen(long number)  throws CFException{
-		dcltbtrdexc.getExcDescription().setExcDescriptionLen((short)number);
-	}
-
-
-
-	/**
-	 *	Returns the value of sqlcode_Ws
-	 *	@return sqlcode_Ws
-	 */
-   public char[] getSqlcode_Ws() throws CFException  {              
-   		return work.getSqlcode_Ws();
-   }
-
-  
-	/**
-	*  set variable sqlcode_Ws
-	*  @param value
-	**/
-   public void setSqlcode_Ws(char[] value) throws CFException {
-      work.setSqlcode_Ws(value);
-   } 
-
-     /**
-	 * 	Update Sqlcode_Ws 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setSqlcode_Ws(char[] source, int sourceIndex) throws CFException {
-      work.setSqlcode_Ws(source, sourceIndex);
-   	
-   }
-   
-   public void setSqlcode_Ws(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      work.setSqlcode_Ws(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update Sqlcode_Ws 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setSqlcode_Ws(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      work.setSqlcode_Ws(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update Sqlcode_Ws with another Field
-	 *	@param value
-	 */
-   public void setSqlcode_Ws(Field source) {
-      work.setSqlcode_Ws(source);
-   }  
-   
-     /**
-	 * 	Update Sqlcode_Ws 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setSqlcode_Ws(Field source, int sourceIndex,int sourceLen) {
-      work.setSqlcode_Ws(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update Sqlcode_Ws 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setSqlcode_Ws(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      work.setSqlcode_Ws(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-
-        public TrdpbexcCtx getTrdpbexcCtx() {
-            return TrdpbexcCtx.this;
-        }
-
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null) return false;
-        return this.hashCode() == o.hashCode();
-    }
-
-    @Override
-    public int hashCode() {
-        String str = "";
-        str += sqlca.hashCode();
-        str += dcltbtrdexc.hashCode();
-        str += work.hashCode();
-        str += exceptionRecord.hashCode();
-        str += exceptionRecordLenGroup.hashCode();
-       return str.hashCode();
-    }
-
-    public MainlineOutCtx clone() {
-        MainlineOutCtx cloneObj = new MainlineOutCtx();
-        cloneObj.sqlca = new Sqlca();
-        cloneObj.sqlca.set(sqlca.getClonedField());
-        cloneObj.dcltbtrdexc = new Dcltbtrdexc();
-        cloneObj.dcltbtrdexc.set(dcltbtrdexc.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
-        cloneObj.exceptionRecord = new ExceptionRecord();
-        cloneObj.exceptionRecord.set(exceptionRecord.getClonedField());
-        cloneObj.exceptionRecordLenGroup = new ExceptionRecordLenGroup();
-        cloneObj.exceptionRecordLenGroup.set(exceptionRecordLenGroup.getClonedField());
-        return cloneObj;
-    }
-
-    }
-
-    public MainlineOutCtx getMainlineOutCtx() {
-            return new MainlineOutCtx();
-    }
-     public class AbendDumpInCtx implements Cloneable {
-     Dcltbtrdexc dcltbtrdexc = TrdpbexcCtx.this.getDcltbtrdexc();
-     Work work = TrdpbexcCtx.this.getWork();
 
 	/**
 	 *	Returns the value of excDescriptionText
@@ -1219,6 +907,250 @@ public class TrdpbexcCtx implements ProgramContext, Cloneable {
    }
 
 	/**
+	 *	Returns the value of exceptionType
+	 *	@return exceptionType
+	 */
+   public char[] getExceptionType() throws CFException  {              
+   		return exceptionRecord.getExceptionType();
+   }
+
+  
+	/**
+	*  set variable exceptionType
+	*  @param value
+	**/
+   public void setExceptionType(char[] value) throws CFException {
+      exceptionRecord.setExceptionType(value);
+   } 
+
+     /**
+	 * 	Update ExceptionType 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setExceptionType(char[] source, int sourceIndex) throws CFException {
+      exceptionRecord.setExceptionType(source, sourceIndex);
+   	
+   }
+   
+   public void setExceptionType(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      exceptionRecord.setExceptionType(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update ExceptionType 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setExceptionType(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      exceptionRecord.setExceptionType(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update ExceptionType with another Field
+	 *	@param value
+	 */
+   public void setExceptionType(Field source) {
+      exceptionRecord.setExceptionType(source);
+   }  
+   
+     /**
+	 * 	Update ExceptionType 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setExceptionType(Field source, int sourceIndex,int sourceLen) {
+      exceptionRecord.setExceptionType(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update ExceptionType 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setExceptionType(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      exceptionRecord.setExceptionType(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sqlcode_Ws
+	 *	@return sqlcode_Ws
+	 */
+   public char[] getSqlcode_Ws() throws CFException  {              
+   		return work.getSqlcode_Ws();
+   }
+
+  
+	/**
+	*  set variable sqlcode_Ws
+	*  @param value
+	**/
+   public void setSqlcode_Ws(char[] value) throws CFException {
+      work.setSqlcode_Ws(value);
+   } 
+
+     /**
+	 * 	Update Sqlcode_Ws 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setSqlcode_Ws(char[] source, int sourceIndex) throws CFException {
+      work.setSqlcode_Ws(source, sourceIndex);
+   	
+   }
+   
+   public void setSqlcode_Ws(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      work.setSqlcode_Ws(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update Sqlcode_Ws 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setSqlcode_Ws(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      work.setSqlcode_Ws(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update Sqlcode_Ws with another Field
+	 *	@param value
+	 */
+   public void setSqlcode_Ws(Field source) {
+      work.setSqlcode_Ws(source);
+   }  
+   
+     /**
+	 * 	Update Sqlcode_Ws 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setSqlcode_Ws(Field source, int sourceIndex,int sourceLen) {
+      work.setSqlcode_Ws(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update Sqlcode_Ws 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setSqlcode_Ws(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      work.setSqlcode_Ws(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sqlca
+	 *	@return sqlca
+	 */   
+	 public Sqlca getSqlca() {
+   	return sqlca;
+   }
+
+
+	/**
+	 *	Returns the value of excDescriptionLen
+	 *	@return excDescriptionLen
+	 */
+	public short getExcDescriptionLen() throws CFException {        
+   		return dcltbtrdexc.getExcDescription().getExcDescriptionLen();
+	}
+	
+	/**
+	 * 	Update ExcDescriptionLen with the passed value
+	 *	@param number
+	 */
+	public void setExcDescriptionLen(short number)  throws CFException{
+		dcltbtrdexc.getExcDescription().setExcDescriptionLen(number);
+	}
+
+	public void setExcDescriptionLen(int number)  throws CFException{
+		dcltbtrdexc.getExcDescription().setExcDescriptionLen((short)number);
+	}
+
+	public void setExcDescriptionLen(long number)  throws CFException{
+		dcltbtrdexc.getExcDescription().setExcDescriptionLen((short)number);
+	}
+
+
+
+	/**
+	 *	Returns the value of exceptionRecordLen
+	 *	@return exceptionRecordLen
+	 */
+	public short getExceptionRecordLen() throws CFException {        
+   		return exceptionRecordLenGroup.getExceptionRecordLen();
+	}
+	
+	/**
+	 * 	Update ExceptionRecordLen with the passed value
+	 *	@param number
+	 */
+	public void setExceptionRecordLen(short number)  throws CFException{
+		exceptionRecordLenGroup.setExceptionRecordLen(number);
+	}
+
+	public void setExceptionRecordLen(int number)  throws CFException{
+		exceptionRecordLenGroup.setExceptionRecordLen((short)number);
+	}
+
+	public void setExceptionRecordLen(long number)  throws CFException{
+		exceptionRecordLenGroup.setExceptionRecordLen((short)number);
+	}
+
+
+
+
+        public TrdpbexcCtx getTrdpbexcCtx() {
+            return TrdpbexcCtx.this;
+        }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) return false;
+        return this.hashCode() == o.hashCode();
+    }
+
+    @Override
+    public int hashCode() {
+        String str = "";
+        str += dcltbtrdexc.hashCode();
+        str += exceptionRecord.hashCode();
+        str += exceptionRecordLenGroup.hashCode();
+        str += work.hashCode();
+        str += sqlca.hashCode();
+       return str.hashCode();
+    }
+
+    public MainlineOutCtx clone() {
+        MainlineOutCtx cloneObj = new MainlineOutCtx();
+        cloneObj.dcltbtrdexc = new Dcltbtrdexc();
+        cloneObj.dcltbtrdexc.set(dcltbtrdexc.getClonedField());
+        cloneObj.exceptionRecord = new ExceptionRecord();
+        cloneObj.exceptionRecord.set(exceptionRecord.getClonedField());
+        cloneObj.exceptionRecordLenGroup = new ExceptionRecordLenGroup();
+        cloneObj.exceptionRecordLenGroup.set(exceptionRecordLenGroup.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        cloneObj.sqlca = new Sqlca();
+        cloneObj.sqlca.set(sqlca.getClonedField());
+        return cloneObj;
+    }
+
+    }
+
+    public MainlineOutCtx getMainlineOutCtx() {
+            return new MainlineOutCtx();
+    }
+     public class AbendDumpInCtx implements Cloneable {
+     Dcltbtrdexc dcltbtrdexc = TrdpbexcCtx.this.getDcltbtrdexc();
+     Work work = TrdpbexcCtx.this.getWork();
+
+	/**
 	 *	Returns the value of excType
 	 *	@return excType
 	 */
@@ -1284,6 +1216,74 @@ public class TrdpbexcCtx implements ProgramContext, Cloneable {
 	 */
    public void setExcType(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
       dcltbtrdexc.setExcType(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of excDescriptionText
+	 *	@return excDescriptionText
+	 */
+   public char[] getExcDescriptionText() throws CFException  {              
+   		return dcltbtrdexc.getExcDescription().getExcDescriptionText();
+   }
+
+  
+	/**
+	*  set variable excDescriptionText
+	*  @param value
+	**/
+   public void setExcDescriptionText(char[] value) throws CFException {
+      dcltbtrdexc.getExcDescription().setExcDescriptionText(value);
+   } 
+
+     /**
+	 * 	Update ExcDescriptionText 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setExcDescriptionText(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdexc.getExcDescription().setExcDescriptionText(source, sourceIndex);
+   	
+   }
+   
+   public void setExcDescriptionText(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdexc.getExcDescription().setExcDescriptionText(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update ExcDescriptionText 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setExcDescriptionText(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdexc.getExcDescription().setExcDescriptionText(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update ExcDescriptionText with another Field
+	 *	@param value
+	 */
+   public void setExcDescriptionText(Field source) {
+      dcltbtrdexc.getExcDescription().setExcDescriptionText(source);
+   }  
+   
+     /**
+	 * 	Update ExcDescriptionText 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setExcDescriptionText(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdexc.getExcDescription().setExcDescriptionText(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update ExcDescriptionText 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setExcDescriptionText(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdexc.getExcDescription().setExcDescriptionText(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 
