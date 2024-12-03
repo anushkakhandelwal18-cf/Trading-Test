@@ -4,7 +4,7 @@ package com.cloudframe.app.dto.serialize.trdpb006;
 *  The class SqlerrmSerialized is used to define offsets in order to serialize
 *  in a fixed String
 *  @author CloudFrame Inc.
-*  created on 2024-12-02 at 20:09. using version 5.0.0.161
+*  created on 2024-12-03 at 13:37. using version 5.0.0.162
 **/
 
 import org.slf4j.Logger;

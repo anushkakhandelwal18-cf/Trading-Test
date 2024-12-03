@@ -129,6 +129,11 @@ return canExecute;
  		    	   		SpringContextHandler.handleDispPostion("DELETE.IEFBR14.Summary","DELETE.IEFBR14.Summary.DISP");
  		    	   		SpringContextHandler.handleDispPostion("DELETE.IEFBR14.Excption","DELETE.IEFBR14.Excption.DISP");
             break;
+            case "step01":  /* setting the appropriate file(s) info for this step(STEP01). */
+ 		    	   		SpringContextHandler.setFileDispPosition("trdpb004_excptionReport", "TRDPB004.ExcptionReport.DISP");
+ 		    	   		SpringContextHandler.setFileDispPosition("trdpb004_runlogReport", "TRDPB004.RunlogReport.DISP");
+ 		    	   		SpringContextHandler.setFileDispPosition("trdpb004_summaryReport", "TRDPB004.SummaryReport.DISP");
+            break;
                 default: break;
         }
 }

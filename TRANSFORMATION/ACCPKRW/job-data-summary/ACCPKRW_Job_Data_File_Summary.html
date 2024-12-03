@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Data File Summary Report</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 16px; }
+table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+table, th, td { border: 1px solid black;; }
+th { padding: 10px; text-align: center; vertical-align: top; }
+td { padding: 10px; text-align: left; vertical-align: top; }
+th { background-color: lightgrey; color: black; font-family: 'Arial Narrow', sans-serif; font-size: 16px; }
+.header-row { font-weight: bold; color: black;}
+.lightblue { background-color: skyblue; }.white { background-color: white; }.middle-header {  background-color: #99ff99; /* Light Green */  font-weight: bold; }.merged-cell { background-color: #e0e0e0; }
+.grey-row { background-color: lightgrey; }
+.right-align { text-align: right;}
+</style>
+</head>
+<body>
+<h1>Job Data File Summary Report</h1>
+<table>
+<tr class="header-row">
+<th >Job Name</th>
+<th colspan='5' text-align:center;>Input/Output File Details</th>
+</tr>
+<tr >
+<th class="white" rowspan='5'>ACCPKRW</td>
+<th class="lightblue" colspan='5' text-align:center;>Input Files (to be Downloaded from Mainframe)</th>
+</tr>
+<tr >
+<th class="lightblue">Dataset Name</th>
+<th class="lightblue" >Max Record Length</th>
+<th class="lightblue">Record Format</th>
+<th class="lightblue">File Type</th>
+<th class="lightblue">Additional Info</th>
+</tr>
+<tr class= 'grey-row'>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr>
+<th  class='middle-header' colspan='5' text-align:center;>Output Files (to be Validated)</th>
+<tr >
+<th class='middle-header'>Dataset Name</th>
+<th class='middle-header'>Max Record Length</th>
+<th class='middle-header'>Record Format</th>
+<th class='middle-header'>File Type</th>
+<th class='middle-header'>Additional Info</th>
+</tr>
+</table>
+</body>
+</html>
