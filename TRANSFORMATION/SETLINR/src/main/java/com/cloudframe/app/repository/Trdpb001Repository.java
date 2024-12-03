@@ -9,11 +9,11 @@ public interface Trdpb001Repository {
     /**
      * This method will handle the sql operations for a open query.
      *
-     * @parm sqlca
-* @parm dcltbtrdstq
+     * @parm dcltbtrdstq
+* @parm sqlca
      * @return 
      */
-    public ResultSet openSettlementQueueTrdpb001(Sqlca sqlca, Dcltbtrdstq dcltbtrdstq) throws Exception;
+    public ResultSet openSettlementQueueTrdpb001(Dcltbtrdstq dcltbtrdstq, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
@@ -42,51 +42,51 @@ public interface Trdpb001Repository {
     /**
      * This method will handle the sql operations for a fetch query.
      *
-     * @parm sqlca
-* @parm dcltbtrdstq
+     * @parm dcltbtrdstq
+* @parm sqlca
      */
-    public void fetchSettlementQueueTrdpb001(ResultSet settlementQueueResultSet, Sqlca sqlca, Dcltbtrdstq dcltbtrdstq) throws Exception;
+    public void fetchSettlementQueueTrdpb001(ResultSet settlementQueueResultSet, Dcltbtrdstq dcltbtrdstq, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm sqlca
-* @parm dcltbtrdstq
+     * @parm dcltbtrdstq
+* @parm sqlca
      */
-    public void deleteTbtrdstq(Sqlca sqlca, Dcltbtrdstq dcltbtrdstq) throws Exception;
+    public void deleteTbtrdstq(Dcltbtrdstq dcltbtrdstq, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm sqlca
-* @parm dcltbtrdstq
+     * @parm dcltbtrdstq
+* @parm sqlca
      */
-    public void deleteTbtrdstq1(Sqlca sqlca, Dcltbtrdstq dcltbtrdstq) throws Exception;
+    public void deleteTbtrdstq1(Dcltbtrdstq dcltbtrdstq, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm sqlca
-* @parm dcltbtrdord
+     * @parm dcltbtrdord
+* @parm sqlca
      */
-    public void updateTbtrdord(Sqlca sqlca, Dcltbtrdord dcltbtrdord) throws Exception;
+    public void updateTbtrdord(Dcltbtrdord dcltbtrdord, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a open query.
      *
-     * @parm sqlca
-* @parm dcltbtrdsum
+     * @parm dcltbtrdsum
+* @parm sqlca
      * @return 
      */
-    public ResultSet openSummaryCsrTrdpb001(Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception;
+    public ResultSet openSummaryCsrTrdpb001(Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a fetch query.
      *
-     * @parm sqlca
-* @parm dcltbtrdsum
+     * @parm dcltbtrdsum
+* @parm sqlca
      */
-    public void fetchSummaryCsrTrdpb001(ResultSet summaryCsrResultSet, Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception;
+    public void fetchSummaryCsrTrdpb001(ResultSet summaryCsrResultSet, Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
@@ -99,18 +99,18 @@ public interface Trdpb001Repository {
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm sqlca
-* @parm dcltbtrdsum
+     * @parm dcltbtrdsum
+* @parm sqlca
      */
-    public void insert1(Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception;
+    public void insert1(Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm sqlca
-* @parm dcltbtrdsum
+     * @parm dcltbtrdsum
+* @parm sqlca
      */
-    public void updateTbtrdsum(Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception;
+    public void updateTbtrdsum(Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a close query.

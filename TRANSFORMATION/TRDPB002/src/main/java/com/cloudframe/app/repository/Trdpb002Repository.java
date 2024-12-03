@@ -9,27 +9,27 @@ public interface Trdpb002Repository {
     /**
      * This method will handle the sql operations for a open query.
      *
-     * @parm sqlca
-* @parm dcltbtrdpos
+     * @parm dcltbtrdpos
+* @parm sqlca
      * @return 
      */
-    public ResultSet openPosBookingTrdpb002(Sqlca sqlca, Dcltbtrdpos dcltbtrdpos) throws Exception;
+    public ResultSet openPosBookingTrdpb002(Dcltbtrdpos dcltbtrdpos, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a fetch query.
      *
-     * @parm sqlca
-* @parm dcltbtrdpos
+     * @parm dcltbtrdpos
+* @parm sqlca
      */
-    public void fetchPosBookingTrdpb002(ResultSet posBookingResultSet, Sqlca sqlca, Dcltbtrdpos dcltbtrdpos) throws Exception;
+    public void fetchPosBookingTrdpb002(ResultSet posBookingResultSet, Dcltbtrdpos dcltbtrdpos, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm sqlca
-* @parm dcltbtrdpos
+     * @parm dcltbtrdpos
+* @parm sqlca
      */
-    public void updateTbtrdpos(Sqlca sqlca, Dcltbtrdpos dcltbtrdpos) throws Exception;
+    public void updateTbtrdpos(Dcltbtrdpos dcltbtrdpos, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a close query.

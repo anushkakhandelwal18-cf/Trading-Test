@@ -73,34 +73,34 @@ public interface Trdpb000Repository {
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm sqlca
-* @parm dcltbtrdsac
+     * @parm dcltbtrdsac
+* @parm sqlca
      */
-    public void selectTbtrdsac(Sqlca sqlca, Dcltbtrdsac dcltbtrdsac) throws Exception;
+    public void selectTbtrdsac(Dcltbtrdsac dcltbtrdsac, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm sqlca
-* @parm dcltbtrdsac
+     * @parm dcltbtrdsac
+* @parm sqlca
      */
-    public void selectTbtrdsac1(Sqlca sqlca, Dcltbtrdsac dcltbtrdsac) throws Exception;
+    public void selectTbtrdsac1(Dcltbtrdsac dcltbtrdsac, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm sqlca
-* @parm dcltbtrdmac
+     * @parm dcltbtrdmac
+* @parm sqlca
      */
-    public void selectTbtrdmac(Sqlca sqlca, Dcltbtrdmac dcltbtrdmac) throws Exception;
+    public void selectTbtrdmac(Dcltbtrdmac dcltbtrdmac, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm sqlca
-* @parm dcltbtrdmac
+     * @parm dcltbtrdmac
+* @parm sqlca
      */
-    public void selectTbtrdmac1(Sqlca sqlca, Dcltbtrdmac dcltbtrdmac) throws Exception;
+    public void selectTbtrdmac1(Dcltbtrdmac dcltbtrdmac, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a batch-insert query.
@@ -138,10 +138,10 @@ public interface Trdpb000Repository {
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm sqlca
-* @parm dcltbtrdmac
+     * @parm dcltbtrdmac
+* @parm sqlca
      */
-    public void selectTbtrdmac2(Sqlca sqlca, Dcltbtrdmac dcltbtrdmac) throws Exception;
+    public void selectTbtrdmac2(Dcltbtrdmac dcltbtrdmac, Sqlca sqlca) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.

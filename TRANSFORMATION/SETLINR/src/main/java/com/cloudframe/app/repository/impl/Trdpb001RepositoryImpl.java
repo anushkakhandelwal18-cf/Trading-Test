@@ -47,7 +47,7 @@ static final short NOT_NULL = (short)0;
 ******            STQ_CURRENCY      = :STQ-CURRENCY                
 ******     ORDER BY STQ_CURRENCY ASC, STQ_ID  ASC                  
 **/
-    public ResultSet openSettlementQueueTrdpb001(Sqlca sqlca, Dcltbtrdstq dcltbtrdstq) throws Exception {
+    public ResultSet openSettlementQueueTrdpb001(Dcltbtrdstq dcltbtrdstq, Sqlca sqlca) throws Exception {
 ResultSet settlementQueueResultSet = null;
 try {
 	//OPEN CURSOR
@@ -177,7 +177,7 @@ try {
 ******     INTO :STQ-ID                                            
 ******         ,:STQ-TRADE-DATA                                    
 **/
-    public void fetchSettlementQueueTrdpb001(ResultSet settlementQueueResultSet, Sqlca sqlca, Dcltbtrdstq dcltbtrdstq) throws Exception {
+    public void fetchSettlementQueueTrdpb001(ResultSet settlementQueueResultSet, Dcltbtrdstq dcltbtrdstq, Sqlca sqlca) throws Exception {
 try {
 	boolean hasResults = settlementQueueResultSet.next();
 	if (hasResults) {
@@ -233,7 +233,7 @@ catch (SQLException e) {
 ******                   STQ_CURRENCY      = :STQ-CURRENCY         
 ******               AND STQ_ID            = :STQ-ID               
 **/
-    public void deleteTbtrdstq(Sqlca sqlca, Dcltbtrdstq dcltbtrdstq) throws Exception {
+    public void deleteTbtrdstq(Dcltbtrdstq dcltbtrdstq, Sqlca sqlca) throws Exception {
 try {
 	// DELETE 
 	// reset SQLCODE
@@ -268,7 +268,7 @@ catch(Exception e) {
 ******                   STQ_CURRENCY      = :STQ-CURRENCY         
 ******               AND STQ_ID            = :STQ-ID               
 **/
-    public void deleteTbtrdstq1(Sqlca sqlca, Dcltbtrdstq dcltbtrdstq) throws Exception {
+    public void deleteTbtrdstq1(Dcltbtrdstq dcltbtrdstq, Sqlca sqlca) throws Exception {
 try {
 	// DELETE 
 	// reset SQLCODE
@@ -305,7 +305,7 @@ catch(Exception e) {
 ******       AND   ORD_FIGI          = :ORD-FIGI                   
 ******       AND   ORD_BUY_SELL_IND  = :ORD-BUY-SELL-IND           
 **/
-    public void updateTbtrdord(Sqlca sqlca, Dcltbtrdord dcltbtrdord) throws Exception {
+    public void updateTbtrdord(Dcltbtrdord dcltbtrdord, Sqlca sqlca) throws Exception {
 
 try {
     // INSRT/UPDATE
@@ -357,7 +357,7 @@ try {
 ******         ,SUM_TOTAL_CREDIT                                   
 ******         ,SUM_CLOSE_BALANCE                                  
 **/
-    public ResultSet openSummaryCsrTrdpb001(Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception {
+    public ResultSet openSummaryCsrTrdpb001(Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception {
 ResultSet summaryCsrResultSet = null;
 try {
 	//OPEN CURSOR
@@ -392,7 +392,7 @@ return summaryCsrResultSet;
 ******          ,:SUM-TOTAL-CREDIT                                 
 ******          ,:SUM-CLOSE-BALANCE                                
 **/
-    public void fetchSummaryCsrTrdpb001(ResultSet summaryCsrResultSet, Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception {
+    public void fetchSummaryCsrTrdpb001(ResultSet summaryCsrResultSet, Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception {
 try {
 	boolean hasResults = summaryCsrResultSet.next();
 	if (hasResults) {
@@ -598,7 +598,7 @@ catch(Exception e) {
 ******         ,:SUM-CLOSE-BALANCE                                 
 ******        )                                                    
 **/
-    public void insert1(Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception {
+    public void insert1(Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception {
 
 try {
     // INSRT/UPDATE
@@ -637,7 +637,7 @@ try {
 ******        WHERE                                                
 ******           SUM_CUSTOMER_ID = :SUM-CUSTOMER-ID                
 **/
-    public void updateTbtrdsum(Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception {
+    public void updateTbtrdsum(Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception {
 
 try {
     // INSRT/UPDATE

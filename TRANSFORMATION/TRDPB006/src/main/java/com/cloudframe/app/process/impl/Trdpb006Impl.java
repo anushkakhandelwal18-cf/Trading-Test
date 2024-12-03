@@ -30,14 +30,14 @@
   import java.math.BigDecimal;
   import com.cloudframe.app.trdpb006.dto.*;
   import com.cloudframe.app.trdpb006.dto.PageHeader;
-  import com.cloudframe.app.trdpb006.dto.Header1;
   import com.cloudframe.app.trdpb006.dto.Sqlca;
-  import com.cloudframe.app.trdpb006.dto.DetailRec;
   import com.cloudframe.app.trdpb006.dto.DetailHdr1;
-  import com.cloudframe.app.trdpb006.file.records.ReporderRecord;
-  import com.cloudframe.app.trdpb006.dto.Dcltbtrdord;
+  import com.cloudframe.app.trdpb006.dto.Header1;
+  import com.cloudframe.app.trdpb006.dto.DetailRec;
   import com.cloudframe.app.trdpb006.dto.Dcltbtrdcus;
   import com.cloudframe.app.trdpb006.dto.Dcltbtrdsec;
+  import com.cloudframe.app.trdpb006.dto.Dcltbtrdord;
+  import com.cloudframe.app.trdpb006.file.records.ReporderRecord;
   import com.cloudframe.app.trdpb006.dto.Work;
   import com.cloudframe.app.common.CONSTANTS;
   import com.cloudframe.app.common.SQLS;
@@ -338,7 +338,7 @@ Trdpb006Ctx programCtx = methodIn.getTrdpb006Ctx();
 //Added variable to get the output context in place.
 FetchProcessOrdersOutCtx methodOut = methodIn.getFetchProcessOrdersOutCtx();
 //  cobolCode::FETCH CLIENT_ORDERS INTO ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ?
-          trdpb006Repository.fetchClientOrdersTrdpb006(programCtx.getClientOrdersResultSet(),methodOut.getDcltbtrdsec(),methodOut.getWork(),programCtx.getSqlca(),methodOut.getDcltbtrdcus(),methodOut.getDcltbtrdord());
+          trdpb006Repository.fetchClientOrdersTrdpb006(programCtx.getClientOrdersResultSet(),programCtx.getSqlca(),methodOut.getWork(),methodOut.getDcltbtrdcus(),methodOut.getDcltbtrdsec(),methodOut.getDcltbtrdord());
 
 // *
 

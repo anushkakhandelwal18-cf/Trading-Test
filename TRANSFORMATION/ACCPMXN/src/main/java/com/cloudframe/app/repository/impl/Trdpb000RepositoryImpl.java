@@ -438,7 +438,7 @@ catch(Exception e) {
 ******     AND   SAC_CURRENCY      = :SAC-CURRENCY                 
 ******     WITH UR                                                 
 **/
-    public void selectTbtrdsac(Sqlca sqlca, Dcltbtrdsac dcltbtrdsac) throws Exception {
+    public void selectTbtrdsac(Dcltbtrdsac dcltbtrdsac, Sqlca sqlca) throws Exception {
 try {
 	// SELECT 
 	// reset SQLCODE
@@ -506,7 +506,7 @@ catch(Exception e) {
 ******     AND   SAC_CURRENCY      = :SAC-CURRENCY                 
 ******     WITH UR                                                 
 **/
-    public void selectTbtrdsac1(Sqlca sqlca, Dcltbtrdsac dcltbtrdsac) throws Exception {
+    public void selectTbtrdsac1(Dcltbtrdsac dcltbtrdsac, Sqlca sqlca) throws Exception {
 try {
 	// SELECT 
 	// reset SQLCODE
@@ -574,7 +574,7 @@ catch(Exception e) {
 ******       AND MAC_CUSTOMER_ID   = :MAC-CUSTOMER-ID              
 ******     WITH UR                                                 
 **/
-    public void selectTbtrdmac(Sqlca sqlca, Dcltbtrdmac dcltbtrdmac) throws Exception {
+    public void selectTbtrdmac(Dcltbtrdmac dcltbtrdmac, Sqlca sqlca) throws Exception {
 try {
 	// SELECT 
 	// reset SQLCODE
@@ -642,7 +642,7 @@ catch(Exception e) {
 ******       AND MAC_CUSTOMER_ID   = :MAC-CUSTOMER-ID              
 ******     WITH UR                                                 
 **/
-    public void selectTbtrdmac1(Sqlca sqlca, Dcltbtrdmac dcltbtrdmac) throws Exception {
+    public void selectTbtrdmac1(Dcltbtrdmac dcltbtrdmac, Sqlca sqlca) throws Exception {
 try {
 	// SELECT 
 	// reset SQLCODE
@@ -989,7 +989,7 @@ catch (SQLException e) {
 ******         AND MAC_NUMBER     = :MAC-NUMBER                    
 ******         WITH UR                                             
 **/
-    public void selectTbtrdmac2(Sqlca sqlca, Dcltbtrdmac dcltbtrdmac) throws Exception {
+    public void selectTbtrdmac2(Dcltbtrdmac dcltbtrdmac, Sqlca sqlca) throws Exception {
 try {
 	// SELECT 
 	// reset SQLCODE

@@ -24,10 +24,10 @@
   import com.cloudframe.app.utility.CFUtil;
   import com.cloudframe.app.exception.Terminate;
   import com.cloudframe.app.trdpb007.dto.*;
-  import com.cloudframe.app.trdpb007.dto.Mqod;
-  import com.cloudframe.app.trdpb007.dto.Mqpmo;
   import com.cloudframe.app.trdpb007.dto.Mqmd;
+  import com.cloudframe.app.trdpb007.dto.Mqod;
   import com.cloudframe.app.trdpb007.dto.PutBuffer;
+  import com.cloudframe.app.trdpb007.dto.Mqpmo;
   import com.cloudframe.app.trdpb007.dto.Work;
   import com.cloudframe.app.common.CONSTANTS;
   

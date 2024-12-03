@@ -47,7 +47,7 @@ public class Mstpb001RepositoryImpl implements Mstpb001Repository {
 ******     WHERE                                                   
 ******           CUS_CUSTOMER_ID   = :CUS-CUSTOMER-ID              
 **/
-    public void selectTbtrdcus(Sqlca sqlca, Dcltbtrdcus dcltbtrdcus) throws Exception {
+    public void selectTbtrdcus(Dcltbtrdcus dcltbtrdcus, Sqlca sqlca) throws Exception {
 try {
 	// SELECT 
 	// reset SQLCODE

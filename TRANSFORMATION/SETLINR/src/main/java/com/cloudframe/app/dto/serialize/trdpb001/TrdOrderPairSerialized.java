@@ -4,7 +4,7 @@ package com.cloudframe.app.dto.serialize.trdpb001;
 *  The class TrdOrderPairSerialized is used to define offsets in order to serialize
 *  in a fixed String
 *  @author CloudFrame Inc.
-*  created on 2024-12-03 at 13:39. using version 5.0.0.162
+*  created on 2024-12-03 at 15:04. using version 5.0.0.163
 **/
 
 import org.slf4j.Logger;

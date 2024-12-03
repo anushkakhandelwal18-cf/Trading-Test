@@ -53,20 +53,20 @@ import com.cloudframe.app.business.Trdpbexc;
   import java.math.RoundingMode;
   import com.cloudframe.app.dto.ProgramContext;
 import com.cloudframe.app.dto.trdpb000.*;
+import com.cloudframe.app.dto.trdpb000.Parm;
 import com.cloudframe.app.dto.trdpb000.Sqlca;
 import com.cloudframe.app.dto.trdpb000.SettlmentQueueTable;
-import com.cloudframe.app.dto.trdpb000.Parm;
+import com.cloudframe.app.dto.trdpb000.Dcltbtrdsac;
+import com.cloudframe.app.dto.trdpb000.CustomerIo;
+import com.cloudframe.app.dto.trdpb000.Dcltbtrdmac;
+import com.cloudframe.app.dto.trdpb000.ExceptionRecord;
+import com.cloudframe.app.dto.trdpb000.Dcltbtrdlog;
+import com.cloudframe.app.dto.trdpb000.SecurityIo;
+import com.cloudframe.app.dto.trdpb000.Dcltbtrdsum;
+import com.cloudframe.app.dto.trdpb000.Dcltbtrdord;
+import com.cloudframe.app.dto.trdpb000.TrdOrderPair;
 import com.cloudframe.app.dto.trdpb000.ExceptionRecordLenGroup;
 import com.cloudframe.app.dto.trdpb000.CustomerSummaryRec;
-import com.cloudframe.app.dto.trdpb000.CustomerIo;
-import com.cloudframe.app.dto.trdpb000.Dcltbtrdord;
-import com.cloudframe.app.dto.trdpb000.Dcltbtrdlog;
-import com.cloudframe.app.dto.trdpb000.ExceptionRecord;
-import com.cloudframe.app.dto.trdpb000.Dcltbtrdsac;
-import com.cloudframe.app.dto.trdpb000.Dcltbtrdmac;
-import com.cloudframe.app.dto.trdpb000.TrdOrderPair;
-import com.cloudframe.app.dto.trdpb000.Dcltbtrdsum;
-import com.cloudframe.app.dto.trdpb000.SecurityIo;
 import com.cloudframe.app.dto.trdpb000.Work;
   import com.cloudframe.app.common.CONSTANTS;
   import com.cloudframe.app.common.SQLS;
@@ -1318,7 +1318,7 @@ BuyerSecAccountOutCtx methodOut = methodIn.getBuyerSecAccountOutCtx();
 //  cobolCode::MOVE TRD-CURRENCY TO SAC-CURRENCY
           methodOut.setSacCurrency(methodOut.getTrdCurrency());
 //  cobolCode::SELECT SAC_NUMBER , SAC_STATUS FROM TBTRDSAC WHERE SAC_CUSTOMER_ID = ? AND SAC_CURRENCY = ? WITH UR
-          trdpb000Repository.selectTbtrdsac(programCtx.getSqlca(),methodOut.getDcltbtrdsac());
+          trdpb000Repository.selectTbtrdsac(methodOut.getDcltbtrdsac(),programCtx.getSqlca());
           //  FORMAT1016334848 = "----"
           methodOut.setSqlcode_Ws(CFUtil.cobolNumberFormatter(CONSTANTS.FORMAT1016334848,String.valueOf(methodOut.getSqlcode()).toCharArray()));
 //  cobolCode::EVALUATE SQLCODE
@@ -1514,7 +1514,7 @@ SellerSecAccountOutCtx methodOut = methodIn.getSellerSecAccountOutCtx();
 //  cobolCode::MOVE TRD-CURRENCY TO SAC-CURRENCY
           methodOut.setSacCurrency(methodOut.getTrdCurrency());
 //  cobolCode::SELECT SAC_NUMBER , SAC_STATUS FROM TBTRDSAC WHERE SAC_CUSTOMER_ID = ? AND SAC_CURRENCY = ? WITH UR
-          trdpb000Repository.selectTbtrdsac1(programCtx.getSqlca(),methodOut.getDcltbtrdsac());
+          trdpb000Repository.selectTbtrdsac1(methodOut.getDcltbtrdsac(),programCtx.getSqlca());
           //  FORMAT1016334848 = "----"
           methodOut.setSqlcode_Ws(CFUtil.cobolNumberFormatter(CONSTANTS.FORMAT1016334848,String.valueOf(methodOut.getSqlcode()).toCharArray()));
 //  cobolCode::EVALUATE SQLCODE
@@ -1708,7 +1708,7 @@ BuyerMoneyAccountOutCtx methodOut = methodIn.getBuyerMoneyAccountOutCtx();
 //  cobolCode::MOVE TRD-BUYER-ID TO MAC-CUSTOMER-ID
           methodOut.setMacCustomerId(methodOut.getTrdBuyerId());
 //  cobolCode::SELECT MAC_NUMBER , MAC_STATUS FROM TBTRDMAC WHERE MAC_CURRENCY = ? AND MAC_CUSTOMER_ID = ? WITH UR
-          trdpb000Repository.selectTbtrdmac(programCtx.getSqlca(),methodOut.getDcltbtrdmac());
+          trdpb000Repository.selectTbtrdmac(methodOut.getDcltbtrdmac(),programCtx.getSqlca());
           //  FORMAT1016334848 = "----"
           methodOut.setSqlcode_Ws(CFUtil.cobolNumberFormatter(CONSTANTS.FORMAT1016334848,String.valueOf(methodOut.getSqlcode()).toCharArray()));
 //  cobolCode::EVALUATE SQLCODE
@@ -1905,7 +1905,7 @@ SellerMoneyAccountOutCtx methodOut = methodIn.getSellerMoneyAccountOutCtx();
 //  cobolCode::MOVE TRD-SELLER-ID TO MAC-CUSTOMER-ID
           methodOut.setMacCustomerId(methodOut.getTrdSellerId());
 //  cobolCode::SELECT MAC_NUMBER , MAC_STATUS FROM TBTRDMAC WHERE MAC_CURRENCY = ? AND MAC_CUSTOMER_ID = ? WITH UR
-          trdpb000Repository.selectTbtrdmac1(programCtx.getSqlca(),methodOut.getDcltbtrdmac());
+          trdpb000Repository.selectTbtrdmac1(methodOut.getDcltbtrdmac(),programCtx.getSqlca());
           //  FORMAT1016334848 = "----"
           methodOut.setSqlcode_Ws(CFUtil.cobolNumberFormatter(CONSTANTS.FORMAT1016334848,String.valueOf(methodOut.getSqlcode()).toCharArray()));
 //  cobolCode::EVALUATE SQLCODE
@@ -2508,7 +2508,7 @@ LogSummaryOutCtx methodOut = methodIn.getLogSummaryOutCtx();
                   methodOut.setMacNumber(methodOut.getTrdSellerMoneyAccNum());
               }
 //  cobolCode::SELECT MAC_BALANCE FROM TBTRDMAC WHERE MAC_CURRENCY = ? AND MAC_NUMBER = ? WITH UR
-              trdpb000Repository.selectTbtrdmac2(programCtx.getSqlca(),methodOut.getDcltbtrdmac());
+              trdpb000Repository.selectTbtrdmac2(methodOut.getDcltbtrdmac(),programCtx.getSqlca());
 //  cobolCode::IF SQLCODE = 0 THEN
               if (	( methodOut.getSqlcode() == 0 )) { 
 //  cobolCode::IF TRD-BUYER-ID = SUM-CUSTOMER-ID

@@ -19,9 +19,9 @@ import com.cloudframe.app.exception.CFException;
 public class Mstpb002Ctx implements ProgramContext, Cloneable {
     GlobalExecutorCtx globalCtx;
 
-    LsSecurityIo lsSecurityIo;
     Dcltbtrdsec dcltbtrdsec;
     Sqlca sqlca;
+    LsSecurityIo lsSecurityIo;
     Work work;
 
 
@@ -56,17 +56,6 @@ public class Mstpb002Ctx implements ProgramContext, Cloneable {
     }
 
 
-    public LsSecurityIo getLsSecurityIo() {
-        if (lsSecurityIo == null) {
-            lsSecurityIo = new LsSecurityIo();
-        }
-
-        return lsSecurityIo;
-    }
-
-    public void setLsSecurityIo(LsSecurityIo lsSecurityIo) {
-        this.lsSecurityIo = lsSecurityIo;
-    }
     public Dcltbtrdsec getDcltbtrdsec() {
         if (dcltbtrdsec == null) {
             dcltbtrdsec = new Dcltbtrdsec();
@@ -88,6 +77,17 @@ public class Mstpb002Ctx implements ProgramContext, Cloneable {
 
     public void setSqlca(Sqlca sqlca) {
         this.sqlca = sqlca;
+    }
+    public LsSecurityIo getLsSecurityIo() {
+        if (lsSecurityIo == null) {
+            lsSecurityIo = new LsSecurityIo();
+        }
+
+        return lsSecurityIo;
+    }
+
+    public void setLsSecurityIo(LsSecurityIo lsSecurityIo) {
+        this.lsSecurityIo = lsSecurityIo;
     }
     public Work getWork() {
         if (work == null) {
@@ -111,21 +111,21 @@ public class Mstpb002Ctx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += lsSecurityIo.hashCode();
         str += dcltbtrdsec.hashCode();
         str += sqlca.hashCode();
+        str += lsSecurityIo.hashCode();
         str += work.hashCode();
        return str.hashCode();
     }
 
     public Mstpb002Ctx clone() {
         Mstpb002Ctx cloneObj = new Mstpb002Ctx();
-        cloneObj.lsSecurityIo = new LsSecurityIo();
-        cloneObj.lsSecurityIo.set(lsSecurityIo.getClonedField());
         cloneObj.dcltbtrdsec = new Dcltbtrdsec();
         cloneObj.dcltbtrdsec.set(dcltbtrdsec.getClonedField());
         cloneObj.sqlca = new Sqlca();
         cloneObj.sqlca.set(sqlca.getClonedField());
+        cloneObj.lsSecurityIo = new LsSecurityIo();
+        cloneObj.lsSecurityIo.set(lsSecurityIo.getClonedField());
         cloneObj.work = new Work();
         cloneObj.work.set(work.getClonedField());
         return cloneObj;
@@ -172,6 +172,20 @@ public class Mstpb002Ctx implements ProgramContext, Cloneable {
      public class MainlineOutCtx implements Cloneable {
      LsSecurityIo lsSecurityIo = Mstpb002Ctx.this.getLsSecurityIo();
 
+	/**
+	 *	Test condition "S" for isSecurityException88()
+	 *	@return  Returns true if isSecurityException88() is "S"
+	 */
+   public boolean isSecurityException88() throws CFException {
+      return lsSecurityIo.isSecurityException88();
+   }
+
+	/**
+	*  set values "S"
+	*/
+   	public void setSecurityException88True()  throws CFException{  			
+    	lsSecurityIo.setSecurityException88True();
+   	}
 	/**
 	 *	Returns the value of lsSecurityErrorMsg
 	 *	@return lsSecurityErrorMsg
@@ -240,20 +254,6 @@ public class Mstpb002Ctx implements ProgramContext, Cloneable {
       lsSecurityIo.setLsSecurityErrorMsg(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
-	/**
-	 *	Test condition "S" for isSecurityException88()
-	 *	@return  Returns true if isSecurityException88() is "S"
-	 */
-   public boolean isSecurityException88() throws CFException {
-      return lsSecurityIo.isSecurityException88();
-   }
-
-	/**
-	*  set values "S"
-	*/
-   	public void setSecurityException88True()  throws CFException{  			
-    	lsSecurityIo.setSecurityException88True();
-   	}
 
         public Mstpb002Ctx getMstpb002Ctx() {
             return Mstpb002Ctx.this;
@@ -286,10 +286,100 @@ public class Mstpb002Ctx implements ProgramContext, Cloneable {
             return new MainlineOutCtx();
     }
      public class GetSecurityInCtx implements Cloneable {
-     LsSecurityIo lsSecurityIo = Mstpb002Ctx.this.getLsSecurityIo();
      Dcltbtrdsec dcltbtrdsec = Mstpb002Ctx.this.getDcltbtrdsec();
      Sqlca sqlca = Mstpb002Ctx.this.getSqlca();
+     LsSecurityIo lsSecurityIo = Mstpb002Ctx.this.getLsSecurityIo();
      Work work = Mstpb002Ctx.this.getWork();
+
+	/**
+	 *	Returns the value of lsFigi
+	 *	@return lsFigi
+	 */
+   public char[] getLsFigi() throws CFException  {              
+   		return lsSecurityIo.getLsFigi();
+   }
+
+  
+	/**
+	*  set variable lsFigi
+	*  @param value
+	**/
+   public void setLsFigi(char[] value) throws CFException {
+      lsSecurityIo.setLsFigi(value);
+   } 
+
+     /**
+	 * 	Update LsFigi 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setLsFigi(char[] source, int sourceIndex) throws CFException {
+      lsSecurityIo.setLsFigi(source, sourceIndex);
+   	
+   }
+   
+   public void setLsFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      lsSecurityIo.setLsFigi(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update LsFigi 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setLsFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      lsSecurityIo.setLsFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update LsFigi with another Field
+	 *	@param value
+	 */
+   public void setLsFigi(Field source) {
+      lsSecurityIo.setLsFigi(source);
+   }  
+   
+     /**
+	 * 	Update LsFigi 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setLsFigi(Field source, int sourceIndex,int sourceLen) {
+      lsSecurityIo.setLsFigi(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update LsFigi 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setLsFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      lsSecurityIo.setLsFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sqlerrd
+	 *	@return sqlerrd
+	 */
+	public int getSqlerrd(int index) throws CFException {        
+   		return sqlca.getSqlerrd((index));
+	}
+	
+	/**
+	 * 	Update Sqlerrd with the passed value
+	 *	@param number
+	 */
+	public void setSqlerrd(int index,int number)  throws CFException{
+		sqlca.setSqlerrd((index),number);
+	}
+
+
+	public void setSqlerrd(int index,long number)  throws CFException{
+		sqlca.setSqlerrd((index),(int)number);
+	}
+
 
 	/**
 	 *	Returns the value of dcltbtrdsec
@@ -299,6 +389,142 @@ public class Mstpb002Ctx implements ProgramContext, Cloneable {
    	return dcltbtrdsec;
    }
 
+
+	/**
+	 *	Returns the value of secCurrency
+	 *	@return secCurrency
+	 */
+   public char[] getSecCurrency() throws CFException  {              
+   		return dcltbtrdsec.getSecCurrency();
+   }
+
+  
+	/**
+	*  set variable secCurrency
+	*  @param value
+	**/
+   public void setSecCurrency(char[] value) throws CFException {
+      dcltbtrdsec.setSecCurrency(value);
+   } 
+
+     /**
+	 * 	Update SecCurrency 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setSecCurrency(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdsec.setSecCurrency(source, sourceIndex);
+   	
+   }
+   
+   public void setSecCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdsec.setSecCurrency(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update SecCurrency 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setSecCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsec.setSecCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update SecCurrency with another Field
+	 *	@param value
+	 */
+   public void setSecCurrency(Field source) {
+      dcltbtrdsec.setSecCurrency(source);
+   }  
+   
+     /**
+	 * 	Update SecCurrency 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setSecCurrency(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdsec.setSecCurrency(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update SecCurrency 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setSecCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsec.setSecCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of secSymbol
+	 *	@return secSymbol
+	 */
+   public char[] getSecSymbol() throws CFException  {              
+   		return dcltbtrdsec.getSecSymbol();
+   }
+
+  
+	/**
+	*  set variable secSymbol
+	*  @param value
+	**/
+   public void setSecSymbol(char[] value) throws CFException {
+      dcltbtrdsec.setSecSymbol(value);
+   } 
+
+     /**
+	 * 	Update SecSymbol 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setSecSymbol(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdsec.setSecSymbol(source, sourceIndex);
+   	
+   }
+   
+   public void setSecSymbol(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdsec.setSecSymbol(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update SecSymbol 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setSecSymbol(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsec.setSecSymbol(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update SecSymbol with another Field
+	 *	@param value
+	 */
+   public void setSecSymbol(Field source) {
+      dcltbtrdsec.setSecSymbol(source);
+   }  
+   
+     /**
+	 * 	Update SecSymbol 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setSecSymbol(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdsec.setSecSymbol(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update SecSymbol 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setSecSymbol(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsec.setSecSymbol(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
 
 	/**
 	 *	Returns the value of sqlca
@@ -372,6 +598,28 @@ public class Mstpb002Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
+	 *	Returns the value of sqlcode
+	 *	@return sqlcode
+	 */
+	public int getSqlcode() throws CFException {        
+   		return sqlca.getSqlcode();
+	}
+	
+	/**
+	 * 	Update Sqlcode with the passed value
+	 *	@param number
+	 */
+	public void setSqlcode(int number)  throws CFException{
+		sqlca.setSqlcode(number);
+	}
+
+
+	public void setSqlcode(long number)  throws CFException{
+		sqlca.setSqlcode((int)number);
+	}
+
+
+	/**
 	 *	Returns the value of secDescription
 	 *	@return secDescription
 	 */
@@ -437,186 +685,6 @@ public class Mstpb002Ctx implements ProgramContext, Cloneable {
 	 */
    public void setSecDescription(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
       dcltbtrdsec.setSecDescription(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of sqlcode
-	 *	@return sqlcode
-	 */
-	public int getSqlcode() throws CFException {        
-   		return sqlca.getSqlcode();
-	}
-	
-	/**
-	 * 	Update Sqlcode with the passed value
-	 *	@param number
-	 */
-	public void setSqlcode(int number)  throws CFException{
-		sqlca.setSqlcode(number);
-	}
-
-
-	public void setSqlcode(long number)  throws CFException{
-		sqlca.setSqlcode((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of sqlerrd
-	 *	@return sqlerrd
-	 */
-	public int getSqlerrd(int index) throws CFException {        
-   		return sqlca.getSqlerrd((index));
-	}
-	
-	/**
-	 * 	Update Sqlerrd with the passed value
-	 *	@param number
-	 */
-	public void setSqlerrd(int index,int number)  throws CFException{
-		sqlca.setSqlerrd((index),number);
-	}
-
-
-	public void setSqlerrd(int index,long number)  throws CFException{
-		sqlca.setSqlerrd((index),(int)number);
-	}
-
-
-	/**
-	 *	Returns the value of lsFigi
-	 *	@return lsFigi
-	 */
-   public char[] getLsFigi() throws CFException  {              
-   		return lsSecurityIo.getLsFigi();
-   }
-
-  
-	/**
-	*  set variable lsFigi
-	*  @param value
-	**/
-   public void setLsFigi(char[] value) throws CFException {
-      lsSecurityIo.setLsFigi(value);
-   } 
-
-     /**
-	 * 	Update LsFigi 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setLsFigi(char[] source, int sourceIndex) throws CFException {
-      lsSecurityIo.setLsFigi(source, sourceIndex);
-   	
-   }
-   
-   public void setLsFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      lsSecurityIo.setLsFigi(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update LsFigi 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setLsFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      lsSecurityIo.setLsFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update LsFigi with another Field
-	 *	@param value
-	 */
-   public void setLsFigi(Field source) {
-      lsSecurityIo.setLsFigi(source);
-   }  
-   
-     /**
-	 * 	Update LsFigi 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setLsFigi(Field source, int sourceIndex,int sourceLen) {
-      lsSecurityIo.setLsFigi(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update LsFigi 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setLsFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      lsSecurityIo.setLsFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of secCurrency
-	 *	@return secCurrency
-	 */
-   public char[] getSecCurrency() throws CFException  {              
-   		return dcltbtrdsec.getSecCurrency();
-   }
-
-  
-	/**
-	*  set variable secCurrency
-	*  @param value
-	**/
-   public void setSecCurrency(char[] value) throws CFException {
-      dcltbtrdsec.setSecCurrency(value);
-   } 
-
-     /**
-	 * 	Update SecCurrency 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setSecCurrency(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdsec.setSecCurrency(source, sourceIndex);
-   	
-   }
-   
-   public void setSecCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdsec.setSecCurrency(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update SecCurrency 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setSecCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsec.setSecCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update SecCurrency with another Field
-	 *	@param value
-	 */
-   public void setSecCurrency(Field source) {
-      dcltbtrdsec.setSecCurrency(source);
-   }  
-   
-     /**
-	 * 	Update SecCurrency 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setSecCurrency(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdsec.setSecCurrency(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update SecCurrency 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setSecCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsec.setSecCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -688,71 +756,71 @@ public class Mstpb002Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of secSymbol
-	 *	@return secSymbol
+	 *	Returns the value of secType
+	 *	@return secType
 	 */
-   public char[] getSecSymbol() throws CFException  {              
-   		return dcltbtrdsec.getSecSymbol();
+   public char[] getSecType() throws CFException  {              
+   		return dcltbtrdsec.getSecType();
    }
 
   
 	/**
-	*  set variable secSymbol
+	*  set variable secType
 	*  @param value
 	**/
-   public void setSecSymbol(char[] value) throws CFException {
-      dcltbtrdsec.setSecSymbol(value);
+   public void setSecType(char[] value) throws CFException {
+      dcltbtrdsec.setSecType(value);
    } 
 
      /**
-	 * 	Update SecSymbol 
+	 * 	Update SecType 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setSecSymbol(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdsec.setSecSymbol(source, sourceIndex);
+   public void setSecType(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdsec.setSecType(source, sourceIndex);
    	
    }
    
-   public void setSecSymbol(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdsec.setSecSymbol(source, sourceIndex, sourceLen);
+   public void setSecType(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdsec.setSecType(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update SecSymbol 
+	 * 	Update SecType 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setSecSymbol(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsec.setSecSymbol(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setSecType(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsec.setSecType(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update SecSymbol with another Field
+	 * 	Update SecType with another Field
 	 *	@param value
 	 */
-   public void setSecSymbol(Field source) {
-      dcltbtrdsec.setSecSymbol(source);
+   public void setSecType(Field source) {
+      dcltbtrdsec.setSecType(source);
    }  
    
      /**
-	 * 	Update SecSymbol 
+	 * 	Update SecType 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setSecSymbol(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdsec.setSecSymbol(source, sourceIndex, sourceLen);   	
+   public void setSecType(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdsec.setSecType(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update SecSymbol 
+	 * 	Update SecType 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setSecSymbol(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsec.setSecSymbol(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setSecType(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsec.setSecType(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -823,74 +891,6 @@ public class Mstpb002Ctx implements ProgramContext, Cloneable {
       sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
-	/**
-	 *	Returns the value of secType
-	 *	@return secType
-	 */
-   public char[] getSecType() throws CFException  {              
-   		return dcltbtrdsec.getSecType();
-   }
-
-  
-	/**
-	*  set variable secType
-	*  @param value
-	**/
-   public void setSecType(char[] value) throws CFException {
-      dcltbtrdsec.setSecType(value);
-   } 
-
-     /**
-	 * 	Update SecType 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setSecType(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdsec.setSecType(source, sourceIndex);
-   	
-   }
-   
-   public void setSecType(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdsec.setSecType(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update SecType 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setSecType(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsec.setSecType(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update SecType with another Field
-	 *	@param value
-	 */
-   public void setSecType(Field source) {
-      dcltbtrdsec.setSecType(source);
-   }  
-   
-     /**
-	 * 	Update SecType 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setSecType(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdsec.setSecType(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update SecType 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setSecType(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsec.setSecType(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
 
         public Mstpb002Ctx getMstpb002Ctx() {
             return Mstpb002Ctx.this;
@@ -909,21 +909,21 @@ public class Mstpb002Ctx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += lsSecurityIo.hashCode();
         str += dcltbtrdsec.hashCode();
         str += sqlca.hashCode();
+        str += lsSecurityIo.hashCode();
         str += work.hashCode();
        return str.hashCode();
     }
 
     public GetSecurityInCtx clone() {
         GetSecurityInCtx cloneObj = new GetSecurityInCtx();
-        cloneObj.lsSecurityIo = new LsSecurityIo();
-        cloneObj.lsSecurityIo.set(lsSecurityIo.getClonedField());
         cloneObj.dcltbtrdsec = new Dcltbtrdsec();
         cloneObj.dcltbtrdsec.set(dcltbtrdsec.getClonedField());
         cloneObj.sqlca = new Sqlca();
         cloneObj.sqlca.set(sqlca.getClonedField());
+        cloneObj.lsSecurityIo = new LsSecurityIo();
+        cloneObj.lsSecurityIo.set(lsSecurityIo.getClonedField());
         cloneObj.work = new Work();
         cloneObj.work.set(work.getClonedField());
         return cloneObj;
@@ -935,318 +935,91 @@ public class Mstpb002Ctx implements ProgramContext, Cloneable {
             return new GetSecurityInCtx();
     }
      public class GetSecurityOutCtx implements Cloneable {
-     LsSecurityIo lsSecurityIo = Mstpb002Ctx.this.getLsSecurityIo();
      Dcltbtrdsec dcltbtrdsec = Mstpb002Ctx.this.getDcltbtrdsec();
      Sqlca sqlca = Mstpb002Ctx.this.getSqlca();
+     LsSecurityIo lsSecurityIo = Mstpb002Ctx.this.getLsSecurityIo();
      Work work = Mstpb002Ctx.this.getWork();
 
 	/**
-	 *	Returns the value of secFigi
-	 *	@return secFigi
+	 *	Test condition "S" for isSecurityException88()
+	 *	@return  Returns true if isSecurityException88() is "S"
 	 */
-   public char[] getSecFigi() throws CFException  {              
-   		return dcltbtrdsec.getSecFigi();
-   }
-
-  
-	/**
-	*  set variable secFigi
-	*  @param value
-	**/
-   public void setSecFigi(char[] value) throws CFException {
-      dcltbtrdsec.setSecFigi(value);
-   } 
-
-     /**
-	 * 	Update SecFigi 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setSecFigi(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdsec.setSecFigi(source, sourceIndex);
-   	
-   }
-   
-   public void setSecFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdsec.setSecFigi(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update SecFigi 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setSecFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsec.setSecFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update SecFigi with another Field
-	 *	@param value
-	 */
-   public void setSecFigi(Field source) {
-      dcltbtrdsec.setSecFigi(source);
-   }  
-   
-     /**
-	 * 	Update SecFigi 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setSecFigi(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdsec.setSecFigi(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update SecFigi 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setSecFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsec.setSecFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public boolean isSecurityException88() throws CFException {
+      return lsSecurityIo.isSecurityException88();
    }
 
 	/**
-	 *	Test condition "A" for isSecurityActive88()
-	 *	@return  Returns true if isSecurityActive88() is "A"
-	 */
-   public boolean isSecurityActive88() throws CFException {
-      return lsSecurityIo.isSecurityActive88();
-   }
-
-	/**
-	*  set values "A"
+	*  set values "S"
 	*/
-   	public void setSecurityActive88True()  throws CFException{  			
-    	lsSecurityIo.setSecurityActive88True();
+   	public void setSecurityException88True()  throws CFException{  			
+    	lsSecurityIo.setSecurityException88True();
    	}
 	/**
-	 *	Returns the value of sqlca
-	 *	@return sqlca
-	 */   
-	 public Sqlca getSqlca() {
-   	return sqlca;
-   }
-
-
-	/**
-	 *	Test condition "N" for isSecurityNotFound88()
-	 *	@return  Returns true if isSecurityNotFound88() is "N"
+	 *	Returns the value of lsFigi
+	 *	@return lsFigi
 	 */
-   public boolean isSecurityNotFound88() throws CFException {
-      return lsSecurityIo.isSecurityNotFound88();
-   }
-
-	/**
-	*  set values "N"
-	*/
-   	public void setSecurityNotFound88True()  throws CFException{  			
-    	lsSecurityIo.setSecurityNotFound88True();
-   	}
-	/**
-	 *	Returns the value of secCurrency
-	 *	@return secCurrency
-	 */
-   public char[] getSecCurrency() throws CFException  {              
-   		return dcltbtrdsec.getSecCurrency();
+   public char[] getLsFigi() throws CFException  {              
+   		return lsSecurityIo.getLsFigi();
    }
 
   
 	/**
-	*  set variable secCurrency
+	*  set variable lsFigi
 	*  @param value
 	**/
-   public void setSecCurrency(char[] value) throws CFException {
-      dcltbtrdsec.setSecCurrency(value);
+   public void setLsFigi(char[] value) throws CFException {
+      lsSecurityIo.setLsFigi(value);
    } 
 
      /**
-	 * 	Update SecCurrency 
+	 * 	Update LsFigi 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setSecCurrency(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdsec.setSecCurrency(source, sourceIndex);
+   public void setLsFigi(char[] source, int sourceIndex) throws CFException {
+      lsSecurityIo.setLsFigi(source, sourceIndex);
    	
    }
    
-   public void setSecCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdsec.setSecCurrency(source, sourceIndex, sourceLen);
+   public void setLsFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      lsSecurityIo.setLsFigi(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update SecCurrency 
+	 * 	Update LsFigi 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setSecCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsec.setSecCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setLsFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      lsSecurityIo.setLsFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update SecCurrency with another Field
+	 * 	Update LsFigi with another Field
 	 *	@param value
 	 */
-   public void setSecCurrency(Field source) {
-      dcltbtrdsec.setSecCurrency(source);
+   public void setLsFigi(Field source) {
+      lsSecurityIo.setLsFigi(source);
    }  
    
      /**
-	 * 	Update SecCurrency 
+	 * 	Update LsFigi 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setSecCurrency(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdsec.setSecCurrency(source, sourceIndex, sourceLen);   	
+   public void setLsFigi(Field source, int sourceIndex,int sourceLen) {
+      lsSecurityIo.setLsFigi(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update SecCurrency 
+	 * 	Update LsFigi 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setSecCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsec.setSecCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of lsDescription
-	 *	@return lsDescription
-	 */
-   public char[] getLsDescription() throws CFException  {              
-   		return lsSecurityIo.getLsDescription();
-   }
-
-  
-	/**
-	*  set variable lsDescription
-	*  @param value
-	**/
-   public void setLsDescription(char[] value) throws CFException {
-      lsSecurityIo.setLsDescription(value);
-   } 
-
-     /**
-	 * 	Update LsDescription 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setLsDescription(char[] source, int sourceIndex) throws CFException {
-      lsSecurityIo.setLsDescription(source, sourceIndex);
-   	
-   }
-   
-   public void setLsDescription(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      lsSecurityIo.setLsDescription(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update LsDescription 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setLsDescription(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      lsSecurityIo.setLsDescription(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update LsDescription with another Field
-	 *	@param value
-	 */
-   public void setLsDescription(Field source) {
-      lsSecurityIo.setLsDescription(source);
-   }  
-   
-     /**
-	 * 	Update LsDescription 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setLsDescription(Field source, int sourceIndex,int sourceLen) {
-      lsSecurityIo.setLsDescription(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update LsDescription 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setLsDescription(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      lsSecurityIo.setLsDescription(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of secSymbol
-	 *	@return secSymbol
-	 */
-   public char[] getSecSymbol() throws CFException  {              
-   		return dcltbtrdsec.getSecSymbol();
-   }
-
-  
-	/**
-	*  set variable secSymbol
-	*  @param value
-	**/
-   public void setSecSymbol(char[] value) throws CFException {
-      dcltbtrdsec.setSecSymbol(value);
-   } 
-
-     /**
-	 * 	Update SecSymbol 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setSecSymbol(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdsec.setSecSymbol(source, sourceIndex);
-   	
-   }
-   
-   public void setSecSymbol(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdsec.setSecSymbol(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update SecSymbol 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setSecSymbol(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsec.setSecSymbol(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update SecSymbol with another Field
-	 *	@param value
-	 */
-   public void setSecSymbol(Field source) {
-      dcltbtrdsec.setSecSymbol(source);
-   }  
-   
-     /**
-	 * 	Update SecSymbol 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setSecSymbol(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdsec.setSecSymbol(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update SecSymbol 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setSecSymbol(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsec.setSecSymbol(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setLsFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      lsSecurityIo.setLsFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -1318,95 +1091,285 @@ public class Mstpb002Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Test condition "S" for isSecurityException88()
-	 *	@return  Returns true if isSecurityException88() is "S"
+	 *	Returns the value of lsSymbol
+	 *	@return lsSymbol
 	 */
-   public boolean isSecurityException88() throws CFException {
-      return lsSecurityIo.isSecurityException88();
-   }
-
-	/**
-	*  set values "S"
-	*/
-   	public void setSecurityException88True()  throws CFException{  			
-    	lsSecurityIo.setSecurityException88True();
-   	}
-	/**
-	 *	Returns the value of lsShareClassFigi
-	 *	@return lsShareClassFigi
-	 */
-   public char[] getLsShareClassFigi() throws CFException  {              
-   		return lsSecurityIo.getLsShareClassFigi();
+   public char[] getLsSymbol() throws CFException  {              
+   		return lsSecurityIo.getLsSymbol();
    }
 
   
 	/**
-	*  set variable lsShareClassFigi
+	*  set variable lsSymbol
 	*  @param value
 	**/
-   public void setLsShareClassFigi(char[] value) throws CFException {
-      lsSecurityIo.setLsShareClassFigi(value);
+   public void setLsSymbol(char[] value) throws CFException {
+      lsSecurityIo.setLsSymbol(value);
    } 
 
      /**
-	 * 	Update LsShareClassFigi 
+	 * 	Update LsSymbol 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setLsShareClassFigi(char[] source, int sourceIndex) throws CFException {
-      lsSecurityIo.setLsShareClassFigi(source, sourceIndex);
+   public void setLsSymbol(char[] source, int sourceIndex) throws CFException {
+      lsSecurityIo.setLsSymbol(source, sourceIndex);
    	
    }
    
-   public void setLsShareClassFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      lsSecurityIo.setLsShareClassFigi(source, sourceIndex, sourceLen);
+   public void setLsSymbol(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      lsSecurityIo.setLsSymbol(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update LsShareClassFigi 
+	 * 	Update LsSymbol 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setLsShareClassFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      lsSecurityIo.setLsShareClassFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setLsSymbol(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      lsSecurityIo.setLsSymbol(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update LsShareClassFigi with another Field
+	 * 	Update LsSymbol with another Field
 	 *	@param value
 	 */
-   public void setLsShareClassFigi(Field source) {
-      lsSecurityIo.setLsShareClassFigi(source);
+   public void setLsSymbol(Field source) {
+      lsSecurityIo.setLsSymbol(source);
    }  
    
      /**
-	 * 	Update LsShareClassFigi 
+	 * 	Update LsSymbol 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setLsShareClassFigi(Field source, int sourceIndex,int sourceLen) {
-      lsSecurityIo.setLsShareClassFigi(source, sourceIndex, sourceLen);   	
+   public void setLsSymbol(Field source, int sourceIndex,int sourceLen) {
+      lsSecurityIo.setLsSymbol(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update LsShareClassFigi 
+	 * 	Update LsSymbol 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setLsShareClassFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      lsSecurityIo.setLsShareClassFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setLsSymbol(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      lsSecurityIo.setLsSymbol(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
-	 *	Returns the value of dcltbtrdsec
-	 *	@return dcltbtrdsec
-	 */   
-	 public Dcltbtrdsec getDcltbtrdsec() {
-   	return dcltbtrdsec;
+	 *	Returns the value of secSymbol
+	 *	@return secSymbol
+	 */
+   public char[] getSecSymbol() throws CFException  {              
+   		return dcltbtrdsec.getSecSymbol();
    }
 
+  
+	/**
+	*  set variable secSymbol
+	*  @param value
+	**/
+   public void setSecSymbol(char[] value) throws CFException {
+      dcltbtrdsec.setSecSymbol(value);
+   } 
+
+     /**
+	 * 	Update SecSymbol 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setSecSymbol(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdsec.setSecSymbol(source, sourceIndex);
+   	
+   }
+   
+   public void setSecSymbol(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdsec.setSecSymbol(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update SecSymbol 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setSecSymbol(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsec.setSecSymbol(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update SecSymbol with another Field
+	 *	@param value
+	 */
+   public void setSecSymbol(Field source) {
+      dcltbtrdsec.setSecSymbol(source);
+   }  
+   
+     /**
+	 * 	Update SecSymbol 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setSecSymbol(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdsec.setSecSymbol(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update SecSymbol 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setSecSymbol(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsec.setSecSymbol(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sqlca
+	 *	@return sqlca
+	 */   
+	 public Sqlca getSqlca() {
+   	return sqlca;
+   }
+
+
+	/**
+	 *	Returns the value of lsSecurityErrorMsg
+	 *	@return lsSecurityErrorMsg
+	 */
+   public char[] getLsSecurityErrorMsg() throws CFException  {              
+   		return lsSecurityIo.getLsSecurityErrorMsg();
+   }
+
+  
+	/**
+	*  set variable lsSecurityErrorMsg
+	*  @param value
+	**/
+   public void setLsSecurityErrorMsg(char[] value) throws CFException {
+      lsSecurityIo.setLsSecurityErrorMsg(value);
+   } 
+
+     /**
+	 * 	Update LsSecurityErrorMsg 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setLsSecurityErrorMsg(char[] source, int sourceIndex) throws CFException {
+      lsSecurityIo.setLsSecurityErrorMsg(source, sourceIndex);
+   	
+   }
+   
+   public void setLsSecurityErrorMsg(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      lsSecurityIo.setLsSecurityErrorMsg(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update LsSecurityErrorMsg 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setLsSecurityErrorMsg(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      lsSecurityIo.setLsSecurityErrorMsg(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update LsSecurityErrorMsg with another Field
+	 *	@param value
+	 */
+   public void setLsSecurityErrorMsg(Field source) {
+      lsSecurityIo.setLsSecurityErrorMsg(source);
+   }  
+   
+     /**
+	 * 	Update LsSecurityErrorMsg 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setLsSecurityErrorMsg(Field source, int sourceIndex,int sourceLen) {
+      lsSecurityIo.setLsSecurityErrorMsg(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update LsSecurityErrorMsg 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setLsSecurityErrorMsg(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      lsSecurityIo.setLsSecurityErrorMsg(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of secFigi
+	 *	@return secFigi
+	 */
+   public char[] getSecFigi() throws CFException  {              
+   		return dcltbtrdsec.getSecFigi();
+   }
+
+  
+	/**
+	*  set variable secFigi
+	*  @param value
+	**/
+   public void setSecFigi(char[] value) throws CFException {
+      dcltbtrdsec.setSecFigi(value);
+   } 
+
+     /**
+	 * 	Update SecFigi 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setSecFigi(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdsec.setSecFigi(source, sourceIndex);
+   	
+   }
+   
+   public void setSecFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdsec.setSecFigi(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update SecFigi 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setSecFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsec.setSecFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update SecFigi with another Field
+	 *	@param value
+	 */
+   public void setSecFigi(Field source) {
+      dcltbtrdsec.setSecFigi(source);
+   }  
+   
+     /**
+	 * 	Update SecFigi 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setSecFigi(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdsec.setSecFigi(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update SecFigi 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setSecFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsec.setSecFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
 
 	/**
 	 *	Returns the value of sqlcode_Ws
@@ -1477,6 +1440,201 @@ public class Mstpb002Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
+	 *	Test condition "N" for isSecurityNotFound88()
+	 *	@return  Returns true if isSecurityNotFound88() is "N"
+	 */
+   public boolean isSecurityNotFound88() throws CFException {
+      return lsSecurityIo.isSecurityNotFound88();
+   }
+
+	/**
+	*  set values "N"
+	*/
+   	public void setSecurityNotFound88True()  throws CFException{  			
+    	lsSecurityIo.setSecurityNotFound88True();
+   	}
+	/**
+	 *	Returns the value of secType
+	 *	@return secType
+	 */
+   public char[] getSecType() throws CFException  {              
+   		return dcltbtrdsec.getSecType();
+   }
+
+  
+	/**
+	*  set variable secType
+	*  @param value
+	**/
+   public void setSecType(char[] value) throws CFException {
+      dcltbtrdsec.setSecType(value);
+   } 
+
+     /**
+	 * 	Update SecType 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setSecType(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdsec.setSecType(source, sourceIndex);
+   	
+   }
+   
+   public void setSecType(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdsec.setSecType(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update SecType 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setSecType(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsec.setSecType(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update SecType with another Field
+	 *	@param value
+	 */
+   public void setSecType(Field source) {
+      dcltbtrdsec.setSecType(source);
+   }  
+   
+     /**
+	 * 	Update SecType 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setSecType(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdsec.setSecType(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update SecType 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setSecType(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsec.setSecType(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Test condition "A" for isSecurityActive88()
+	 *	@return  Returns true if isSecurityActive88() is "A"
+	 */
+   public boolean isSecurityActive88() throws CFException {
+      return lsSecurityIo.isSecurityActive88();
+   }
+
+	/**
+	*  set values "A"
+	*/
+   	public void setSecurityActive88True()  throws CFException{  			
+    	lsSecurityIo.setSecurityActive88True();
+   	}
+	/**
+	 *	Returns the value of dcltbtrdsec
+	 *	@return dcltbtrdsec
+	 */   
+	 public Dcltbtrdsec getDcltbtrdsec() {
+   	return dcltbtrdsec;
+   }
+
+
+	/**
+	 *	Returns the value of secCurrency
+	 *	@return secCurrency
+	 */
+   public char[] getSecCurrency() throws CFException  {              
+   		return dcltbtrdsec.getSecCurrency();
+   }
+
+  
+	/**
+	*  set variable secCurrency
+	*  @param value
+	**/
+   public void setSecCurrency(char[] value) throws CFException {
+      dcltbtrdsec.setSecCurrency(value);
+   } 
+
+     /**
+	 * 	Update SecCurrency 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setSecCurrency(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdsec.setSecCurrency(source, sourceIndex);
+   	
+   }
+   
+   public void setSecCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdsec.setSecCurrency(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update SecCurrency 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setSecCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsec.setSecCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update SecCurrency with another Field
+	 *	@param value
+	 */
+   public void setSecCurrency(Field source) {
+      dcltbtrdsec.setSecCurrency(source);
+   }  
+   
+     /**
+	 * 	Update SecCurrency 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setSecCurrency(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdsec.setSecCurrency(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update SecCurrency 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setSecCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsec.setSecCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sqlcode
+	 *	@return sqlcode
+	 */
+	public int getSqlcode() throws CFException {        
+   		return sqlca.getSqlcode();
+	}
+	
+	/**
+	 * 	Update Sqlcode with the passed value
+	 *	@param number
+	 */
+	public void setSqlcode(int number)  throws CFException{
+		sqlca.setSqlcode(number);
+	}
+
+
+	public void setSqlcode(long number)  throws CFException{
+		sqlca.setSqlcode((int)number);
+	}
+
+
+	/**
 	 *	Returns the value of secDescription
 	 *	@return secDescription
 	 */
@@ -1545,161 +1703,139 @@ public class Mstpb002Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of sqlcode
-	 *	@return sqlcode
+	 *	Returns the value of lsShareClassFigi
+	 *	@return lsShareClassFigi
 	 */
-	public int getSqlcode() throws CFException {        
-   		return sqlca.getSqlcode();
-	}
-	
-	/**
-	 * 	Update Sqlcode with the passed value
-	 *	@param number
-	 */
-	public void setSqlcode(int number)  throws CFException{
-		sqlca.setSqlcode(number);
-	}
-
-
-	public void setSqlcode(long number)  throws CFException{
-		sqlca.setSqlcode((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of lsSymbol
-	 *	@return lsSymbol
-	 */
-   public char[] getLsSymbol() throws CFException  {              
-   		return lsSecurityIo.getLsSymbol();
+   public char[] getLsShareClassFigi() throws CFException  {              
+   		return lsSecurityIo.getLsShareClassFigi();
    }
 
   
 	/**
-	*  set variable lsSymbol
+	*  set variable lsShareClassFigi
 	*  @param value
 	**/
-   public void setLsSymbol(char[] value) throws CFException {
-      lsSecurityIo.setLsSymbol(value);
+   public void setLsShareClassFigi(char[] value) throws CFException {
+      lsSecurityIo.setLsShareClassFigi(value);
    } 
 
      /**
-	 * 	Update LsSymbol 
+	 * 	Update LsShareClassFigi 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setLsSymbol(char[] source, int sourceIndex) throws CFException {
-      lsSecurityIo.setLsSymbol(source, sourceIndex);
+   public void setLsShareClassFigi(char[] source, int sourceIndex) throws CFException {
+      lsSecurityIo.setLsShareClassFigi(source, sourceIndex);
    	
    }
    
-   public void setLsSymbol(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      lsSecurityIo.setLsSymbol(source, sourceIndex, sourceLen);
+   public void setLsShareClassFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      lsSecurityIo.setLsShareClassFigi(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update LsSymbol 
+	 * 	Update LsShareClassFigi 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setLsSymbol(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      lsSecurityIo.setLsSymbol(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setLsShareClassFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      lsSecurityIo.setLsShareClassFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update LsSymbol with another Field
+	 * 	Update LsShareClassFigi with another Field
 	 *	@param value
 	 */
-   public void setLsSymbol(Field source) {
-      lsSecurityIo.setLsSymbol(source);
+   public void setLsShareClassFigi(Field source) {
+      lsSecurityIo.setLsShareClassFigi(source);
    }  
    
      /**
-	 * 	Update LsSymbol 
+	 * 	Update LsShareClassFigi 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setLsSymbol(Field source, int sourceIndex,int sourceLen) {
-      lsSecurityIo.setLsSymbol(source, sourceIndex, sourceLen);   	
+   public void setLsShareClassFigi(Field source, int sourceIndex,int sourceLen) {
+      lsSecurityIo.setLsShareClassFigi(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update LsSymbol 
+	 * 	Update LsShareClassFigi 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setLsSymbol(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      lsSecurityIo.setLsSymbol(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setLsShareClassFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      lsSecurityIo.setLsShareClassFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
-	 *	Returns the value of lsFigi
-	 *	@return lsFigi
+	 *	Returns the value of lsDescription
+	 *	@return lsDescription
 	 */
-   public char[] getLsFigi() throws CFException  {              
-   		return lsSecurityIo.getLsFigi();
+   public char[] getLsDescription() throws CFException  {              
+   		return lsSecurityIo.getLsDescription();
    }
 
   
 	/**
-	*  set variable lsFigi
+	*  set variable lsDescription
 	*  @param value
 	**/
-   public void setLsFigi(char[] value) throws CFException {
-      lsSecurityIo.setLsFigi(value);
+   public void setLsDescription(char[] value) throws CFException {
+      lsSecurityIo.setLsDescription(value);
    } 
 
      /**
-	 * 	Update LsFigi 
+	 * 	Update LsDescription 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setLsFigi(char[] source, int sourceIndex) throws CFException {
-      lsSecurityIo.setLsFigi(source, sourceIndex);
+   public void setLsDescription(char[] source, int sourceIndex) throws CFException {
+      lsSecurityIo.setLsDescription(source, sourceIndex);
    	
    }
    
-   public void setLsFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      lsSecurityIo.setLsFigi(source, sourceIndex, sourceLen);
+   public void setLsDescription(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      lsSecurityIo.setLsDescription(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update LsFigi 
+	 * 	Update LsDescription 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setLsFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      lsSecurityIo.setLsFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setLsDescription(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      lsSecurityIo.setLsDescription(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update LsFigi with another Field
+	 * 	Update LsDescription with another Field
 	 *	@param value
 	 */
-   public void setLsFigi(Field source) {
-      lsSecurityIo.setLsFigi(source);
+   public void setLsDescription(Field source) {
+      lsSecurityIo.setLsDescription(source);
    }  
    
      /**
-	 * 	Update LsFigi 
+	 * 	Update LsDescription 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setLsFigi(Field source, int sourceIndex,int sourceLen) {
-      lsSecurityIo.setLsFigi(source, sourceIndex, sourceLen);   	
+   public void setLsDescription(Field source, int sourceIndex,int sourceLen) {
+      lsSecurityIo.setLsDescription(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update LsFigi 
+	 * 	Update LsDescription 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setLsFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      lsSecurityIo.setLsFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setLsDescription(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      lsSecurityIo.setLsDescription(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -1838,142 +1974,6 @@ public class Mstpb002Ctx implements ProgramContext, Cloneable {
       dcltbtrdsec.setSecShareClassFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
-	/**
-	 *	Returns the value of lsSecurityErrorMsg
-	 *	@return lsSecurityErrorMsg
-	 */
-   public char[] getLsSecurityErrorMsg() throws CFException  {              
-   		return lsSecurityIo.getLsSecurityErrorMsg();
-   }
-
-  
-	/**
-	*  set variable lsSecurityErrorMsg
-	*  @param value
-	**/
-   public void setLsSecurityErrorMsg(char[] value) throws CFException {
-      lsSecurityIo.setLsSecurityErrorMsg(value);
-   } 
-
-     /**
-	 * 	Update LsSecurityErrorMsg 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setLsSecurityErrorMsg(char[] source, int sourceIndex) throws CFException {
-      lsSecurityIo.setLsSecurityErrorMsg(source, sourceIndex);
-   	
-   }
-   
-   public void setLsSecurityErrorMsg(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      lsSecurityIo.setLsSecurityErrorMsg(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update LsSecurityErrorMsg 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setLsSecurityErrorMsg(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      lsSecurityIo.setLsSecurityErrorMsg(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update LsSecurityErrorMsg with another Field
-	 *	@param value
-	 */
-   public void setLsSecurityErrorMsg(Field source) {
-      lsSecurityIo.setLsSecurityErrorMsg(source);
-   }  
-   
-     /**
-	 * 	Update LsSecurityErrorMsg 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setLsSecurityErrorMsg(Field source, int sourceIndex,int sourceLen) {
-      lsSecurityIo.setLsSecurityErrorMsg(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update LsSecurityErrorMsg 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setLsSecurityErrorMsg(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      lsSecurityIo.setLsSecurityErrorMsg(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of secType
-	 *	@return secType
-	 */
-   public char[] getSecType() throws CFException  {              
-   		return dcltbtrdsec.getSecType();
-   }
-
-  
-	/**
-	*  set variable secType
-	*  @param value
-	**/
-   public void setSecType(char[] value) throws CFException {
-      dcltbtrdsec.setSecType(value);
-   } 
-
-     /**
-	 * 	Update SecType 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setSecType(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdsec.setSecType(source, sourceIndex);
-   	
-   }
-   
-   public void setSecType(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdsec.setSecType(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update SecType 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setSecType(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsec.setSecType(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update SecType with another Field
-	 *	@param value
-	 */
-   public void setSecType(Field source) {
-      dcltbtrdsec.setSecType(source);
-   }  
-   
-     /**
-	 * 	Update SecType 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setSecType(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdsec.setSecType(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update SecType 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setSecType(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsec.setSecType(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
 
         public Mstpb002Ctx getMstpb002Ctx() {
             return Mstpb002Ctx.this;
@@ -1989,21 +1989,21 @@ public class Mstpb002Ctx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += lsSecurityIo.hashCode();
         str += dcltbtrdsec.hashCode();
         str += sqlca.hashCode();
+        str += lsSecurityIo.hashCode();
         str += work.hashCode();
        return str.hashCode();
     }
 
     public GetSecurityOutCtx clone() {
         GetSecurityOutCtx cloneObj = new GetSecurityOutCtx();
-        cloneObj.lsSecurityIo = new LsSecurityIo();
-        cloneObj.lsSecurityIo.set(lsSecurityIo.getClonedField());
         cloneObj.dcltbtrdsec = new Dcltbtrdsec();
         cloneObj.dcltbtrdsec.set(dcltbtrdsec.getClonedField());
         cloneObj.sqlca = new Sqlca();
         cloneObj.sqlca.set(sqlca.getClonedField());
+        cloneObj.lsSecurityIo = new LsSecurityIo();
+        cloneObj.lsSecurityIo.set(lsSecurityIo.getClonedField());
         cloneObj.work = new Work();
         cloneObj.work.set(work.getClonedField());
         return cloneObj;

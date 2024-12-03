@@ -17,13 +17,13 @@ public interface Trdpb006Repository {
     /**
      * This method will handle the sql operations for a fetch query.
      *
-     * @parm dcltbtrdord
-* @parm dcltbtrdsec
-* @parm sqlca
+     * @parm sqlca
 * @parm dcltbtrdcus
 * @parm work
+* @parm dcltbtrdord
+* @parm dcltbtrdsec
      */
-    public void fetchClientOrdersTrdpb006(ResultSet clientOrdersResultSet, Dcltbtrdord dcltbtrdord, Dcltbtrdsec dcltbtrdsec, Sqlca sqlca, Dcltbtrdcus dcltbtrdcus, Work work) throws Exception;
+    public void fetchClientOrdersTrdpb006(ResultSet clientOrdersResultSet, Sqlca sqlca, Dcltbtrdcus dcltbtrdcus, Work work, Dcltbtrdord dcltbtrdord, Dcltbtrdsec dcltbtrdsec) throws Exception;
 
     /**
      * This method will handle the sql operations for a close query.

@@ -30,7 +30,7 @@
         <dependency>
             <groupId>com.cloudframe</groupId>
             <artifactId>dcio</artifactId>
-            <version>5.0.0.13</version>
+            <version>5.0.0.14</version>
 			<scope>system</scope>
 			<systemPath>${project.basedir}/cf-lib/CFDataConnectIO.jar</systemPath>
         </dependency>

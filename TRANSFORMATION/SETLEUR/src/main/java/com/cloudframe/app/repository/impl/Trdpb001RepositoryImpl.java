@@ -79,7 +79,7 @@ return settlementQueueResultSet;
 ******    ,:LOG-END-TS                                             
 ******   )                                                         
 **/
-    public void insert(Dcltbtrdlog dcltbtrdlog, Sqlca sqlca) throws Exception {
+    public void insert(Sqlca sqlca, Dcltbtrdlog dcltbtrdlog) throws Exception {
 
 try {
     // INSRT/UPDATE
@@ -110,7 +110,7 @@ try {
 ******           WHERE LOG_TRANSACTION = :LOG-TRANSACTION          
 ******             AND LOG_CURRENCY    = :LOG-CURRENCY             
 **/
-    public void updateTbtrdlog(Dcltbtrdlog dcltbtrdlog, Sqlca sqlca) throws Exception {
+    public void updateTbtrdlog(Sqlca sqlca, Dcltbtrdlog dcltbtrdlog) throws Exception {
 
 try {
     // INSRT/UPDATE
@@ -144,7 +144,7 @@ try {
 ******           WHERE LOG_TRANSACTION = :LOG-TRANSACTION          
 ******             AND LOG_CURRENCY    = :LOG-CURRENCY             
 **/
-    public void updateTbtrdlog1(Dcltbtrdlog dcltbtrdlog, Sqlca sqlca) throws Exception {
+    public void updateTbtrdlog1(Sqlca sqlca, Dcltbtrdlog dcltbtrdlog) throws Exception {
 
 try {
     // INSRT/UPDATE

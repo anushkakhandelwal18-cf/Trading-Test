@@ -39,11 +39,11 @@ import com.cloudframe.app.business.*;
 import com.cloudframe.app.service.*;
   import com.cloudframe.app.dto.ProgramContext;
 import com.cloudframe.app.dto.trdpb002.*;
-import com.cloudframe.app.dto.trdpb002.Sqlca;
 import com.cloudframe.app.dto.trdpb002.TrdOrderPair;
+import com.cloudframe.app.dto.trdpb002.Sqlca;
 import com.cloudframe.app.dto.trdpb002.ExceptionRecordLenGroup;
-import com.cloudframe.app.dto.trdpb002.Dcltbtrdpos;
 import com.cloudframe.app.dto.trdpb002.ExceptionRecord;
+import com.cloudframe.app.dto.trdpb002.Dcltbtrdpos;
 import com.cloudframe.app.dto.trdpb002.Work;
   import com.cloudframe.app.common.CONSTANTS;
   import com.cloudframe.app.common.SQLS;
@@ -242,7 +242,7 @@ SacBookingOutCtx methodOut = methodIn.getSacBookingOutCtx();
               logger.info("TRD-FIGI              ={}", new String(methodOut.getTrdFigi())); 
           }
 //  cobolCode::SELECT POS_BALANCE FROM TBTRDPOS WHERE POS_CURRENCY = ? AND POS_SAC_NUMBER = ? AND POS_FIGI = ? FOR UPDATE OF POS_BALANCE
-          programCtx.setPosBookingResultSet(trdpb002Repository.openPosBookingTrdpb002(programCtx.getSqlca(),methodOut.getDcltbtrdpos()));
+          programCtx.setPosBookingResultSet(trdpb002Repository.openPosBookingTrdpb002(methodOut.getDcltbtrdpos(),programCtx.getSqlca()));
 
 // *
 //  cobolCode::IF SQLCODE NOT = 0 THEN
@@ -270,7 +270,7 @@ return methodOut;
 //cobolCodeEnds::GO TO 1000-EXIT
           }
 //  cobolCode::FETCH POS_BOOKING INTO ?
-          trdpb002Repository.fetchPosBookingTrdpb002(programCtx.getPosBookingResultSet(),programCtx.getSqlca(),methodOut.getDcltbtrdpos());
+          trdpb002Repository.fetchPosBookingTrdpb002(programCtx.getPosBookingResultSet(),methodOut.getDcltbtrdpos(),programCtx.getSqlca());
 
 // *
 //  cobolCode::IF SQLCODE = 0 THEN
@@ -286,7 +286,7 @@ return methodOut;
                   methodOut.setPosBalance(methodOut.getPosBalance().add(methodIn.getTrdOrderQty()));
               }
 //  cobolCode::UPDATE TBTRDPOS SET POS_BALANCE = ? WHERE POS_CURRENCY = ? AND POS_SAC_NUMBER = ? AND POS_FIGI = ?
-              trdpb002Repository.updateTbtrdpos(programCtx.getSqlca(),methodOut.getDcltbtrdpos());
+              trdpb002Repository.updateTbtrdpos(methodOut.getDcltbtrdpos(),programCtx.getSqlca());
 
 // *            Where current of pos_booking
 //  cobolCode::IF SQLCODE = 0 THEN

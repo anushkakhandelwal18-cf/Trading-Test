@@ -18,26 +18,26 @@ public interface Trdpb001Repository {
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm dcltbtrdlog
-* @parm sqlca
+     * @parm sqlca
+* @parm dcltbtrdlog
      */
-    public void insert(Dcltbtrdlog dcltbtrdlog, Sqlca sqlca) throws Exception;
+    public void insert(Sqlca sqlca, Dcltbtrdlog dcltbtrdlog) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm dcltbtrdlog
-* @parm sqlca
+     * @parm sqlca
+* @parm dcltbtrdlog
      */
-    public void updateTbtrdlog(Dcltbtrdlog dcltbtrdlog, Sqlca sqlca) throws Exception;
+    public void updateTbtrdlog(Sqlca sqlca, Dcltbtrdlog dcltbtrdlog) throws Exception;
 
     /**
      * This method will handle the sql operations for a update query.
      *
-     * @parm dcltbtrdlog
-* @parm sqlca
+     * @parm sqlca
+* @parm dcltbtrdlog
      */
-    public void updateTbtrdlog1(Dcltbtrdlog dcltbtrdlog, Sqlca sqlca) throws Exception;
+    public void updateTbtrdlog1(Sqlca sqlca, Dcltbtrdlog dcltbtrdlog) throws Exception;
 
     /**
      * This method will handle the sql operations for a fetch query.

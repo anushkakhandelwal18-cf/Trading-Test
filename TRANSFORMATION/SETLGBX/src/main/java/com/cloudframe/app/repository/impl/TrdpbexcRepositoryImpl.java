@@ -41,7 +41,7 @@ public class TrdpbexcRepositoryImpl implements TrdpbexcRepository {
 ******   VALUES(:EXC-TYPE                                          
 ******         ,:EXC-DESCRIPTION)                                  
 **/
-    public void insertTbtrdexc(Dcltbtrdexc dcltbtrdexc, Sqlca sqlca) throws Exception {
+    public void insertTbtrdexc(Sqlca sqlca, Dcltbtrdexc dcltbtrdexc) throws Exception {
 
 try {
     // INSRT/UPDATE
@@ -73,7 +73,7 @@ try {
 ******             VALUES(:EXC-TYPE                                
 ******                   ,:EXC-DESCRIPTION)                        
 **/
-    public void insertTbtrdexc1(Dcltbtrdexc dcltbtrdexc, Sqlca sqlca) throws Exception {
+    public void insertTbtrdexc1(Sqlca sqlca, Dcltbtrdexc dcltbtrdexc) throws Exception {
 
 try {
     // INSRT/UPDATE
@@ -105,7 +105,7 @@ try {
 ******             VALUES(:EXC-TYPE                                
 ******                   ,:EXC-DESCRIPTION)                        
 **/
-    public void insertTbtrdexc2(Dcltbtrdexc dcltbtrdexc, Sqlca sqlca) throws Exception {
+    public void insertTbtrdexc2(Sqlca sqlca, Dcltbtrdexc dcltbtrdexc) throws Exception {
 
 try {
     // INSRT/UPDATE

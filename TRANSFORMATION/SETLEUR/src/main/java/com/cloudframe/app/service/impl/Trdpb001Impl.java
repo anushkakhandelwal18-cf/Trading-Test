@@ -46,17 +46,17 @@ import com.cloudframe.app.business.Trdpbexc;
   import java.math.RoundingMode;
   import com.cloudframe.app.dto.ProgramContext;
 import com.cloudframe.app.dto.trdpb001.*;
-import com.cloudframe.app.dto.trdpb001.Parm;
 import com.cloudframe.app.dto.trdpb001.Sqlca;
 import com.cloudframe.app.dto.trdpb001.Dcltbtrdord;
-import com.cloudframe.app.dto.trdpb001.ExceptionRecordLenGroup;
-import com.cloudframe.app.dto.trdpb001.Dcltbtrdmac;
-import com.cloudframe.app.dto.trdpb001.ExceptionRecord;
+import com.cloudframe.app.dto.trdpb001.Parm;
 import com.cloudframe.app.dto.trdpb001.Dcltbtrdstq;
-import com.cloudframe.app.dto.trdpb001.Dcltbtrdlog;
+import com.cloudframe.app.dto.trdpb001.Dcltbtrdmac;
 import com.cloudframe.app.dto.trdpb001.CustomerSummaryRec;
-import com.cloudframe.app.dto.trdpb001.TrdOrderPair;
 import com.cloudframe.app.dto.trdpb001.Dcltbtrdsum;
+import com.cloudframe.app.dto.trdpb001.Dcltbtrdlog;
+import com.cloudframe.app.dto.trdpb001.ExceptionRecord;
+import com.cloudframe.app.dto.trdpb001.ExceptionRecordLenGroup;
+import com.cloudframe.app.dto.trdpb001.TrdOrderPair;
 import com.cloudframe.app.dto.trdpb001.Work;
   import com.cloudframe.app.common.CONSTANTS;
   import com.cloudframe.app.common.SQLS;
@@ -310,14 +310,14 @@ MainlineOutCtx methodOut = methodIn.getMainlineOutCtx();
           updated = updateString(methodOut.getLogEndTs() ,joinCharArray);
           methodOut.setLogEndTs(  (char[])updated.get("string"));
 //  cobolCode::INSERT INTO TBTRDLOG VALUES ( ? , ? , ? , ? )
-          trdpb001Repository.insert(methodOut.getDcltbtrdlog(),programCtx.getSqlca());
+          trdpb001Repository.insert(programCtx.getSqlca(),methodOut.getDcltbtrdlog());
 //  cobolCode::EVALUATE TRUE
           if  (	( methodOut.getSqlcode() == 0 )) { 
               ;
           }
           else if  (	( methodOut.getSqlcode() == -803 )) { 
 //  cobolCode::UPDATE TBTRDLOG SET LOG_END_TS = ? WHERE LOG_TRANSACTION = ? AND LOG_CURRENCY = ?
-              trdpb001Repository.updateTbtrdlog1(methodOut.getDcltbtrdlog(),programCtx.getSqlca());
+              trdpb001Repository.updateTbtrdlog1(programCtx.getSqlca(),methodOut.getDcltbtrdlog());
 //  cobolCode::IF SQLCODE NOT = 0 THEN
               if (	( methodOut.getSqlcode() != 0 )) { 
                   //  FORMAT1016334848 = "----"
