@@ -3,7 +3,7 @@ package com.cloudframe.app.cfcard.dto;
 /**
 *  The class Work is used to handle fields declared in it
 *  @author CloudFrame Inc.
-*  created on 2024-12-03 at 06:58. using version 5.0.0.161
+*  created on 2024-12-03 at 14:17. using version 5.0.0.162
 **/
 
 

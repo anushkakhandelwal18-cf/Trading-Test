@@ -4,7 +4,7 @@ package com.cloudframe.app.cfcard.dto.serialize;
 *  The class ParmSerialized is used to define offsets in order to serialize
 *  in a fixed String
 *  @author CloudFrame Inc.
-*  created on 2024-12-03 at 06:58. using version 5.0.0.161
+*  created on 2024-12-03 at 14:17. using version 5.0.0.162
 **/
 
 import org.slf4j.Logger;
