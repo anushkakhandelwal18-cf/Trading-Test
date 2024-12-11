@@ -4,7 +4,7 @@ package com.cloudframe.app.dto.serialize.mstpb001;
 *  The class SqlextSerialized is used to define offsets in order to serialize
 *  in a fixed String
 *  @author CloudFrame Inc.
-*  created on 2024-12-03 at 13:41. using version 5.0.0.162
+*  created on 2024-12-11 at 04:18. using version 5.0.0.163
 **/
 
 import org.slf4j.Logger;

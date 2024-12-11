@@ -47,7 +47,7 @@ static final short NOT_NULL = (short)0;
 ******    ,:LOG-END-TS                                             
 ******   )                                                         
 **/
-    public void insert(Dcltbtrdlog dcltbtrdlog, Sqlca sqlca) throws Exception {
+    public void insert(Sqlca sqlca, Dcltbtrdlog dcltbtrdlog) throws Exception {
 
 try {
     // INSRT/UPDATE
@@ -78,7 +78,7 @@ try {
 ******           WHERE LOG_TRANSACTION = :LOG-TRANSACTION          
 ******             AND LOG_CURRENCY    = :LOG-CURRENCY             
 **/
-    public void updateTbtrdlog(Dcltbtrdlog dcltbtrdlog, Sqlca sqlca) throws Exception {
+    public void updateTbtrdlog(Sqlca sqlca, Dcltbtrdlog dcltbtrdlog) throws Exception {
 
 try {
     // INSRT/UPDATE
@@ -112,7 +112,7 @@ try {
 ******           WHERE LOG_TRANSACTION = :LOG-TRANSACTION          
 ******             AND LOG_CURRENCY    = :LOG-CURRENCY             
 **/
-    public void updateTbtrdlog1(Dcltbtrdlog dcltbtrdlog, Sqlca sqlca) throws Exception {
+    public void updateTbtrdlog1(Sqlca sqlca, Dcltbtrdlog dcltbtrdlog) throws Exception {
 
 try {
     // INSRT/UPDATE
@@ -156,7 +156,7 @@ try {
 ******        AND ORD_BUY_SELL_IND  = 'B'                          
 ******        AND ORD_STATUS        = :ORD-STATUS                  
 **/
-    public ResultSet openBuySideOrdersTrdpb000(Dcltbtrdord dcltbtrdord, Sqlca sqlca) throws Exception {
+    public ResultSet openBuySideOrdersTrdpb000(Sqlca sqlca, Dcltbtrdord dcltbtrdord) throws Exception {
 ResultSet buySideOrdersResultSet = null;
 try {
 	//OPEN CURSOR
@@ -189,7 +189,7 @@ return buySideOrdersResultSet;
 ******         ,:ORD-CURRENCY                                      
 ******         ,:ORD-AMOUNT                                        
 **/
-    public void fetchBuySideOrdersTrdpb000(ResultSet buySideOrdersResultSet, Dcltbtrdord dcltbtrdord, Sqlca sqlca) throws Exception {
+    public void fetchBuySideOrdersTrdpb000(ResultSet buySideOrdersResultSet, Sqlca sqlca, Dcltbtrdord dcltbtrdord) throws Exception {
 try {
 	boolean hasResults = buySideOrdersResultSet.next();
 	if (hasResults) {
@@ -276,7 +276,7 @@ catch (SQLException e) {
 ******             ,:ORD-CURRENCY                                  
 ******             ,:ORD-AMOUNT                                    
 **/
-    public void fetchBuySideOrders1Trdpb000(ResultSet buySideOrdersResultSet, Dcltbtrdord dcltbtrdord, Sqlca sqlca) throws Exception {
+    public void fetchBuySideOrders1Trdpb000(ResultSet buySideOrdersResultSet, Sqlca sqlca, Dcltbtrdord dcltbtrdord) throws Exception {
 try {
 	boolean hasResults = buySideOrdersResultSet.next();
 	if (hasResults) {
@@ -379,7 +379,7 @@ catch (SQLException e) {
 ******     AND   ORD_BUY_SELL_IND  = :ORD-BUY-SELL-IND             
 ******     WITH UR                                                 
 **/
-    public void selectTbtrdord(Dcltbtrdord dcltbtrdord, Sqlca sqlca) throws Exception {
+    public void selectTbtrdord(Sqlca sqlca, Dcltbtrdord dcltbtrdord) throws Exception {
 try {
 	// SELECT 
 	// reset SQLCODE
@@ -574,7 +574,7 @@ catch(Exception e) {
 ******       AND MAC_CUSTOMER_ID   = :MAC-CUSTOMER-ID              
 ******     WITH UR                                                 
 **/
-    public void selectTbtrdmac(Dcltbtrdmac dcltbtrdmac, Sqlca sqlca) throws Exception {
+    public void selectTbtrdmac(Sqlca sqlca, Dcltbtrdmac dcltbtrdmac) throws Exception {
 try {
 	// SELECT 
 	// reset SQLCODE
@@ -642,7 +642,7 @@ catch(Exception e) {
 ******       AND MAC_CUSTOMER_ID   = :MAC-CUSTOMER-ID              
 ******     WITH UR                                                 
 **/
-    public void selectTbtrdmac1(Dcltbtrdmac dcltbtrdmac, Sqlca sqlca) throws Exception {
+    public void selectTbtrdmac1(Sqlca sqlca, Dcltbtrdmac dcltbtrdmac) throws Exception {
 try {
 	// SELECT 
 	// reset SQLCODE
@@ -763,7 +763,7 @@ catch(Exception e) {
 ******       AND   ORD_FIGI          = :ORD-FIGI                   
 ******       AND   ORD_BUY_SELL_IND  = :ORD-BUY-SELL-IND           
 **/
-    public void updateTbtrdord(Dcltbtrdord dcltbtrdord, Sqlca sqlca) throws Exception {
+    public void updateTbtrdord(Sqlca sqlca, Dcltbtrdord dcltbtrdord) throws Exception {
 
 try {
     // INSRT/UPDATE
@@ -815,7 +815,7 @@ try {
 ******         ,SUM_TOTAL_CREDIT                                   
 ******         ,SUM_CLOSE_BALANCE                                  
 **/
-    public ResultSet openSummaryCsrTrdpb000(Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception {
+    public ResultSet openSummaryCsrTrdpb000(Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception {
 ResultSet summaryCsrResultSet = null;
 try {
 	//OPEN CURSOR
@@ -850,7 +850,7 @@ return summaryCsrResultSet;
 ******          ,:SUM-TOTAL-CREDIT                                 
 ******          ,:SUM-CLOSE-BALANCE                                
 **/
-    public void fetchSummaryCsrTrdpb000(ResultSet summaryCsrResultSet, Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception {
+    public void fetchSummaryCsrTrdpb000(ResultSet summaryCsrResultSet, Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception {
 try {
 	boolean hasResults = summaryCsrResultSet.next();
 	if (hasResults) {
@@ -989,7 +989,7 @@ catch (SQLException e) {
 ******         AND MAC_NUMBER     = :MAC-NUMBER                    
 ******         WITH UR                                             
 **/
-    public void selectTbtrdmac2(Dcltbtrdmac dcltbtrdmac, Sqlca sqlca) throws Exception {
+    public void selectTbtrdmac2(Sqlca sqlca, Dcltbtrdmac dcltbtrdmac) throws Exception {
 try {
 	// SELECT 
 	// reset SQLCODE
@@ -1056,7 +1056,7 @@ catch(Exception e) {
 ******         ,:SUM-CLOSE-BALANCE                                 
 ******        )                                                    
 **/
-    public void insert1(Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception {
+    public void insert1(Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception {
 
 try {
     // INSRT/UPDATE
@@ -1095,7 +1095,7 @@ try {
 ******        WHERE                                                
 ******           SUM_CUSTOMER_ID = :SUM-CUSTOMER-ID                
 **/
-    public void updateTbtrdsum(Dcltbtrdsum dcltbtrdsum, Sqlca sqlca) throws Exception {
+    public void updateTbtrdsum(Sqlca sqlca, Dcltbtrdsum dcltbtrdsum) throws Exception {
 
 try {
     // INSRT/UPDATE

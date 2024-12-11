@@ -184,7 +184,7 @@ GetCustomerOutCtx methodOut = methodIn.getGetCustomerOutCtx();
 //  cobolCode::MOVE LS-CUSTOMER-ID TO CUS-CUSTOMER-ID
           methodOut.setCusCustomerId(methodOut.getLsCustomerId());
 //  cobolCode::SELECT CUS_CURRENCY , CUS_DESCRIPTION , CUS_STATUS FROM TBTRDCUS WHERE CUS_CUSTOMER_ID = ?
-          mstpb001Repository.selectTbtrdcus(methodOut.getDcltbtrdcus(),programCtx.getSqlca());
+          mstpb001Repository.selectTbtrdcus(programCtx.getSqlca(),methodOut.getDcltbtrdcus());
           //  FORMAT1016334848 = "----"
           methodOut.setSqlcode_Ws(CFUtil.cobolNumberFormatter(CONSTANTS.FORMAT1016334848,String.valueOf(methodOut.getSqlcode()).toCharArray()));
 //  cobolCode::EVALUATE SQLCODE

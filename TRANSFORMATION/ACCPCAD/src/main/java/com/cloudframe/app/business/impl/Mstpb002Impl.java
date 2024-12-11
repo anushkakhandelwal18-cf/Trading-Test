@@ -36,8 +36,8 @@ import com.cloudframe.app.business.Mstpb002;
   import java.util.HashMap;
   import com.cloudframe.app.dto.ProgramContext;
 import com.cloudframe.app.dto.mstpb002.*;
-import com.cloudframe.app.dto.mstpb002.Sqlca;
 import com.cloudframe.app.dto.mstpb002.LsSecurityIo;
+import com.cloudframe.app.dto.mstpb002.Sqlca;
 import com.cloudframe.app.dto.mstpb002.Dcltbtrdsec;
 import com.cloudframe.app.dto.mstpb002.Work;
   import com.cloudframe.app.common.CONSTANTS;
@@ -193,7 +193,7 @@ GetSecurityOutCtx methodOut = methodIn.getGetSecurityOutCtx();
 //  cobolCode::MOVE LS-FIGI TO SEC-FIGI
           methodOut.setSecFigi(methodOut.getLsFigi());
 //  cobolCode::SELECT SEC_CURRENCY , SEC_DESCRIPTION , SEC_SYMBOL , SEC_SHARE_CLASS_FIGI , SEC_TYPE FROM TBTRDSEC WHERE SEC_FIGI = ?
-          mstpb002Repository.selectTbtrdsec(programCtx.getSqlca(),methodOut.getDcltbtrdsec());
+          mstpb002Repository.selectTbtrdsec(methodOut.getDcltbtrdsec(),programCtx.getSqlca());
           //  FORMAT1016334848 = "----"
           methodOut.setSqlcode_Ws(CFUtil.cobolNumberFormatter(CONSTANTS.FORMAT1016334848,String.valueOf(methodOut.getSqlcode()).toCharArray()));
 //  cobolCode::EVALUATE SQLCODE

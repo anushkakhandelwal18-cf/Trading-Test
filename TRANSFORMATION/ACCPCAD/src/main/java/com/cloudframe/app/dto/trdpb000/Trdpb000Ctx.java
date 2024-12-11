@@ -31,21 +31,21 @@ import java.sql.ResultSet;
 public class Trdpb000Ctx implements ProgramContext, Cloneable {
     GlobalExecutorCtx globalCtx;
 
-    Dcltbtrdord dcltbtrdord;
-    Work work;
-    Dcltbtrdmac dcltbtrdmac;
-    Dcltbtrdsac dcltbtrdsac;
-    CustomerSummaryRec customerSummaryRec;
-    Parm parm;
-    CustomerIo customerIo;
-    TrdOrderPair trdOrderPair;
     SettlmentQueueTable settlmentQueueTable;
-    Dcltbtrdlog dcltbtrdlog;
-    Dcltbtrdsum dcltbtrdsum;
-    ExceptionRecord exceptionRecord;
     Sqlca sqlca;
+    TrdOrderPair trdOrderPair;
+    Work work;
+    Dcltbtrdlog dcltbtrdlog;
+    Dcltbtrdsac dcltbtrdsac;
+    Dcltbtrdsum dcltbtrdsum;
     ExceptionRecordLenGroup exceptionRecordLenGroup;
     SecurityIo securityIo;
+    ExceptionRecord exceptionRecord;
+    Dcltbtrdmac dcltbtrdmac;
+    Parm parm;
+    CustomerSummaryRec customerSummaryRec;
+    CustomerIo customerIo;
+    Dcltbtrdord dcltbtrdord;
 
 
     private int rc;
@@ -97,82 +97,27 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     }
 
 
-    public Dcltbtrdord getDcltbtrdord() {
-        if (dcltbtrdord == null) {
-            dcltbtrdord = new Dcltbtrdord();
+    public SettlmentQueueTable getSettlmentQueueTable() {
+        if (settlmentQueueTable == null) {
+            settlmentQueueTable = new SettlmentQueueTable();
         }
 
-        return dcltbtrdord;
+        return settlmentQueueTable;
     }
 
-    public void setDcltbtrdord(Dcltbtrdord dcltbtrdord) {
-        this.dcltbtrdord = dcltbtrdord;
+    public void setSettlmentQueueTable(SettlmentQueueTable settlmentQueueTable) {
+        this.settlmentQueueTable = settlmentQueueTable;
     }
-    public Work getWork() {
-        if (work == null) {
-            work = new Work();
+    public Sqlca getSqlca() {
+        if (sqlca == null) {
+            sqlca = new Sqlca();
         }
 
-        return work;
+        return sqlca;
     }
 
-    public void setWork(Work work) {
-        this.work = work;
-    }
-    public Dcltbtrdmac getDcltbtrdmac() {
-        if (dcltbtrdmac == null) {
-            dcltbtrdmac = new Dcltbtrdmac();
-        }
-
-        return dcltbtrdmac;
-    }
-
-    public void setDcltbtrdmac(Dcltbtrdmac dcltbtrdmac) {
-        this.dcltbtrdmac = dcltbtrdmac;
-    }
-    public Dcltbtrdsac getDcltbtrdsac() {
-        if (dcltbtrdsac == null) {
-            dcltbtrdsac = new Dcltbtrdsac();
-        }
-
-        return dcltbtrdsac;
-    }
-
-    public void setDcltbtrdsac(Dcltbtrdsac dcltbtrdsac) {
-        this.dcltbtrdsac = dcltbtrdsac;
-    }
-    public CustomerSummaryRec getCustomerSummaryRec() {
-        if (customerSummaryRec == null) {
-            customerSummaryRec = new CustomerSummaryRec();
-        }
-
-        return customerSummaryRec;
-    }
-
-    public void setCustomerSummaryRec(CustomerSummaryRec customerSummaryRec) {
-        this.customerSummaryRec = customerSummaryRec;
-    }
-    public Parm getParm() {
-        if (parm == null) {
-            parm = new Parm();
-        }
-
-        return parm;
-    }
-
-    public void setParm(Parm parm) {
-        this.parm = parm;
-    }
-    public CustomerIo getCustomerIo() {
-        if (customerIo == null) {
-            customerIo = new CustomerIo();
-        }
-
-        return customerIo;
-    }
-
-    public void setCustomerIo(CustomerIo customerIo) {
-        this.customerIo = customerIo;
+    public void setSqlca(Sqlca sqlca) {
+        this.sqlca = sqlca;
     }
     public TrdOrderPair getTrdOrderPair() {
         if (trdOrderPair == null) {
@@ -185,16 +130,16 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     public void setTrdOrderPair(TrdOrderPair trdOrderPair) {
         this.trdOrderPair = trdOrderPair;
     }
-    public SettlmentQueueTable getSettlmentQueueTable() {
-        if (settlmentQueueTable == null) {
-            settlmentQueueTable = new SettlmentQueueTable();
+    public Work getWork() {
+        if (work == null) {
+            work = new Work();
         }
 
-        return settlmentQueueTable;
+        return work;
     }
 
-    public void setSettlmentQueueTable(SettlmentQueueTable settlmentQueueTable) {
-        this.settlmentQueueTable = settlmentQueueTable;
+    public void setWork(Work work) {
+        this.work = work;
     }
     public Dcltbtrdlog getDcltbtrdlog() {
         if (dcltbtrdlog == null) {
@@ -207,6 +152,17 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     public void setDcltbtrdlog(Dcltbtrdlog dcltbtrdlog) {
         this.dcltbtrdlog = dcltbtrdlog;
     }
+    public Dcltbtrdsac getDcltbtrdsac() {
+        if (dcltbtrdsac == null) {
+            dcltbtrdsac = new Dcltbtrdsac();
+        }
+
+        return dcltbtrdsac;
+    }
+
+    public void setDcltbtrdsac(Dcltbtrdsac dcltbtrdsac) {
+        this.dcltbtrdsac = dcltbtrdsac;
+    }
     public Dcltbtrdsum getDcltbtrdsum() {
         if (dcltbtrdsum == null) {
             dcltbtrdsum = new Dcltbtrdsum();
@@ -217,28 +173,6 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
 
     public void setDcltbtrdsum(Dcltbtrdsum dcltbtrdsum) {
         this.dcltbtrdsum = dcltbtrdsum;
-    }
-    public ExceptionRecord getExceptionRecord() {
-        if (exceptionRecord == null) {
-            exceptionRecord = new ExceptionRecord();
-        }
-
-        return exceptionRecord;
-    }
-
-    public void setExceptionRecord(ExceptionRecord exceptionRecord) {
-        this.exceptionRecord = exceptionRecord;
-    }
-    public Sqlca getSqlca() {
-        if (sqlca == null) {
-            sqlca = new Sqlca();
-        }
-
-        return sqlca;
-    }
-
-    public void setSqlca(Sqlca sqlca) {
-        this.sqlca = sqlca;
     }
     public ExceptionRecordLenGroup getExceptionRecordLenGroup() {
         if (exceptionRecordLenGroup == null) {
@@ -262,6 +196,72 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     public void setSecurityIo(SecurityIo securityIo) {
         this.securityIo = securityIo;
     }
+    public ExceptionRecord getExceptionRecord() {
+        if (exceptionRecord == null) {
+            exceptionRecord = new ExceptionRecord();
+        }
+
+        return exceptionRecord;
+    }
+
+    public void setExceptionRecord(ExceptionRecord exceptionRecord) {
+        this.exceptionRecord = exceptionRecord;
+    }
+    public Dcltbtrdmac getDcltbtrdmac() {
+        if (dcltbtrdmac == null) {
+            dcltbtrdmac = new Dcltbtrdmac();
+        }
+
+        return dcltbtrdmac;
+    }
+
+    public void setDcltbtrdmac(Dcltbtrdmac dcltbtrdmac) {
+        this.dcltbtrdmac = dcltbtrdmac;
+    }
+    public Parm getParm() {
+        if (parm == null) {
+            parm = new Parm();
+        }
+
+        return parm;
+    }
+
+    public void setParm(Parm parm) {
+        this.parm = parm;
+    }
+    public CustomerSummaryRec getCustomerSummaryRec() {
+        if (customerSummaryRec == null) {
+            customerSummaryRec = new CustomerSummaryRec();
+        }
+
+        return customerSummaryRec;
+    }
+
+    public void setCustomerSummaryRec(CustomerSummaryRec customerSummaryRec) {
+        this.customerSummaryRec = customerSummaryRec;
+    }
+    public CustomerIo getCustomerIo() {
+        if (customerIo == null) {
+            customerIo = new CustomerIo();
+        }
+
+        return customerIo;
+    }
+
+    public void setCustomerIo(CustomerIo customerIo) {
+        this.customerIo = customerIo;
+    }
+    public Dcltbtrdord getDcltbtrdord() {
+        if (dcltbtrdord == null) {
+            dcltbtrdord = new Dcltbtrdord();
+        }
+
+        return dcltbtrdord;
+    }
+
+    public void setDcltbtrdord(Dcltbtrdord dcltbtrdord) {
+        this.dcltbtrdord = dcltbtrdord;
+    }
 
 
     @Override
@@ -273,56 +273,56 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += dcltbtrdord.hashCode();
-        str += work.hashCode();
-        str += dcltbtrdmac.hashCode();
-        str += dcltbtrdsac.hashCode();
-        str += customerSummaryRec.hashCode();
-        str += parm.hashCode();
-        str += customerIo.hashCode();
-        str += trdOrderPair.hashCode();
         str += settlmentQueueTable.hashCode();
-        str += dcltbtrdlog.hashCode();
-        str += dcltbtrdsum.hashCode();
-        str += exceptionRecord.hashCode();
         str += sqlca.hashCode();
+        str += trdOrderPair.hashCode();
+        str += work.hashCode();
+        str += dcltbtrdlog.hashCode();
+        str += dcltbtrdsac.hashCode();
+        str += dcltbtrdsum.hashCode();
         str += exceptionRecordLenGroup.hashCode();
         str += securityIo.hashCode();
+        str += exceptionRecord.hashCode();
+        str += dcltbtrdmac.hashCode();
+        str += parm.hashCode();
+        str += customerSummaryRec.hashCode();
+        str += customerIo.hashCode();
+        str += dcltbtrdord.hashCode();
        return str.hashCode();
     }
 
     public Trdpb000Ctx clone() {
         Trdpb000Ctx cloneObj = new Trdpb000Ctx();
-        cloneObj.dcltbtrdord = new Dcltbtrdord();
-        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
-        cloneObj.dcltbtrdmac = new Dcltbtrdmac();
-        cloneObj.dcltbtrdmac.set(dcltbtrdmac.getClonedField());
-        cloneObj.dcltbtrdsac = new Dcltbtrdsac();
-        cloneObj.dcltbtrdsac.set(dcltbtrdsac.getClonedField());
-        cloneObj.customerSummaryRec = new CustomerSummaryRec();
-        cloneObj.customerSummaryRec.set(customerSummaryRec.getClonedField());
-        cloneObj.parm = new Parm();
-        cloneObj.parm.set(parm.getClonedField());
-        cloneObj.customerIo = new CustomerIo();
-        cloneObj.customerIo.set(customerIo.getClonedField());
-        cloneObj.trdOrderPair = new TrdOrderPair();
-        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
         cloneObj.settlmentQueueTable = new SettlmentQueueTable();
         cloneObj.settlmentQueueTable.set(settlmentQueueTable.getClonedField());
-        cloneObj.dcltbtrdlog = new Dcltbtrdlog();
-        cloneObj.dcltbtrdlog.set(dcltbtrdlog.getClonedField());
-        cloneObj.dcltbtrdsum = new Dcltbtrdsum();
-        cloneObj.dcltbtrdsum.set(dcltbtrdsum.getClonedField());
-        cloneObj.exceptionRecord = new ExceptionRecord();
-        cloneObj.exceptionRecord.set(exceptionRecord.getClonedField());
         cloneObj.sqlca = new Sqlca();
         cloneObj.sqlca.set(sqlca.getClonedField());
+        cloneObj.trdOrderPair = new TrdOrderPair();
+        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        cloneObj.dcltbtrdlog = new Dcltbtrdlog();
+        cloneObj.dcltbtrdlog.set(dcltbtrdlog.getClonedField());
+        cloneObj.dcltbtrdsac = new Dcltbtrdsac();
+        cloneObj.dcltbtrdsac.set(dcltbtrdsac.getClonedField());
+        cloneObj.dcltbtrdsum = new Dcltbtrdsum();
+        cloneObj.dcltbtrdsum.set(dcltbtrdsum.getClonedField());
         cloneObj.exceptionRecordLenGroup = new ExceptionRecordLenGroup();
         cloneObj.exceptionRecordLenGroup.set(exceptionRecordLenGroup.getClonedField());
         cloneObj.securityIo = new SecurityIo();
         cloneObj.securityIo.set(securityIo.getClonedField());
+        cloneObj.exceptionRecord = new ExceptionRecord();
+        cloneObj.exceptionRecord.set(exceptionRecord.getClonedField());
+        cloneObj.dcltbtrdmac = new Dcltbtrdmac();
+        cloneObj.dcltbtrdmac.set(dcltbtrdmac.getClonedField());
+        cloneObj.parm = new Parm();
+        cloneObj.parm.set(parm.getClonedField());
+        cloneObj.customerSummaryRec = new CustomerSummaryRec();
+        cloneObj.customerSummaryRec.set(customerSummaryRec.getClonedField());
+        cloneObj.customerIo = new CustomerIo();
+        cloneObj.customerIo.set(customerIo.getClonedField());
+        cloneObj.dcltbtrdord = new Dcltbtrdord();
+        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
         return cloneObj;
     }
 
@@ -365,17 +365,17 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
             return new ProcessInCtx();
     }
      public class MainlineInCtx implements Cloneable {
-     Dcltbtrdlog dcltbtrdlog = Trdpb000Ctx.this.getDcltbtrdlog();
-     Work work = Trdpb000Ctx.this.getWork();
      Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
+     Work work = Trdpb000Ctx.this.getWork();
      Parm parm = Trdpb000Ctx.this.getParm();
+     Dcltbtrdlog dcltbtrdlog = Trdpb000Ctx.this.getDcltbtrdlog();
 
 	/**
-	 *	Returns the value of dcltbtrdlog
-	 *	@return dcltbtrdlog
+	 *	Returns the value of sqlca
+	 *	@return sqlca
 	 */   
-	 public Dcltbtrdlog getDcltbtrdlog() {
-   	return dcltbtrdlog;
+	 public Sqlca getSqlca() {
+   	return sqlca;
    }
 
 
@@ -462,12 +462,25 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     	parm.setValidCurrencyTrue();
    	}
 	/**
-	 *	Returns the value of sqlca
-	 *	@return sqlca
-	 */   
-	 public Sqlca getSqlca() {
-   	return sqlca;
-   }
+	 *	Returns the value of sqlcode
+	 *	@return sqlcode
+	 */
+	public int getSqlcode() throws CFException {        
+   		return sqlca.getSqlcode();
+	}
+	
+	/**
+	 * 	Update Sqlcode with the passed value
+	 *	@param number
+	 */
+	public void setSqlcode(int number)  throws CFException{
+		sqlca.setSqlcode(number);
+	}
+
+
+	public void setSqlcode(long number)  throws CFException{
+		sqlca.setSqlcode((int)number);
+	}
 
 
 	/**
@@ -525,28 +538,6 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
 	public void setChkpFrequencyString(char[] value)  throws CFException{
 		parm.setChkpFrequency(value);
 	}	
-
-	/**
-	 *	Returns the value of sqlerrd
-	 *	@return sqlerrd
-	 */
-	public int getSqlerrd(int index) throws CFException {        
-   		return sqlca.getSqlerrd((index));
-	}
-	
-	/**
-	 * 	Update Sqlerrd with the passed value
-	 *	@param number
-	 */
-	public void setSqlerrd(int index,int number)  throws CFException{
-		sqlca.setSqlerrd((index),number);
-	}
-
-
-	public void setSqlerrd(int index,long number)  throws CFException{
-		sqlca.setSqlerrd((index),(int)number);
-	}
-
 
 	/**
 	 *	Returns the value of currency01
@@ -615,6 +606,15 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    public void setCurrency01(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
       parm.setCurrency01(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
+
+	/**
+	 *	Returns the value of dcltbtrdlog
+	 *	@return dcltbtrdlog
+	 */   
+	 public Dcltbtrdlog getDcltbtrdlog() {
+   	return dcltbtrdlog;
+   }
+
 
 	/**
 	 *	Returns the value of sqlwarn
@@ -679,24 +679,24 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of sqlcode
-	 *	@return sqlcode
+	 *	Returns the value of sqlerrd
+	 *	@return sqlerrd
 	 */
-	public int getSqlcode() throws CFException {        
-   		return sqlca.getSqlcode();
+	public int getSqlerrd(int index) throws CFException {        
+   		return sqlca.getSqlerrd((index));
 	}
 	
 	/**
-	 * 	Update Sqlcode with the passed value
+	 * 	Update Sqlerrd with the passed value
 	 *	@param number
 	 */
-	public void setSqlcode(int number)  throws CFException{
-		sqlca.setSqlcode(number);
+	public void setSqlerrd(int index,int number)  throws CFException{
+		sqlca.setSqlerrd((index),number);
 	}
 
 
-	public void setSqlcode(long number)  throws CFException{
-		sqlca.setSqlcode((int)number);
+	public void setSqlerrd(int index,long number)  throws CFException{
+		sqlca.setSqlerrd((index),(int)number);
 	}
 
 
@@ -718,23 +718,23 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += dcltbtrdlog.hashCode();
-        str += work.hashCode();
         str += sqlca.hashCode();
+        str += work.hashCode();
         str += parm.hashCode();
+        str += dcltbtrdlog.hashCode();
        return str.hashCode();
     }
 
     public MainlineInCtx clone() {
         MainlineInCtx cloneObj = new MainlineInCtx();
-        cloneObj.dcltbtrdlog = new Dcltbtrdlog();
-        cloneObj.dcltbtrdlog.set(dcltbtrdlog.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
         cloneObj.sqlca = new Sqlca();
         cloneObj.sqlca.set(sqlca.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
         cloneObj.parm = new Parm();
         cloneObj.parm.set(parm.getClonedField());
+        cloneObj.dcltbtrdlog = new Dcltbtrdlog();
+        cloneObj.dcltbtrdlog.set(dcltbtrdlog.getClonedField());
         return cloneObj;
     }
 
@@ -744,250 +744,19 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
             return new MainlineInCtx();
     }
      public class MainlineOutCtx implements Cloneable {
-     Work work = Trdpb000Ctx.this.getWork();
-     Dcltbtrdlog dcltbtrdlog = Trdpb000Ctx.this.getDcltbtrdlog();
      Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
+     Work work = Trdpb000Ctx.this.getWork();
      Parm parm = Trdpb000Ctx.this.getParm();
+     Dcltbtrdlog dcltbtrdlog = Trdpb000Ctx.this.getDcltbtrdlog();
 
 	/**
-	 *	Returns the value of chkpFrequency
-	 *	@return chkpFrequency
-	 */
-	public int getChkpFrequency() throws CFException {
-   		return parm.getChkpFrequency();
-	}
-
-
-	/**
-	 *	Returns String value of chkpFrequency
-	 *	@return chkpFrequency
-	 */
-	public char[]  getChkpFrequencyString() throws CFException {
-	     return String.valueOf(parm.getChkpFrequencyString()).toCharArray();
-	}
-
-	 /**
-	 *  This method allows testing if there is a numeric value stored in the serialized String
-	 *	@return true if numeric value is stored in the string
-	 */
-	public boolean chkpFrequencyIsNumeric()  throws CFException{
-	    return parm.chkpFrequencyIsNumeric();
-	}
-
-	/**
-	 * 	Update ChkpFrequency with the passed value
-	 *	@param number
-	 */
-	public void setChkpFrequency(int number)  throws CFException{
-		parm.setChkpFrequency(number);
-	}
-	
-
-	public void setChkpFrequency(long number)  throws CFException{
-	    parm.setChkpFrequency(number);
-	}
-	
-	
-	/**
-	 * 	Update ChkpFrequency with the passed value
-	 *	@param value (String or char[])
-	 */
-	public void setChkpFrequency(char[] value)  throws CFException {
-		parm.setChkpFrequency(value);
-	}
-	
-	/**
-	 * 	Update ChkpFrequency with the passed value 
-	 *
-	 *	@param value (String or char[])
-	 */
-	public void setChkpFrequencyString(char[] value)  throws CFException{
-		parm.setChkpFrequency(value);
-	}	
-
-	/**
-	 *	Returns the value of currtime
-	 *	@return currtime
-	 */
-   public char[] getCurrtime() throws CFException  {              
-   		return work.getCurrtime();
+	 *	Returns the value of sqlca
+	 *	@return sqlca
+	 */   
+	 public Sqlca getSqlca() {
+   	return sqlca;
    }
 
-  
-	/**
-	*  set variable currtime
-	*  @param value
-	**/
-   public void setCurrtime(char[] value) throws CFException {
-      work.setCurrtime(value);
-   } 
-
-	/**
-	 *	Returns the value of logStartTs
-	 *	@return logStartTs
-	 */
-   public char[] getLogStartTs() throws CFException  {              
-   		return dcltbtrdlog.getLogStartTs();
-   }
-
-  
-	/**
-	*  set variable logStartTs
-	*  @param value
-	**/
-   public void setLogStartTs(char[] value) throws CFException {
-      dcltbtrdlog.setLogStartTs(value);
-   } 
-
-     /**
-	 * 	Update LogStartTs 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setLogStartTs(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdlog.setLogStartTs(source, sourceIndex);
-   	
-   }
-   
-   public void setLogStartTs(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdlog.setLogStartTs(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update LogStartTs 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setLogStartTs(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdlog.setLogStartTs(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update LogStartTs with another Field
-	 *	@param value
-	 */
-   public void setLogStartTs(Field source) {
-      dcltbtrdlog.setLogStartTs(source);
-   }  
-   
-     /**
-	 * 	Update LogStartTs 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setLogStartTs(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdlog.setLogStartTs(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update LogStartTs 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setLogStartTs(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdlog.setLogStartTs(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Test condition "S" for isSystemException()
-	 *	@return  Returns true if isSystemException() is "S"
-	 */
-   public boolean isSystemException() throws CFException {
-      return work.isSystemException();
-   }
-
-	/**
-	*  set values "S"
-	*/
-   	public void setSystemExceptionTrue()  throws CFException{  			
-    	work.setSystemExceptionTrue();
-   	}
-	/**
-	 *	Returns the value of currency01
-	 *	@return currency01
-	 */
-   public char[] getCurrency01() throws CFException  {              
-   		return parm.getCurrency01();
-   }
-
-  
-	/**
-	*  set variable currency01
-	*  @param value
-	**/
-   public void setCurrency01(char[] value) throws CFException {
-      parm.setCurrency01(value);
-   } 
-
-     /**
-	 * 	Update Currency01 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setCurrency01(char[] source, int sourceIndex) throws CFException {
-      parm.setCurrency01(source, sourceIndex);
-   	
-   }
-   
-   public void setCurrency01(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      parm.setCurrency01(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update Currency01 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setCurrency01(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      parm.setCurrency01(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update Currency01 with another Field
-	 *	@param value
-	 */
-   public void setCurrency01(Field source) {
-      parm.setCurrency01(source);
-   }  
-   
-     /**
-	 * 	Update Currency01 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setCurrency01(Field source, int sourceIndex,int sourceLen) {
-      parm.setCurrency01(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update Currency01 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setCurrency01(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      parm.setCurrency01(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of exception
-	 *	@return exception
-	 */
-   public char[] getException() throws CFException  {              
-   		return work.getException();
-   }
-
-  
-	/**
-	*  set variable exception
-	*  @param value
-	**/
-   public void setException(char[] value) throws CFException {
-      work.setException(value);
-   } 
 
 	/**
 	 *	Returns the value of logCurrency
@@ -1055,6 +824,164 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
 	 */
    public void setLogCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
       dcltbtrdlog.setLogCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sqlcode
+	 *	@return sqlcode
+	 */
+	public int getSqlcode() throws CFException {        
+   		return sqlca.getSqlcode();
+	}
+	
+	/**
+	 * 	Update Sqlcode with the passed value
+	 *	@param number
+	 */
+	public void setSqlcode(int number)  throws CFException{
+		sqlca.setSqlcode(number);
+	}
+
+
+	public void setSqlcode(long number)  throws CFException{
+		sqlca.setSqlcode((int)number);
+	}
+
+
+	/**
+	 *	Returns the value of currency01
+	 *	@return currency01
+	 */
+   public char[] getCurrency01() throws CFException  {              
+   		return parm.getCurrency01();
+   }
+
+  
+	/**
+	*  set variable currency01
+	*  @param value
+	**/
+   public void setCurrency01(char[] value) throws CFException {
+      parm.setCurrency01(value);
+   } 
+
+     /**
+	 * 	Update Currency01 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setCurrency01(char[] source, int sourceIndex) throws CFException {
+      parm.setCurrency01(source, sourceIndex);
+   	
+   }
+   
+   public void setCurrency01(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      parm.setCurrency01(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update Currency01 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setCurrency01(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      parm.setCurrency01(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update Currency01 with another Field
+	 *	@param value
+	 */
+   public void setCurrency01(Field source) {
+      parm.setCurrency01(source);
+   }  
+   
+     /**
+	 * 	Update Currency01 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setCurrency01(Field source, int sourceIndex,int sourceLen) {
+      parm.setCurrency01(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update Currency01 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setCurrency01(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      parm.setCurrency01(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of logStartTs
+	 *	@return logStartTs
+	 */
+   public char[] getLogStartTs() throws CFException  {              
+   		return dcltbtrdlog.getLogStartTs();
+   }
+
+  
+	/**
+	*  set variable logStartTs
+	*  @param value
+	**/
+   public void setLogStartTs(char[] value) throws CFException {
+      dcltbtrdlog.setLogStartTs(value);
+   } 
+
+     /**
+	 * 	Update LogStartTs 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setLogStartTs(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdlog.setLogStartTs(source, sourceIndex);
+   	
+   }
+   
+   public void setLogStartTs(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdlog.setLogStartTs(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update LogStartTs 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setLogStartTs(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdlog.setLogStartTs(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update LogStartTs with another Field
+	 *	@param value
+	 */
+   public void setLogStartTs(Field source) {
+      dcltbtrdlog.setLogStartTs(source);
+   }  
+   
+     /**
+	 * 	Update LogStartTs 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setLogStartTs(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdlog.setLogStartTs(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update LogStartTs 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setLogStartTs(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdlog.setLogStartTs(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -1133,6 +1060,40 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    public void setLogTransaction(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
       dcltbtrdlog.setLogTransaction(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
+
+	/**
+	 *	Returns the value of currdate
+	 *	@return currdate
+	 */
+   public char[] getCurrdate() throws CFException  {              
+   		return work.getCurrdate();
+   }
+
+  
+	/**
+	*  set variable currdate
+	*  @param value
+	**/
+   public void setCurrdate(char[] value) throws CFException {
+      work.setCurrdate(value);
+   } 
+
+	/**
+	 *	Returns the value of currtime
+	 *	@return currtime
+	 */
+   public char[] getCurrtime() throws CFException  {              
+   		return work.getCurrtime();
+   }
+
+  
+	/**
+	*  set variable currtime
+	*  @param value
+	**/
+   public void setCurrtime(char[] value) throws CFException {
+      work.setCurrtime(value);
+   } 
 
 	/**
 	 *	Returns the value of logEndTs
@@ -1217,31 +1178,92 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     	work.setApplExceptionTrue();
    	}
 	/**
-	 *	Returns the value of sqlca
-	 *	@return sqlca
-	 */   
-	 public Sqlca getSqlca() {
-   	return sqlca;
-   }
+	 *	Returns the value of chkpFrequency
+	 *	@return chkpFrequency
+	 */
+	public int getChkpFrequency() throws CFException {
+   		return parm.getChkpFrequency();
+	}
 
 
 	/**
-	 *	Returns the value of currdate
-	 *	@return currdate
+	 *	Returns String value of chkpFrequency
+	 *	@return chkpFrequency
 	 */
-   public char[] getCurrdate() throws CFException  {              
-   		return work.getCurrdate();
+	public char[]  getChkpFrequencyString() throws CFException {
+	     return String.valueOf(parm.getChkpFrequencyString()).toCharArray();
+	}
+
+	 /**
+	 *  This method allows testing if there is a numeric value stored in the serialized String
+	 *	@return true if numeric value is stored in the string
+	 */
+	public boolean chkpFrequencyIsNumeric()  throws CFException{
+	    return parm.chkpFrequencyIsNumeric();
+	}
+
+	/**
+	 * 	Update ChkpFrequency with the passed value
+	 *	@param number
+	 */
+	public void setChkpFrequency(int number)  throws CFException{
+		parm.setChkpFrequency(number);
+	}
+	
+
+	public void setChkpFrequency(long number)  throws CFException{
+	    parm.setChkpFrequency(number);
+	}
+	
+	
+	/**
+	 * 	Update ChkpFrequency with the passed value
+	 *	@param value (String or char[])
+	 */
+	public void setChkpFrequency(char[] value)  throws CFException {
+		parm.setChkpFrequency(value);
+	}
+	
+	/**
+	 * 	Update ChkpFrequency with the passed value 
+	 *
+	 *	@param value (String or char[])
+	 */
+	public void setChkpFrequencyString(char[] value)  throws CFException{
+		parm.setChkpFrequency(value);
+	}	
+
+	/**
+	 *	Returns the value of exception
+	 *	@return exception
+	 */
+   public char[] getException() throws CFException  {              
+   		return work.getException();
    }
 
   
 	/**
-	*  set variable currdate
+	*  set variable exception
 	*  @param value
 	**/
-   public void setCurrdate(char[] value) throws CFException {
-      work.setCurrdate(value);
+   public void setException(char[] value) throws CFException {
+      work.setException(value);
    } 
 
+	/**
+	 *	Test condition "S" for isSystemException()
+	 *	@return  Returns true if isSystemException() is "S"
+	 */
+   public boolean isSystemException() throws CFException {
+      return work.isSystemException();
+   }
+
+	/**
+	*  set values "S"
+	*/
+   	public void setSystemExceptionTrue()  throws CFException{  			
+    	work.setSystemExceptionTrue();
+   	}
 	/**
 	 *	Returns the value of sqlcode_Ws
 	 *	@return sqlcode_Ws
@@ -1310,6 +1332,85 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
       work.setSqlcode_Ws(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
+
+        public Trdpb000Ctx getTrdpb000Ctx() {
+            return Trdpb000Ctx.this;
+        }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) return false;
+        return this.hashCode() == o.hashCode();
+    }
+
+    @Override
+    public int hashCode() {
+        String str = "";
+        str += sqlca.hashCode();
+        str += work.hashCode();
+        str += parm.hashCode();
+        str += dcltbtrdlog.hashCode();
+       return str.hashCode();
+    }
+
+    public MainlineOutCtx clone() {
+        MainlineOutCtx cloneObj = new MainlineOutCtx();
+        cloneObj.sqlca = new Sqlca();
+        cloneObj.sqlca.set(sqlca.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        cloneObj.parm = new Parm();
+        cloneObj.parm.set(parm.getClonedField());
+        cloneObj.dcltbtrdlog = new Dcltbtrdlog();
+        cloneObj.dcltbtrdlog.set(dcltbtrdlog.getClonedField());
+        return cloneObj;
+    }
+
+    }
+
+    public MainlineOutCtx getMainlineOutCtx() {
+            return new MainlineOutCtx();
+    }
+     public class OrderAcceptanceInCtx implements Cloneable {
+     SettlmentQueueTable settlmentQueueTable = Trdpb000Ctx.this.getSettlmentQueueTable();
+     Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
+     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
+     Work work = Trdpb000Ctx.this.getWork();
+     Parm parm = Trdpb000Ctx.this.getParm();
+     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
+
+	/**
+	 *	Returns the value of sqlca
+	 *	@return sqlca
+	 */   
+	 public Sqlca getSqlca() {
+   	return sqlca;
+   }
+
+
+	/**
+	 *	Returns the value of orderCount
+	 *	@return orderCount
+	 */
+	public int getOrderCount() throws CFException {        
+   		return work.getOrderCount();
+	}
+	
+	/**
+	 * 	Update OrderCount with the passed value
+	 *	@param number
+	 */
+	public void setOrderCount(int number)  throws CFException{
+		work.setOrderCount(number);
+	}
+
+
+	public void setOrderCount(long number)  throws CFException{
+		work.setOrderCount((int)number);
+	}
+
+
 	/**
 	 *	Returns the value of sqlcode
 	 *	@return sqlcode
@@ -1332,61 +1433,204 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
 	}
 
 
+	/**
+	 *	Returns the value of ordBuySellInd
+	 *	@return ordBuySellInd
+	 */
+   public char[] getOrdBuySellInd() throws CFException  {              
+   		return dcltbtrdord.getOrdBuySellInd();
+   }
 
-        public Trdpb000Ctx getTrdpb000Ctx() {
-            return Trdpb000Ctx.this;
-        }
+  
+	/**
+	*  set variable ordBuySellInd
+	*  @param value
+	**/
+   public void setOrdBuySellInd(char[] value) throws CFException {
+      dcltbtrdord.setOrdBuySellInd(value);
+   } 
 
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null) return false;
-        return this.hashCode() == o.hashCode();
-    }
-
-    @Override
-    public int hashCode() {
-        String str = "";
-        str += work.hashCode();
-        str += dcltbtrdlog.hashCode();
-        str += sqlca.hashCode();
-        str += parm.hashCode();
-       return str.hashCode();
-    }
-
-    public MainlineOutCtx clone() {
-        MainlineOutCtx cloneObj = new MainlineOutCtx();
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
-        cloneObj.dcltbtrdlog = new Dcltbtrdlog();
-        cloneObj.dcltbtrdlog.set(dcltbtrdlog.getClonedField());
-        cloneObj.sqlca = new Sqlca();
-        cloneObj.sqlca.set(sqlca.getClonedField());
-        cloneObj.parm = new Parm();
-        cloneObj.parm.set(parm.getClonedField());
-        return cloneObj;
-    }
-
-    }
-
-    public MainlineOutCtx getMainlineOutCtx() {
-            return new MainlineOutCtx();
-    }
-     public class OrderAcceptanceInCtx implements Cloneable {
-     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
-     SettlmentQueueTable settlmentQueueTable = Trdpb000Ctx.this.getSettlmentQueueTable();
-     Work work = Trdpb000Ctx.this.getWork();
-     Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
-     Parm parm = Trdpb000Ctx.this.getParm();
-     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
+     /**
+	 * 	Update OrdBuySellInd 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdBuySellInd(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdBuySellInd 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdBuySellInd with another Field
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(Field source) {
+      dcltbtrdord.setOrdBuySellInd(source);
+   }  
+   
+     /**
+	 * 	Update OrdBuySellInd 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdBuySellInd 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
 
 	/**
-	 *	Returns the value of dcltbtrdord
-	 *	@return dcltbtrdord
-	 */   
-	 public Dcltbtrdord getDcltbtrdord() {
-   	return dcltbtrdord;
+	 *	Returns the value of currency01
+	 *	@return currency01
+	 */
+   public char[] getCurrency01() throws CFException  {              
+   		return parm.getCurrency01();
    }
+
+  
+	/**
+	*  set variable currency01
+	*  @param value
+	**/
+   public void setCurrency01(char[] value) throws CFException {
+      parm.setCurrency01(value);
+   } 
+
+     /**
+	 * 	Update Currency01 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setCurrency01(char[] source, int sourceIndex) throws CFException {
+      parm.setCurrency01(source, sourceIndex);
+   	
+   }
+   
+   public void setCurrency01(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      parm.setCurrency01(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update Currency01 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setCurrency01(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      parm.setCurrency01(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update Currency01 with another Field
+	 *	@param value
+	 */
+   public void setCurrency01(Field source) {
+      parm.setCurrency01(source);
+   }  
+   
+     /**
+	 * 	Update Currency01 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setCurrency01(Field source, int sourceIndex,int sourceLen) {
+      parm.setCurrency01(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update Currency01 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setCurrency01(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      parm.setCurrency01(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sqlerrd
+	 *	@return sqlerrd
+	 */
+	public int getSqlerrd(int index) throws CFException {        
+   		return sqlca.getSqlerrd((index));
+	}
+	
+	/**
+	 * 	Update Sqlerrd with the passed value
+	 *	@param number
+	 */
+	public void setSqlerrd(int index,int number)  throws CFException{
+		sqlca.setSqlerrd((index),number);
+	}
+
+
+	public void setSqlerrd(int index,long number)  throws CFException{
+		sqlca.setSqlerrd((index),(int)number);
+	}
+
+
+	public BigDecimal getOrdQuantity() throws CFException{      
+   		return dcltbtrdord.getOrdQuantity();
+	}
+
+    public char[] getOrdQuantityString() throws CFException {
+          return  dcltbtrdord.getOrdQuantity().toPlainString().toCharArray();
+    }
+	
+	/**
+	 * 	Update OrdQuantity with the passed number
+	 *	@param number
+	 */
+	public void setOrdQuantity(BigDecimal number)  throws CFException{
+		dcltbtrdord.setOrdQuantity(number);
+   }
+
+	/**
+	 *	Returns the value of stqIndex
+	 *	@return stqIndex
+	 */
+	public short getStqIndex() throws CFException {        
+   		return settlmentQueueTable.getStqIndex();
+	}
+	
+	/**
+	 * 	Update StqIndex with the passed value
+	 *	@param number
+	 */
+	public void setStqIndex(short number)  throws CFException{
+		settlmentQueueTable.setStqIndex(number);
+	}
+
+	public void setStqIndex(int number)  throws CFException{
+		settlmentQueueTable.setStqIndex((short)number);
+	}
+
+	public void setStqIndex(long number)  throws CFException{
+		settlmentQueueTable.setStqIndex((short)number);
+	}
+
 
 
 	/**
@@ -1458,30 +1702,72 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of stqIndex
-	 *	@return stqIndex
+	 *	Returns the value of ordFigi
+	 *	@return ordFigi
 	 */
-	public short getStqIndex() throws CFException {        
-   		return settlmentQueueTable.getStqIndex();
-	}
-	
+   public char[] getOrdFigi() throws CFException  {              
+   		return dcltbtrdord.getOrdFigi();
+   }
+
+  
 	/**
-	 * 	Update StqIndex with the passed value
-	 *	@param number
+	*  set variable ordFigi
+	*  @param value
+	**/
+   public void setOrdFigi(char[] value) throws CFException {
+      dcltbtrdord.setOrdFigi(value);
+   } 
+
+     /**
+	 * 	Update OrdFigi 
+	 *     with a char[] from an offset and length             
+	 *	@param value
 	 */
-	public void setStqIndex(short number)  throws CFException{
-		settlmentQueueTable.setStqIndex(number);
-	}
-
-	public void setStqIndex(int number)  throws CFException{
-		settlmentQueueTable.setStqIndex((short)number);
-	}
-
-	public void setStqIndex(long number)  throws CFException{
-		settlmentQueueTable.setStqIndex((short)number);
-	}
-
-
+   public void setOrdFigi(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdFigi(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdFigi with another Field
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source) {
+      dcltbtrdord.setOrdFigi(source);
+   }  
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
 
 	/**
 	 *	Returns the value of chkpFrequency
@@ -1538,267 +1824,6 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
 	public void setChkpFrequencyString(char[] value)  throws CFException{
 		parm.setChkpFrequency(value);
 	}	
-
-	/**
-	 *	Returns the value of sqlerrd
-	 *	@return sqlerrd
-	 */
-	public int getSqlerrd(int index) throws CFException {        
-   		return sqlca.getSqlerrd((index));
-	}
-	
-	/**
-	 * 	Update Sqlerrd with the passed value
-	 *	@param number
-	 */
-	public void setSqlerrd(int index,int number)  throws CFException{
-		sqlca.setSqlerrd((index),number);
-	}
-
-
-	public void setSqlerrd(int index,long number)  throws CFException{
-		sqlca.setSqlerrd((index),(int)number);
-	}
-
-
-	/**
-	 *	Returns the value of currency01
-	 *	@return currency01
-	 */
-   public char[] getCurrency01() throws CFException  {              
-   		return parm.getCurrency01();
-   }
-
-  
-	/**
-	*  set variable currency01
-	*  @param value
-	**/
-   public void setCurrency01(char[] value) throws CFException {
-      parm.setCurrency01(value);
-   } 
-
-     /**
-	 * 	Update Currency01 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setCurrency01(char[] source, int sourceIndex) throws CFException {
-      parm.setCurrency01(source, sourceIndex);
-   	
-   }
-   
-   public void setCurrency01(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      parm.setCurrency01(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update Currency01 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setCurrency01(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      parm.setCurrency01(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update Currency01 with another Field
-	 *	@param value
-	 */
-   public void setCurrency01(Field source) {
-      parm.setCurrency01(source);
-   }  
-   
-     /**
-	 * 	Update Currency01 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setCurrency01(Field source, int sourceIndex,int sourceLen) {
-      parm.setCurrency01(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update Currency01 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setCurrency01(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      parm.setCurrency01(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of sqlwarn
-	 *	@return sqlwarn
-	 */   
-	 public Sqlwarn getSqlwarn() {
-   	return sqlca.getSqlwarn();
-   }
-
-   /**
-	* 	Update Sqlwarn with the passed value
-	*	@param value
-	*/
-   public void setSqlwarn(char[] value) throws CFException {
-      sqlca.setSqlwarn(value);
-   }   
-
-     /**
-	 * 	Update Sqlwarn 
-	 *     with a String from an offset and length             
-	 *	@param value
-	 */
-   public void setSqlwarn(char[] source, int sourceIndex,int sourceLen) throws CFException {
-   	sqlca.setSqlwarn(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update Sqlwarn 
-	 *     with a String from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setSqlwarn(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-   	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update Sqlwarn with another Field
-	 *	@param value
-	 */
-   public void setSqlwarn(Field source) {
-   	sqlca.setSqlwarn(source);
-   }  
-   
-     /**
-	 * 	Update Sqlwarn 
-	 *     with another Field from an offset and length             
-	 *	@param value
-	 */
-   public void setSqlwarn(Field source, int sourceIndex,int sourceLen) {
-   	sqlca.setSqlwarn(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update Sqlwarn 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setSqlwarn(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-   	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	public BigDecimal getOrdAmount() throws CFException{      
-   		return dcltbtrdord.getOrdAmount();
-	}
-
-    public char[] getOrdAmountString() throws CFException {
-          return  dcltbtrdord.getOrdAmount().toPlainString().toCharArray();
-    }
-	
-	/**
-	 * 	Update OrdAmount with the passed number
-	 *	@param number
-	 */
-	public void setOrdAmount(BigDecimal number)  throws CFException{
-		dcltbtrdord.setOrdAmount(number);
-   }
-
-	public BigDecimal getOrdQuantity() throws CFException{      
-   		return dcltbtrdord.getOrdQuantity();
-	}
-
-    public char[] getOrdQuantityString() throws CFException {
-          return  dcltbtrdord.getOrdQuantity().toPlainString().toCharArray();
-    }
-	
-	/**
-	 * 	Update OrdQuantity with the passed number
-	 *	@param number
-	 */
-	public void setOrdQuantity(BigDecimal number)  throws CFException{
-		dcltbtrdord.setOrdQuantity(number);
-   }
-
-	/**
-	 *	Returns the value of ordTradeid
-	 *	@return ordTradeid
-	 */
-   public char[] getOrdTradeid() throws CFException  {              
-   		return dcltbtrdord.getOrdTradeid();
-   }
-
-  
-	/**
-	*  set variable ordTradeid
-	*  @param value
-	**/
-   public void setOrdTradeid(char[] value) throws CFException {
-      dcltbtrdord.setOrdTradeid(value);
-   } 
-
-     /**
-	 * 	Update OrdTradeid 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdTradeid 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdTradeid with another Field
-	 *	@param value
-	 */
-   public void setOrdTradeid(Field source) {
-      dcltbtrdord.setOrdTradeid(source);
-   }  
-   
-     /**
-	 * 	Update OrdTradeid 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdTradeid 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of sqlca
-	 *	@return sqlca
-	 */   
-	 public Sqlca getSqlca() {
-   	return sqlca;
-   }
-
 
 	/**
 	 *	Returns the value of ordCustomerId
@@ -1869,184 +1894,159 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of ordBuySellInd
-	 *	@return ordBuySellInd
-	 */
-   public char[] getOrdBuySellInd() throws CFException  {              
-   		return dcltbtrdord.getOrdBuySellInd();
+	 *	Returns the value of sqlwarn
+	 *	@return sqlwarn
+	 */   
+	 public Sqlwarn getSqlwarn() {
+   	return sqlca.getSqlwarn();
    }
 
-  
-	/**
-	*  set variable ordBuySellInd
-	*  @param value
-	**/
-   public void setOrdBuySellInd(char[] value) throws CFException {
-      dcltbtrdord.setOrdBuySellInd(value);
-   } 
+   /**
+	* 	Update Sqlwarn with the passed value
+	*	@param value
+	*/
+   public void setSqlwarn(char[] value) throws CFException {
+      sqlca.setSqlwarn(value);
+   }   
 
      /**
-	 * 	Update OrdBuySellInd 
-	 *     with a char[] from an offset and length             
+	 * 	Update Sqlwarn 
+	 *     with a String from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdBuySellInd(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);
+   public void setSqlwarn(char[] source, int sourceIndex,int sourceLen) throws CFException {
+   	sqlca.setSqlwarn(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdBuySellInd 
-	 *     with a char[] from an offset and length  
+	 * 	Update Sqlwarn 
+	 *     with a String from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setSqlwarn(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+   	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdBuySellInd with another Field
+	 * 	Update Sqlwarn with another Field
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(Field source) {
-      dcltbtrdord.setOrdBuySellInd(source);
+   public void setSqlwarn(Field source) {
+   	sqlca.setSqlwarn(source);
    }  
    
      /**
-	 * 	Update OrdBuySellInd 
-	 *     with another Field from an offset and length          
+	 * 	Update Sqlwarn 
+	 *     with another Field from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);   	
+   public void setSqlwarn(Field source, int sourceIndex,int sourceLen) {
+   	sqlca.setSqlwarn(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdBuySellInd 
+	 * 	Update Sqlwarn 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setSqlwarn(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+   	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
-	 *	Returns the value of sqlcode
-	 *	@return sqlcode
+	 *	Returns the value of ordTradeid
+	 *	@return ordTradeid
 	 */
-	public int getSqlcode() throws CFException {        
-   		return sqlca.getSqlcode();
-	}
-	
-	/**
-	 * 	Update Sqlcode with the passed value
-	 *	@param number
-	 */
-	public void setSqlcode(int number)  throws CFException{
-		sqlca.setSqlcode(number);
-	}
-
-
-	public void setSqlcode(long number)  throws CFException{
-		sqlca.setSqlcode((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of orderCount
-	 *	@return orderCount
-	 */
-	public int getOrderCount() throws CFException {        
-   		return work.getOrderCount();
-	}
-	
-	/**
-	 * 	Update OrderCount with the passed value
-	 *	@param number
-	 */
-	public void setOrderCount(int number)  throws CFException{
-		work.setOrderCount(number);
-	}
-
-
-	public void setOrderCount(long number)  throws CFException{
-		work.setOrderCount((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of ordFigi
-	 *	@return ordFigi
-	 */
-   public char[] getOrdFigi() throws CFException  {              
-   		return dcltbtrdord.getOrdFigi();
+   public char[] getOrdTradeid() throws CFException  {              
+   		return dcltbtrdord.getOrdTradeid();
    }
 
   
 	/**
-	*  set variable ordFigi
+	*  set variable ordTradeid
 	*  @param value
 	**/
-   public void setOrdFigi(char[] value) throws CFException {
-      dcltbtrdord.setOrdFigi(value);
+   public void setOrdTradeid(char[] value) throws CFException {
+      dcltbtrdord.setOrdTradeid(value);
    } 
 
      /**
-	 * 	Update OrdFigi 
+	 * 	Update OrdTradeid 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdFigi(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdFigi(source, sourceIndex);
+   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex);
    	
    }
    
-   public void setOrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);
+   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdFigi 
+	 * 	Update OrdTradeid 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdFigi with another Field
+	 * 	Update OrdTradeid with another Field
 	 *	@param value
 	 */
-   public void setOrdFigi(Field source) {
-      dcltbtrdord.setOrdFigi(source);
+   public void setOrdTradeid(Field source) {
+      dcltbtrdord.setOrdTradeid(source);
    }  
    
      /**
-	 * 	Update OrdFigi 
+	 * 	Update OrdTradeid 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdFigi(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);   	
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdFigi 
+	 * 	Update OrdTradeid 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
+
+	public BigDecimal getOrdAmount() throws CFException{      
+   		return dcltbtrdord.getOrdAmount();
+	}
+
+    public char[] getOrdAmountString() throws CFException {
+          return  dcltbtrdord.getOrdAmount().toPlainString().toCharArray();
+    }
+	
+	/**
+	 * 	Update OrdAmount with the passed number
+	 *	@param number
+	 */
+	public void setOrdAmount(BigDecimal number)  throws CFException{
+		dcltbtrdord.setOrdAmount(number);
+   }
+
+	/**
+	 *	Returns the value of dcltbtrdord
+	 *	@return dcltbtrdord
+	 */   
+	 public Dcltbtrdord getDcltbtrdord() {
+   	return dcltbtrdord;
+   }
+
 
 
         public Trdpb000Ctx getTrdpb000Ctx() {
@@ -2066,29 +2066,29 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += dcltbtrdord.hashCode();
         str += settlmentQueueTable.hashCode();
-        str += work.hashCode();
         str += sqlca.hashCode();
-        str += parm.hashCode();
         str += trdOrderPair.hashCode();
+        str += work.hashCode();
+        str += parm.hashCode();
+        str += dcltbtrdord.hashCode();
        return str.hashCode();
     }
 
     public OrderAcceptanceInCtx clone() {
         OrderAcceptanceInCtx cloneObj = new OrderAcceptanceInCtx();
-        cloneObj.dcltbtrdord = new Dcltbtrdord();
-        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
         cloneObj.settlmentQueueTable = new SettlmentQueueTable();
         cloneObj.settlmentQueueTable.set(settlmentQueueTable.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
         cloneObj.sqlca = new Sqlca();
         cloneObj.sqlca.set(sqlca.getClonedField());
-        cloneObj.parm = new Parm();
-        cloneObj.parm.set(parm.getClonedField());
         cloneObj.trdOrderPair = new TrdOrderPair();
         cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        cloneObj.parm = new Parm();
+        cloneObj.parm.set(parm.getClonedField());
+        cloneObj.dcltbtrdord = new Dcltbtrdord();
+        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
         return cloneObj;
     }
 
@@ -2098,36 +2098,13 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
             return new OrderAcceptanceInCtx();
     }
      public class OrderAcceptanceOutCtx implements Cloneable {
-     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
      SettlmentQueueTable settlmentQueueTable = Trdpb000Ctx.this.getSettlmentQueueTable();
-     Work work = Trdpb000Ctx.this.getWork();
      Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
-     Parm parm = Trdpb000Ctx.this.getParm();
      TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
+     Work work = Trdpb000Ctx.this.getWork();
+     Parm parm = Trdpb000Ctx.this.getParm();
+     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
 
-	/**
-	 *	Returns the value of dcltbtrdord
-	 *	@return dcltbtrdord
-	 */   
-	 public Dcltbtrdord getDcltbtrdord() {
-   	return dcltbtrdord;
-   }
-
-
-	/**
-	 *	Test condition "N" for isNoExceptions()
-	 *	@return  Returns true if isNoExceptions() is "N"
-	 */
-   public boolean isNoExceptions() throws CFException {
-      return work.isNoExceptions();
-   }
-
-	/**
-	*  set values "N"
-	*/
-   	public void setNoExceptionsTrue()  throws CFException{  			
-    	work.setNoExceptionsTrue();
-   	}
 	/**
 	 *	Returns the value of stqCurrency
 	 *	@return stqCurrency
@@ -2213,355 +2190,89 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
       parm.setCurrency01(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
-	public BigDecimal getTrdOrderQty() throws CFException{      
-   		return trdOrderPair.getTrdOrderQty();
+	public BigDecimal getTrdOrderAmount() throws CFException{      
+   		return trdOrderPair.getTrdOrderAmount();
 	}
 
-    public char[] getTrdOrderQtyString() throws CFException {
-          return  trdOrderPair.getTrdOrderQty().toPlainString().toCharArray();
+    public char[] getTrdOrderAmountString() throws CFException {
+          return  trdOrderPair.getTrdOrderAmount().toPlainString().toCharArray();
     }
 	
 	/**
-	 * 	Update TrdOrderQty with the passed number
+	 * 	Update TrdOrderAmount with the passed number
 	 *	@param number
 	 */
-	public void setTrdOrderQty(BigDecimal number)  throws CFException{
-		trdOrderPair.setTrdOrderQty(number);
+	public void setTrdOrderAmount(BigDecimal number)  throws CFException{
+		trdOrderPair.setTrdOrderAmount(number);
    }
 
 	/**
-	 *	Returns the value of exception
-	 *	@return exception
+	 *	Returns the value of ordStatus
+	 *	@return ordStatus
 	 */
-   public char[] getException() throws CFException  {              
-   		return work.getException();
+   public char[] getOrdStatus() throws CFException  {              
+   		return dcltbtrdord.getOrdStatus();
    }
 
   
 	/**
-	*  set variable exception
+	*  set variable ordStatus
 	*  @param value
 	**/
-   public void setException(char[] value) throws CFException {
-      work.setException(value);
-   } 
-
-	/**
-	 *	Test condition "101" for isAccepted()
-	 *	@return  Returns true if isAccepted() is "101"
-	 */
-   public boolean isAccepted() throws CFException {
-      return work.isAccepted();
-   }
-
-	/**
-	*  set values "101"
-	*/
-   	public void setAcceptedTrue()  throws CFException{  			
-    	work.setAcceptedTrue();
-   	}
-	/**
-	 *	Returns the value of trdExchange
-	 *	@return trdExchange
-	 */
-   public char[] getTrdExchange() throws CFException  {              
-   		return trdOrderPair.getTrdExchange();
-   }
-
-  
-	/**
-	*  set variable trdExchange
-	*  @param value
-	**/
-   public void setTrdExchange(char[] value) throws CFException {
-      trdOrderPair.setTrdExchange(value);
+   public void setOrdStatus(char[] value) throws CFException {
+      dcltbtrdord.setOrdStatus(value);
    } 
 
      /**
-	 * 	Update TrdExchange 
+	 * 	Update OrdStatus 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setTrdExchange(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdExchange(source, sourceIndex);
+   public void setOrdStatus(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdStatus(source, sourceIndex);
    	
    }
    
-   public void setTrdExchange(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);
+   public void setOrdStatus(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update TrdExchange 
+	 * 	Update OrdStatus 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdExchange(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdStatus(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update TrdExchange with another Field
+	 * 	Update OrdStatus with another Field
 	 *	@param value
 	 */
-   public void setTrdExchange(Field source) {
-      trdOrderPair.setTrdExchange(source);
+   public void setOrdStatus(Field source) {
+      dcltbtrdord.setOrdStatus(source);
    }  
    
      /**
-	 * 	Update TrdExchange 
+	 * 	Update OrdStatus 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setTrdExchange(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);   	
+   public void setOrdStatus(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update TrdExchange 
+	 * 	Update OrdStatus 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdStatus(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
-
-	/**
-	 *	Returns the value of ordTradingXchng
-	 *	@return ordTradingXchng
-	 */
-   public char[] getOrdTradingXchng() throws CFException  {              
-   		return dcltbtrdord.getOrdTradingXchng();
-   }
-
-  
-	/**
-	*  set variable ordTradingXchng
-	*  @param value
-	**/
-   public void setOrdTradingXchng(char[] value) throws CFException {
-      dcltbtrdord.setOrdTradingXchng(value);
-   } 
-
-     /**
-	 * 	Update OrdTradingXchng 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdTradingXchng(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdTradingXchng 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdTradingXchng with another Field
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(Field source) {
-      dcltbtrdord.setOrdTradingXchng(source);
-   }  
-   
-     /**
-	 * 	Update OrdTradingXchng 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdTradingXchng 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of sqlca
-	 *	@return sqlca
-	 */   
-	 public Sqlca getSqlca() {
-   	return sqlca;
-   }
-
-
-	/**
-	 *	Returns the value of ordCustomerId
-	 *	@return ordCustomerId
-	 */
-   public char[] getOrdCustomerId() throws CFException  {              
-   		return dcltbtrdord.getOrdCustomerId();
-   }
-
-  
-	/**
-	*  set variable ordCustomerId
-	*  @param value
-	**/
-   public void setOrdCustomerId(char[] value) throws CFException {
-      dcltbtrdord.setOrdCustomerId(value);
-   } 
-
-     /**
-	 * 	Update OrdCustomerId 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdCustomerId(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdCustomerId(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdCustomerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdCustomerId(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdCustomerId 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdCustomerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdCustomerId with another Field
-	 *	@param value
-	 */
-   public void setOrdCustomerId(Field source) {
-      dcltbtrdord.setOrdCustomerId(source);
-   }  
-   
-     /**
-	 * 	Update OrdCustomerId 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdCustomerId(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdCustomerId(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdCustomerId 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdCustomerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of ordCurrency
-	 *	@return ordCurrency
-	 */
-   public char[] getOrdCurrency() throws CFException  {              
-   		return dcltbtrdord.getOrdCurrency();
-   }
-
-  
-	/**
-	*  set variable ordCurrency
-	*  @param value
-	**/
-   public void setOrdCurrency(char[] value) throws CFException {
-      dcltbtrdord.setOrdCurrency(value);
-   } 
-
-     /**
-	 * 	Update OrdCurrency 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdCurrency(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdCurrency 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdCurrency with another Field
-	 *	@param value
-	 */
-   public void setOrdCurrency(Field source) {
-      dcltbtrdord.setOrdCurrency(source);
-   }  
-   
-     /**
-	 * 	Update OrdCurrency 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdCurrency 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of sqlcode
-	 *	@return sqlcode
-	 */
-	public int getSqlcode() throws CFException {        
-   		return sqlca.getSqlcode();
-	}
-	
-	/**
-	 * 	Update Sqlcode with the passed value
-	 *	@param number
-	 */
-	public void setSqlcode(int number)  throws CFException{
-		sqlca.setSqlcode(number);
-	}
-
-
-	public void setSqlcode(long number)  throws CFException{
-		sqlca.setSqlcode((int)number);
-	}
-
 
 	/**
 	 *	Returns the value of trdCurrency
@@ -2632,394 +2343,246 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of stqIndex
-	 *	@return stqIndex
+	 *	Returns the value of ordFigi
+	 *	@return ordFigi
 	 */
-	public short getStqIndex() throws CFException {        
-   		return settlmentQueueTable.getStqIndex();
-	}
-	
-	/**
-	 * 	Update StqIndex with the passed value
-	 *	@param number
-	 */
-	public void setStqIndex(short number)  throws CFException{
-		settlmentQueueTable.setStqIndex(number);
-	}
-
-	public void setStqIndex(int number)  throws CFException{
-		settlmentQueueTable.setStqIndex((short)number);
-	}
-
-	public void setStqIndex(long number)  throws CFException{
-		settlmentQueueTable.setStqIndex((short)number);
-	}
-
-
-
-	/**
-	 *	Returns the value of orderStatus
-	 *	@return orderStatus
-	 */
-   public char[] getOrderStatus() throws CFException  {              
-   		return work.getOrderStatus();
+   public char[] getOrdFigi() throws CFException  {              
+   		return dcltbtrdord.getOrdFigi();
    }
 
   
 	/**
-	*  set variable orderStatus
+	*  set variable ordFigi
 	*  @param value
 	**/
-   public void setOrderStatus(char[] value) throws CFException {
-      work.setOrderStatus(value);
-   } 
-
-	/**
-	 *	Returns the value of ordStatus
-	 *	@return ordStatus
-	 */
-   public char[] getOrdStatus() throws CFException  {              
-   		return dcltbtrdord.getOrdStatus();
-   }
-
-  
-	/**
-	*  set variable ordStatus
-	*  @param value
-	**/
-   public void setOrdStatus(char[] value) throws CFException {
-      dcltbtrdord.setOrdStatus(value);
+   public void setOrdFigi(char[] value) throws CFException {
+      dcltbtrdord.setOrdFigi(value);
    } 
 
      /**
-	 * 	Update OrdStatus 
+	 * 	Update OrdFigi 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdStatus(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdStatus(source, sourceIndex);
+   public void setOrdFigi(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdFigi(source, sourceIndex);
    	
    }
    
-   public void setOrdStatus(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);
+   public void setOrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdStatus 
+	 * 	Update OrdFigi 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdStatus(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdStatus with another Field
+	 * 	Update OrdFigi with another Field
 	 *	@param value
 	 */
-   public void setOrdStatus(Field source) {
-      dcltbtrdord.setOrdStatus(source);
+   public void setOrdFigi(Field source) {
+      dcltbtrdord.setOrdFigi(source);
    }  
    
      /**
-	 * 	Update OrdStatus 
+	 * 	Update OrdFigi 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdStatus(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);   	
+   public void setOrdFigi(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdStatus 
+	 * 	Update OrdFigi 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdStatus(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
-	public BigDecimal getOrdAmount() throws CFException{      
-   		return dcltbtrdord.getOrdAmount();
-	}
-
-    public char[] getOrdAmountString() throws CFException {
-          return  dcltbtrdord.getOrdAmount().toPlainString().toCharArray();
-    }
-	
 	/**
-	 * 	Update OrdAmount with the passed number
-	 *	@param number
+	 *	Returns the value of ordCustomerId
+	 *	@return ordCustomerId
 	 */
-	public void setOrdAmount(BigDecimal number)  throws CFException{
-		dcltbtrdord.setOrdAmount(number);
+   public char[] getOrdCustomerId() throws CFException  {              
+   		return dcltbtrdord.getOrdCustomerId();
    }
 
-	public BigDecimal getTrdOrderAmount() throws CFException{      
-   		return trdOrderPair.getTrdOrderAmount();
-	}
-
-    public char[] getTrdOrderAmountString() throws CFException {
-          return  trdOrderPair.getTrdOrderAmount().toPlainString().toCharArray();
-    }
-	
+  
 	/**
-	 * 	Update TrdOrderAmount with the passed number
-	 *	@param number
+	*  set variable ordCustomerId
+	*  @param value
+	**/
+   public void setOrdCustomerId(char[] value) throws CFException {
+      dcltbtrdord.setOrdCustomerId(value);
+   } 
+
+     /**
+	 * 	Update OrdCustomerId 
+	 *     with a char[] from an offset and length             
+	 *	@param value
 	 */
-	public void setTrdOrderAmount(BigDecimal number)  throws CFException{
-		trdOrderPair.setTrdOrderAmount(number);
+   public void setOrdCustomerId(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdCustomerId(source, sourceIndex);
+   	
    }
-
-	public BigDecimal getOrdQuantity() throws CFException{      
-   		return dcltbtrdord.getOrdQuantity();
-	}
-
-    public char[] getOrdQuantityString() throws CFException {
-          return  dcltbtrdord.getOrdQuantity().toPlainString().toCharArray();
-    }
-	
-	/**
-	 * 	Update OrdQuantity with the passed number
-	 *	@param number
+   
+   public void setOrdCustomerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdCustomerId(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdCustomerId 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
 	 */
-	public void setOrdQuantity(BigDecimal number)  throws CFException{
-		dcltbtrdord.setOrdQuantity(number);
+   public void setOrdCustomerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
-
-	/**
-	 *	Test condition "A" for isApplException()
-	 *	@return  Returns true if isApplException() is "A"
+   
+    /**
+	 * 	Update OrdCustomerId with another Field
+	 *	@param value
 	 */
-   public boolean isApplException() throws CFException {
-      return work.isApplException();
+   public void setOrdCustomerId(Field source) {
+      dcltbtrdord.setOrdCustomerId(source);
+   }  
+   
+     /**
+	 * 	Update OrdCustomerId 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdCustomerId(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdCustomerId(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdCustomerId 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdCustomerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
-	*  set values "A"
+	 *	Test condition "D" for isDataException()
+	 *	@return  Returns true if isDataException() is "D"
+	 */
+   public boolean isDataException() throws CFException {
+      return work.isDataException();
+   }
+
+	/**
+	*  set values "D"
 	*/
-   	public void setApplExceptionTrue()  throws CFException{  			
-    	work.setApplExceptionTrue();
+   	public void setDataExceptionTrue()  throws CFException{  			
+    	work.setDataExceptionTrue();
    	}
+	public BigDecimal getTrdOrderQty() throws CFException{      
+   		return trdOrderPair.getTrdOrderQty();
+	}
+
+    public char[] getTrdOrderQtyString() throws CFException {
+          return  trdOrderPair.getTrdOrderQty().toPlainString().toCharArray();
+    }
+	
 	/**
-	 *	Returns the value of ordTradeid
-	 *	@return ordTradeid
+	 * 	Update TrdOrderQty with the passed number
+	 *	@param number
 	 */
-   public char[] getOrdTradeid() throws CFException  {              
-   		return dcltbtrdord.getOrdTradeid();
+	public void setTrdOrderQty(BigDecimal number)  throws CFException{
+		trdOrderPair.setTrdOrderQty(number);
+   }
+
+	/**
+	 *	Returns the value of dcltbtrdord
+	 *	@return dcltbtrdord
+	 */   
+	 public Dcltbtrdord getDcltbtrdord() {
+   	return dcltbtrdord;
+   }
+
+
+	/**
+	 *	Returns the value of ordTradingXchng
+	 *	@return ordTradingXchng
+	 */
+   public char[] getOrdTradingXchng() throws CFException  {              
+   		return dcltbtrdord.getOrdTradingXchng();
    }
 
   
 	/**
-	*  set variable ordTradeid
+	*  set variable ordTradingXchng
 	*  @param value
 	**/
-   public void setOrdTradeid(char[] value) throws CFException {
-      dcltbtrdord.setOrdTradeid(value);
+   public void setOrdTradingXchng(char[] value) throws CFException {
+      dcltbtrdord.setOrdTradingXchng(value);
    } 
 
      /**
-	 * 	Update OrdTradeid 
+	 * 	Update OrdTradingXchng 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex);
+   public void setOrdTradingXchng(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex);
    	
    }
    
-   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
+   public void setOrdTradingXchng(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdTradeid 
+	 * 	Update OrdTradingXchng 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdTradingXchng(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdTradeid with another Field
+	 * 	Update OrdTradingXchng with another Field
 	 *	@param value
 	 */
-   public void setOrdTradeid(Field source) {
-      dcltbtrdord.setOrdTradeid(source);
+   public void setOrdTradingXchng(Field source) {
+      dcltbtrdord.setOrdTradingXchng(source);
    }  
    
      /**
-	 * 	Update OrdTradeid 
+	 * 	Update OrdTradingXchng 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
+   public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdTradeid 
+	 * 	Update OrdTradingXchng 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Test condition "Y" for isNoMoreOrders()
-	 *	@return  Returns true if isNoMoreOrders() is "Y"
-	 */
-   public boolean isNoMoreOrders() throws CFException {
-      return work.isNoMoreOrders();
-   }
-
-	/**
-	*  set values "Y"
-	*/
-   	public void setNoMoreOrdersTrue()  throws CFException{  			
-    	work.setNoMoreOrdersTrue();
-   	}
-	/**
-	 *	Returns the value of trdBuyerId
-	 *	@return trdBuyerId
-	 */
-   public char[] getTrdBuyerId() throws CFException  {              
-   		return trdOrderPair.getTrdBuyerId();
-   }
-
-  
-	/**
-	*  set variable trdBuyerId
-	*  @param value
-	**/
-   public void setTrdBuyerId(char[] value) throws CFException {
-      trdOrderPair.setTrdBuyerId(value);
-   } 
-
-     /**
-	 * 	Update TrdBuyerId 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdBuyerId(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdBuyerId(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdBuyerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdBuyerId 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdBuyerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdBuyerId with another Field
-	 *	@param value
-	 */
-   public void setTrdBuyerId(Field source) {
-      trdOrderPair.setTrdBuyerId(source);
-   }  
-   
-     /**
-	 * 	Update TrdBuyerId 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdBuyerId(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdBuyerId 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdBuyerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of trdOrderId
-	 *	@return trdOrderId
-	 */
-   public char[] getTrdOrderId() throws CFException  {              
-   		return trdOrderPair.getTrdOrderId();
-   }
-
-  
-	/**
-	*  set variable trdOrderId
-	*  @param value
-	**/
-   public void setTrdOrderId(char[] value) throws CFException {
-      trdOrderPair.setTrdOrderId(value);
-   } 
-
-     /**
-	 * 	Update TrdOrderId 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdOrderId(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdOrderId(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdOrderId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdOrderId 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdOrderId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdOrderId with another Field
-	 *	@param value
-	 */
-   public void setTrdOrderId(Field source) {
-      trdOrderPair.setTrdOrderId(source);
-   }  
-   
-     /**
-	 * 	Update TrdOrderId 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdOrderId 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -3091,6 +2654,395 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
+	 *	Returns the value of sqlca
+	 *	@return sqlca
+	 */   
+	 public Sqlca getSqlca() {
+   	return sqlca;
+   }
+
+
+	/**
+	 *	Returns the value of orderCount
+	 *	@return orderCount
+	 */
+	public int getOrderCount() throws CFException {        
+   		return work.getOrderCount();
+	}
+	
+	/**
+	 * 	Update OrderCount with the passed value
+	 *	@param number
+	 */
+	public void setOrderCount(int number)  throws CFException{
+		work.setOrderCount(number);
+	}
+
+
+	public void setOrderCount(long number)  throws CFException{
+		work.setOrderCount((int)number);
+	}
+
+
+	/**
+	 *	Test condition "N" for isNoExceptions()
+	 *	@return  Returns true if isNoExceptions() is "N"
+	 */
+   public boolean isNoExceptions() throws CFException {
+      return work.isNoExceptions();
+   }
+
+	/**
+	*  set values "N"
+	*/
+   	public void setNoExceptionsTrue()  throws CFException{  			
+    	work.setNoExceptionsTrue();
+   	}
+	/**
+	 *	Returns the value of trdBuyerId
+	 *	@return trdBuyerId
+	 */
+   public char[] getTrdBuyerId() throws CFException  {              
+   		return trdOrderPair.getTrdBuyerId();
+   }
+
+  
+	/**
+	*  set variable trdBuyerId
+	*  @param value
+	**/
+   public void setTrdBuyerId(char[] value) throws CFException {
+      trdOrderPair.setTrdBuyerId(value);
+   } 
+
+     /**
+	 * 	Update TrdBuyerId 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdBuyerId(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdBuyerId(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdBuyerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdBuyerId 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdBuyerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdBuyerId with another Field
+	 *	@param value
+	 */
+   public void setTrdBuyerId(Field source) {
+      trdOrderPair.setTrdBuyerId(source);
+   }  
+   
+     /**
+	 * 	Update TrdBuyerId 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdBuyerId(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdBuyerId 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdBuyerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sqlcode
+	 *	@return sqlcode
+	 */
+	public int getSqlcode() throws CFException {        
+   		return sqlca.getSqlcode();
+	}
+	
+	/**
+	 * 	Update Sqlcode with the passed value
+	 *	@param number
+	 */
+	public void setSqlcode(int number)  throws CFException{
+		sqlca.setSqlcode(number);
+	}
+
+
+	public void setSqlcode(long number)  throws CFException{
+		sqlca.setSqlcode((int)number);
+	}
+
+
+	/**
+	 *	Test condition "101" for isAccepted()
+	 *	@return  Returns true if isAccepted() is "101"
+	 */
+   public boolean isAccepted() throws CFException {
+      return work.isAccepted();
+   }
+
+	/**
+	*  set values "101"
+	*/
+   	public void setAcceptedTrue()  throws CFException{  			
+    	work.setAcceptedTrue();
+   	}
+	public BigDecimal getOrdQuantity() throws CFException{      
+   		return dcltbtrdord.getOrdQuantity();
+	}
+
+    public char[] getOrdQuantityString() throws CFException {
+          return  dcltbtrdord.getOrdQuantity().toPlainString().toCharArray();
+    }
+	
+	/**
+	 * 	Update OrdQuantity with the passed number
+	 *	@param number
+	 */
+	public void setOrdQuantity(BigDecimal number)  throws CFException{
+		dcltbtrdord.setOrdQuantity(number);
+   }
+
+	/**
+	 *	Returns the value of stqIndex
+	 *	@return stqIndex
+	 */
+	public short getStqIndex() throws CFException {        
+   		return settlmentQueueTable.getStqIndex();
+	}
+	
+	/**
+	 * 	Update StqIndex with the passed value
+	 *	@param number
+	 */
+	public void setStqIndex(short number)  throws CFException{
+		settlmentQueueTable.setStqIndex(number);
+	}
+
+	public void setStqIndex(int number)  throws CFException{
+		settlmentQueueTable.setStqIndex((short)number);
+	}
+
+	public void setStqIndex(long number)  throws CFException{
+		settlmentQueueTable.setStqIndex((short)number);
+	}
+
+
+
+	/**
+	 *	Test condition "Y" for isNoMoreOrders()
+	 *	@return  Returns true if isNoMoreOrders() is "Y"
+	 */
+   public boolean isNoMoreOrders() throws CFException {
+      return work.isNoMoreOrders();
+   }
+
+	/**
+	*  set values "Y"
+	*/
+   	public void setNoMoreOrdersTrue()  throws CFException{  			
+    	work.setNoMoreOrdersTrue();
+   	}
+	/**
+	 *	Returns the value of trdOrderId
+	 *	@return trdOrderId
+	 */
+   public char[] getTrdOrderId() throws CFException  {              
+   		return trdOrderPair.getTrdOrderId();
+   }
+
+  
+	/**
+	*  set variable trdOrderId
+	*  @param value
+	**/
+   public void setTrdOrderId(char[] value) throws CFException {
+      trdOrderPair.setTrdOrderId(value);
+   } 
+
+     /**
+	 * 	Update TrdOrderId 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdOrderId(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdOrderId(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdOrderId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdOrderId 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdOrderId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdOrderId with another Field
+	 *	@param value
+	 */
+   public void setTrdOrderId(Field source) {
+      trdOrderPair.setTrdOrderId(source);
+   }  
+   
+     /**
+	 * 	Update TrdOrderId 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdOrderId 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Test condition "A" for isApplException()
+	 *	@return  Returns true if isApplException() is "A"
+	 */
+   public boolean isApplException() throws CFException {
+      return work.isApplException();
+   }
+
+	/**
+	*  set values "A"
+	*/
+   	public void setApplExceptionTrue()  throws CFException{  			
+    	work.setApplExceptionTrue();
+   	}
+	/**
+	 *	Returns the value of orderStatus
+	 *	@return orderStatus
+	 */
+   public char[] getOrderStatus() throws CFException  {              
+   		return work.getOrderStatus();
+   }
+
+  
+	/**
+	*  set variable orderStatus
+	*  @param value
+	**/
+   public void setOrderStatus(char[] value) throws CFException {
+      work.setOrderStatus(value);
+   } 
+
+	/**
+	 *	Returns the value of ordCurrency
+	 *	@return ordCurrency
+	 */
+   public char[] getOrdCurrency() throws CFException  {              
+   		return dcltbtrdord.getOrdCurrency();
+   }
+
+  
+	/**
+	*  set variable ordCurrency
+	*  @param value
+	**/
+   public void setOrdCurrency(char[] value) throws CFException {
+      dcltbtrdord.setOrdCurrency(value);
+   } 
+
+     /**
+	 * 	Update OrdCurrency 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdCurrency(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdCurrency 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdCurrency with another Field
+	 *	@param value
+	 */
+   public void setOrdCurrency(Field source) {
+      dcltbtrdord.setOrdCurrency(source);
+   }  
+   
+     /**
+	 * 	Update OrdCurrency 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdCurrency 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of exception
+	 *	@return exception
+	 */
+   public char[] getException() throws CFException  {              
+   		return work.getException();
+   }
+
+  
+	/**
+	*  set variable exception
+	*  @param value
+	**/
+   public void setException(char[] value) throws CFException {
+      work.setException(value);
+   } 
+
+	/**
 	 *	Returns the value of sqlcode_Ws
 	 *	@return sqlcode_Ws
 	 */
@@ -3159,107 +3111,155 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Test condition "D" for isDataException()
-	 *	@return  Returns true if isDataException() is "D"
+	 *	Returns the value of ordTradeid
+	 *	@return ordTradeid
 	 */
-   public boolean isDataException() throws CFException {
-      return work.isDataException();
-   }
-
-	/**
-	*  set values "D"
-	*/
-   	public void setDataExceptionTrue()  throws CFException{  			
-    	work.setDataExceptionTrue();
-   	}
-	/**
-	 *	Returns the value of orderCount
-	 *	@return orderCount
-	 */
-	public int getOrderCount() throws CFException {        
-   		return work.getOrderCount();
-	}
-	
-	/**
-	 * 	Update OrderCount with the passed value
-	 *	@param number
-	 */
-	public void setOrderCount(int number)  throws CFException{
-		work.setOrderCount(number);
-	}
-
-
-	public void setOrderCount(long number)  throws CFException{
-		work.setOrderCount((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of ordFigi
-	 *	@return ordFigi
-	 */
-   public char[] getOrdFigi() throws CFException  {              
-   		return dcltbtrdord.getOrdFigi();
+   public char[] getOrdTradeid() throws CFException  {              
+   		return dcltbtrdord.getOrdTradeid();
    }
 
   
 	/**
-	*  set variable ordFigi
+	*  set variable ordTradeid
 	*  @param value
 	**/
-   public void setOrdFigi(char[] value) throws CFException {
-      dcltbtrdord.setOrdFigi(value);
+   public void setOrdTradeid(char[] value) throws CFException {
+      dcltbtrdord.setOrdTradeid(value);
    } 
 
      /**
-	 * 	Update OrdFigi 
+	 * 	Update OrdTradeid 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdFigi(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdFigi(source, sourceIndex);
+   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex);
    	
    }
    
-   public void setOrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);
+   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdFigi 
+	 * 	Update OrdTradeid 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdFigi with another Field
+	 * 	Update OrdTradeid with another Field
 	 *	@param value
 	 */
-   public void setOrdFigi(Field source) {
-      dcltbtrdord.setOrdFigi(source);
+   public void setOrdTradeid(Field source) {
+      dcltbtrdord.setOrdTradeid(source);
    }  
    
      /**
-	 * 	Update OrdFigi 
+	 * 	Update OrdTradeid 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdFigi(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);   	
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdFigi 
+	 * 	Update OrdTradeid 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	public BigDecimal getOrdAmount() throws CFException{      
+   		return dcltbtrdord.getOrdAmount();
+	}
+
+    public char[] getOrdAmountString() throws CFException {
+          return  dcltbtrdord.getOrdAmount().toPlainString().toCharArray();
+    }
+	
+	/**
+	 * 	Update OrdAmount with the passed number
+	 *	@param number
+	 */
+	public void setOrdAmount(BigDecimal number)  throws CFException{
+		dcltbtrdord.setOrdAmount(number);
+   }
+
+	/**
+	 *	Returns the value of trdExchange
+	 *	@return trdExchange
+	 */
+   public char[] getTrdExchange() throws CFException  {              
+   		return trdOrderPair.getTrdExchange();
+   }
+
+  
+	/**
+	*  set variable trdExchange
+	*  @param value
+	**/
+   public void setTrdExchange(char[] value) throws CFException {
+      trdOrderPair.setTrdExchange(value);
+   } 
+
+     /**
+	 * 	Update TrdExchange 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdExchange(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdExchange(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdExchange(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdExchange 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdExchange(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdExchange with another Field
+	 *	@param value
+	 */
+   public void setTrdExchange(Field source) {
+      trdOrderPair.setTrdExchange(source);
+   }  
+   
+     /**
+	 * 	Update TrdExchange 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdExchange(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdExchange 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 
@@ -3277,29 +3277,29 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += dcltbtrdord.hashCode();
         str += settlmentQueueTable.hashCode();
-        str += work.hashCode();
         str += sqlca.hashCode();
-        str += parm.hashCode();
         str += trdOrderPair.hashCode();
+        str += work.hashCode();
+        str += parm.hashCode();
+        str += dcltbtrdord.hashCode();
        return str.hashCode();
     }
 
     public OrderAcceptanceOutCtx clone() {
         OrderAcceptanceOutCtx cloneObj = new OrderAcceptanceOutCtx();
-        cloneObj.dcltbtrdord = new Dcltbtrdord();
-        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
         cloneObj.settlmentQueueTable = new SettlmentQueueTable();
         cloneObj.settlmentQueueTable.set(settlmentQueueTable.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
         cloneObj.sqlca = new Sqlca();
         cloneObj.sqlca.set(sqlca.getClonedField());
-        cloneObj.parm = new Parm();
-        cloneObj.parm.set(parm.getClonedField());
         cloneObj.trdOrderPair = new TrdOrderPair();
         cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        cloneObj.parm = new Parm();
+        cloneObj.parm.set(parm.getClonedField());
+        cloneObj.dcltbtrdord = new Dcltbtrdord();
+        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
         return cloneObj;
     }
 
@@ -3309,19 +3309,177 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
             return new OrderAcceptanceOutCtx();
     }
      public class GetSellSideOrderInCtx implements Cloneable {
-     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
-     Work work = Trdpb000Ctx.this.getWork();
      Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
      TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
+     Work work = Trdpb000Ctx.this.getWork();
+     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
 
 	/**
-	 *	Returns the value of dcltbtrdord
-	 *	@return dcltbtrdord
-	 */   
-	 public Dcltbtrdord getDcltbtrdord() {
-   	return dcltbtrdord;
+	 *	Returns the value of trdFigi
+	 *	@return trdFigi
+	 */
+   public char[] getTrdFigi() throws CFException  {              
+   		return trdOrderPair.getTrdFigi();
    }
 
+  
+	/**
+	*  set variable trdFigi
+	*  @param value
+	**/
+   public void setTrdFigi(char[] value) throws CFException {
+      trdOrderPair.setTrdFigi(value);
+   } 
+
+     /**
+	 * 	Update TrdFigi 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdFigi(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdFigi(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdFigi 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdFigi with another Field
+	 *	@param value
+	 */
+   public void setTrdFigi(Field source) {
+      trdOrderPair.setTrdFigi(source);
+   }  
+   
+     /**
+	 * 	Update TrdFigi 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdFigi(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdFigi 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sqlca
+	 *	@return sqlca
+	 */   
+	 public Sqlca getSqlca() {
+   	return sqlca;
+   }
+
+
+	/**
+	 *	Returns the value of sqlerrd
+	 *	@return sqlerrd
+	 */
+	public int getSqlerrd(int index) throws CFException {        
+   		return sqlca.getSqlerrd((index));
+	}
+	
+	/**
+	 * 	Update Sqlerrd with the passed value
+	 *	@param number
+	 */
+	public void setSqlerrd(int index,int number)  throws CFException{
+		sqlca.setSqlerrd((index),number);
+	}
+
+
+	public void setSqlerrd(int index,long number)  throws CFException{
+		sqlca.setSqlerrd((index),(int)number);
+	}
+
+
+	/**
+	 *	Returns the value of ordStatus
+	 *	@return ordStatus
+	 */
+   public char[] getOrdStatus() throws CFException  {              
+   		return dcltbtrdord.getOrdStatus();
+   }
+
+  
+	/**
+	*  set variable ordStatus
+	*  @param value
+	**/
+   public void setOrdStatus(char[] value) throws CFException {
+      dcltbtrdord.setOrdStatus(value);
+   } 
+
+     /**
+	 * 	Update OrdStatus 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdStatus(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdStatus(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdStatus(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdStatus 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdStatus(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdStatus with another Field
+	 *	@param value
+	 */
+   public void setOrdStatus(Field source) {
+      dcltbtrdord.setOrdStatus(source);
+   }  
+   
+     /**
+	 * 	Update OrdStatus 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdStatus(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdStatus 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdStatus(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
 
 	/**
 	 *	Returns the value of trdCurrency
@@ -3460,93 +3618,207 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of sqlerrd
-	 *	@return sqlerrd
+	 *	Returns the value of trdOrderId
+	 *	@return trdOrderId
 	 */
-	public int getSqlerrd(int index) throws CFException {        
-   		return sqlca.getSqlerrd((index));
-	}
-	
-	/**
-	 * 	Update Sqlerrd with the passed value
-	 *	@param number
-	 */
-	public void setSqlerrd(int index,int number)  throws CFException{
-		sqlca.setSqlerrd((index),number);
-	}
-
-
-	public void setSqlerrd(int index,long number)  throws CFException{
-		sqlca.setSqlerrd((index),(int)number);
-	}
-
-
-	/**
-	 *	Returns the value of ordStatus
-	 *	@return ordStatus
-	 */
-   public char[] getOrdStatus() throws CFException  {              
-   		return dcltbtrdord.getOrdStatus();
+   public char[] getTrdOrderId() throws CFException  {              
+   		return trdOrderPair.getTrdOrderId();
    }
 
   
 	/**
-	*  set variable ordStatus
+	*  set variable trdOrderId
 	*  @param value
 	**/
-   public void setOrdStatus(char[] value) throws CFException {
-      dcltbtrdord.setOrdStatus(value);
+   public void setTrdOrderId(char[] value) throws CFException {
+      trdOrderPair.setTrdOrderId(value);
    } 
 
      /**
-	 * 	Update OrdStatus 
+	 * 	Update TrdOrderId 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdStatus(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdStatus(source, sourceIndex);
+   public void setTrdOrderId(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdOrderId(source, sourceIndex);
    	
    }
    
-   public void setOrdStatus(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);
+   public void setTrdOrderId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdStatus 
+	 * 	Update TrdOrderId 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdStatus(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdOrderId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdStatus with another Field
+	 * 	Update TrdOrderId with another Field
 	 *	@param value
 	 */
-   public void setOrdStatus(Field source) {
-      dcltbtrdord.setOrdStatus(source);
+   public void setTrdOrderId(Field source) {
+      trdOrderPair.setTrdOrderId(source);
    }  
    
      /**
-	 * 	Update OrdStatus 
+	 * 	Update TrdOrderId 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdStatus(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);   	
+   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdStatus 
+	 * 	Update TrdOrderId 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdStatus(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of ordCustomerId
+	 *	@return ordCustomerId
+	 */
+   public char[] getOrdCustomerId() throws CFException  {              
+   		return dcltbtrdord.getOrdCustomerId();
+   }
+
+  
+	/**
+	*  set variable ordCustomerId
+	*  @param value
+	**/
+   public void setOrdCustomerId(char[] value) throws CFException {
+      dcltbtrdord.setOrdCustomerId(value);
+   } 
+
+     /**
+	 * 	Update OrdCustomerId 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdCustomerId(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdCustomerId(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdCustomerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdCustomerId(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdCustomerId 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdCustomerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdCustomerId with another Field
+	 *	@param value
+	 */
+   public void setOrdCustomerId(Field source) {
+      dcltbtrdord.setOrdCustomerId(source);
+   }  
+   
+     /**
+	 * 	Update OrdCustomerId 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdCustomerId(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdCustomerId(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdCustomerId 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdCustomerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sqlcode_Ws
+	 *	@return sqlcode_Ws
+	 */
+   public char[] getSqlcode_Ws() throws CFException  {              
+   		return work.getSqlcode_Ws();
+   }
+
+  
+	/**
+	*  set variable sqlcode_Ws
+	*  @param value
+	**/
+   public void setSqlcode_Ws(char[] value) throws CFException {
+      work.setSqlcode_Ws(value);
+   } 
+
+     /**
+	 * 	Update Sqlcode_Ws 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setSqlcode_Ws(char[] source, int sourceIndex) throws CFException {
+      work.setSqlcode_Ws(source, sourceIndex);
+   	
+   }
+   
+   public void setSqlcode_Ws(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      work.setSqlcode_Ws(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update Sqlcode_Ws 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setSqlcode_Ws(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      work.setSqlcode_Ws(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update Sqlcode_Ws with another Field
+	 *	@param value
+	 */
+   public void setSqlcode_Ws(Field source) {
+      work.setSqlcode_Ws(source);
+   }  
+   
+     /**
+	 * 	Update Sqlcode_Ws 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setSqlcode_Ws(Field source, int sourceIndex,int sourceLen) {
+      work.setSqlcode_Ws(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update Sqlcode_Ws 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setSqlcode_Ws(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      work.setSqlcode_Ws(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -3609,74 +3881,6 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
 	 */
    public void setSqlwarn(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
    	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of trdExchange
-	 *	@return trdExchange
-	 */
-   public char[] getTrdExchange() throws CFException  {              
-   		return trdOrderPair.getTrdExchange();
-   }
-
-  
-	/**
-	*  set variable trdExchange
-	*  @param value
-	**/
-   public void setTrdExchange(char[] value) throws CFException {
-      trdOrderPair.setTrdExchange(value);
-   } 
-
-     /**
-	 * 	Update TrdExchange 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdExchange(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdExchange(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdExchange(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdExchange 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdExchange(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdExchange with another Field
-	 *	@param value
-	 */
-   public void setTrdExchange(Field source) {
-      trdOrderPair.setTrdExchange(source);
-   }  
-   
-     /**
-	 * 	Update TrdExchange 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdExchange(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdExchange 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -3748,148 +3952,197 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of sqlca
-	 *	@return sqlca
+	 *	Returns the value of dcltbtrdord
+	 *	@return dcltbtrdord
 	 */   
-	 public Sqlca getSqlca() {
-   	return sqlca;
+	 public Dcltbtrdord getDcltbtrdord() {
+   	return dcltbtrdord;
    }
 
 
 	/**
-	 *	Returns the value of ordCustomerId
-	 *	@return ordCustomerId
+	 *	Returns the value of trdExchange
+	 *	@return trdExchange
 	 */
-   public char[] getOrdCustomerId() throws CFException  {              
-   		return dcltbtrdord.getOrdCustomerId();
+   public char[] getTrdExchange() throws CFException  {              
+   		return trdOrderPair.getTrdExchange();
    }
 
   
 	/**
-	*  set variable ordCustomerId
+	*  set variable trdExchange
 	*  @param value
 	**/
-   public void setOrdCustomerId(char[] value) throws CFException {
-      dcltbtrdord.setOrdCustomerId(value);
+   public void setTrdExchange(char[] value) throws CFException {
+      trdOrderPair.setTrdExchange(value);
    } 
 
      /**
-	 * 	Update OrdCustomerId 
+	 * 	Update TrdExchange 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdCustomerId(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdCustomerId(source, sourceIndex);
+   public void setTrdExchange(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdExchange(source, sourceIndex);
    	
    }
    
-   public void setOrdCustomerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdCustomerId(source, sourceIndex, sourceLen);
+   public void setTrdExchange(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdCustomerId 
+	 * 	Update TrdExchange 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdCustomerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdExchange(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdCustomerId with another Field
+	 * 	Update TrdExchange with another Field
 	 *	@param value
 	 */
-   public void setOrdCustomerId(Field source) {
-      dcltbtrdord.setOrdCustomerId(source);
+   public void setTrdExchange(Field source) {
+      trdOrderPair.setTrdExchange(source);
    }  
    
      /**
-	 * 	Update OrdCustomerId 
+	 * 	Update TrdExchange 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdCustomerId(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdCustomerId(source, sourceIndex, sourceLen);   	
+   public void setTrdExchange(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdCustomerId 
+	 * 	Update TrdExchange 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdCustomerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
+
+        public Trdpb000Ctx getTrdpb000Ctx() {
+            return Trdpb000Ctx.this;
+        }
+
+        public GetSellSideOrderOutCtx getGetSellSideOrderOutCtx() {
+            return new GetSellSideOrderOutCtx();
+        }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) return false;
+        return this.hashCode() == o.hashCode();
+    }
+
+    @Override
+    public int hashCode() {
+        String str = "";
+        str += sqlca.hashCode();
+        str += trdOrderPair.hashCode();
+        str += work.hashCode();
+        str += dcltbtrdord.hashCode();
+       return str.hashCode();
+    }
+
+    public GetSellSideOrderInCtx clone() {
+        GetSellSideOrderInCtx cloneObj = new GetSellSideOrderInCtx();
+        cloneObj.sqlca = new Sqlca();
+        cloneObj.sqlca.set(sqlca.getClonedField());
+        cloneObj.trdOrderPair = new TrdOrderPair();
+        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        cloneObj.dcltbtrdord = new Dcltbtrdord();
+        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
+        return cloneObj;
+    }
+
+    }
+
+    public GetSellSideOrderInCtx getGetSellSideOrderInCtx() {
+            return new GetSellSideOrderInCtx();
+    }
+     public class GetSellSideOrderOutCtx implements Cloneable {
+     Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
+     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
+     Work work = Trdpb000Ctx.this.getWork();
+     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
+
 	/**
-	 *	Returns the value of trdOrderId
-	 *	@return trdOrderId
+	 *	Returns the value of ordTradingXchng
+	 *	@return ordTradingXchng
 	 */
-   public char[] getTrdOrderId() throws CFException  {              
-   		return trdOrderPair.getTrdOrderId();
+   public char[] getOrdTradingXchng() throws CFException  {              
+   		return dcltbtrdord.getOrdTradingXchng();
    }
 
   
 	/**
-	*  set variable trdOrderId
+	*  set variable ordTradingXchng
 	*  @param value
 	**/
-   public void setTrdOrderId(char[] value) throws CFException {
-      trdOrderPair.setTrdOrderId(value);
+   public void setOrdTradingXchng(char[] value) throws CFException {
+      dcltbtrdord.setOrdTradingXchng(value);
    } 
 
      /**
-	 * 	Update TrdOrderId 
+	 * 	Update OrdTradingXchng 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setTrdOrderId(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdOrderId(source, sourceIndex);
+   public void setOrdTradingXchng(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex);
    	
    }
    
-   public void setTrdOrderId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);
+   public void setOrdTradingXchng(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update TrdOrderId 
+	 * 	Update OrdTradingXchng 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdOrderId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdTradingXchng(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update TrdOrderId with another Field
+	 * 	Update OrdTradingXchng with another Field
 	 *	@param value
 	 */
-   public void setTrdOrderId(Field source) {
-      trdOrderPair.setTrdOrderId(source);
+   public void setOrdTradingXchng(Field source) {
+      dcltbtrdord.setOrdTradingXchng(source);
    }  
    
      /**
-	 * 	Update TrdOrderId 
+	 * 	Update OrdTradingXchng 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);   	
+   public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update TrdOrderId 
+	 * 	Update OrdTradingXchng 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -3961,230 +4214,104 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of sqlcode_Ws
-	 *	@return sqlcode_Ws
-	 */
-   public char[] getSqlcode_Ws() throws CFException  {              
-   		return work.getSqlcode_Ws();
-   }
-
-  
-	/**
-	*  set variable sqlcode_Ws
-	*  @param value
-	**/
-   public void setSqlcode_Ws(char[] value) throws CFException {
-      work.setSqlcode_Ws(value);
-   } 
-
-     /**
-	 * 	Update Sqlcode_Ws 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setSqlcode_Ws(char[] source, int sourceIndex) throws CFException {
-      work.setSqlcode_Ws(source, sourceIndex);
-   	
-   }
-   
-   public void setSqlcode_Ws(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      work.setSqlcode_Ws(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update Sqlcode_Ws 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setSqlcode_Ws(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      work.setSqlcode_Ws(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update Sqlcode_Ws with another Field
-	 *	@param value
-	 */
-   public void setSqlcode_Ws(Field source) {
-      work.setSqlcode_Ws(source);
-   }  
-   
-     /**
-	 * 	Update Sqlcode_Ws 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setSqlcode_Ws(Field source, int sourceIndex,int sourceLen) {
-      work.setSqlcode_Ws(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update Sqlcode_Ws 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setSqlcode_Ws(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      work.setSqlcode_Ws(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-
-        public Trdpb000Ctx getTrdpb000Ctx() {
-            return Trdpb000Ctx.this;
-        }
-
-        public GetSellSideOrderOutCtx getGetSellSideOrderOutCtx() {
-            return new GetSellSideOrderOutCtx();
-        }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null) return false;
-        return this.hashCode() == o.hashCode();
-    }
-
-    @Override
-    public int hashCode() {
-        String str = "";
-        str += dcltbtrdord.hashCode();
-        str += work.hashCode();
-        str += sqlca.hashCode();
-        str += trdOrderPair.hashCode();
-       return str.hashCode();
-    }
-
-    public GetSellSideOrderInCtx clone() {
-        GetSellSideOrderInCtx cloneObj = new GetSellSideOrderInCtx();
-        cloneObj.dcltbtrdord = new Dcltbtrdord();
-        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
-        cloneObj.sqlca = new Sqlca();
-        cloneObj.sqlca.set(sqlca.getClonedField());
-        cloneObj.trdOrderPair = new TrdOrderPair();
-        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
-        return cloneObj;
-    }
-
-    }
-
-    public GetSellSideOrderInCtx getGetSellSideOrderInCtx() {
-            return new GetSellSideOrderInCtx();
-    }
-     public class GetSellSideOrderOutCtx implements Cloneable {
-     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
-     Work work = Trdpb000Ctx.this.getWork();
-     Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
-     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
-
-	/**
-	 *	Returns the value of dcltbtrdord
-	 *	@return dcltbtrdord
+	 *	Returns the value of sqlca
+	 *	@return sqlca
 	 */   
-	 public Dcltbtrdord getDcltbtrdord() {
-   	return dcltbtrdord;
+	 public Sqlca getSqlca() {
+   	return sqlca;
    }
 
 
 	/**
-	 *	Returns the value of trdCurrency
-	 *	@return trdCurrency
+	 *	Returns the value of ordBuySellInd
+	 *	@return ordBuySellInd
 	 */
-   public char[] getTrdCurrency() throws CFException  {              
-   		return trdOrderPair.getTrdCurrency();
+   public char[] getOrdBuySellInd() throws CFException  {              
+   		return dcltbtrdord.getOrdBuySellInd();
    }
 
   
 	/**
-	*  set variable trdCurrency
+	*  set variable ordBuySellInd
 	*  @param value
 	**/
-   public void setTrdCurrency(char[] value) throws CFException {
-      trdOrderPair.setTrdCurrency(value);
+   public void setOrdBuySellInd(char[] value) throws CFException {
+      dcltbtrdord.setOrdBuySellInd(value);
    } 
 
      /**
-	 * 	Update TrdCurrency 
+	 * 	Update OrdBuySellInd 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setTrdCurrency(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdCurrency(source, sourceIndex);
+   public void setOrdBuySellInd(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex);
    	
    }
    
-   public void setTrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);
+   public void setOrdBuySellInd(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update TrdCurrency 
+	 * 	Update OrdBuySellInd 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdBuySellInd(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update TrdCurrency with another Field
+	 * 	Update OrdBuySellInd with another Field
 	 *	@param value
 	 */
-   public void setTrdCurrency(Field source) {
-      trdOrderPair.setTrdCurrency(source);
+   public void setOrdBuySellInd(Field source) {
+      dcltbtrdord.setOrdBuySellInd(source);
    }  
    
      /**
-	 * 	Update TrdCurrency 
+	 * 	Update OrdBuySellInd 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);   	
+   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update TrdCurrency 
+	 * 	Update OrdBuySellInd 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
-	 *	Returns the value of orderStatus
-	 *	@return orderStatus
+	 *	Returns the value of sqlcode
+	 *	@return sqlcode
 	 */
-   public char[] getOrderStatus() throws CFException  {              
-   		return work.getOrderStatus();
-   }
-
-  
+	public int getSqlcode() throws CFException {        
+   		return sqlca.getSqlcode();
+	}
+	
 	/**
-	*  set variable orderStatus
-	*  @param value
-	**/
-   public void setOrderStatus(char[] value) throws CFException {
-      work.setOrderStatus(value);
-   } 
-
-	/**
-	 *	Test condition "308" for isOverdueSellerOrdMissing()
-	 *	@return  Returns true if isOverdueSellerOrdMissing() is "308"
+	 * 	Update Sqlcode with the passed value
+	 *	@param number
 	 */
-   public boolean isOverdueSellerOrdMissing() throws CFException {
-      return work.isOverdueSellerOrdMissing();
-   }
+	public void setSqlcode(int number)  throws CFException{
+		sqlca.setSqlcode(number);
+	}
 
-	/**
-	*  set values "308"
-	*/
-   	public void setOverdueSellerOrdMissingTrue()  throws CFException{  			
-    	work.setOverdueSellerOrdMissingTrue();
-   	}
+
+	public void setSqlcode(long number)  throws CFException{
+		sqlca.setSqlcode((int)number);
+	}
+
+
 	/**
 	 *	Test condition "307" for isOverdueSellerOrdstaInvld()
 	 *	@return  Returns true if isOverdueSellerOrdstaInvld() is "307"
@@ -4198,6 +4325,20 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
 	*/
    	public void setOverdueSellerOrdstaInvldTrue()  throws CFException{  			
     	work.setOverdueSellerOrdstaInvldTrue();
+   	}
+	/**
+	 *	Test condition "101" for isAccepted()
+	 *	@return  Returns true if isAccepted() is "101"
+	 */
+   public boolean isAccepted() throws CFException {
+      return work.isAccepted();
+   }
+
+	/**
+	*  set values "101"
+	*/
+   	public void setAcceptedTrue()  throws CFException{  			
+    	work.setAcceptedTrue();
    	}
 	/**
 	 *	Returns the value of ordStatus
@@ -4268,170 +4409,221 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of exception
-	 *	@return exception
+	 *	Test condition "308" for isOverdueSellerOrdMissing()
+	 *	@return  Returns true if isOverdueSellerOrdMissing() is "308"
 	 */
-   public char[] getException() throws CFException  {              
-   		return work.getException();
-   }
-
-  
-	/**
-	*  set variable exception
-	*  @param value
-	**/
-   public void setException(char[] value) throws CFException {
-      work.setException(value);
-   } 
-
-	/**
-	 *	Test condition "101" for isAccepted()
-	 *	@return  Returns true if isAccepted() is "101"
-	 */
-   public boolean isAccepted() throws CFException {
-      return work.isAccepted();
+   public boolean isOverdueSellerOrdMissing() throws CFException {
+      return work.isOverdueSellerOrdMissing();
    }
 
 	/**
-	*  set values "101"
+	*  set values "308"
 	*/
-   	public void setAcceptedTrue()  throws CFException{  			
-    	work.setAcceptedTrue();
+   	public void setOverdueSellerOrdMissingTrue()  throws CFException{  			
+    	work.setOverdueSellerOrdMissingTrue();
    	}
 	/**
-	 *	Returns the value of trdExchange
-	 *	@return trdExchange
+	 *	Returns the value of trdCurrency
+	 *	@return trdCurrency
 	 */
-   public char[] getTrdExchange() throws CFException  {              
-   		return trdOrderPair.getTrdExchange();
+   public char[] getTrdCurrency() throws CFException  {              
+   		return trdOrderPair.getTrdCurrency();
    }
 
   
 	/**
-	*  set variable trdExchange
+	*  set variable trdCurrency
 	*  @param value
 	**/
-   public void setTrdExchange(char[] value) throws CFException {
-      trdOrderPair.setTrdExchange(value);
+   public void setTrdCurrency(char[] value) throws CFException {
+      trdOrderPair.setTrdCurrency(value);
    } 
 
      /**
-	 * 	Update TrdExchange 
+	 * 	Update TrdCurrency 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setTrdExchange(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdExchange(source, sourceIndex);
+   public void setTrdCurrency(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdCurrency(source, sourceIndex);
    	
    }
    
-   public void setTrdExchange(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);
+   public void setTrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update TrdExchange 
+	 * 	Update TrdCurrency 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdExchange(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update TrdExchange with another Field
+	 * 	Update TrdCurrency with another Field
 	 *	@param value
 	 */
-   public void setTrdExchange(Field source) {
-      trdOrderPair.setTrdExchange(source);
+   public void setTrdCurrency(Field source) {
+      trdOrderPair.setTrdCurrency(source);
    }  
    
      /**
-	 * 	Update TrdExchange 
+	 * 	Update TrdCurrency 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setTrdExchange(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);   	
+   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update TrdExchange 
+	 * 	Update TrdCurrency 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
-	 *	Returns the value of ordTradeid
-	 *	@return ordTradeid
+	 *	Returns the value of trdOrderId
+	 *	@return trdOrderId
 	 */
-   public char[] getOrdTradeid() throws CFException  {              
-   		return dcltbtrdord.getOrdTradeid();
+   public char[] getTrdOrderId() throws CFException  {              
+   		return trdOrderPair.getTrdOrderId();
    }
 
   
 	/**
-	*  set variable ordTradeid
+	*  set variable trdOrderId
 	*  @param value
 	**/
-   public void setOrdTradeid(char[] value) throws CFException {
-      dcltbtrdord.setOrdTradeid(value);
+   public void setTrdOrderId(char[] value) throws CFException {
+      trdOrderPair.setTrdOrderId(value);
    } 
 
      /**
-	 * 	Update OrdTradeid 
+	 * 	Update TrdOrderId 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex);
+   public void setTrdOrderId(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdOrderId(source, sourceIndex);
    	
    }
    
-   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
+   public void setTrdOrderId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdTradeid 
+	 * 	Update TrdOrderId 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdOrderId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdTradeid with another Field
+	 * 	Update TrdOrderId with another Field
 	 *	@param value
 	 */
-   public void setOrdTradeid(Field source) {
-      dcltbtrdord.setOrdTradeid(source);
+   public void setTrdOrderId(Field source) {
+      trdOrderPair.setTrdOrderId(source);
    }  
    
      /**
-	 * 	Update OrdTradeid 
+	 * 	Update TrdOrderId 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
+   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdTradeid 
+	 * 	Update TrdOrderId 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of ordFigi
+	 *	@return ordFigi
+	 */
+   public char[] getOrdFigi() throws CFException  {              
+   		return dcltbtrdord.getOrdFigi();
+   }
+
+  
+	/**
+	*  set variable ordFigi
+	*  @param value
+	**/
+   public void setOrdFigi(char[] value) throws CFException {
+      dcltbtrdord.setOrdFigi(value);
+   } 
+
+     /**
+	 * 	Update OrdFigi 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdFigi(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdFigi(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdFigi with another Field
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source) {
+      dcltbtrdord.setOrdFigi(source);
+   }  
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -4449,81 +4641,21 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     	work.setApplExceptionTrue();
    	}
 	/**
-	 *	Returns the value of ordTradingXchng
-	 *	@return ordTradingXchng
+	 *	Returns the value of orderStatus
+	 *	@return orderStatus
 	 */
-   public char[] getOrdTradingXchng() throws CFException  {              
-   		return dcltbtrdord.getOrdTradingXchng();
+   public char[] getOrderStatus() throws CFException  {              
+   		return work.getOrderStatus();
    }
 
   
 	/**
-	*  set variable ordTradingXchng
+	*  set variable orderStatus
 	*  @param value
 	**/
-   public void setOrdTradingXchng(char[] value) throws CFException {
-      dcltbtrdord.setOrdTradingXchng(value);
+   public void setOrderStatus(char[] value) throws CFException {
+      work.setOrderStatus(value);
    } 
-
-     /**
-	 * 	Update OrdTradingXchng 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdTradingXchng(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdTradingXchng 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdTradingXchng with another Field
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(Field source) {
-      dcltbtrdord.setOrdTradingXchng(source);
-   }  
-   
-     /**
-	 * 	Update OrdTradingXchng 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdTradingXchng 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of sqlca
-	 *	@return sqlca
-	 */   
-	 public Sqlca getSqlca() {
-   	return sqlca;
-   }
-
 
 	/**
 	 *	Returns the value of ordCustomerId
@@ -4662,207 +4794,154 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of trdOrderId
-	 *	@return trdOrderId
+	 *	Test condition "D" for isDataException()
+	 *	@return  Returns true if isDataException() is "D"
 	 */
-   public char[] getTrdOrderId() throws CFException  {              
-   		return trdOrderPair.getTrdOrderId();
+   public boolean isDataException() throws CFException {
+      return work.isDataException();
+   }
+
+	/**
+	*  set values "D"
+	*/
+   	public void setDataExceptionTrue()  throws CFException{  			
+    	work.setDataExceptionTrue();
+   	}
+	/**
+	 *	Returns the value of exception
+	 *	@return exception
+	 */
+   public char[] getException() throws CFException  {              
+   		return work.getException();
    }
 
   
 	/**
-	*  set variable trdOrderId
+	*  set variable exception
 	*  @param value
 	**/
-   public void setTrdOrderId(char[] value) throws CFException {
-      trdOrderPair.setTrdOrderId(value);
+   public void setException(char[] value) throws CFException {
+      work.setException(value);
    } 
 
-     /**
-	 * 	Update TrdOrderId 
-	 *     with a char[] from an offset and length             
-	 *	@param value
+	/**
+	 *	Returns the value of tradeid
+	 *	@return tradeid
 	 */
-   public void setTrdOrderId(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdOrderId(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdOrderId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdOrderId 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdOrderId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdOrderId with another Field
-	 *	@param value
-	 */
-   public void setTrdOrderId(Field source) {
-      trdOrderPair.setTrdOrderId(source);
-   }  
-   
-     /**
-	 * 	Update TrdOrderId 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdOrderId 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
+	public long getTradeid() throws CFException {
+   		return work.getTradeid();
+	}
+
 
 	/**
-	 *	Returns the value of trdFigi
-	 *	@return trdFigi
+	 *	Returns String value of tradeid
+	 *	@return tradeid
 	 */
-   public char[] getTrdFigi() throws CFException  {              
-   		return trdOrderPair.getTrdFigi();
+	public char[]  getTradeidString() throws CFException {
+	     return String.valueOf(work.getTradeidString()).toCharArray();
+	}
+
+	 /**
+	 *  This method allows testing if there is a numeric value stored in the serialized String
+	 *	@return true if numeric value is stored in the string
+	 */
+	public boolean tradeidIsNumeric()  throws CFException{
+	    return work.tradeidIsNumeric();
+	}
+
+	/**
+	 * 	Update Tradeid with the passed value
+	 *	@param number
+	 */
+	public void setTradeid(long number)  throws CFException{
+		work.setTradeid(number);
+	}
+	
+
+	
+	/**
+	 * 	Update Tradeid with the passed value
+	 *	@param value (String or char[])
+	 */
+	public void setTradeid(char[] value)  throws CFException {
+		work.setTradeid(value);
+	}
+	
+	/**
+	 * 	Update Tradeid with the passed value 
+	 *
+	 *	@param value (String or char[])
+	 */
+	public void setTradeidString(char[] value)  throws CFException{
+		work.setTradeid(value);
+	}	
+
+	/**
+	 *	Returns the value of ordTradeid
+	 *	@return ordTradeid
+	 */
+   public char[] getOrdTradeid() throws CFException  {              
+   		return dcltbtrdord.getOrdTradeid();
    }
 
   
 	/**
-	*  set variable trdFigi
+	*  set variable ordTradeid
 	*  @param value
 	**/
-   public void setTrdFigi(char[] value) throws CFException {
-      trdOrderPair.setTrdFigi(value);
+   public void setOrdTradeid(char[] value) throws CFException {
+      dcltbtrdord.setOrdTradeid(value);
    } 
 
      /**
-	 * 	Update TrdFigi 
+	 * 	Update OrdTradeid 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setTrdFigi(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdFigi(source, sourceIndex);
+   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex);
    	
    }
    
-   public void setTrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);
+   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update TrdFigi 
+	 * 	Update OrdTradeid 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update TrdFigi with another Field
+	 * 	Update OrdTradeid with another Field
 	 *	@param value
 	 */
-   public void setTrdFigi(Field source) {
-      trdOrderPair.setTrdFigi(source);
+   public void setOrdTradeid(Field source) {
+      dcltbtrdord.setOrdTradeid(source);
    }  
    
      /**
-	 * 	Update TrdFigi 
+	 * 	Update OrdTradeid 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setTrdFigi(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);   	
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update TrdFigi 
+	 * 	Update OrdTradeid 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of ordBuySellInd
-	 *	@return ordBuySellInd
-	 */
-   public char[] getOrdBuySellInd() throws CFException  {              
-   		return dcltbtrdord.getOrdBuySellInd();
-   }
-
-  
-	/**
-	*  set variable ordBuySellInd
-	*  @param value
-	**/
-   public void setOrdBuySellInd(char[] value) throws CFException {
-      dcltbtrdord.setOrdBuySellInd(value);
-   } 
-
-     /**
-	 * 	Update OrdBuySellInd 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdBuySellInd(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdBuySellInd(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdBuySellInd 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdBuySellInd(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdBuySellInd with another Field
-	 *	@param value
-	 */
-   public void setOrdBuySellInd(Field source) {
-      dcltbtrdord.setOrdBuySellInd(source);
-   }  
-   
-     /**
-	 * 	Update OrdBuySellInd 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdBuySellInd 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -4934,159 +5013,80 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of sqlcode
-	 *	@return sqlcode
-	 */
-	public int getSqlcode() throws CFException {        
-   		return sqlca.getSqlcode();
-	}
-	
-	/**
-	 * 	Update Sqlcode with the passed value
-	 *	@param number
-	 */
-	public void setSqlcode(int number)  throws CFException{
-		sqlca.setSqlcode(number);
-	}
-
-
-	public void setSqlcode(long number)  throws CFException{
-		sqlca.setSqlcode((int)number);
-	}
-
-
-	/**
-	 *	Test condition "D" for isDataException()
-	 *	@return  Returns true if isDataException() is "D"
-	 */
-   public boolean isDataException() throws CFException {
-      return work.isDataException();
+	 *	Returns the value of dcltbtrdord
+	 *	@return dcltbtrdord
+	 */   
+	 public Dcltbtrdord getDcltbtrdord() {
+   	return dcltbtrdord;
    }
 
-	/**
-	*  set values "D"
-	*/
-   	public void setDataExceptionTrue()  throws CFException{  			
-    	work.setDataExceptionTrue();
-   	}
-	/**
-	 *	Returns the value of tradeid
-	 *	@return tradeid
-	 */
-	public long getTradeid() throws CFException {
-   		return work.getTradeid();
-	}
-
 
 	/**
-	 *	Returns String value of tradeid
-	 *	@return tradeid
+	 *	Returns the value of trdExchange
+	 *	@return trdExchange
 	 */
-	public char[]  getTradeidString() throws CFException {
-	     return String.valueOf(work.getTradeidString()).toCharArray();
-	}
-
-	 /**
-	 *  This method allows testing if there is a numeric value stored in the serialized String
-	 *	@return true if numeric value is stored in the string
-	 */
-	public boolean tradeidIsNumeric()  throws CFException{
-	    return work.tradeidIsNumeric();
-	}
-
-	/**
-	 * 	Update Tradeid with the passed value
-	 *	@param number
-	 */
-	public void setTradeid(long number)  throws CFException{
-		work.setTradeid(number);
-	}
-	
-
-	
-	/**
-	 * 	Update Tradeid with the passed value
-	 *	@param value (String or char[])
-	 */
-	public void setTradeid(char[] value)  throws CFException {
-		work.setTradeid(value);
-	}
-	
-	/**
-	 * 	Update Tradeid with the passed value 
-	 *
-	 *	@param value (String or char[])
-	 */
-	public void setTradeidString(char[] value)  throws CFException{
-		work.setTradeid(value);
-	}	
-
-	/**
-	 *	Returns the value of ordFigi
-	 *	@return ordFigi
-	 */
-   public char[] getOrdFigi() throws CFException  {              
-   		return dcltbtrdord.getOrdFigi();
+   public char[] getTrdExchange() throws CFException  {              
+   		return trdOrderPair.getTrdExchange();
    }
 
   
 	/**
-	*  set variable ordFigi
+	*  set variable trdExchange
 	*  @param value
 	**/
-   public void setOrdFigi(char[] value) throws CFException {
-      dcltbtrdord.setOrdFigi(value);
+   public void setTrdExchange(char[] value) throws CFException {
+      trdOrderPair.setTrdExchange(value);
    } 
 
      /**
-	 * 	Update OrdFigi 
+	 * 	Update TrdExchange 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdFigi(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdFigi(source, sourceIndex);
+   public void setTrdExchange(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdExchange(source, sourceIndex);
    	
    }
    
-   public void setOrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);
+   public void setTrdExchange(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdFigi 
+	 * 	Update TrdExchange 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdExchange(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdFigi with another Field
+	 * 	Update TrdExchange with another Field
 	 *	@param value
 	 */
-   public void setOrdFigi(Field source) {
-      dcltbtrdord.setOrdFigi(source);
+   public void setTrdExchange(Field source) {
+      trdOrderPair.setTrdExchange(source);
    }  
    
      /**
-	 * 	Update OrdFigi 
+	 * 	Update TrdExchange 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdFigi(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);   	
+   public void setTrdExchange(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdFigi 
+	 * 	Update TrdExchange 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 
@@ -5104,23 +5104,23 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += dcltbtrdord.hashCode();
-        str += work.hashCode();
         str += sqlca.hashCode();
         str += trdOrderPair.hashCode();
+        str += work.hashCode();
+        str += dcltbtrdord.hashCode();
        return str.hashCode();
     }
 
     public GetSellSideOrderOutCtx clone() {
         GetSellSideOrderOutCtx cloneObj = new GetSellSideOrderOutCtx();
-        cloneObj.dcltbtrdord = new Dcltbtrdord();
-        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
         cloneObj.sqlca = new Sqlca();
         cloneObj.sqlca.set(sqlca.getClonedField());
         cloneObj.trdOrderPair = new TrdOrderPair();
         cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        cloneObj.dcltbtrdord = new Dcltbtrdord();
+        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
         return cloneObj;
     }
 
@@ -5130,10 +5130,10 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
             return new GetSellSideOrderOutCtx();
     }
      public class ValidateCustomersInCtx implements Cloneable {
-     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
+     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
      Work work = Trdpb000Ctx.this.getWork();
      CustomerIo customerIo = Trdpb000Ctx.this.getCustomerIo();
-     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
+     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
 
 	/**
 	 *	Returns the value of trdCurrency
@@ -5204,71 +5204,139 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of ordTradeid
-	 *	@return ordTradeid
+	 *	Returns the value of trdFigi
+	 *	@return trdFigi
 	 */
-   public char[] getOrdTradeid() throws CFException  {              
-   		return dcltbtrdord.getOrdTradeid();
+   public char[] getTrdFigi() throws CFException  {              
+   		return trdOrderPair.getTrdFigi();
    }
 
   
 	/**
-	*  set variable ordTradeid
+	*  set variable trdFigi
 	*  @param value
 	**/
-   public void setOrdTradeid(char[] value) throws CFException {
-      dcltbtrdord.setOrdTradeid(value);
+   public void setTrdFigi(char[] value) throws CFException {
+      trdOrderPair.setTrdFigi(value);
    } 
 
      /**
-	 * 	Update OrdTradeid 
+	 * 	Update TrdFigi 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex);
+   public void setTrdFigi(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdFigi(source, sourceIndex);
    	
    }
    
-   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
+   public void setTrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdTradeid 
+	 * 	Update TrdFigi 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdTradeid with another Field
+	 * 	Update TrdFigi with another Field
 	 *	@param value
 	 */
-   public void setOrdTradeid(Field source) {
-      dcltbtrdord.setOrdTradeid(source);
+   public void setTrdFigi(Field source) {
+      trdOrderPair.setTrdFigi(source);
    }  
    
      /**
-	 * 	Update OrdTradeid 
+	 * 	Update TrdFigi 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
+   public void setTrdFigi(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdTradeid 
+	 * 	Update TrdFigi 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of trdOrderId
+	 *	@return trdOrderId
+	 */
+   public char[] getTrdOrderId() throws CFException  {              
+   		return trdOrderPair.getTrdOrderId();
+   }
+
+  
+	/**
+	*  set variable trdOrderId
+	*  @param value
+	**/
+   public void setTrdOrderId(char[] value) throws CFException {
+      trdOrderPair.setTrdOrderId(value);
+   } 
+
+     /**
+	 * 	Update TrdOrderId 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdOrderId(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdOrderId(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdOrderId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdOrderId 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdOrderId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdOrderId with another Field
+	 *	@param value
+	 */
+   public void setTrdOrderId(Field source) {
+      trdOrderPair.setTrdOrderId(source);
+   }  
+   
+     /**
+	 * 	Update TrdOrderId 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdOrderId 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -5340,6 +5408,23 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
+	 *	Returns the value of customerCheck
+	 *	@return customerCheck
+	 */
+   public char[] getCustomerCheck() throws CFException  {              
+   		return work.getCustomerCheck();
+   }
+
+  
+	/**
+	*  set variable customerCheck
+	*  @param value
+	**/
+   public void setCustomerCheck(char[] value) throws CFException {
+      work.setCustomerCheck(value);
+   } 
+
+	/**
 	 *	Returns the value of ordCustomerId
 	 *	@return ordCustomerId
 	 */
@@ -5408,139 +5493,148 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of trdOrderId
-	 *	@return trdOrderId
+	 *	Returns the value of customerIo
+	 *	@return customerIo
+	 */   
+	 public CustomerIo getCustomerIo() {
+   	return customerIo;
+   }
+
+
+	/**
+	 *	Returns the value of ordTradeid
+	 *	@return ordTradeid
 	 */
-   public char[] getTrdOrderId() throws CFException  {              
-   		return trdOrderPair.getTrdOrderId();
+   public char[] getOrdTradeid() throws CFException  {              
+   		return dcltbtrdord.getOrdTradeid();
    }
 
   
 	/**
-	*  set variable trdOrderId
+	*  set variable ordTradeid
 	*  @param value
 	**/
-   public void setTrdOrderId(char[] value) throws CFException {
-      trdOrderPair.setTrdOrderId(value);
+   public void setOrdTradeid(char[] value) throws CFException {
+      dcltbtrdord.setOrdTradeid(value);
    } 
 
      /**
-	 * 	Update TrdOrderId 
+	 * 	Update OrdTradeid 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setTrdOrderId(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdOrderId(source, sourceIndex);
+   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex);
    	
    }
    
-   public void setTrdOrderId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);
+   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update TrdOrderId 
+	 * 	Update OrdTradeid 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdOrderId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update TrdOrderId with another Field
+	 * 	Update OrdTradeid with another Field
 	 *	@param value
 	 */
-   public void setTrdOrderId(Field source) {
-      trdOrderPair.setTrdOrderId(source);
+   public void setOrdTradeid(Field source) {
+      dcltbtrdord.setOrdTradeid(source);
    }  
    
      /**
-	 * 	Update TrdOrderId 
+	 * 	Update OrdTradeid 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);   	
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update TrdOrderId 
+	 * 	Update OrdTradeid 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
-	 *	Returns the value of trdFigi
-	 *	@return trdFigi
+	 *	Returns the value of customerErrorMsg
+	 *	@return customerErrorMsg
 	 */
-   public char[] getTrdFigi() throws CFException  {              
-   		return trdOrderPair.getTrdFigi();
+   public char[] getCustomerErrorMsg() throws CFException  {              
+   		return customerIo.getCustomerErrorMsg();
    }
 
   
 	/**
-	*  set variable trdFigi
+	*  set variable customerErrorMsg
 	*  @param value
 	**/
-   public void setTrdFigi(char[] value) throws CFException {
-      trdOrderPair.setTrdFigi(value);
+   public void setCustomerErrorMsg(char[] value) throws CFException {
+      customerIo.setCustomerErrorMsg(value);
    } 
 
      /**
-	 * 	Update TrdFigi 
+	 * 	Update CustomerErrorMsg 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setTrdFigi(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdFigi(source, sourceIndex);
+   public void setCustomerErrorMsg(char[] source, int sourceIndex) throws CFException {
+      customerIo.setCustomerErrorMsg(source, sourceIndex);
    	
    }
    
-   public void setTrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);
+   public void setCustomerErrorMsg(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      customerIo.setCustomerErrorMsg(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update TrdFigi 
+	 * 	Update CustomerErrorMsg 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setCustomerErrorMsg(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      customerIo.setCustomerErrorMsg(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update TrdFigi with another Field
+	 * 	Update CustomerErrorMsg with another Field
 	 *	@param value
 	 */
-   public void setTrdFigi(Field source) {
-      trdOrderPair.setTrdFigi(source);
+   public void setCustomerErrorMsg(Field source) {
+      customerIo.setCustomerErrorMsg(source);
    }  
    
      /**
-	 * 	Update TrdFigi 
+	 * 	Update CustomerErrorMsg 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setTrdFigi(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);   	
+   public void setCustomerErrorMsg(Field source, int sourceIndex,int sourceLen) {
+      customerIo.setCustomerErrorMsg(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update TrdFigi 
+	 * 	Update CustomerErrorMsg 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setCustomerErrorMsg(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      customerIo.setCustomerErrorMsg(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -5679,100 +5773,6 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
       trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
-	/**
-	 *	Returns the value of customerIo
-	 *	@return customerIo
-	 */   
-	 public CustomerIo getCustomerIo() {
-   	return customerIo;
-   }
-
-
-	/**
-	 *	Returns the value of customerCheck
-	 *	@return customerCheck
-	 */
-   public char[] getCustomerCheck() throws CFException  {              
-   		return work.getCustomerCheck();
-   }
-
-  
-	/**
-	*  set variable customerCheck
-	*  @param value
-	**/
-   public void setCustomerCheck(char[] value) throws CFException {
-      work.setCustomerCheck(value);
-   } 
-
-	/**
-	 *	Returns the value of customerErrorMsg
-	 *	@return customerErrorMsg
-	 */
-   public char[] getCustomerErrorMsg() throws CFException  {              
-   		return customerIo.getCustomerErrorMsg();
-   }
-
-  
-	/**
-	*  set variable customerErrorMsg
-	*  @param value
-	**/
-   public void setCustomerErrorMsg(char[] value) throws CFException {
-      customerIo.setCustomerErrorMsg(value);
-   } 
-
-     /**
-	 * 	Update CustomerErrorMsg 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setCustomerErrorMsg(char[] source, int sourceIndex) throws CFException {
-      customerIo.setCustomerErrorMsg(source, sourceIndex);
-   	
-   }
-   
-   public void setCustomerErrorMsg(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      customerIo.setCustomerErrorMsg(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update CustomerErrorMsg 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setCustomerErrorMsg(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      customerIo.setCustomerErrorMsg(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update CustomerErrorMsg with another Field
-	 *	@param value
-	 */
-   public void setCustomerErrorMsg(Field source) {
-      customerIo.setCustomerErrorMsg(source);
-   }  
-   
-     /**
-	 * 	Update CustomerErrorMsg 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setCustomerErrorMsg(Field source, int sourceIndex,int sourceLen) {
-      customerIo.setCustomerErrorMsg(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update CustomerErrorMsg 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setCustomerErrorMsg(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      customerIo.setCustomerErrorMsg(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
 
         public Trdpb000Ctx getTrdpb000Ctx() {
             return Trdpb000Ctx.this;
@@ -5791,23 +5791,23 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += dcltbtrdord.hashCode();
+        str += trdOrderPair.hashCode();
         str += work.hashCode();
         str += customerIo.hashCode();
-        str += trdOrderPair.hashCode();
+        str += dcltbtrdord.hashCode();
        return str.hashCode();
     }
 
     public ValidateCustomersInCtx clone() {
         ValidateCustomersInCtx cloneObj = new ValidateCustomersInCtx();
-        cloneObj.dcltbtrdord = new Dcltbtrdord();
-        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
+        cloneObj.trdOrderPair = new TrdOrderPair();
+        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
         cloneObj.work = new Work();
         cloneObj.work.set(work.getClonedField());
         cloneObj.customerIo = new CustomerIo();
         cloneObj.customerIo.set(customerIo.getClonedField());
-        cloneObj.trdOrderPair = new TrdOrderPair();
-        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        cloneObj.dcltbtrdord = new Dcltbtrdord();
+        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
         return cloneObj;
     }
 
@@ -5817,464 +5817,93 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
             return new ValidateCustomersInCtx();
     }
      public class ValidateCustomersOutCtx implements Cloneable {
-     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
+     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
      Work work = Trdpb000Ctx.this.getWork();
      CustomerIo customerIo = Trdpb000Ctx.this.getCustomerIo();
-     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
+     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
 
 	/**
-	 *	Returns the value of exception
-	 *	@return exception
+	 *	Returns the value of ordBuySellInd
+	 *	@return ordBuySellInd
 	 */
-   public char[] getException() throws CFException  {              
-   		return work.getException();
+   public char[] getOrdBuySellInd() throws CFException  {              
+   		return dcltbtrdord.getOrdBuySellInd();
    }
 
   
 	/**
-	*  set variable exception
+	*  set variable ordBuySellInd
 	*  @param value
 	**/
-   public void setException(char[] value) throws CFException {
-      work.setException(value);
-   } 
-
-	/**
-	 *	Test condition "101" for isAccepted()
-	 *	@return  Returns true if isAccepted() is "101"
-	 */
-   public boolean isAccepted() throws CFException {
-      return work.isAccepted();
-   }
-
-	/**
-	*  set values "101"
-	*/
-   	public void setAcceptedTrue()  throws CFException{  			
-    	work.setAcceptedTrue();
-   	}
-	/**
-	 *	Returns the value of trdExchange
-	 *	@return trdExchange
-	 */
-   public char[] getTrdExchange() throws CFException  {              
-   		return trdOrderPair.getTrdExchange();
-   }
-
-  
-	/**
-	*  set variable trdExchange
-	*  @param value
-	**/
-   public void setTrdExchange(char[] value) throws CFException {
-      trdOrderPair.setTrdExchange(value);
+   public void setOrdBuySellInd(char[] value) throws CFException {
+      dcltbtrdord.setOrdBuySellInd(value);
    } 
 
      /**
-	 * 	Update TrdExchange 
+	 * 	Update OrdBuySellInd 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setTrdExchange(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdExchange(source, sourceIndex);
+   public void setOrdBuySellInd(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex);
    	
    }
    
-   public void setTrdExchange(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);
+   public void setOrdBuySellInd(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update TrdExchange 
+	 * 	Update OrdBuySellInd 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdExchange(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdBuySellInd(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update TrdExchange with another Field
+	 * 	Update OrdBuySellInd with another Field
 	 *	@param value
 	 */
-   public void setTrdExchange(Field source) {
-      trdOrderPair.setTrdExchange(source);
+   public void setOrdBuySellInd(Field source) {
+      dcltbtrdord.setOrdBuySellInd(source);
    }  
    
      /**
-	 * 	Update TrdExchange 
+	 * 	Update OrdBuySellInd 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setTrdExchange(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);   	
+   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update TrdExchange 
+	 * 	Update OrdBuySellInd 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
-	 *	Returns the value of customerIo
-	 *	@return customerIo
-	 */   
-	 public CustomerIo getCustomerIo() {
-   	return customerIo;
-   }
-
-
-	/**
-	 *	Test condition "302" for isOverdueSellerIdInvld()
-	 *	@return  Returns true if isOverdueSellerIdInvld() is "302"
+	 *	Test condition "A" for isCustomerActive88()
+	 *	@return  Returns true if isCustomerActive88() is "A"
 	 */
-   public boolean isOverdueSellerIdInvld() throws CFException {
-      return work.isOverdueSellerIdInvld();
+   public boolean isCustomerActive88() throws CFException {
+      return customerIo.isCustomerActive88();
    }
 
 	/**
-	*  set values "302"
+	*  set values "A"
 	*/
-   	public void setOverdueSellerIdInvldTrue()  throws CFException{  			
-    	work.setOverdueSellerIdInvldTrue();
+   	public void setCustomerActive88True()  throws CFException{  			
+    	customerIo.setCustomerActive88True();
    	}
-	/**
-	 *	Test condition "301" for isOverdueBuyerIdInvld()
-	 *	@return  Returns true if isOverdueBuyerIdInvld() is "301"
-	 */
-   public boolean isOverdueBuyerIdInvld() throws CFException {
-      return work.isOverdueBuyerIdInvld();
-   }
-
-	/**
-	*  set values "301"
-	*/
-   	public void setOverdueBuyerIdInvldTrue()  throws CFException{  			
-    	work.setOverdueBuyerIdInvldTrue();
-   	}
-	/**
-	 *	Returns the value of ordTradingXchng
-	 *	@return ordTradingXchng
-	 */
-   public char[] getOrdTradingXchng() throws CFException  {              
-   		return dcltbtrdord.getOrdTradingXchng();
-   }
-
-  
-	/**
-	*  set variable ordTradingXchng
-	*  @param value
-	**/
-   public void setOrdTradingXchng(char[] value) throws CFException {
-      dcltbtrdord.setOrdTradingXchng(value);
-   } 
-
-     /**
-	 * 	Update OrdTradingXchng 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdTradingXchng(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdTradingXchng 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdTradingXchng with another Field
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(Field source) {
-      dcltbtrdord.setOrdTradingXchng(source);
-   }  
-   
-     /**
-	 * 	Update OrdTradingXchng 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdTradingXchng 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of ordCurrency
-	 *	@return ordCurrency
-	 */
-   public char[] getOrdCurrency() throws CFException  {              
-   		return dcltbtrdord.getOrdCurrency();
-   }
-
-  
-	/**
-	*  set variable ordCurrency
-	*  @param value
-	**/
-   public void setOrdCurrency(char[] value) throws CFException {
-      dcltbtrdord.setOrdCurrency(value);
-   } 
-
-     /**
-	 * 	Update OrdCurrency 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdCurrency(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdCurrency 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdCurrency with another Field
-	 *	@param value
-	 */
-   public void setOrdCurrency(Field source) {
-      dcltbtrdord.setOrdCurrency(source);
-   }  
-   
-     /**
-	 * 	Update OrdCurrency 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdCurrency 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of trdCurrency
-	 *	@return trdCurrency
-	 */
-   public char[] getTrdCurrency() throws CFException  {              
-   		return trdOrderPair.getTrdCurrency();
-   }
-
-  
-	/**
-	*  set variable trdCurrency
-	*  @param value
-	**/
-   public void setTrdCurrency(char[] value) throws CFException {
-      trdOrderPair.setTrdCurrency(value);
-   } 
-
-     /**
-	 * 	Update TrdCurrency 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdCurrency(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdCurrency(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdCurrency with another Field
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source) {
-      trdOrderPair.setTrdCurrency(source);
-   }  
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Test condition "N" for isCustomerNotFound88()
-	 *	@return  Returns true if isCustomerNotFound88() is "N"
-	 */
-   public boolean isCustomerNotFound88() throws CFException {
-      return customerIo.isCustomerNotFound88();
-   }
-
-	/**
-	*  set values "N"
-	*/
-   	public void setCustomerNotFound88True()  throws CFException{  			
-    	customerIo.setCustomerNotFound88True();
-   	}
-	/**
-	 *	Test condition "I" for isCustomerInactive88()
-	 *	@return  Returns true if isCustomerInactive88() is "I"
-	 */
-   public boolean isCustomerInactive88() throws CFException {
-      return customerIo.isCustomerInactive88();
-   }
-
-	/**
-	*  set values "I"
-	*/
-   	public void setCustomerInactive88True()  throws CFException{  			
-    	customerIo.setCustomerInactive88True();
-   	}
-	/**
-	 *	Returns the value of orderStatus
-	 *	@return orderStatus
-	 */
-   public char[] getOrderStatus() throws CFException  {              
-   		return work.getOrderStatus();
-   }
-
-  
-	/**
-	*  set variable orderStatus
-	*  @param value
-	**/
-   public void setOrderStatus(char[] value) throws CFException {
-      work.setOrderStatus(value);
-   } 
-
-	/**
-	 *	Returns the value of ordStatus
-	 *	@return ordStatus
-	 */
-   public char[] getOrdStatus() throws CFException  {              
-   		return dcltbtrdord.getOrdStatus();
-   }
-
-  
-	/**
-	*  set variable ordStatus
-	*  @param value
-	**/
-   public void setOrdStatus(char[] value) throws CFException {
-      dcltbtrdord.setOrdStatus(value);
-   } 
-
-     /**
-	 * 	Update OrdStatus 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdStatus(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdStatus(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdStatus(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdStatus 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdStatus(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdStatus with another Field
-	 *	@param value
-	 */
-   public void setOrdStatus(Field source) {
-      dcltbtrdord.setOrdStatus(source);
-   }  
-   
-     /**
-	 * 	Update OrdStatus 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdStatus(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdStatus 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdStatus(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
 	/**
 	 *	Test condition "S" for isCustomerException88()
 	 *	@return  Returns true if isCustomerException88() is "S"
@@ -6358,87 +5987,387 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of ordTradeid
-	 *	@return ordTradeid
+	 *	Test condition "301" for isOverdueBuyerIdInvld()
+	 *	@return  Returns true if isOverdueBuyerIdInvld() is "301"
 	 */
-   public char[] getOrdTradeid() throws CFException  {              
-   		return dcltbtrdord.getOrdTradeid();
+   public boolean isOverdueBuyerIdInvld() throws CFException {
+      return work.isOverdueBuyerIdInvld();
+   }
+
+	/**
+	*  set values "301"
+	*/
+   	public void setOverdueBuyerIdInvldTrue()  throws CFException{  			
+    	work.setOverdueBuyerIdInvldTrue();
+   	}
+	/**
+	 *	Returns the value of ordStatus
+	 *	@return ordStatus
+	 */
+   public char[] getOrdStatus() throws CFException  {              
+   		return dcltbtrdord.getOrdStatus();
    }
 
   
 	/**
-	*  set variable ordTradeid
+	*  set variable ordStatus
 	*  @param value
 	**/
-   public void setOrdTradeid(char[] value) throws CFException {
-      dcltbtrdord.setOrdTradeid(value);
+   public void setOrdStatus(char[] value) throws CFException {
+      dcltbtrdord.setOrdStatus(value);
    } 
 
      /**
-	 * 	Update OrdTradeid 
+	 * 	Update OrdStatus 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex);
+   public void setOrdStatus(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdStatus(source, sourceIndex);
    	
    }
    
-   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
+   public void setOrdStatus(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdTradeid 
+	 * 	Update OrdStatus 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdStatus(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdTradeid with another Field
+	 * 	Update OrdStatus with another Field
 	 *	@param value
 	 */
-   public void setOrdTradeid(Field source) {
-      dcltbtrdord.setOrdTradeid(source);
+   public void setOrdStatus(Field source) {
+      dcltbtrdord.setOrdStatus(source);
    }  
    
      /**
-	 * 	Update OrdTradeid 
+	 * 	Update OrdStatus 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
+   public void setOrdStatus(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdTradeid 
+	 * 	Update OrdStatus 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdStatus(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
-	 *	Test condition "A" for isApplException()
-	 *	@return  Returns true if isApplException() is "A"
+	 *	Returns the value of trdCurrency
+	 *	@return trdCurrency
 	 */
-   public boolean isApplException() throws CFException {
-      return work.isApplException();
+   public char[] getTrdCurrency() throws CFException  {              
+   		return trdOrderPair.getTrdCurrency();
+   }
+
+  
+	/**
+	*  set variable trdCurrency
+	*  @param value
+	**/
+   public void setTrdCurrency(char[] value) throws CFException {
+      trdOrderPair.setTrdCurrency(value);
+   } 
+
+     /**
+	 * 	Update TrdCurrency 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdCurrency(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdCurrency(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdCurrency 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdCurrency with another Field
+	 *	@param value
+	 */
+   public void setTrdCurrency(Field source) {
+      trdOrderPair.setTrdCurrency(source);
+   }  
+   
+     /**
+	 * 	Update TrdCurrency 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdCurrency 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
-	*  set values "A"
+	 *	Returns the value of ordFigi
+	 *	@return ordFigi
+	 */
+   public char[] getOrdFigi() throws CFException  {              
+   		return dcltbtrdord.getOrdFigi();
+   }
+
+  
+	/**
+	*  set variable ordFigi
+	*  @param value
+	**/
+   public void setOrdFigi(char[] value) throws CFException {
+      dcltbtrdord.setOrdFigi(value);
+   } 
+
+     /**
+	 * 	Update OrdFigi 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdFigi(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdFigi(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdFigi with another Field
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source) {
+      dcltbtrdord.setOrdFigi(source);
+   }  
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Test condition "D" for isDataException()
+	 *	@return  Returns true if isDataException() is "D"
+	 */
+   public boolean isDataException() throws CFException {
+      return work.isDataException();
+   }
+
+	/**
+	*  set values "D"
 	*/
-   	public void setApplExceptionTrue()  throws CFException{  			
-    	work.setApplExceptionTrue();
+   	public void setDataExceptionTrue()  throws CFException{  			
+    	work.setDataExceptionTrue();
    	}
+	/**
+	 *	Test condition "302" for isOverdueSellerIdInvld()
+	 *	@return  Returns true if isOverdueSellerIdInvld() is "302"
+	 */
+   public boolean isOverdueSellerIdInvld() throws CFException {
+      return work.isOverdueSellerIdInvld();
+   }
+
+	/**
+	*  set values "302"
+	*/
+   	public void setOverdueSellerIdInvldTrue()  throws CFException{  			
+    	work.setOverdueSellerIdInvldTrue();
+   	}
+	/**
+	 *	Returns the value of ordTradingXchng
+	 *	@return ordTradingXchng
+	 */
+   public char[] getOrdTradingXchng() throws CFException  {              
+   		return dcltbtrdord.getOrdTradingXchng();
+   }
+
+  
+	/**
+	*  set variable ordTradingXchng
+	*  @param value
+	**/
+   public void setOrdTradingXchng(char[] value) throws CFException {
+      dcltbtrdord.setOrdTradingXchng(value);
+   } 
+
+     /**
+	 * 	Update OrdTradingXchng 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdTradingXchng(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdTradingXchng(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdTradingXchng 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdTradingXchng(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdTradingXchng with another Field
+	 *	@param value
+	 */
+   public void setOrdTradingXchng(Field source) {
+      dcltbtrdord.setOrdTradingXchng(source);
+   }  
+   
+     /**
+	 * 	Update OrdTradingXchng 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdTradingXchng 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of trdFigi
+	 *	@return trdFigi
+	 */
+   public char[] getTrdFigi() throws CFException  {              
+   		return trdOrderPair.getTrdFigi();
+   }
+
+  
+	/**
+	*  set variable trdFigi
+	*  @param value
+	**/
+   public void setTrdFigi(char[] value) throws CFException {
+      trdOrderPair.setTrdFigi(value);
+   } 
+
+     /**
+	 * 	Update TrdFigi 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdFigi(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdFigi(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdFigi 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdFigi with another Field
+	 *	@param value
+	 */
+   public void setTrdFigi(Field source) {
+      trdOrderPair.setTrdFigi(source);
+   }  
+   
+     /**
+	 * 	Update TrdFigi 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdFigi(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdFigi 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
 	/**
 	 *	Returns the value of trdBuyerId
 	 *	@return trdBuyerId
@@ -6508,6 +6437,88 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
+	 *	Test condition "101" for isAccepted()
+	 *	@return  Returns true if isAccepted() is "101"
+	 */
+   public boolean isAccepted() throws CFException {
+      return work.isAccepted();
+   }
+
+	/**
+	*  set values "101"
+	*/
+   	public void setAcceptedTrue()  throws CFException{  			
+    	work.setAcceptedTrue();
+   	}
+	/**
+	 *	Returns the value of customerId
+	 *	@return customerId
+	 */
+   public char[] getCustomerId() throws CFException  {              
+   		return customerIo.getCustomerId();
+   }
+
+  
+	/**
+	*  set variable customerId
+	*  @param value
+	**/
+   public void setCustomerId(char[] value) throws CFException {
+      customerIo.setCustomerId(value);
+   } 
+
+     /**
+	 * 	Update CustomerId 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setCustomerId(char[] source, int sourceIndex) throws CFException {
+      customerIo.setCustomerId(source, sourceIndex);
+   	
+   }
+   
+   public void setCustomerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      customerIo.setCustomerId(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update CustomerId 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setCustomerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      customerIo.setCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update CustomerId with another Field
+	 *	@param value
+	 */
+   public void setCustomerId(Field source) {
+      customerIo.setCustomerId(source);
+   }  
+   
+     /**
+	 * 	Update CustomerId 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setCustomerId(Field source, int sourceIndex,int sourceLen) {
+      customerIo.setCustomerId(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update CustomerId 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setCustomerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      customerIo.setCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
 	 *	Returns the value of trdOrderId
 	 *	@return trdOrderId
 	 */
@@ -6573,6 +6584,1080 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
 	 */
    public void setTrdOrderId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
       trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Test condition "A" for isApplException()
+	 *	@return  Returns true if isApplException() is "A"
+	 */
+   public boolean isApplException() throws CFException {
+      return work.isApplException();
+   }
+
+	/**
+	*  set values "A"
+	*/
+   	public void setApplExceptionTrue()  throws CFException{  			
+    	work.setApplExceptionTrue();
+   	}
+	/**
+	 *	Returns the value of orderStatus
+	 *	@return orderStatus
+	 */
+   public char[] getOrderStatus() throws CFException  {              
+   		return work.getOrderStatus();
+   }
+
+  
+	/**
+	*  set variable orderStatus
+	*  @param value
+	**/
+   public void setOrderStatus(char[] value) throws CFException {
+      work.setOrderStatus(value);
+   } 
+
+	/**
+	 *	Returns the value of exception
+	 *	@return exception
+	 */
+   public char[] getException() throws CFException  {              
+   		return work.getException();
+   }
+
+  
+	/**
+	*  set variable exception
+	*  @param value
+	**/
+   public void setException(char[] value) throws CFException {
+      work.setException(value);
+   } 
+
+	/**
+	 *	Returns the value of ordCurrency
+	 *	@return ordCurrency
+	 */
+   public char[] getOrdCurrency() throws CFException  {              
+   		return dcltbtrdord.getOrdCurrency();
+   }
+
+  
+	/**
+	*  set variable ordCurrency
+	*  @param value
+	**/
+   public void setOrdCurrency(char[] value) throws CFException {
+      dcltbtrdord.setOrdCurrency(value);
+   } 
+
+     /**
+	 * 	Update OrdCurrency 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdCurrency(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdCurrency 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdCurrency with another Field
+	 *	@param value
+	 */
+   public void setOrdCurrency(Field source) {
+      dcltbtrdord.setOrdCurrency(source);
+   }  
+   
+     /**
+	 * 	Update OrdCurrency 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdCurrency 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of customerIo
+	 *	@return customerIo
+	 */   
+	 public CustomerIo getCustomerIo() {
+   	return customerIo;
+   }
+
+
+	/**
+	 *	Returns the value of tradeid
+	 *	@return tradeid
+	 */
+	public long getTradeid() throws CFException {
+   		return work.getTradeid();
+	}
+
+
+	/**
+	 *	Returns String value of tradeid
+	 *	@return tradeid
+	 */
+	public char[]  getTradeidString() throws CFException {
+	     return String.valueOf(work.getTradeidString()).toCharArray();
+	}
+
+	 /**
+	 *  This method allows testing if there is a numeric value stored in the serialized String
+	 *	@return true if numeric value is stored in the string
+	 */
+	public boolean tradeidIsNumeric()  throws CFException{
+	    return work.tradeidIsNumeric();
+	}
+
+	/**
+	 * 	Update Tradeid with the passed value
+	 *	@param number
+	 */
+	public void setTradeid(long number)  throws CFException{
+		work.setTradeid(number);
+	}
+	
+
+	
+	/**
+	 * 	Update Tradeid with the passed value
+	 *	@param value (String or char[])
+	 */
+	public void setTradeid(char[] value)  throws CFException {
+		work.setTradeid(value);
+	}
+	
+	/**
+	 * 	Update Tradeid with the passed value 
+	 *
+	 *	@param value (String or char[])
+	 */
+	public void setTradeidString(char[] value)  throws CFException{
+		work.setTradeid(value);
+	}	
+
+	/**
+	 *	Test condition "I" for isCustomerInactive88()
+	 *	@return  Returns true if isCustomerInactive88() is "I"
+	 */
+   public boolean isCustomerInactive88() throws CFException {
+      return customerIo.isCustomerInactive88();
+   }
+
+	/**
+	*  set values "I"
+	*/
+   	public void setCustomerInactive88True()  throws CFException{  			
+    	customerIo.setCustomerInactive88True();
+   	}
+	/**
+	 *	Returns the value of ordTradeid
+	 *	@return ordTradeid
+	 */
+   public char[] getOrdTradeid() throws CFException  {              
+   		return dcltbtrdord.getOrdTradeid();
+   }
+
+  
+	/**
+	*  set variable ordTradeid
+	*  @param value
+	**/
+   public void setOrdTradeid(char[] value) throws CFException {
+      dcltbtrdord.setOrdTradeid(value);
+   } 
+
+     /**
+	 * 	Update OrdTradeid 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdTradeid 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdTradeid with another Field
+	 *	@param value
+	 */
+   public void setOrdTradeid(Field source) {
+      dcltbtrdord.setOrdTradeid(source);
+   }  
+   
+     /**
+	 * 	Update OrdTradeid 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdTradeid 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of trdSellerId
+	 *	@return trdSellerId
+	 */
+   public char[] getTrdSellerId() throws CFException  {              
+   		return trdOrderPair.getTrdSellerId();
+   }
+
+  
+	/**
+	*  set variable trdSellerId
+	*  @param value
+	**/
+   public void setTrdSellerId(char[] value) throws CFException {
+      trdOrderPair.setTrdSellerId(value);
+   } 
+
+     /**
+	 * 	Update TrdSellerId 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdSellerId(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdSellerId(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdSellerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdSellerId(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdSellerId 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdSellerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdSellerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdSellerId with another Field
+	 *	@param value
+	 */
+   public void setTrdSellerId(Field source) {
+      trdOrderPair.setTrdSellerId(source);
+   }  
+   
+     /**
+	 * 	Update TrdSellerId 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdSellerId(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdSellerId(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdSellerId 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdSellerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdSellerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Test condition "N" for isCustomerNotFound88()
+	 *	@return  Returns true if isCustomerNotFound88() is "N"
+	 */
+   public boolean isCustomerNotFound88() throws CFException {
+      return customerIo.isCustomerNotFound88();
+   }
+
+	/**
+	*  set values "N"
+	*/
+   	public void setCustomerNotFound88True()  throws CFException{  			
+    	customerIo.setCustomerNotFound88True();
+   	}
+	/**
+	 *	Returns the value of trdExchange
+	 *	@return trdExchange
+	 */
+   public char[] getTrdExchange() throws CFException  {              
+   		return trdOrderPair.getTrdExchange();
+   }
+
+  
+	/**
+	*  set variable trdExchange
+	*  @param value
+	**/
+   public void setTrdExchange(char[] value) throws CFException {
+      trdOrderPair.setTrdExchange(value);
+   } 
+
+     /**
+	 * 	Update TrdExchange 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdExchange(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdExchange(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdExchange(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdExchange 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdExchange(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdExchange with another Field
+	 *	@param value
+	 */
+   public void setTrdExchange(Field source) {
+      trdOrderPair.setTrdExchange(source);
+   }  
+   
+     /**
+	 * 	Update TrdExchange 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdExchange(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdExchange 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+
+        public Trdpb000Ctx getTrdpb000Ctx() {
+            return Trdpb000Ctx.this;
+        }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) return false;
+        return this.hashCode() == o.hashCode();
+    }
+
+    @Override
+    public int hashCode() {
+        String str = "";
+        str += trdOrderPair.hashCode();
+        str += work.hashCode();
+        str += customerIo.hashCode();
+        str += dcltbtrdord.hashCode();
+       return str.hashCode();
+    }
+
+    public ValidateCustomersOutCtx clone() {
+        ValidateCustomersOutCtx cloneObj = new ValidateCustomersOutCtx();
+        cloneObj.trdOrderPair = new TrdOrderPair();
+        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        cloneObj.customerIo = new CustomerIo();
+        cloneObj.customerIo.set(customerIo.getClonedField());
+        cloneObj.dcltbtrdord = new Dcltbtrdord();
+        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
+        return cloneObj;
+    }
+
+    }
+
+    public ValidateCustomersOutCtx getValidateCustomersOutCtx() {
+            return new ValidateCustomersOutCtx();
+    }
+     public class ValidateSecurityInCtx implements Cloneable {
+     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
+     Work work = Trdpb000Ctx.this.getWork();
+     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
+     SecurityIo securityIo = Trdpb000Ctx.this.getSecurityIo();
+
+	/**
+	 *	Returns the value of trdCurrency
+	 *	@return trdCurrency
+	 */
+   public char[] getTrdCurrency() throws CFException  {              
+   		return trdOrderPair.getTrdCurrency();
+   }
+
+  
+	/**
+	*  set variable trdCurrency
+	*  @param value
+	**/
+   public void setTrdCurrency(char[] value) throws CFException {
+      trdOrderPair.setTrdCurrency(value);
+   } 
+
+     /**
+	 * 	Update TrdCurrency 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdCurrency(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdCurrency(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdCurrency 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdCurrency with another Field
+	 *	@param value
+	 */
+   public void setTrdCurrency(Field source) {
+      trdOrderPair.setTrdCurrency(source);
+   }  
+   
+     /**
+	 * 	Update TrdCurrency 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdCurrency 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of trdFigi
+	 *	@return trdFigi
+	 */
+   public char[] getTrdFigi() throws CFException  {              
+   		return trdOrderPair.getTrdFigi();
+   }
+
+  
+	/**
+	*  set variable trdFigi
+	*  @param value
+	**/
+   public void setTrdFigi(char[] value) throws CFException {
+      trdOrderPair.setTrdFigi(value);
+   } 
+
+     /**
+	 * 	Update TrdFigi 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdFigi(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdFigi(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdFigi 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdFigi with another Field
+	 *	@param value
+	 */
+   public void setTrdFigi(Field source) {
+      trdOrderPair.setTrdFigi(source);
+   }  
+   
+     /**
+	 * 	Update TrdFigi 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdFigi(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdFigi 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of trdOrderId
+	 *	@return trdOrderId
+	 */
+   public char[] getTrdOrderId() throws CFException  {              
+   		return trdOrderPair.getTrdOrderId();
+   }
+
+  
+	/**
+	*  set variable trdOrderId
+	*  @param value
+	**/
+   public void setTrdOrderId(char[] value) throws CFException {
+      trdOrderPair.setTrdOrderId(value);
+   } 
+
+     /**
+	 * 	Update TrdOrderId 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdOrderId(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdOrderId(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdOrderId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdOrderId 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdOrderId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdOrderId with another Field
+	 *	@param value
+	 */
+   public void setTrdOrderId(Field source) {
+      trdOrderPair.setTrdOrderId(source);
+   }  
+   
+     /**
+	 * 	Update TrdOrderId 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdOrderId 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of ordFigi
+	 *	@return ordFigi
+	 */
+   public char[] getOrdFigi() throws CFException  {              
+   		return dcltbtrdord.getOrdFigi();
+   }
+
+  
+	/**
+	*  set variable ordFigi
+	*  @param value
+	**/
+   public void setOrdFigi(char[] value) throws CFException {
+      dcltbtrdord.setOrdFigi(value);
+   } 
+
+     /**
+	 * 	Update OrdFigi 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdFigi(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdFigi(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdFigi with another Field
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source) {
+      dcltbtrdord.setOrdFigi(source);
+   }  
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of securityErrorMsg
+	 *	@return securityErrorMsg
+	 */
+   public char[] getSecurityErrorMsg() throws CFException  {              
+   		return securityIo.getSecurityErrorMsg();
+   }
+
+  
+	/**
+	*  set variable securityErrorMsg
+	*  @param value
+	**/
+   public void setSecurityErrorMsg(char[] value) throws CFException {
+      securityIo.setSecurityErrorMsg(value);
+   } 
+
+     /**
+	 * 	Update SecurityErrorMsg 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setSecurityErrorMsg(char[] source, int sourceIndex) throws CFException {
+      securityIo.setSecurityErrorMsg(source, sourceIndex);
+   	
+   }
+   
+   public void setSecurityErrorMsg(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      securityIo.setSecurityErrorMsg(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update SecurityErrorMsg 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setSecurityErrorMsg(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      securityIo.setSecurityErrorMsg(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update SecurityErrorMsg with another Field
+	 *	@param value
+	 */
+   public void setSecurityErrorMsg(Field source) {
+      securityIo.setSecurityErrorMsg(source);
+   }  
+   
+     /**
+	 * 	Update SecurityErrorMsg 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setSecurityErrorMsg(Field source, int sourceIndex,int sourceLen) {
+      securityIo.setSecurityErrorMsg(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update SecurityErrorMsg 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setSecurityErrorMsg(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      securityIo.setSecurityErrorMsg(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of securityCheck
+	 *	@return securityCheck
+	 */
+   public char[] getSecurityCheck() throws CFException  {              
+   		return work.getSecurityCheck();
+   }
+
+  
+	/**
+	*  set variable securityCheck
+	*  @param value
+	**/
+   public void setSecurityCheck(char[] value) throws CFException {
+      work.setSecurityCheck(value);
+   } 
+
+	/**
+	 *	Returns the value of ordTradeid
+	 *	@return ordTradeid
+	 */
+   public char[] getOrdTradeid() throws CFException  {              
+   		return dcltbtrdord.getOrdTradeid();
+   }
+
+  
+	/**
+	*  set variable ordTradeid
+	*  @param value
+	**/
+   public void setOrdTradeid(char[] value) throws CFException {
+      dcltbtrdord.setOrdTradeid(value);
+   } 
+
+     /**
+	 * 	Update OrdTradeid 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdTradeid 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdTradeid with another Field
+	 *	@param value
+	 */
+   public void setOrdTradeid(Field source) {
+      dcltbtrdord.setOrdTradeid(source);
+   }  
+   
+     /**
+	 * 	Update OrdTradeid 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdTradeid 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of securityIo
+	 *	@return securityIo
+	 */   
+	 public SecurityIo getSecurityIo() {
+   	return securityIo;
+   }
+
+
+	/**
+	 *	Returns the value of trdExchange
+	 *	@return trdExchange
+	 */
+   public char[] getTrdExchange() throws CFException  {              
+   		return trdOrderPair.getTrdExchange();
+   }
+
+  
+	/**
+	*  set variable trdExchange
+	*  @param value
+	**/
+   public void setTrdExchange(char[] value) throws CFException {
+      trdOrderPair.setTrdExchange(value);
+   } 
+
+     /**
+	 * 	Update TrdExchange 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdExchange(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdExchange(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdExchange(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdExchange 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdExchange(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdExchange with another Field
+	 *	@param value
+	 */
+   public void setTrdExchange(Field source) {
+      trdOrderPair.setTrdExchange(source);
+   }  
+   
+     /**
+	 * 	Update TrdExchange 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdExchange(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdExchange 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+
+        public Trdpb000Ctx getTrdpb000Ctx() {
+            return Trdpb000Ctx.this;
+        }
+
+        public ValidateSecurityOutCtx getValidateSecurityOutCtx() {
+            return new ValidateSecurityOutCtx();
+        }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) return false;
+        return this.hashCode() == o.hashCode();
+    }
+
+    @Override
+    public int hashCode() {
+        String str = "";
+        str += trdOrderPair.hashCode();
+        str += work.hashCode();
+        str += dcltbtrdord.hashCode();
+        str += securityIo.hashCode();
+       return str.hashCode();
+    }
+
+    public ValidateSecurityInCtx clone() {
+        ValidateSecurityInCtx cloneObj = new ValidateSecurityInCtx();
+        cloneObj.trdOrderPair = new TrdOrderPair();
+        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        cloneObj.dcltbtrdord = new Dcltbtrdord();
+        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
+        cloneObj.securityIo = new SecurityIo();
+        cloneObj.securityIo.set(securityIo.getClonedField());
+        return cloneObj;
+    }
+
+    }
+
+    public ValidateSecurityInCtx getValidateSecurityInCtx() {
+            return new ValidateSecurityInCtx();
+    }
+     public class ValidateSecurityOutCtx implements Cloneable {
+     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
+     Work work = Trdpb000Ctx.this.getWork();
+     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
+     SecurityIo securityIo = Trdpb000Ctx.this.getSecurityIo();
+
+	/**
+	 *	Returns the value of ordTradingXchng
+	 *	@return ordTradingXchng
+	 */
+   public char[] getOrdTradingXchng() throws CFException  {              
+   		return dcltbtrdord.getOrdTradingXchng();
+   }
+
+  
+	/**
+	*  set variable ordTradingXchng
+	*  @param value
+	**/
+   public void setOrdTradingXchng(char[] value) throws CFException {
+      dcltbtrdord.setOrdTradingXchng(value);
+   } 
+
+     /**
+	 * 	Update OrdTradingXchng 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdTradingXchng(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdTradingXchng(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdTradingXchng 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdTradingXchng(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdTradingXchng with another Field
+	 *	@param value
+	 */
+   public void setOrdTradingXchng(Field source) {
+      dcltbtrdord.setOrdTradingXchng(source);
+   }  
+   
+     /**
+	 * 	Update OrdTradingXchng 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdTradingXchng 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -6712,972 +7797,6 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of customerId
-	 *	@return customerId
-	 */
-   public char[] getCustomerId() throws CFException  {              
-   		return customerIo.getCustomerId();
-   }
-
-  
-	/**
-	*  set variable customerId
-	*  @param value
-	**/
-   public void setCustomerId(char[] value) throws CFException {
-      customerIo.setCustomerId(value);
-   } 
-
-     /**
-	 * 	Update CustomerId 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setCustomerId(char[] source, int sourceIndex) throws CFException {
-      customerIo.setCustomerId(source, sourceIndex);
-   	
-   }
-   
-   public void setCustomerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      customerIo.setCustomerId(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update CustomerId 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setCustomerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      customerIo.setCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update CustomerId with another Field
-	 *	@param value
-	 */
-   public void setCustomerId(Field source) {
-      customerIo.setCustomerId(source);
-   }  
-   
-     /**
-	 * 	Update CustomerId 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setCustomerId(Field source, int sourceIndex,int sourceLen) {
-      customerIo.setCustomerId(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update CustomerId 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setCustomerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      customerIo.setCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of trdSellerId
-	 *	@return trdSellerId
-	 */
-   public char[] getTrdSellerId() throws CFException  {              
-   		return trdOrderPair.getTrdSellerId();
-   }
-
-  
-	/**
-	*  set variable trdSellerId
-	*  @param value
-	**/
-   public void setTrdSellerId(char[] value) throws CFException {
-      trdOrderPair.setTrdSellerId(value);
-   } 
-
-     /**
-	 * 	Update TrdSellerId 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdSellerId(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdSellerId(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdSellerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdSellerId(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdSellerId 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdSellerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdSellerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdSellerId with another Field
-	 *	@param value
-	 */
-   public void setTrdSellerId(Field source) {
-      trdOrderPair.setTrdSellerId(source);
-   }  
-   
-     /**
-	 * 	Update TrdSellerId 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdSellerId(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdSellerId(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdSellerId 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdSellerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdSellerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Test condition "A" for isCustomerActive88()
-	 *	@return  Returns true if isCustomerActive88() is "A"
-	 */
-   public boolean isCustomerActive88() throws CFException {
-      return customerIo.isCustomerActive88();
-   }
-
-	/**
-	*  set values "A"
-	*/
-   	public void setCustomerActive88True()  throws CFException{  			
-    	customerIo.setCustomerActive88True();
-   	}
-	/**
-	 *	Test condition "D" for isDataException()
-	 *	@return  Returns true if isDataException() is "D"
-	 */
-   public boolean isDataException() throws CFException {
-      return work.isDataException();
-   }
-
-	/**
-	*  set values "D"
-	*/
-   	public void setDataExceptionTrue()  throws CFException{  			
-    	work.setDataExceptionTrue();
-   	}
-	/**
-	 *	Returns the value of tradeid
-	 *	@return tradeid
-	 */
-	public long getTradeid() throws CFException {
-   		return work.getTradeid();
-	}
-
-
-	/**
-	 *	Returns String value of tradeid
-	 *	@return tradeid
-	 */
-	public char[]  getTradeidString() throws CFException {
-	     return String.valueOf(work.getTradeidString()).toCharArray();
-	}
-
-	 /**
-	 *  This method allows testing if there is a numeric value stored in the serialized String
-	 *	@return true if numeric value is stored in the string
-	 */
-	public boolean tradeidIsNumeric()  throws CFException{
-	    return work.tradeidIsNumeric();
-	}
-
-	/**
-	 * 	Update Tradeid with the passed value
-	 *	@param number
-	 */
-	public void setTradeid(long number)  throws CFException{
-		work.setTradeid(number);
-	}
-	
-
-	
-	/**
-	 * 	Update Tradeid with the passed value
-	 *	@param value (String or char[])
-	 */
-	public void setTradeid(char[] value)  throws CFException {
-		work.setTradeid(value);
-	}
-	
-	/**
-	 * 	Update Tradeid with the passed value 
-	 *
-	 *	@param value (String or char[])
-	 */
-	public void setTradeidString(char[] value)  throws CFException{
-		work.setTradeid(value);
-	}	
-
-	/**
-	 *	Returns the value of ordFigi
-	 *	@return ordFigi
-	 */
-   public char[] getOrdFigi() throws CFException  {              
-   		return dcltbtrdord.getOrdFigi();
-   }
-
-  
-	/**
-	*  set variable ordFigi
-	*  @param value
-	**/
-   public void setOrdFigi(char[] value) throws CFException {
-      dcltbtrdord.setOrdFigi(value);
-   } 
-
-     /**
-	 * 	Update OrdFigi 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdFigi(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdFigi(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdFigi 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdFigi with another Field
-	 *	@param value
-	 */
-   public void setOrdFigi(Field source) {
-      dcltbtrdord.setOrdFigi(source);
-   }  
-   
-     /**
-	 * 	Update OrdFigi 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdFigi(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdFigi 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-
-        public Trdpb000Ctx getTrdpb000Ctx() {
-            return Trdpb000Ctx.this;
-        }
-
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null) return false;
-        return this.hashCode() == o.hashCode();
-    }
-
-    @Override
-    public int hashCode() {
-        String str = "";
-        str += dcltbtrdord.hashCode();
-        str += work.hashCode();
-        str += customerIo.hashCode();
-        str += trdOrderPair.hashCode();
-       return str.hashCode();
-    }
-
-    public ValidateCustomersOutCtx clone() {
-        ValidateCustomersOutCtx cloneObj = new ValidateCustomersOutCtx();
-        cloneObj.dcltbtrdord = new Dcltbtrdord();
-        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
-        cloneObj.customerIo = new CustomerIo();
-        cloneObj.customerIo.set(customerIo.getClonedField());
-        cloneObj.trdOrderPair = new TrdOrderPair();
-        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
-        return cloneObj;
-    }
-
-    }
-
-    public ValidateCustomersOutCtx getValidateCustomersOutCtx() {
-            return new ValidateCustomersOutCtx();
-    }
-     public class ValidateSecurityInCtx implements Cloneable {
-     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
-     Work work = Trdpb000Ctx.this.getWork();
-     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
-     SecurityIo securityIo = Trdpb000Ctx.this.getSecurityIo();
-
-	/**
-	 *	Returns the value of trdCurrency
-	 *	@return trdCurrency
-	 */
-   public char[] getTrdCurrency() throws CFException  {              
-   		return trdOrderPair.getTrdCurrency();
-   }
-
-  
-	/**
-	*  set variable trdCurrency
-	*  @param value
-	**/
-   public void setTrdCurrency(char[] value) throws CFException {
-      trdOrderPair.setTrdCurrency(value);
-   } 
-
-     /**
-	 * 	Update TrdCurrency 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdCurrency(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdCurrency(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdCurrency with another Field
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source) {
-      trdOrderPair.setTrdCurrency(source);
-   }  
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of ordTradeid
-	 *	@return ordTradeid
-	 */
-   public char[] getOrdTradeid() throws CFException  {              
-   		return dcltbtrdord.getOrdTradeid();
-   }
-
-  
-	/**
-	*  set variable ordTradeid
-	*  @param value
-	**/
-   public void setOrdTradeid(char[] value) throws CFException {
-      dcltbtrdord.setOrdTradeid(value);
-   } 
-
-     /**
-	 * 	Update OrdTradeid 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdTradeid 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdTradeid with another Field
-	 *	@param value
-	 */
-   public void setOrdTradeid(Field source) {
-      dcltbtrdord.setOrdTradeid(source);
-   }  
-   
-     /**
-	 * 	Update OrdTradeid 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdTradeid 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of securityCheck
-	 *	@return securityCheck
-	 */
-   public char[] getSecurityCheck() throws CFException  {              
-   		return work.getSecurityCheck();
-   }
-
-  
-	/**
-	*  set variable securityCheck
-	*  @param value
-	**/
-   public void setSecurityCheck(char[] value) throws CFException {
-      work.setSecurityCheck(value);
-   } 
-
-	/**
-	 *	Returns the value of trdOrderId
-	 *	@return trdOrderId
-	 */
-   public char[] getTrdOrderId() throws CFException  {              
-   		return trdOrderPair.getTrdOrderId();
-   }
-
-  
-	/**
-	*  set variable trdOrderId
-	*  @param value
-	**/
-   public void setTrdOrderId(char[] value) throws CFException {
-      trdOrderPair.setTrdOrderId(value);
-   } 
-
-     /**
-	 * 	Update TrdOrderId 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdOrderId(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdOrderId(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdOrderId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdOrderId 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdOrderId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdOrderId with another Field
-	 *	@param value
-	 */
-   public void setTrdOrderId(Field source) {
-      trdOrderPair.setTrdOrderId(source);
-   }  
-   
-     /**
-	 * 	Update TrdOrderId 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdOrderId 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of trdFigi
-	 *	@return trdFigi
-	 */
-   public char[] getTrdFigi() throws CFException  {              
-   		return trdOrderPair.getTrdFigi();
-   }
-
-  
-	/**
-	*  set variable trdFigi
-	*  @param value
-	**/
-   public void setTrdFigi(char[] value) throws CFException {
-      trdOrderPair.setTrdFigi(value);
-   } 
-
-     /**
-	 * 	Update TrdFigi 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdFigi(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdFigi(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdFigi 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdFigi with another Field
-	 *	@param value
-	 */
-   public void setTrdFigi(Field source) {
-      trdOrderPair.setTrdFigi(source);
-   }  
-   
-     /**
-	 * 	Update TrdFigi 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdFigi(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdFigi 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of securityErrorMsg
-	 *	@return securityErrorMsg
-	 */
-   public char[] getSecurityErrorMsg() throws CFException  {              
-   		return securityIo.getSecurityErrorMsg();
-   }
-
-  
-	/**
-	*  set variable securityErrorMsg
-	*  @param value
-	**/
-   public void setSecurityErrorMsg(char[] value) throws CFException {
-      securityIo.setSecurityErrorMsg(value);
-   } 
-
-     /**
-	 * 	Update SecurityErrorMsg 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setSecurityErrorMsg(char[] source, int sourceIndex) throws CFException {
-      securityIo.setSecurityErrorMsg(source, sourceIndex);
-   	
-   }
-   
-   public void setSecurityErrorMsg(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      securityIo.setSecurityErrorMsg(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update SecurityErrorMsg 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setSecurityErrorMsg(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      securityIo.setSecurityErrorMsg(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update SecurityErrorMsg with another Field
-	 *	@param value
-	 */
-   public void setSecurityErrorMsg(Field source) {
-      securityIo.setSecurityErrorMsg(source);
-   }  
-   
-     /**
-	 * 	Update SecurityErrorMsg 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setSecurityErrorMsg(Field source, int sourceIndex,int sourceLen) {
-      securityIo.setSecurityErrorMsg(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update SecurityErrorMsg 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setSecurityErrorMsg(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      securityIo.setSecurityErrorMsg(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of trdExchange
-	 *	@return trdExchange
-	 */
-   public char[] getTrdExchange() throws CFException  {              
-   		return trdOrderPair.getTrdExchange();
-   }
-
-  
-	/**
-	*  set variable trdExchange
-	*  @param value
-	**/
-   public void setTrdExchange(char[] value) throws CFException {
-      trdOrderPair.setTrdExchange(value);
-   } 
-
-     /**
-	 * 	Update TrdExchange 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdExchange(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdExchange(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdExchange(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdExchange 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdExchange(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdExchange with another Field
-	 *	@param value
-	 */
-   public void setTrdExchange(Field source) {
-      trdOrderPair.setTrdExchange(source);
-   }  
-   
-     /**
-	 * 	Update TrdExchange 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdExchange(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdExchange 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of securityIo
-	 *	@return securityIo
-	 */   
-	 public SecurityIo getSecurityIo() {
-   	return securityIo;
-   }
-
-
-	/**
-	 *	Returns the value of ordFigi
-	 *	@return ordFigi
-	 */
-   public char[] getOrdFigi() throws CFException  {              
-   		return dcltbtrdord.getOrdFigi();
-   }
-
-  
-	/**
-	*  set variable ordFigi
-	*  @param value
-	**/
-   public void setOrdFigi(char[] value) throws CFException {
-      dcltbtrdord.setOrdFigi(value);
-   } 
-
-     /**
-	 * 	Update OrdFigi 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdFigi(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdFigi(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdFigi 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdFigi with another Field
-	 *	@param value
-	 */
-   public void setOrdFigi(Field source) {
-      dcltbtrdord.setOrdFigi(source);
-   }  
-   
-     /**
-	 * 	Update OrdFigi 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdFigi(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdFigi 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-
-        public Trdpb000Ctx getTrdpb000Ctx() {
-            return Trdpb000Ctx.this;
-        }
-
-        public ValidateSecurityOutCtx getValidateSecurityOutCtx() {
-            return new ValidateSecurityOutCtx();
-        }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null) return false;
-        return this.hashCode() == o.hashCode();
-    }
-
-    @Override
-    public int hashCode() {
-        String str = "";
-        str += dcltbtrdord.hashCode();
-        str += work.hashCode();
-        str += trdOrderPair.hashCode();
-        str += securityIo.hashCode();
-       return str.hashCode();
-    }
-
-    public ValidateSecurityInCtx clone() {
-        ValidateSecurityInCtx cloneObj = new ValidateSecurityInCtx();
-        cloneObj.dcltbtrdord = new Dcltbtrdord();
-        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
-        cloneObj.trdOrderPair = new TrdOrderPair();
-        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
-        cloneObj.securityIo = new SecurityIo();
-        cloneObj.securityIo.set(securityIo.getClonedField());
-        return cloneObj;
-    }
-
-    }
-
-    public ValidateSecurityInCtx getValidateSecurityInCtx() {
-            return new ValidateSecurityInCtx();
-    }
-     public class ValidateSecurityOutCtx implements Cloneable {
-     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
-     Work work = Trdpb000Ctx.this.getWork();
-     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
-     SecurityIo securityIo = Trdpb000Ctx.this.getSecurityIo();
-
-	/**
-	 *	Returns the value of trdCurrency
-	 *	@return trdCurrency
-	 */
-   public char[] getTrdCurrency() throws CFException  {              
-   		return trdOrderPair.getTrdCurrency();
-   }
-
-  
-	/**
-	*  set variable trdCurrency
-	*  @param value
-	**/
-   public void setTrdCurrency(char[] value) throws CFException {
-      trdOrderPair.setTrdCurrency(value);
-   } 
-
-     /**
-	 * 	Update TrdCurrency 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdCurrency(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdCurrency(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdCurrency with another Field
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source) {
-      trdOrderPair.setTrdCurrency(source);
-   }  
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of orderStatus
-	 *	@return orderStatus
-	 */
-   public char[] getOrderStatus() throws CFException  {              
-   		return work.getOrderStatus();
-   }
-
-  
-	/**
-	*  set variable orderStatus
-	*  @param value
-	**/
-   public void setOrderStatus(char[] value) throws CFException {
-      work.setOrderStatus(value);
-   } 
-
-	/**
 	 *	Returns the value of figi
 	 *	@return figi
 	 */
@@ -7746,20 +7865,6 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Test condition "N" for isSecurityNotFound88()
-	 *	@return  Returns true if isSecurityNotFound88() is "N"
-	 */
-   public boolean isSecurityNotFound88() throws CFException {
-      return securityIo.isSecurityNotFound88();
-   }
-
-	/**
-	*  set values "N"
-	*/
-   	public void setSecurityNotFound88True()  throws CFException{  			
-    	securityIo.setSecurityNotFound88True();
-   	}
-	/**
 	 *	Returns the value of securityErrorMsg
 	 *	@return securityErrorMsg
 	 */
@@ -7826,6 +7931,57 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    public void setSecurityErrorMsg(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
       securityIo.setSecurityErrorMsg(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
+
+	/**
+	 *	Test condition "I" for isSecurityInactive88()
+	 *	@return  Returns true if isSecurityInactive88() is "I"
+	 */
+   public boolean isSecurityInactive88() throws CFException {
+      return securityIo.isSecurityInactive88();
+   }
+
+	/**
+	*  set values "I"
+	*/
+   	public void setSecurityInactive88True()  throws CFException{  			
+    	securityIo.setSecurityInactive88True();
+   	}
+	/**
+	 *	Test condition "303" for isOverdueSecurityInvld()
+	 *	@return  Returns true if isOverdueSecurityInvld() is "303"
+	 */
+   public boolean isOverdueSecurityInvld() throws CFException {
+      return work.isOverdueSecurityInvld();
+   }
+
+	/**
+	*  set values "303"
+	*/
+   	public void setOverdueSecurityInvldTrue()  throws CFException{  			
+    	work.setOverdueSecurityInvldTrue();
+   	}
+	/**
+	 *	Test condition "A" for isSecurityActive88()
+	 *	@return  Returns true if isSecurityActive88() is "A"
+	 */
+   public boolean isSecurityActive88() throws CFException {
+      return securityIo.isSecurityActive88();
+   }
+
+	/**
+	*  set values "A"
+	*/
+   	public void setSecurityActive88True()  throws CFException{  			
+    	securityIo.setSecurityActive88True();
+   	}
+	/**
+	 *	Returns the value of securityIo
+	 *	@return securityIo
+	 */   
+	 public SecurityIo getSecurityIo() {
+   	return securityIo;
+   }
+
 
 	/**
 	 *	Returns the value of ordStatus
@@ -7896,348 +8052,71 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of exception
-	 *	@return exception
+	 *	Returns the value of trdCurrency
+	 *	@return trdCurrency
 	 */
-   public char[] getException() throws CFException  {              
-   		return work.getException();
+   public char[] getTrdCurrency() throws CFException  {              
+   		return trdOrderPair.getTrdCurrency();
    }
 
   
 	/**
-	*  set variable exception
+	*  set variable trdCurrency
 	*  @param value
 	**/
-   public void setException(char[] value) throws CFException {
-      work.setException(value);
-   } 
-
-	/**
-	 *	Test condition "303" for isOverdueSecurityInvld()
-	 *	@return  Returns true if isOverdueSecurityInvld() is "303"
-	 */
-   public boolean isOverdueSecurityInvld() throws CFException {
-      return work.isOverdueSecurityInvld();
-   }
-
-	/**
-	*  set values "303"
-	*/
-   	public void setOverdueSecurityInvldTrue()  throws CFException{  			
-    	work.setOverdueSecurityInvldTrue();
-   	}
-	/**
-	 *	Returns the value of trdExchange
-	 *	@return trdExchange
-	 */
-   public char[] getTrdExchange() throws CFException  {              
-   		return trdOrderPair.getTrdExchange();
-   }
-
-  
-	/**
-	*  set variable trdExchange
-	*  @param value
-	**/
-   public void setTrdExchange(char[] value) throws CFException {
-      trdOrderPair.setTrdExchange(value);
+   public void setTrdCurrency(char[] value) throws CFException {
+      trdOrderPair.setTrdCurrency(value);
    } 
 
      /**
-	 * 	Update TrdExchange 
+	 * 	Update TrdCurrency 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setTrdExchange(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdExchange(source, sourceIndex);
+   public void setTrdCurrency(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdCurrency(source, sourceIndex);
    	
    }
    
-   public void setTrdExchange(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);
+   public void setTrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update TrdExchange 
+	 * 	Update TrdCurrency 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdExchange(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update TrdExchange with another Field
+	 * 	Update TrdCurrency with another Field
 	 *	@param value
 	 */
-   public void setTrdExchange(Field source) {
-      trdOrderPair.setTrdExchange(source);
+   public void setTrdCurrency(Field source) {
+      trdOrderPair.setTrdCurrency(source);
    }  
    
      /**
-	 * 	Update TrdExchange 
+	 * 	Update TrdCurrency 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setTrdExchange(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);   	
+   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update TrdExchange 
+	 * 	Update TrdCurrency 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of ordTradeid
-	 *	@return ordTradeid
-	 */
-   public char[] getOrdTradeid() throws CFException  {              
-   		return dcltbtrdord.getOrdTradeid();
-   }
-
-  
-	/**
-	*  set variable ordTradeid
-	*  @param value
-	**/
-   public void setOrdTradeid(char[] value) throws CFException {
-      dcltbtrdord.setOrdTradeid(value);
-   } 
-
-     /**
-	 * 	Update OrdTradeid 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdTradeid 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdTradeid with another Field
-	 *	@param value
-	 */
-   public void setOrdTradeid(Field source) {
-      dcltbtrdord.setOrdTradeid(source);
-   }  
-   
-     /**
-	 * 	Update OrdTradeid 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdTradeid 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Test condition "A" for isApplException()
-	 *	@return  Returns true if isApplException() is "A"
-	 */
-   public boolean isApplException() throws CFException {
-      return work.isApplException();
-   }
-
-	/**
-	*  set values "A"
-	*/
-   	public void setApplExceptionTrue()  throws CFException{  			
-    	work.setApplExceptionTrue();
-   	}
-	/**
-	 *	Test condition "I" for isSecurityInactive88()
-	 *	@return  Returns true if isSecurityInactive88() is "I"
-	 */
-   public boolean isSecurityInactive88() throws CFException {
-      return securityIo.isSecurityInactive88();
-   }
-
-	/**
-	*  set values "I"
-	*/
-   	public void setSecurityInactive88True()  throws CFException{  			
-    	securityIo.setSecurityInactive88True();
-   	}
-	/**
-	 *	Returns the value of ordTradingXchng
-	 *	@return ordTradingXchng
-	 */
-   public char[] getOrdTradingXchng() throws CFException  {              
-   		return dcltbtrdord.getOrdTradingXchng();
-   }
-
-  
-	/**
-	*  set variable ordTradingXchng
-	*  @param value
-	**/
-   public void setOrdTradingXchng(char[] value) throws CFException {
-      dcltbtrdord.setOrdTradingXchng(value);
-   } 
-
-     /**
-	 * 	Update OrdTradingXchng 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdTradingXchng(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdTradingXchng 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdTradingXchng with another Field
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(Field source) {
-      dcltbtrdord.setOrdTradingXchng(source);
-   }  
-   
-     /**
-	 * 	Update OrdTradingXchng 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdTradingXchng 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Test condition "A" for isSecurityActive88()
-	 *	@return  Returns true if isSecurityActive88() is "A"
-	 */
-   public boolean isSecurityActive88() throws CFException {
-      return securityIo.isSecurityActive88();
-   }
-
-	/**
-	*  set values "A"
-	*/
-   	public void setSecurityActive88True()  throws CFException{  			
-    	securityIo.setSecurityActive88True();
-   	}
-	/**
-	 *	Returns the value of ordCurrency
-	 *	@return ordCurrency
-	 */
-   public char[] getOrdCurrency() throws CFException  {              
-   		return dcltbtrdord.getOrdCurrency();
-   }
-
-  
-	/**
-	*  set variable ordCurrency
-	*  @param value
-	**/
-   public void setOrdCurrency(char[] value) throws CFException {
-      dcltbtrdord.setOrdCurrency(value);
-   } 
-
-     /**
-	 * 	Update OrdCurrency 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdCurrency(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdCurrency 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdCurrency with another Field
-	 *	@param value
-	 */
-   public void setOrdCurrency(Field source) {
-      dcltbtrdord.setOrdCurrency(source);
-   }  
-   
-     /**
-	 * 	Update OrdCurrency 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdCurrency 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -8323,6 +8202,453 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
+	 *	Returns the value of ordFigi
+	 *	@return ordFigi
+	 */
+   public char[] getOrdFigi() throws CFException  {              
+   		return dcltbtrdord.getOrdFigi();
+   }
+
+  
+	/**
+	*  set variable ordFigi
+	*  @param value
+	**/
+   public void setOrdFigi(char[] value) throws CFException {
+      dcltbtrdord.setOrdFigi(value);
+   } 
+
+     /**
+	 * 	Update OrdFigi 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdFigi(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdFigi(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdFigi with another Field
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source) {
+      dcltbtrdord.setOrdFigi(source);
+   }  
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Test condition "A" for isApplException()
+	 *	@return  Returns true if isApplException() is "A"
+	 */
+   public boolean isApplException() throws CFException {
+      return work.isApplException();
+   }
+
+	/**
+	*  set values "A"
+	*/
+   	public void setApplExceptionTrue()  throws CFException{  			
+    	work.setApplExceptionTrue();
+   	}
+	/**
+	 *	Returns the value of orderStatus
+	 *	@return orderStatus
+	 */
+   public char[] getOrderStatus() throws CFException  {              
+   		return work.getOrderStatus();
+   }
+
+  
+	/**
+	*  set variable orderStatus
+	*  @param value
+	**/
+   public void setOrderStatus(char[] value) throws CFException {
+      work.setOrderStatus(value);
+   } 
+
+	/**
+	 *	Test condition "D" for isDataException()
+	 *	@return  Returns true if isDataException() is "D"
+	 */
+   public boolean isDataException() throws CFException {
+      return work.isDataException();
+   }
+
+	/**
+	*  set values "D"
+	*/
+   	public void setDataExceptionTrue()  throws CFException{  			
+    	work.setDataExceptionTrue();
+   	}
+	/**
+	 *	Returns the value of exception
+	 *	@return exception
+	 */
+   public char[] getException() throws CFException  {              
+   		return work.getException();
+   }
+
+  
+	/**
+	*  set variable exception
+	*  @param value
+	**/
+   public void setException(char[] value) throws CFException {
+      work.setException(value);
+   } 
+
+	/**
+	 *	Returns the value of ordCurrency
+	 *	@return ordCurrency
+	 */
+   public char[] getOrdCurrency() throws CFException  {              
+   		return dcltbtrdord.getOrdCurrency();
+   }
+
+  
+	/**
+	*  set variable ordCurrency
+	*  @param value
+	**/
+   public void setOrdCurrency(char[] value) throws CFException {
+      dcltbtrdord.setOrdCurrency(value);
+   } 
+
+     /**
+	 * 	Update OrdCurrency 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdCurrency(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdCurrency 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdCurrency with another Field
+	 *	@param value
+	 */
+   public void setOrdCurrency(Field source) {
+      dcltbtrdord.setOrdCurrency(source);
+   }  
+   
+     /**
+	 * 	Update OrdCurrency 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdCurrency 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of tradeid
+	 *	@return tradeid
+	 */
+	public long getTradeid() throws CFException {
+   		return work.getTradeid();
+	}
+
+
+	/**
+	 *	Returns String value of tradeid
+	 *	@return tradeid
+	 */
+	public char[]  getTradeidString() throws CFException {
+	     return String.valueOf(work.getTradeidString()).toCharArray();
+	}
+
+	 /**
+	 *  This method allows testing if there is a numeric value stored in the serialized String
+	 *	@return true if numeric value is stored in the string
+	 */
+	public boolean tradeidIsNumeric()  throws CFException{
+	    return work.tradeidIsNumeric();
+	}
+
+	/**
+	 * 	Update Tradeid with the passed value
+	 *	@param number
+	 */
+	public void setTradeid(long number)  throws CFException{
+		work.setTradeid(number);
+	}
+	
+
+	
+	/**
+	 * 	Update Tradeid with the passed value
+	 *	@param value (String or char[])
+	 */
+	public void setTradeid(char[] value)  throws CFException {
+		work.setTradeid(value);
+	}
+	
+	/**
+	 * 	Update Tradeid with the passed value 
+	 *
+	 *	@param value (String or char[])
+	 */
+	public void setTradeidString(char[] value)  throws CFException{
+		work.setTradeid(value);
+	}	
+
+	/**
+	 *	Returns the value of ordTradeid
+	 *	@return ordTradeid
+	 */
+   public char[] getOrdTradeid() throws CFException  {              
+   		return dcltbtrdord.getOrdTradeid();
+   }
+
+  
+	/**
+	*  set variable ordTradeid
+	*  @param value
+	**/
+   public void setOrdTradeid(char[] value) throws CFException {
+      dcltbtrdord.setOrdTradeid(value);
+   } 
+
+     /**
+	 * 	Update OrdTradeid 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdTradeid 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdTradeid with another Field
+	 *	@param value
+	 */
+   public void setOrdTradeid(Field source) {
+      dcltbtrdord.setOrdTradeid(source);
+   }  
+   
+     /**
+	 * 	Update OrdTradeid 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdTradeid 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Test condition "N" for isSecurityNotFound88()
+	 *	@return  Returns true if isSecurityNotFound88() is "N"
+	 */
+   public boolean isSecurityNotFound88() throws CFException {
+      return securityIo.isSecurityNotFound88();
+   }
+
+	/**
+	*  set values "N"
+	*/
+   	public void setSecurityNotFound88True()  throws CFException{  			
+    	securityIo.setSecurityNotFound88True();
+   	}
+	/**
+	 *	Returns the value of trdExchange
+	 *	@return trdExchange
+	 */
+   public char[] getTrdExchange() throws CFException  {              
+   		return trdOrderPair.getTrdExchange();
+   }
+
+  
+	/**
+	*  set variable trdExchange
+	*  @param value
+	**/
+   public void setTrdExchange(char[] value) throws CFException {
+      trdOrderPair.setTrdExchange(value);
+   } 
+
+     /**
+	 * 	Update TrdExchange 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdExchange(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdExchange(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdExchange(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdExchange 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdExchange(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdExchange with another Field
+	 *	@param value
+	 */
+   public void setTrdExchange(Field source) {
+      trdOrderPair.setTrdExchange(source);
+   }  
+   
+     /**
+	 * 	Update TrdExchange 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdExchange(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdExchange 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+
+        public Trdpb000Ctx getTrdpb000Ctx() {
+            return Trdpb000Ctx.this;
+        }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) return false;
+        return this.hashCode() == o.hashCode();
+    }
+
+    @Override
+    public int hashCode() {
+        String str = "";
+        str += trdOrderPair.hashCode();
+        str += work.hashCode();
+        str += dcltbtrdord.hashCode();
+        str += securityIo.hashCode();
+       return str.hashCode();
+    }
+
+    public ValidateSecurityOutCtx clone() {
+        ValidateSecurityOutCtx cloneObj = new ValidateSecurityOutCtx();
+        cloneObj.trdOrderPair = new TrdOrderPair();
+        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        cloneObj.dcltbtrdord = new Dcltbtrdord();
+        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
+        cloneObj.securityIo = new SecurityIo();
+        cloneObj.securityIo.set(securityIo.getClonedField());
+        return cloneObj;
+    }
+
+    }
+
+    public ValidateSecurityOutCtx getValidateSecurityOutCtx() {
+            return new ValidateSecurityOutCtx();
+    }
+     public class BuyerSecAccountInCtx implements Cloneable {
+     Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
+     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
+     Work work = Trdpb000Ctx.this.getWork();
+     Dcltbtrdsac dcltbtrdsac = Trdpb000Ctx.this.getDcltbtrdsac();
+     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
+
+	/**
 	 *	Returns the value of trdFigi
 	 *	@return trdFigi
 	 */
@@ -8391,262 +8717,156 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of ordBuySellInd
-	 *	@return ordBuySellInd
+	 *	Returns the value of sqlca
+	 *	@return sqlca
+	 */   
+	 public Sqlca getSqlca() {
+   	return sqlca;
+   }
+
+
+	/**
+	 *	Returns the value of trdBuyerId
+	 *	@return trdBuyerId
 	 */
-   public char[] getOrdBuySellInd() throws CFException  {              
-   		return dcltbtrdord.getOrdBuySellInd();
+   public char[] getTrdBuyerId() throws CFException  {              
+   		return trdOrderPair.getTrdBuyerId();
    }
 
   
 	/**
-	*  set variable ordBuySellInd
+	*  set variable trdBuyerId
 	*  @param value
 	**/
-   public void setOrdBuySellInd(char[] value) throws CFException {
-      dcltbtrdord.setOrdBuySellInd(value);
+   public void setTrdBuyerId(char[] value) throws CFException {
+      trdOrderPair.setTrdBuyerId(value);
    } 
 
      /**
-	 * 	Update OrdBuySellInd 
+	 * 	Update TrdBuyerId 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex);
+   public void setTrdBuyerId(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdBuyerId(source, sourceIndex);
    	
    }
    
-   public void setOrdBuySellInd(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);
+   public void setTrdBuyerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdBuySellInd 
+	 * 	Update TrdBuyerId 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdBuyerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdBuySellInd with another Field
+	 * 	Update TrdBuyerId with another Field
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(Field source) {
-      dcltbtrdord.setOrdBuySellInd(source);
+   public void setTrdBuyerId(Field source) {
+      trdOrderPair.setTrdBuyerId(source);
    }  
    
      /**
-	 * 	Update OrdBuySellInd 
+	 * 	Update TrdBuyerId 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);   	
+   public void setTrdBuyerId(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdBuySellInd 
+	 * 	Update TrdBuyerId 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdBuyerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
-	 *	Test condition "D" for isDataException()
-	 *	@return  Returns true if isDataException() is "D"
+	 *	Returns the value of sqlcode
+	 *	@return sqlcode
 	 */
-   public boolean isDataException() throws CFException {
-      return work.isDataException();
-   }
-
-	/**
-	*  set values "D"
-	*/
-   	public void setDataExceptionTrue()  throws CFException{  			
-    	work.setDataExceptionTrue();
-   	}
-	/**
-	 *	Returns the value of tradeid
-	 *	@return tradeid
-	 */
-	public long getTradeid() throws CFException {
-   		return work.getTradeid();
+	public int getSqlcode() throws CFException {        
+   		return sqlca.getSqlcode();
 	}
-
-
+	
 	/**
-	 *	Returns String value of tradeid
-	 *	@return tradeid
-	 */
-	public char[]  getTradeidString() throws CFException {
-	     return String.valueOf(work.getTradeidString()).toCharArray();
-	}
-
-	 /**
-	 *  This method allows testing if there is a numeric value stored in the serialized String
-	 *	@return true if numeric value is stored in the string
-	 */
-	public boolean tradeidIsNumeric()  throws CFException{
-	    return work.tradeidIsNumeric();
-	}
-
-	/**
-	 * 	Update Tradeid with the passed value
+	 * 	Update Sqlcode with the passed value
 	 *	@param number
 	 */
-	public void setTradeid(long number)  throws CFException{
-		work.setTradeid(number);
+	public void setSqlcode(int number)  throws CFException{
+		sqlca.setSqlcode(number);
 	}
-	
 
-	
-	/**
-	 * 	Update Tradeid with the passed value
-	 *	@param value (String or char[])
-	 */
-	public void setTradeid(char[] value)  throws CFException {
-		work.setTradeid(value);
+
+	public void setSqlcode(long number)  throws CFException{
+		sqlca.setSqlcode((int)number);
 	}
-	
-	/**
-	 * 	Update Tradeid with the passed value 
-	 *
-	 *	@param value (String or char[])
-	 */
-	public void setTradeidString(char[] value)  throws CFException{
-		work.setTradeid(value);
-	}	
+
 
 	/**
-	 *	Returns the value of securityIo
-	 *	@return securityIo
+	 *	Returns the value of sacNumber
+	 *	@return sacNumber
+	 */
+	public int getSacNumber() throws CFException {        
+   		return dcltbtrdsac.getSacNumber();
+	}
+	
+	/**
+	 * 	Update SacNumber with the passed value
+	 *	@param number
+	 */
+	public void setSacNumber(int number)  throws CFException{
+		dcltbtrdsac.setSacNumber(number);
+	}
+
+
+	public void setSacNumber(long number)  throws CFException{
+		dcltbtrdsac.setSacNumber((int)number);
+	}
+
+
+	/**
+	 *	Returns the value of dcltbtrdsac
+	 *	@return dcltbtrdsac
 	 */   
-	 public SecurityIo getSecurityIo() {
-   	return securityIo;
+	 public Dcltbtrdsac getDcltbtrdsac() {
+   	return dcltbtrdsac;
    }
 
 
 	/**
-	 *	Returns the value of ordFigi
-	 *	@return ordFigi
+	 *	Returns the value of sqlerrd
+	 *	@return sqlerrd
 	 */
-   public char[] getOrdFigi() throws CFException  {              
-   		return dcltbtrdord.getOrdFigi();
-   }
-
-  
+	public int getSqlerrd(int index) throws CFException {        
+   		return sqlca.getSqlerrd((index));
+	}
+	
 	/**
-	*  set variable ordFigi
-	*  @param value
-	**/
-   public void setOrdFigi(char[] value) throws CFException {
-      dcltbtrdord.setOrdFigi(value);
-   } 
-
-     /**
-	 * 	Update OrdFigi 
-	 *     with a char[] from an offset and length             
-	 *	@param value
+	 * 	Update Sqlerrd with the passed value
+	 *	@param number
 	 */
-   public void setOrdFigi(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdFigi(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdFigi 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdFigi with another Field
-	 *	@param value
-	 */
-   public void setOrdFigi(Field source) {
-      dcltbtrdord.setOrdFigi(source);
-   }  
-   
-     /**
-	 * 	Update OrdFigi 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdFigi(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdFigi 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
+	public void setSqlerrd(int index,int number)  throws CFException{
+		sqlca.setSqlerrd((index),number);
+	}
 
 
-        public Trdpb000Ctx getTrdpb000Ctx() {
-            return Trdpb000Ctx.this;
-        }
+	public void setSqlerrd(int index,long number)  throws CFException{
+		sqlca.setSqlerrd((index),(int)number);
+	}
 
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null) return false;
-        return this.hashCode() == o.hashCode();
-    }
-
-    @Override
-    public int hashCode() {
-        String str = "";
-        str += dcltbtrdord.hashCode();
-        str += work.hashCode();
-        str += trdOrderPair.hashCode();
-        str += securityIo.hashCode();
-       return str.hashCode();
-    }
-
-    public ValidateSecurityOutCtx clone() {
-        ValidateSecurityOutCtx cloneObj = new ValidateSecurityOutCtx();
-        cloneObj.dcltbtrdord = new Dcltbtrdord();
-        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
-        cloneObj.trdOrderPair = new TrdOrderPair();
-        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
-        cloneObj.securityIo = new SecurityIo();
-        cloneObj.securityIo.set(securityIo.getClonedField());
-        return cloneObj;
-    }
-
-    }
-
-    public ValidateSecurityOutCtx getValidateSecurityOutCtx() {
-            return new ValidateSecurityOutCtx();
-    }
-     public class BuyerSecAccountInCtx implements Cloneable {
-     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
-     Work work = Trdpb000Ctx.this.getWork();
-     Dcltbtrdsac dcltbtrdsac = Trdpb000Ctx.this.getDcltbtrdsac();
-     Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
-     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
 
 	/**
 	 *	Returns the value of trdCurrency
@@ -8785,57 +9005,124 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of sacNumber
-	 *	@return sacNumber
+	 *	Returns the value of trdOrderId
+	 *	@return trdOrderId
 	 */
-	public int getSacNumber() throws CFException {        
-   		return dcltbtrdsac.getSacNumber();
-	}
-	
-	/**
-	 * 	Update SacNumber with the passed value
-	 *	@param number
-	 */
-	public void setSacNumber(int number)  throws CFException{
-		dcltbtrdsac.setSacNumber(number);
-	}
-
-
-	public void setSacNumber(long number)  throws CFException{
-		dcltbtrdsac.setSacNumber((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of dcltbtrdsac
-	 *	@return dcltbtrdsac
-	 */   
-	 public Dcltbtrdsac getDcltbtrdsac() {
-   	return dcltbtrdsac;
+   public char[] getTrdOrderId() throws CFException  {              
+   		return trdOrderPair.getTrdOrderId();
    }
 
+  
+	/**
+	*  set variable trdOrderId
+	*  @param value
+	**/
+   public void setTrdOrderId(char[] value) throws CFException {
+      trdOrderPair.setTrdOrderId(value);
+   } 
+
+     /**
+	 * 	Update TrdOrderId 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdOrderId(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdOrderId(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdOrderId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdOrderId 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdOrderId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdOrderId with another Field
+	 *	@param value
+	 */
+   public void setTrdOrderId(Field source) {
+      trdOrderPair.setTrdOrderId(source);
+   }  
+   
+     /**
+	 * 	Update TrdOrderId 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdOrderId 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
 
 	/**
-	 *	Returns the value of sqlerrd
-	 *	@return sqlerrd
+	 *	Returns the value of tradeid
+	 *	@return tradeid
 	 */
-	public int getSqlerrd(int index) throws CFException {        
-   		return sqlca.getSqlerrd((index));
+	public long getTradeid() throws CFException {
+   		return work.getTradeid();
+	}
+
+
+	/**
+	 *	Returns String value of tradeid
+	 *	@return tradeid
+	 */
+	public char[]  getTradeidString() throws CFException {
+	     return String.valueOf(work.getTradeidString()).toCharArray();
+	}
+
+	 /**
+	 *  This method allows testing if there is a numeric value stored in the serialized String
+	 *	@return true if numeric value is stored in the string
+	 */
+	public boolean tradeidIsNumeric()  throws CFException{
+	    return work.tradeidIsNumeric();
+	}
+
+	/**
+	 * 	Update Tradeid with the passed value
+	 *	@param number
+	 */
+	public void setTradeid(long number)  throws CFException{
+		work.setTradeid(number);
+	}
+	
+
+	
+	/**
+	 * 	Update Tradeid with the passed value
+	 *	@param value (String or char[])
+	 */
+	public void setTradeid(char[] value)  throws CFException {
+		work.setTradeid(value);
 	}
 	
 	/**
-	 * 	Update Sqlerrd with the passed value
-	 *	@param number
+	 * 	Update Tradeid with the passed value 
+	 *
+	 *	@param value (String or char[])
 	 */
-	public void setSqlerrd(int index,int number)  throws CFException{
-		sqlca.setSqlerrd((index),number);
-	}
-
-
-	public void setSqlerrd(int index,long number)  throws CFException{
-		sqlca.setSqlerrd((index),(int)number);
-	}
-
+	public void setTradeidString(char[] value)  throws CFException{
+		work.setTradeid(value);
+	}	
 
 	/**
 	 *	Returns the value of sqlwarn
@@ -8897,6 +9184,74 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
 	 */
    public void setSqlwarn(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
    	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sacStatus
+	 *	@return sacStatus
+	 */
+   public char[] getSacStatus() throws CFException  {              
+   		return dcltbtrdsac.getSacStatus();
+   }
+
+  
+	/**
+	*  set variable sacStatus
+	*  @param value
+	**/
+   public void setSacStatus(char[] value) throws CFException {
+      dcltbtrdsac.setSacStatus(value);
+   } 
+
+     /**
+	 * 	Update SacStatus 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setSacStatus(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdsac.setSacStatus(source, sourceIndex);
+   	
+   }
+   
+   public void setSacStatus(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdsac.setSacStatus(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update SacStatus 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setSacStatus(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsac.setSacStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update SacStatus with another Field
+	 *	@param value
+	 */
+   public void setSacStatus(Field source) {
+      dcltbtrdsac.setSacStatus(source);
+   }  
+   
+     /**
+	 * 	Update SacStatus 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setSacStatus(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdsac.setSacStatus(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update SacStatus 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setSacStatus(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsac.setSacStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -8967,361 +9322,6 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
       trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
-	/**
-	 *	Returns the value of sqlca
-	 *	@return sqlca
-	 */   
-	 public Sqlca getSqlca() {
-   	return sqlca;
-   }
-
-
-	/**
-	 *	Returns the value of trdBuyerId
-	 *	@return trdBuyerId
-	 */
-   public char[] getTrdBuyerId() throws CFException  {              
-   		return trdOrderPair.getTrdBuyerId();
-   }
-
-  
-	/**
-	*  set variable trdBuyerId
-	*  @param value
-	**/
-   public void setTrdBuyerId(char[] value) throws CFException {
-      trdOrderPair.setTrdBuyerId(value);
-   } 
-
-     /**
-	 * 	Update TrdBuyerId 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdBuyerId(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdBuyerId(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdBuyerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdBuyerId 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdBuyerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdBuyerId with another Field
-	 *	@param value
-	 */
-   public void setTrdBuyerId(Field source) {
-      trdOrderPair.setTrdBuyerId(source);
-   }  
-   
-     /**
-	 * 	Update TrdBuyerId 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdBuyerId(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdBuyerId 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdBuyerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of trdOrderId
-	 *	@return trdOrderId
-	 */
-   public char[] getTrdOrderId() throws CFException  {              
-   		return trdOrderPair.getTrdOrderId();
-   }
-
-  
-	/**
-	*  set variable trdOrderId
-	*  @param value
-	**/
-   public void setTrdOrderId(char[] value) throws CFException {
-      trdOrderPair.setTrdOrderId(value);
-   } 
-
-     /**
-	 * 	Update TrdOrderId 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdOrderId(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdOrderId(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdOrderId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdOrderId 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdOrderId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdOrderId with another Field
-	 *	@param value
-	 */
-   public void setTrdOrderId(Field source) {
-      trdOrderPair.setTrdOrderId(source);
-   }  
-   
-     /**
-	 * 	Update TrdOrderId 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdOrderId 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of trdFigi
-	 *	@return trdFigi
-	 */
-   public char[] getTrdFigi() throws CFException  {              
-   		return trdOrderPair.getTrdFigi();
-   }
-
-  
-	/**
-	*  set variable trdFigi
-	*  @param value
-	**/
-   public void setTrdFigi(char[] value) throws CFException {
-      trdOrderPair.setTrdFigi(value);
-   } 
-
-     /**
-	 * 	Update TrdFigi 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdFigi(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdFigi(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdFigi 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdFigi with another Field
-	 *	@param value
-	 */
-   public void setTrdFigi(Field source) {
-      trdOrderPair.setTrdFigi(source);
-   }  
-   
-     /**
-	 * 	Update TrdFigi 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdFigi(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdFigi 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of sqlcode
-	 *	@return sqlcode
-	 */
-	public int getSqlcode() throws CFException {        
-   		return sqlca.getSqlcode();
-	}
-	
-	/**
-	 * 	Update Sqlcode with the passed value
-	 *	@param number
-	 */
-	public void setSqlcode(int number)  throws CFException{
-		sqlca.setSqlcode(number);
-	}
-
-
-	public void setSqlcode(long number)  throws CFException{
-		sqlca.setSqlcode((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of tradeid
-	 *	@return tradeid
-	 */
-	public long getTradeid() throws CFException {
-   		return work.getTradeid();
-	}
-
-
-	/**
-	 *	Returns String value of tradeid
-	 *	@return tradeid
-	 */
-	public char[]  getTradeidString() throws CFException {
-	     return String.valueOf(work.getTradeidString()).toCharArray();
-	}
-
-	 /**
-	 *  This method allows testing if there is a numeric value stored in the serialized String
-	 *	@return true if numeric value is stored in the string
-	 */
-	public boolean tradeidIsNumeric()  throws CFException{
-	    return work.tradeidIsNumeric();
-	}
-
-	/**
-	 * 	Update Tradeid with the passed value
-	 *	@param number
-	 */
-	public void setTradeid(long number)  throws CFException{
-		work.setTradeid(number);
-	}
-	
-
-	
-	/**
-	 * 	Update Tradeid with the passed value
-	 *	@param value (String or char[])
-	 */
-	public void setTradeid(char[] value)  throws CFException {
-		work.setTradeid(value);
-	}
-	
-	/**
-	 * 	Update Tradeid with the passed value 
-	 *
-	 *	@param value (String or char[])
-	 */
-	public void setTradeidString(char[] value)  throws CFException{
-		work.setTradeid(value);
-	}	
-
-	/**
-	 *	Returns the value of sacStatus
-	 *	@return sacStatus
-	 */
-   public char[] getSacStatus() throws CFException  {              
-   		return dcltbtrdsac.getSacStatus();
-   }
-
-  
-	/**
-	*  set variable sacStatus
-	*  @param value
-	**/
-   public void setSacStatus(char[] value) throws CFException {
-      dcltbtrdsac.setSacStatus(value);
-   } 
-
-     /**
-	 * 	Update SacStatus 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setSacStatus(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdsac.setSacStatus(source, sourceIndex);
-   	
-   }
-   
-   public void setSacStatus(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdsac.setSacStatus(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update SacStatus 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setSacStatus(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsac.setSacStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update SacStatus with another Field
-	 *	@param value
-	 */
-   public void setSacStatus(Field source) {
-      dcltbtrdsac.setSacStatus(source);
-   }  
-   
-     /**
-	 * 	Update SacStatus 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setSacStatus(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdsac.setSacStatus(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update SacStatus 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setSacStatus(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsac.setSacStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
 
         public Trdpb000Ctx getTrdpb000Ctx() {
             return Trdpb000Ctx.this;
@@ -9340,26 +9340,26 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += dcltbtrdord.hashCode();
-        str += work.hashCode();
-        str += dcltbtrdsac.hashCode();
         str += sqlca.hashCode();
         str += trdOrderPair.hashCode();
+        str += work.hashCode();
+        str += dcltbtrdsac.hashCode();
+        str += dcltbtrdord.hashCode();
        return str.hashCode();
     }
 
     public BuyerSecAccountInCtx clone() {
         BuyerSecAccountInCtx cloneObj = new BuyerSecAccountInCtx();
-        cloneObj.dcltbtrdord = new Dcltbtrdord();
-        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
-        cloneObj.dcltbtrdsac = new Dcltbtrdsac();
-        cloneObj.dcltbtrdsac.set(dcltbtrdsac.getClonedField());
         cloneObj.sqlca = new Sqlca();
         cloneObj.sqlca.set(sqlca.getClonedField());
         cloneObj.trdOrderPair = new TrdOrderPair();
         cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        cloneObj.dcltbtrdsac = new Dcltbtrdsac();
+        cloneObj.dcltbtrdsac.set(dcltbtrdsac.getClonedField());
+        cloneObj.dcltbtrdord = new Dcltbtrdord();
+        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
         return cloneObj;
     }
 
@@ -9369,11 +9369,101 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
             return new BuyerSecAccountInCtx();
     }
      public class BuyerSecAccountOutCtx implements Cloneable {
-     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
-     Work work = Trdpb000Ctx.this.getWork();
-     Dcltbtrdsac dcltbtrdsac = Trdpb000Ctx.this.getDcltbtrdsac();
      Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
      TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
+     Work work = Trdpb000Ctx.this.getWork();
+     Dcltbtrdsac dcltbtrdsac = Trdpb000Ctx.this.getDcltbtrdsac();
+     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
+
+	/**
+	 *	Returns the value of ordBuySellInd
+	 *	@return ordBuySellInd
+	 */
+   public char[] getOrdBuySellInd() throws CFException  {              
+   		return dcltbtrdord.getOrdBuySellInd();
+   }
+
+  
+	/**
+	*  set variable ordBuySellInd
+	*  @param value
+	**/
+   public void setOrdBuySellInd(char[] value) throws CFException {
+      dcltbtrdord.setOrdBuySellInd(value);
+   } 
+
+     /**
+	 * 	Update OrdBuySellInd 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdBuySellInd(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdBuySellInd 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdBuySellInd with another Field
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(Field source) {
+      dcltbtrdord.setOrdBuySellInd(source);
+   }  
+   
+     /**
+	 * 	Update OrdBuySellInd 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdBuySellInd 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sacNumber
+	 *	@return sacNumber
+	 */
+	public int getSacNumber() throws CFException {        
+   		return dcltbtrdsac.getSacNumber();
+	}
+	
+	/**
+	 * 	Update SacNumber with the passed value
+	 *	@param number
+	 */
+	public void setSacNumber(int number)  throws CFException{
+		dcltbtrdsac.setSacNumber(number);
+	}
+
+
+	public void setSacNumber(long number)  throws CFException{
+		dcltbtrdsac.setSacNumber((int)number);
+	}
+
 
 	/**
 	 *	Returns the value of dcltbtrdsac
@@ -9383,6 +9473,346 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    	return dcltbtrdsac;
    }
 
+
+	/**
+	 *	Returns the value of sacCustomerId
+	 *	@return sacCustomerId
+	 */
+   public char[] getSacCustomerId() throws CFException  {              
+   		return dcltbtrdsac.getSacCustomerId();
+   }
+
+  
+	/**
+	*  set variable sacCustomerId
+	*  @param value
+	**/
+   public void setSacCustomerId(char[] value) throws CFException {
+      dcltbtrdsac.setSacCustomerId(value);
+   } 
+
+     /**
+	 * 	Update SacCustomerId 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setSacCustomerId(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdsac.setSacCustomerId(source, sourceIndex);
+   	
+   }
+   
+   public void setSacCustomerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdsac.setSacCustomerId(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update SacCustomerId 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setSacCustomerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsac.setSacCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update SacCustomerId with another Field
+	 *	@param value
+	 */
+   public void setSacCustomerId(Field source) {
+      dcltbtrdsac.setSacCustomerId(source);
+   }  
+   
+     /**
+	 * 	Update SacCustomerId 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setSacCustomerId(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdsac.setSacCustomerId(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update SacCustomerId 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setSacCustomerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsac.setSacCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of ordStatus
+	 *	@return ordStatus
+	 */
+   public char[] getOrdStatus() throws CFException  {              
+   		return dcltbtrdord.getOrdStatus();
+   }
+
+  
+	/**
+	*  set variable ordStatus
+	*  @param value
+	**/
+   public void setOrdStatus(char[] value) throws CFException {
+      dcltbtrdord.setOrdStatus(value);
+   } 
+
+     /**
+	 * 	Update OrdStatus 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdStatus(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdStatus(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdStatus(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdStatus 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdStatus(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdStatus with another Field
+	 *	@param value
+	 */
+   public void setOrdStatus(Field source) {
+      dcltbtrdord.setOrdStatus(source);
+   }  
+   
+     /**
+	 * 	Update OrdStatus 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdStatus(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdStatus 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdStatus(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of trdCurrency
+	 *	@return trdCurrency
+	 */
+   public char[] getTrdCurrency() throws CFException  {              
+   		return trdOrderPair.getTrdCurrency();
+   }
+
+  
+	/**
+	*  set variable trdCurrency
+	*  @param value
+	**/
+   public void setTrdCurrency(char[] value) throws CFException {
+      trdOrderPair.setTrdCurrency(value);
+   } 
+
+     /**
+	 * 	Update TrdCurrency 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdCurrency(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdCurrency(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdCurrency 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdCurrency with another Field
+	 *	@param value
+	 */
+   public void setTrdCurrency(Field source) {
+      trdOrderPair.setTrdCurrency(source);
+   }  
+   
+     /**
+	 * 	Update TrdCurrency 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdCurrency 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sacCurrency
+	 *	@return sacCurrency
+	 */
+   public char[] getSacCurrency() throws CFException  {              
+   		return dcltbtrdsac.getSacCurrency();
+   }
+
+  
+	/**
+	*  set variable sacCurrency
+	*  @param value
+	**/
+   public void setSacCurrency(char[] value) throws CFException {
+      dcltbtrdsac.setSacCurrency(value);
+   } 
+
+     /**
+	 * 	Update SacCurrency 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setSacCurrency(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdsac.setSacCurrency(source, sourceIndex);
+   	
+   }
+   
+   public void setSacCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdsac.setSacCurrency(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update SacCurrency 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setSacCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsac.setSacCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update SacCurrency with another Field
+	 *	@param value
+	 */
+   public void setSacCurrency(Field source) {
+      dcltbtrdsac.setSacCurrency(source);
+   }  
+   
+     /**
+	 * 	Update SacCurrency 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setSacCurrency(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdsac.setSacCurrency(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update SacCurrency 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setSacCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsac.setSacCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of ordFigi
+	 *	@return ordFigi
+	 */
+   public char[] getOrdFigi() throws CFException  {              
+   		return dcltbtrdord.getOrdFigi();
+   }
+
+  
+	/**
+	*  set variable ordFigi
+	*  @param value
+	**/
+   public void setOrdFigi(char[] value) throws CFException {
+      dcltbtrdord.setOrdFigi(value);
+   } 
+
+     /**
+	 * 	Update OrdFigi 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdFigi(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdFigi(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdFigi with another Field
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source) {
+      dcltbtrdord.setOrdFigi(source);
+   }  
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
 
 	/**
 	 *	Returns the value of trdBuyerSecAccNum
@@ -9407,317 +9837,19 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
 
 
 	/**
-	 *	Returns the value of sacCurrency
-	 *	@return sacCurrency
+	 *	Test condition "D" for isDataException()
+	 *	@return  Returns true if isDataException() is "D"
 	 */
-   public char[] getSacCurrency() throws CFException  {              
-   		return dcltbtrdsac.getSacCurrency();
-   }
-
-  
-	/**
-	*  set variable sacCurrency
-	*  @param value
-	**/
-   public void setSacCurrency(char[] value) throws CFException {
-      dcltbtrdsac.setSacCurrency(value);
-   } 
-
-     /**
-	 * 	Update SacCurrency 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setSacCurrency(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdsac.setSacCurrency(source, sourceIndex);
-   	
-   }
-   
-   public void setSacCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdsac.setSacCurrency(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update SacCurrency 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setSacCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsac.setSacCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update SacCurrency with another Field
-	 *	@param value
-	 */
-   public void setSacCurrency(Field source) {
-      dcltbtrdsac.setSacCurrency(source);
-   }  
-   
-     /**
-	 * 	Update SacCurrency 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setSacCurrency(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdsac.setSacCurrency(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update SacCurrency 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setSacCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsac.setSacCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public boolean isDataException() throws CFException {
+      return work.isDataException();
    }
 
 	/**
-	 *	Returns the value of accDisp
-	 *	@return accDisp
-	 */
-   public char[] getAccDisp() throws CFException  {              
-   		return work.getAccDisp();
-   }
-
-  
-	/**
-	*  set variable accDisp
-	*  @param value
-	**/
-   public void setAccDisp(char[] value) throws CFException {
-      work.setAccDisp(value);
-   } 
-
-     /**
-	 * 	Update AccDisp 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setAccDisp(char[] source, int sourceIndex) throws CFException {
-      work.setAccDisp(source, sourceIndex);
-   	
-   }
-   
-   public void setAccDisp(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      work.setAccDisp(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update AccDisp 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setAccDisp(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      work.setAccDisp(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update AccDisp with another Field
-	 *	@param value
-	 */
-   public void setAccDisp(Field source) {
-      work.setAccDisp(source);
-   }  
-   
-     /**
-	 * 	Update AccDisp 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setAccDisp(Field source, int sourceIndex,int sourceLen) {
-      work.setAccDisp(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update AccDisp 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setAccDisp(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      work.setAccDisp(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of exception
-	 *	@return exception
-	 */
-   public char[] getException() throws CFException  {              
-   		return work.getException();
-   }
-
-  
-	/**
-	*  set variable exception
-	*  @param value
-	**/
-   public void setException(char[] value) throws CFException {
-      work.setException(value);
-   } 
-
-	/**
-	 *	Returns the value of trdExchange
-	 *	@return trdExchange
-	 */
-   public char[] getTrdExchange() throws CFException  {              
-   		return trdOrderPair.getTrdExchange();
-   }
-
-  
-	/**
-	*  set variable trdExchange
-	*  @param value
-	**/
-   public void setTrdExchange(char[] value) throws CFException {
-      trdOrderPair.setTrdExchange(value);
-   } 
-
-     /**
-	 * 	Update TrdExchange 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdExchange(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdExchange(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdExchange(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdExchange 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdExchange(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdExchange with another Field
-	 *	@param value
-	 */
-   public void setTrdExchange(Field source) {
-      trdOrderPair.setTrdExchange(source);
-   }  
-   
-     /**
-	 * 	Update TrdExchange 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdExchange(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdExchange 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of sacCustomerId
-	 *	@return sacCustomerId
-	 */
-   public char[] getSacCustomerId() throws CFException  {              
-   		return dcltbtrdsac.getSacCustomerId();
-   }
-
-  
-	/**
-	*  set variable sacCustomerId
-	*  @param value
-	**/
-   public void setSacCustomerId(char[] value) throws CFException {
-      dcltbtrdsac.setSacCustomerId(value);
-   } 
-
-     /**
-	 * 	Update SacCustomerId 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setSacCustomerId(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdsac.setSacCustomerId(source, sourceIndex);
-   	
-   }
-   
-   public void setSacCustomerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdsac.setSacCustomerId(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update SacCustomerId 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setSacCustomerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsac.setSacCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update SacCustomerId with another Field
-	 *	@param value
-	 */
-   public void setSacCustomerId(Field source) {
-      dcltbtrdsac.setSacCustomerId(source);
-   }  
-   
-     /**
-	 * 	Update SacCustomerId 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setSacCustomerId(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdsac.setSacCustomerId(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update SacCustomerId 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setSacCustomerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsac.setSacCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Test condition "304" for isOverdueBuyerAcInvld()
-	 *	@return  Returns true if isOverdueBuyerAcInvld() is "304"
-	 */
-   public boolean isOverdueBuyerAcInvld() throws CFException {
-      return work.isOverdueBuyerAcInvld();
-   }
-
-	/**
-	*  set values "304"
+	*  set values "D"
 	*/
-   	public void setOverdueBuyerAcInvldTrue()  throws CFException{  			
-    	work.setOverdueBuyerAcInvldTrue();
+   	public void setDataExceptionTrue()  throws CFException{  			
+    	work.setDataExceptionTrue();
    	}
-	/**
-	 *	Returns the value of sqlca
-	 *	@return sqlca
-	 */   
-	 public Sqlca getSqlca() {
-   	return sqlca;
-   }
-
-
 	/**
 	 *	Returns the value of ordTradingXchng
 	 *	@return ordTradingXchng
@@ -9787,352 +9919,82 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of ordCurrency
-	 *	@return ordCurrency
+	 *	Returns the value of trdFigi
+	 *	@return trdFigi
 	 */
-   public char[] getOrdCurrency() throws CFException  {              
-   		return dcltbtrdord.getOrdCurrency();
+   public char[] getTrdFigi() throws CFException  {              
+   		return trdOrderPair.getTrdFigi();
    }
 
   
 	/**
-	*  set variable ordCurrency
+	*  set variable trdFigi
 	*  @param value
 	**/
-   public void setOrdCurrency(char[] value) throws CFException {
-      dcltbtrdord.setOrdCurrency(value);
+   public void setTrdFigi(char[] value) throws CFException {
+      trdOrderPair.setTrdFigi(value);
    } 
 
      /**
-	 * 	Update OrdCurrency 
+	 * 	Update TrdFigi 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdCurrency(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex);
+   public void setTrdFigi(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdFigi(source, sourceIndex);
    	
    }
    
-   public void setOrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);
+   public void setTrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdCurrency 
+	 * 	Update TrdFigi 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdCurrency with another Field
+	 * 	Update TrdFigi with another Field
 	 *	@param value
 	 */
-   public void setOrdCurrency(Field source) {
-      dcltbtrdord.setOrdCurrency(source);
+   public void setTrdFigi(Field source) {
+      trdOrderPair.setTrdFigi(source);
    }  
    
      /**
-	 * 	Update OrdCurrency 
+	 * 	Update TrdFigi 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);   	
+   public void setTrdFigi(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdCurrency 
+	 * 	Update TrdFigi 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
-	 *	Returns the value of sqlcode
-	 *	@return sqlcode
-	 */
-	public int getSqlcode() throws CFException {        
-   		return sqlca.getSqlcode();
-	}
-	
-	/**
-	 * 	Update Sqlcode with the passed value
-	 *	@param number
-	 */
-	public void setSqlcode(int number)  throws CFException{
-		sqlca.setSqlcode(number);
-	}
-
-
-	public void setSqlcode(long number)  throws CFException{
-		sqlca.setSqlcode((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of trdCurrency
-	 *	@return trdCurrency
-	 */
-   public char[] getTrdCurrency() throws CFException  {              
-   		return trdOrderPair.getTrdCurrency();
+	 *	Returns the value of sqlca
+	 *	@return sqlca
+	 */   
+	 public Sqlca getSqlca() {
+   	return sqlca;
    }
 
-  
-	/**
-	*  set variable trdCurrency
-	*  @param value
-	**/
-   public void setTrdCurrency(char[] value) throws CFException {
-      trdOrderPair.setTrdCurrency(value);
-   } 
 
-     /**
-	 * 	Update TrdCurrency 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdCurrency(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdCurrency(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdCurrency with another Field
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source) {
-      trdOrderPair.setTrdCurrency(source);
-   }  
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of sacNumber
-	 *	@return sacNumber
-	 */
-	public int getSacNumber() throws CFException {        
-   		return dcltbtrdsac.getSacNumber();
-	}
-	
-	/**
-	 * 	Update SacNumber with the passed value
-	 *	@param number
-	 */
-	public void setSacNumber(int number)  throws CFException{
-		dcltbtrdsac.setSacNumber(number);
-	}
-
-
-	public void setSacNumber(long number)  throws CFException{
-		dcltbtrdsac.setSacNumber((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of orderStatus
-	 *	@return orderStatus
-	 */
-   public char[] getOrderStatus() throws CFException  {              
-   		return work.getOrderStatus();
-   }
-
-  
-	/**
-	*  set variable orderStatus
-	*  @param value
-	**/
-   public void setOrderStatus(char[] value) throws CFException {
-      work.setOrderStatus(value);
-   } 
-
-	/**
-	 *	Returns the value of ordStatus
-	 *	@return ordStatus
-	 */
-   public char[] getOrdStatus() throws CFException  {              
-   		return dcltbtrdord.getOrdStatus();
-   }
-
-  
-	/**
-	*  set variable ordStatus
-	*  @param value
-	**/
-   public void setOrdStatus(char[] value) throws CFException {
-      dcltbtrdord.setOrdStatus(value);
-   } 
-
-     /**
-	 * 	Update OrdStatus 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdStatus(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdStatus(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdStatus(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdStatus 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdStatus(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdStatus with another Field
-	 *	@param value
-	 */
-   public void setOrdStatus(Field source) {
-      dcltbtrdord.setOrdStatus(source);
-   }  
-   
-     /**
-	 * 	Update OrdStatus 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdStatus(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdStatus 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdStatus(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of ordTradeid
-	 *	@return ordTradeid
-	 */
-   public char[] getOrdTradeid() throws CFException  {              
-   		return dcltbtrdord.getOrdTradeid();
-   }
-
-  
-	/**
-	*  set variable ordTradeid
-	*  @param value
-	**/
-   public void setOrdTradeid(char[] value) throws CFException {
-      dcltbtrdord.setOrdTradeid(value);
-   } 
-
-     /**
-	 * 	Update OrdTradeid 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdTradeid 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdTradeid with another Field
-	 *	@param value
-	 */
-   public void setOrdTradeid(Field source) {
-      dcltbtrdord.setOrdTradeid(source);
-   }  
-   
-     /**
-	 * 	Update OrdTradeid 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdTradeid 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Test condition "A" for isApplException()
-	 *	@return  Returns true if isApplException() is "A"
-	 */
-   public boolean isApplException() throws CFException {
-      return work.isApplException();
-   }
-
-	/**
-	*  set values "A"
-	*/
-   	public void setApplExceptionTrue()  throws CFException{  			
-    	work.setApplExceptionTrue();
-   	}
 	/**
 	 *	Returns the value of trdBuyerId
 	 *	@return trdBuyerId
@@ -10202,6 +10064,96 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
+	 *	Returns the value of sqlcode
+	 *	@return sqlcode
+	 */
+	public int getSqlcode() throws CFException {        
+   		return sqlca.getSqlcode();
+	}
+	
+	/**
+	 * 	Update Sqlcode with the passed value
+	 *	@param number
+	 */
+	public void setSqlcode(int number)  throws CFException{
+		sqlca.setSqlcode(number);
+	}
+
+
+	public void setSqlcode(long number)  throws CFException{
+		sqlca.setSqlcode((int)number);
+	}
+
+
+	/**
+	 *	Returns the value of accDisp
+	 *	@return accDisp
+	 */
+   public char[] getAccDisp() throws CFException  {              
+   		return work.getAccDisp();
+   }
+
+  
+	/**
+	*  set variable accDisp
+	*  @param value
+	**/
+   public void setAccDisp(char[] value) throws CFException {
+      work.setAccDisp(value);
+   } 
+
+     /**
+	 * 	Update AccDisp 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setAccDisp(char[] source, int sourceIndex) throws CFException {
+      work.setAccDisp(source, sourceIndex);
+   	
+   }
+   
+   public void setAccDisp(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      work.setAccDisp(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update AccDisp 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setAccDisp(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      work.setAccDisp(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update AccDisp with another Field
+	 *	@param value
+	 */
+   public void setAccDisp(Field source) {
+      work.setAccDisp(source);
+   }  
+   
+     /**
+	 * 	Update AccDisp 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setAccDisp(Field source, int sourceIndex,int sourceLen) {
+      work.setAccDisp(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update AccDisp 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setAccDisp(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      work.setAccDisp(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
 	 *	Returns the value of trdOrderId
 	 *	@return trdOrderId
 	 */
@@ -10270,139 +10222,119 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of trdFigi
-	 *	@return trdFigi
+	 *	Test condition "A" for isApplException()
+	 *	@return  Returns true if isApplException() is "A"
 	 */
-   public char[] getTrdFigi() throws CFException  {              
-   		return trdOrderPair.getTrdFigi();
+   public boolean isApplException() throws CFException {
+      return work.isApplException();
+   }
+
+	/**
+	*  set values "A"
+	*/
+   	public void setApplExceptionTrue()  throws CFException{  			
+    	work.setApplExceptionTrue();
+   	}
+	/**
+	 *	Returns the value of orderStatus
+	 *	@return orderStatus
+	 */
+   public char[] getOrderStatus() throws CFException  {              
+   		return work.getOrderStatus();
    }
 
   
 	/**
-	*  set variable trdFigi
+	*  set variable orderStatus
 	*  @param value
 	**/
-   public void setTrdFigi(char[] value) throws CFException {
-      trdOrderPair.setTrdFigi(value);
+   public void setOrderStatus(char[] value) throws CFException {
+      work.setOrderStatus(value);
    } 
 
-     /**
-	 * 	Update TrdFigi 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdFigi(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdFigi(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdFigi 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdFigi with another Field
-	 *	@param value
-	 */
-   public void setTrdFigi(Field source) {
-      trdOrderPair.setTrdFigi(source);
-   }  
-   
-     /**
-	 * 	Update TrdFigi 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdFigi(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdFigi 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
 	/**
-	 *	Returns the value of ordBuySellInd
-	 *	@return ordBuySellInd
+	 *	Returns the value of exception
+	 *	@return exception
 	 */
-   public char[] getOrdBuySellInd() throws CFException  {              
-   		return dcltbtrdord.getOrdBuySellInd();
+   public char[] getException() throws CFException  {              
+   		return work.getException();
    }
 
   
 	/**
-	*  set variable ordBuySellInd
+	*  set variable exception
 	*  @param value
 	**/
-   public void setOrdBuySellInd(char[] value) throws CFException {
-      dcltbtrdord.setOrdBuySellInd(value);
+   public void setException(char[] value) throws CFException {
+      work.setException(value);
+   } 
+
+	/**
+	 *	Returns the value of ordCurrency
+	 *	@return ordCurrency
+	 */
+   public char[] getOrdCurrency() throws CFException  {              
+   		return dcltbtrdord.getOrdCurrency();
+   }
+
+  
+	/**
+	*  set variable ordCurrency
+	*  @param value
+	**/
+   public void setOrdCurrency(char[] value) throws CFException {
+      dcltbtrdord.setOrdCurrency(value);
    } 
 
      /**
-	 * 	Update OrdBuySellInd 
+	 * 	Update OrdCurrency 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex);
+   public void setOrdCurrency(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex);
    	
    }
    
-   public void setOrdBuySellInd(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);
+   public void setOrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdBuySellInd 
+	 * 	Update OrdCurrency 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdBuySellInd with another Field
+	 * 	Update OrdCurrency with another Field
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(Field source) {
-      dcltbtrdord.setOrdBuySellInd(source);
+   public void setOrdCurrency(Field source) {
+      dcltbtrdord.setOrdCurrency(source);
    }  
    
      /**
-	 * 	Update OrdBuySellInd 
+	 * 	Update OrdCurrency 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);   	
+   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdBuySellInd 
+	 * 	Update OrdCurrency 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -10474,85 +10406,153 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Test condition "D" for isDataException()
-	 *	@return  Returns true if isDataException() is "D"
+	 *	Test condition "304" for isOverdueBuyerAcInvld()
+	 *	@return  Returns true if isOverdueBuyerAcInvld() is "304"
 	 */
-   public boolean isDataException() throws CFException {
-      return work.isDataException();
+   public boolean isOverdueBuyerAcInvld() throws CFException {
+      return work.isOverdueBuyerAcInvld();
    }
 
 	/**
-	*  set values "D"
+	*  set values "304"
 	*/
-   	public void setDataExceptionTrue()  throws CFException{  			
-    	work.setDataExceptionTrue();
+   	public void setOverdueBuyerAcInvldTrue()  throws CFException{  			
+    	work.setOverdueBuyerAcInvldTrue();
    	}
 	/**
-	 *	Returns the value of ordFigi
-	 *	@return ordFigi
+	 *	Returns the value of ordTradeid
+	 *	@return ordTradeid
 	 */
-   public char[] getOrdFigi() throws CFException  {              
-   		return dcltbtrdord.getOrdFigi();
+   public char[] getOrdTradeid() throws CFException  {              
+   		return dcltbtrdord.getOrdTradeid();
    }
 
   
 	/**
-	*  set variable ordFigi
+	*  set variable ordTradeid
 	*  @param value
 	**/
-   public void setOrdFigi(char[] value) throws CFException {
-      dcltbtrdord.setOrdFigi(value);
+   public void setOrdTradeid(char[] value) throws CFException {
+      dcltbtrdord.setOrdTradeid(value);
    } 
 
      /**
-	 * 	Update OrdFigi 
+	 * 	Update OrdTradeid 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdFigi(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdFigi(source, sourceIndex);
+   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex);
    	
    }
    
-   public void setOrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);
+   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdFigi 
+	 * 	Update OrdTradeid 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdFigi with another Field
+	 * 	Update OrdTradeid with another Field
 	 *	@param value
 	 */
-   public void setOrdFigi(Field source) {
-      dcltbtrdord.setOrdFigi(source);
+   public void setOrdTradeid(Field source) {
+      dcltbtrdord.setOrdTradeid(source);
    }  
    
      /**
-	 * 	Update OrdFigi 
+	 * 	Update OrdTradeid 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdFigi(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);   	
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdFigi 
+	 * 	Update OrdTradeid 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of trdExchange
+	 *	@return trdExchange
+	 */
+   public char[] getTrdExchange() throws CFException  {              
+   		return trdOrderPair.getTrdExchange();
+   }
+
+  
+	/**
+	*  set variable trdExchange
+	*  @param value
+	**/
+   public void setTrdExchange(char[] value) throws CFException {
+      trdOrderPair.setTrdExchange(value);
+   } 
+
+     /**
+	 * 	Update TrdExchange 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdExchange(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdExchange(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdExchange(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdExchange 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdExchange(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdExchange with another Field
+	 *	@param value
+	 */
+   public void setTrdExchange(Field source) {
+      trdOrderPair.setTrdExchange(source);
+   }  
+   
+     /**
+	 * 	Update TrdExchange 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdExchange(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdExchange 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 
@@ -10570,26 +10570,26 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += dcltbtrdord.hashCode();
-        str += work.hashCode();
-        str += dcltbtrdsac.hashCode();
         str += sqlca.hashCode();
         str += trdOrderPair.hashCode();
+        str += work.hashCode();
+        str += dcltbtrdsac.hashCode();
+        str += dcltbtrdord.hashCode();
        return str.hashCode();
     }
 
     public BuyerSecAccountOutCtx clone() {
         BuyerSecAccountOutCtx cloneObj = new BuyerSecAccountOutCtx();
-        cloneObj.dcltbtrdord = new Dcltbtrdord();
-        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
-        cloneObj.dcltbtrdsac = new Dcltbtrdsac();
-        cloneObj.dcltbtrdsac.set(dcltbtrdsac.getClonedField());
         cloneObj.sqlca = new Sqlca();
         cloneObj.sqlca.set(sqlca.getClonedField());
         cloneObj.trdOrderPair = new TrdOrderPair();
         cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        cloneObj.dcltbtrdsac = new Dcltbtrdsac();
+        cloneObj.dcltbtrdsac.set(dcltbtrdsac.getClonedField());
+        cloneObj.dcltbtrdord = new Dcltbtrdord();
+        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
         return cloneObj;
     }
 
@@ -10599,11 +10599,163 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
             return new BuyerSecAccountOutCtx();
     }
      public class SellerSecAccountInCtx implements Cloneable {
-     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
-     Work work = Trdpb000Ctx.this.getWork();
-     Dcltbtrdsac dcltbtrdsac = Trdpb000Ctx.this.getDcltbtrdsac();
      Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
      TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
+     Work work = Trdpb000Ctx.this.getWork();
+     Dcltbtrdsac dcltbtrdsac = Trdpb000Ctx.this.getDcltbtrdsac();
+     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
+
+	/**
+	 *	Returns the value of trdFigi
+	 *	@return trdFigi
+	 */
+   public char[] getTrdFigi() throws CFException  {              
+   		return trdOrderPair.getTrdFigi();
+   }
+
+  
+	/**
+	*  set variable trdFigi
+	*  @param value
+	**/
+   public void setTrdFigi(char[] value) throws CFException {
+      trdOrderPair.setTrdFigi(value);
+   } 
+
+     /**
+	 * 	Update TrdFigi 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdFigi(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdFigi(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdFigi 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdFigi with another Field
+	 *	@param value
+	 */
+   public void setTrdFigi(Field source) {
+      trdOrderPair.setTrdFigi(source);
+   }  
+   
+     /**
+	 * 	Update TrdFigi 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdFigi(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdFigi 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sqlca
+	 *	@return sqlca
+	 */   
+	 public Sqlca getSqlca() {
+   	return sqlca;
+   }
+
+
+	/**
+	 *	Returns the value of sqlcode
+	 *	@return sqlcode
+	 */
+	public int getSqlcode() throws CFException {        
+   		return sqlca.getSqlcode();
+	}
+	
+	/**
+	 * 	Update Sqlcode with the passed value
+	 *	@param number
+	 */
+	public void setSqlcode(int number)  throws CFException{
+		sqlca.setSqlcode(number);
+	}
+
+
+	public void setSqlcode(long number)  throws CFException{
+		sqlca.setSqlcode((int)number);
+	}
+
+
+	/**
+	 *	Returns the value of sacNumber
+	 *	@return sacNumber
+	 */
+	public int getSacNumber() throws CFException {        
+   		return dcltbtrdsac.getSacNumber();
+	}
+	
+	/**
+	 * 	Update SacNumber with the passed value
+	 *	@param number
+	 */
+	public void setSacNumber(int number)  throws CFException{
+		dcltbtrdsac.setSacNumber(number);
+	}
+
+
+	public void setSacNumber(long number)  throws CFException{
+		dcltbtrdsac.setSacNumber((int)number);
+	}
+
+
+	/**
+	 *	Returns the value of dcltbtrdsac
+	 *	@return dcltbtrdsac
+	 */   
+	 public Dcltbtrdsac getDcltbtrdsac() {
+   	return dcltbtrdsac;
+   }
+
+
+	/**
+	 *	Returns the value of sqlerrd
+	 *	@return sqlerrd
+	 */
+	public int getSqlerrd(int index) throws CFException {        
+   		return sqlca.getSqlerrd((index));
+	}
+	
+	/**
+	 * 	Update Sqlerrd with the passed value
+	 *	@param number
+	 */
+	public void setSqlerrd(int index,int number)  throws CFException{
+		sqlca.setSqlerrd((index),number);
+	}
+
+
+	public void setSqlerrd(int index,long number)  throws CFException{
+		sqlca.setSqlerrd((index),(int)number);
+	}
+
 
 	/**
 	 *	Returns the value of trdCurrency
@@ -10742,198 +10894,6 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of sacNumber
-	 *	@return sacNumber
-	 */
-	public int getSacNumber() throws CFException {        
-   		return dcltbtrdsac.getSacNumber();
-	}
-	
-	/**
-	 * 	Update SacNumber with the passed value
-	 *	@param number
-	 */
-	public void setSacNumber(int number)  throws CFException{
-		dcltbtrdsac.setSacNumber(number);
-	}
-
-
-	public void setSacNumber(long number)  throws CFException{
-		dcltbtrdsac.setSacNumber((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of dcltbtrdsac
-	 *	@return dcltbtrdsac
-	 */   
-	 public Dcltbtrdsac getDcltbtrdsac() {
-   	return dcltbtrdsac;
-   }
-
-
-	/**
-	 *	Returns the value of sqlerrd
-	 *	@return sqlerrd
-	 */
-	public int getSqlerrd(int index) throws CFException {        
-   		return sqlca.getSqlerrd((index));
-	}
-	
-	/**
-	 * 	Update Sqlerrd with the passed value
-	 *	@param number
-	 */
-	public void setSqlerrd(int index,int number)  throws CFException{
-		sqlca.setSqlerrd((index),number);
-	}
-
-
-	public void setSqlerrd(int index,long number)  throws CFException{
-		sqlca.setSqlerrd((index),(int)number);
-	}
-
-
-	/**
-	 *	Returns the value of sqlwarn
-	 *	@return sqlwarn
-	 */   
-	 public Sqlwarn getSqlwarn() {
-   	return sqlca.getSqlwarn();
-   }
-
-   /**
-	* 	Update Sqlwarn with the passed value
-	*	@param value
-	*/
-   public void setSqlwarn(char[] value) throws CFException {
-      sqlca.setSqlwarn(value);
-   }   
-
-     /**
-	 * 	Update Sqlwarn 
-	 *     with a String from an offset and length             
-	 *	@param value
-	 */
-   public void setSqlwarn(char[] source, int sourceIndex,int sourceLen) throws CFException {
-   	sqlca.setSqlwarn(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update Sqlwarn 
-	 *     with a String from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setSqlwarn(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-   	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update Sqlwarn with another Field
-	 *	@param value
-	 */
-   public void setSqlwarn(Field source) {
-   	sqlca.setSqlwarn(source);
-   }  
-   
-     /**
-	 * 	Update Sqlwarn 
-	 *     with another Field from an offset and length             
-	 *	@param value
-	 */
-   public void setSqlwarn(Field source, int sourceIndex,int sourceLen) {
-   	sqlca.setSqlwarn(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update Sqlwarn 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setSqlwarn(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-   	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of trdExchange
-	 *	@return trdExchange
-	 */
-   public char[] getTrdExchange() throws CFException  {              
-   		return trdOrderPair.getTrdExchange();
-   }
-
-  
-	/**
-	*  set variable trdExchange
-	*  @param value
-	**/
-   public void setTrdExchange(char[] value) throws CFException {
-      trdOrderPair.setTrdExchange(value);
-   } 
-
-     /**
-	 * 	Update TrdExchange 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdExchange(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdExchange(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdExchange(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdExchange 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdExchange(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdExchange with another Field
-	 *	@param value
-	 */
-   public void setTrdExchange(Field source) {
-      trdOrderPair.setTrdExchange(source);
-   }  
-   
-     /**
-	 * 	Update TrdExchange 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdExchange(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdExchange 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of sqlca
-	 *	@return sqlca
-	 */   
-	 public Sqlca getSqlca() {
-   	return sqlca;
-   }
-
-
-	/**
 	 *	Returns the value of trdOrderId
 	 *	@return trdOrderId
 	 */
@@ -11002,71 +10962,185 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of trdFigi
-	 *	@return trdFigi
+	 *	Returns the value of tradeid
+	 *	@return tradeid
 	 */
-   public char[] getTrdFigi() throws CFException  {              
-   		return trdOrderPair.getTrdFigi();
+	public long getTradeid() throws CFException {
+   		return work.getTradeid();
+	}
+
+
+	/**
+	 *	Returns String value of tradeid
+	 *	@return tradeid
+	 */
+	public char[]  getTradeidString() throws CFException {
+	     return String.valueOf(work.getTradeidString()).toCharArray();
+	}
+
+	 /**
+	 *  This method allows testing if there is a numeric value stored in the serialized String
+	 *	@return true if numeric value is stored in the string
+	 */
+	public boolean tradeidIsNumeric()  throws CFException{
+	    return work.tradeidIsNumeric();
+	}
+
+	/**
+	 * 	Update Tradeid with the passed value
+	 *	@param number
+	 */
+	public void setTradeid(long number)  throws CFException{
+		work.setTradeid(number);
+	}
+	
+
+	
+	/**
+	 * 	Update Tradeid with the passed value
+	 *	@param value (String or char[])
+	 */
+	public void setTradeid(char[] value)  throws CFException {
+		work.setTradeid(value);
+	}
+	
+	/**
+	 * 	Update Tradeid with the passed value 
+	 *
+	 *	@param value (String or char[])
+	 */
+	public void setTradeidString(char[] value)  throws CFException{
+		work.setTradeid(value);
+	}	
+
+	/**
+	 *	Returns the value of sqlwarn
+	 *	@return sqlwarn
+	 */   
+	 public Sqlwarn getSqlwarn() {
+   	return sqlca.getSqlwarn();
    }
 
-  
-	/**
-	*  set variable trdFigi
-	*  @param value
-	**/
-   public void setTrdFigi(char[] value) throws CFException {
-      trdOrderPair.setTrdFigi(value);
-   } 
+   /**
+	* 	Update Sqlwarn with the passed value
+	*	@param value
+	*/
+   public void setSqlwarn(char[] value) throws CFException {
+      sqlca.setSqlwarn(value);
+   }   
 
      /**
-	 * 	Update TrdFigi 
-	 *     with a char[] from an offset and length             
+	 * 	Update Sqlwarn 
+	 *     with a String from an offset and length             
 	 *	@param value
 	 */
-   public void setTrdFigi(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdFigi(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);
+   public void setSqlwarn(char[] source, int sourceIndex,int sourceLen) throws CFException {
+   	sqlca.setSqlwarn(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update TrdFigi 
-	 *     with a char[] from an offset and length  
+	 * 	Update Sqlwarn 
+	 *     with a String from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setSqlwarn(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+   	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update TrdFigi with another Field
+	 * 	Update Sqlwarn with another Field
 	 *	@param value
 	 */
-   public void setTrdFigi(Field source) {
-      trdOrderPair.setTrdFigi(source);
+   public void setSqlwarn(Field source) {
+   	sqlca.setSqlwarn(source);
    }  
    
      /**
-	 * 	Update TrdFigi 
-	 *     with another Field from an offset and length          
+	 * 	Update Sqlwarn 
+	 *     with another Field from an offset and length             
 	 *	@param value
 	 */
-   public void setTrdFigi(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);   	
+   public void setSqlwarn(Field source, int sourceIndex,int sourceLen) {
+   	sqlca.setSqlwarn(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update TrdFigi 
+	 * 	Update Sqlwarn 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setSqlwarn(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+   	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sacStatus
+	 *	@return sacStatus
+	 */
+   public char[] getSacStatus() throws CFException  {              
+   		return dcltbtrdsac.getSacStatus();
+   }
+
+  
+	/**
+	*  set variable sacStatus
+	*  @param value
+	**/
+   public void setSacStatus(char[] value) throws CFException {
+      dcltbtrdsac.setSacStatus(value);
+   } 
+
+     /**
+	 * 	Update SacStatus 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setSacStatus(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdsac.setSacStatus(source, sourceIndex);
+   	
+   }
+   
+   public void setSacStatus(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdsac.setSacStatus(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update SacStatus 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setSacStatus(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsac.setSacStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update SacStatus with another Field
+	 *	@param value
+	 */
+   public void setSacStatus(Field source) {
+      dcltbtrdsac.setSacStatus(source);
+   }  
+   
+     /**
+	 * 	Update SacStatus 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setSacStatus(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdsac.setSacStatus(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update SacStatus 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setSacStatus(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsac.setSacStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -11138,399 +11212,6 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of sqlcode
-	 *	@return sqlcode
-	 */
-	public int getSqlcode() throws CFException {        
-   		return sqlca.getSqlcode();
-	}
-	
-	/**
-	 * 	Update Sqlcode with the passed value
-	 *	@param number
-	 */
-	public void setSqlcode(int number)  throws CFException{
-		sqlca.setSqlcode(number);
-	}
-
-
-	public void setSqlcode(long number)  throws CFException{
-		sqlca.setSqlcode((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of tradeid
-	 *	@return tradeid
-	 */
-	public long getTradeid() throws CFException {
-   		return work.getTradeid();
-	}
-
-
-	/**
-	 *	Returns String value of tradeid
-	 *	@return tradeid
-	 */
-	public char[]  getTradeidString() throws CFException {
-	     return String.valueOf(work.getTradeidString()).toCharArray();
-	}
-
-	 /**
-	 *  This method allows testing if there is a numeric value stored in the serialized String
-	 *	@return true if numeric value is stored in the string
-	 */
-	public boolean tradeidIsNumeric()  throws CFException{
-	    return work.tradeidIsNumeric();
-	}
-
-	/**
-	 * 	Update Tradeid with the passed value
-	 *	@param number
-	 */
-	public void setTradeid(long number)  throws CFException{
-		work.setTradeid(number);
-	}
-	
-
-	
-	/**
-	 * 	Update Tradeid with the passed value
-	 *	@param value (String or char[])
-	 */
-	public void setTradeid(char[] value)  throws CFException {
-		work.setTradeid(value);
-	}
-	
-	/**
-	 * 	Update Tradeid with the passed value 
-	 *
-	 *	@param value (String or char[])
-	 */
-	public void setTradeidString(char[] value)  throws CFException{
-		work.setTradeid(value);
-	}	
-
-	/**
-	 *	Returns the value of sacStatus
-	 *	@return sacStatus
-	 */
-   public char[] getSacStatus() throws CFException  {              
-   		return dcltbtrdsac.getSacStatus();
-   }
-
-  
-	/**
-	*  set variable sacStatus
-	*  @param value
-	**/
-   public void setSacStatus(char[] value) throws CFException {
-      dcltbtrdsac.setSacStatus(value);
-   } 
-
-     /**
-	 * 	Update SacStatus 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setSacStatus(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdsac.setSacStatus(source, sourceIndex);
-   	
-   }
-   
-   public void setSacStatus(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdsac.setSacStatus(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update SacStatus 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setSacStatus(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsac.setSacStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update SacStatus with another Field
-	 *	@param value
-	 */
-   public void setSacStatus(Field source) {
-      dcltbtrdsac.setSacStatus(source);
-   }  
-   
-     /**
-	 * 	Update SacStatus 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setSacStatus(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdsac.setSacStatus(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update SacStatus 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setSacStatus(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsac.setSacStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-
-        public Trdpb000Ctx getTrdpb000Ctx() {
-            return Trdpb000Ctx.this;
-        }
-
-        public SellerSecAccountOutCtx getSellerSecAccountOutCtx() {
-            return new SellerSecAccountOutCtx();
-        }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null) return false;
-        return this.hashCode() == o.hashCode();
-    }
-
-    @Override
-    public int hashCode() {
-        String str = "";
-        str += dcltbtrdord.hashCode();
-        str += work.hashCode();
-        str += dcltbtrdsac.hashCode();
-        str += sqlca.hashCode();
-        str += trdOrderPair.hashCode();
-       return str.hashCode();
-    }
-
-    public SellerSecAccountInCtx clone() {
-        SellerSecAccountInCtx cloneObj = new SellerSecAccountInCtx();
-        cloneObj.dcltbtrdord = new Dcltbtrdord();
-        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
-        cloneObj.dcltbtrdsac = new Dcltbtrdsac();
-        cloneObj.dcltbtrdsac.set(dcltbtrdsac.getClonedField());
-        cloneObj.sqlca = new Sqlca();
-        cloneObj.sqlca.set(sqlca.getClonedField());
-        cloneObj.trdOrderPair = new TrdOrderPair();
-        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
-        return cloneObj;
-    }
-
-    }
-
-    public SellerSecAccountInCtx getSellerSecAccountInCtx() {
-            return new SellerSecAccountInCtx();
-    }
-     public class SellerSecAccountOutCtx implements Cloneable {
-     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
-     Work work = Trdpb000Ctx.this.getWork();
-     Dcltbtrdsac dcltbtrdsac = Trdpb000Ctx.this.getDcltbtrdsac();
-     Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
-     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
-
-	/**
-	 *	Returns the value of dcltbtrdsac
-	 *	@return dcltbtrdsac
-	 */   
-	 public Dcltbtrdsac getDcltbtrdsac() {
-   	return dcltbtrdsac;
-   }
-
-
-	/**
-	 *	Test condition "305" for isOverdueSellerAcInvld()
-	 *	@return  Returns true if isOverdueSellerAcInvld() is "305"
-	 */
-   public boolean isOverdueSellerAcInvld() throws CFException {
-      return work.isOverdueSellerAcInvld();
-   }
-
-	/**
-	*  set values "305"
-	*/
-   	public void setOverdueSellerAcInvldTrue()  throws CFException{  			
-    	work.setOverdueSellerAcInvldTrue();
-   	}
-	/**
-	 *	Returns the value of trdSellerSecAccNum
-	 *	@return trdSellerSecAccNum
-	 */
-	public int getTrdSellerSecAccNum() throws CFException {        
-   		return trdOrderPair.getTrdSellerSecAccNum();
-	}
-	
-	/**
-	 * 	Update TrdSellerSecAccNum with the passed value
-	 *	@param number
-	 */
-	public void setTrdSellerSecAccNum(int number)  throws CFException{
-		trdOrderPair.setTrdSellerSecAccNum(number);
-	}
-
-
-	public void setTrdSellerSecAccNum(long number)  throws CFException{
-		trdOrderPair.setTrdSellerSecAccNum((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of sacCurrency
-	 *	@return sacCurrency
-	 */
-   public char[] getSacCurrency() throws CFException  {              
-   		return dcltbtrdsac.getSacCurrency();
-   }
-
-  
-	/**
-	*  set variable sacCurrency
-	*  @param value
-	**/
-   public void setSacCurrency(char[] value) throws CFException {
-      dcltbtrdsac.setSacCurrency(value);
-   } 
-
-     /**
-	 * 	Update SacCurrency 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setSacCurrency(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdsac.setSacCurrency(source, sourceIndex);
-   	
-   }
-   
-   public void setSacCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdsac.setSacCurrency(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update SacCurrency 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setSacCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsac.setSacCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update SacCurrency with another Field
-	 *	@param value
-	 */
-   public void setSacCurrency(Field source) {
-      dcltbtrdsac.setSacCurrency(source);
-   }  
-   
-     /**
-	 * 	Update SacCurrency 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setSacCurrency(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdsac.setSacCurrency(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update SacCurrency 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setSacCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsac.setSacCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of accDisp
-	 *	@return accDisp
-	 */
-   public char[] getAccDisp() throws CFException  {              
-   		return work.getAccDisp();
-   }
-
-  
-	/**
-	*  set variable accDisp
-	*  @param value
-	**/
-   public void setAccDisp(char[] value) throws CFException {
-      work.setAccDisp(value);
-   } 
-
-     /**
-	 * 	Update AccDisp 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setAccDisp(char[] source, int sourceIndex) throws CFException {
-      work.setAccDisp(source, sourceIndex);
-   	
-   }
-   
-   public void setAccDisp(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      work.setAccDisp(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update AccDisp 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setAccDisp(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      work.setAccDisp(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update AccDisp with another Field
-	 *	@param value
-	 */
-   public void setAccDisp(Field source) {
-      work.setAccDisp(source);
-   }  
-   
-     /**
-	 * 	Update AccDisp 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setAccDisp(Field source, int sourceIndex,int sourceLen) {
-      work.setAccDisp(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update AccDisp 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setAccDisp(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      work.setAccDisp(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of exception
-	 *	@return exception
-	 */
-   public char[] getException() throws CFException  {              
-   		return work.getException();
-   }
-
-  
-	/**
-	*  set variable exception
-	*  @param value
-	**/
-   public void setException(char[] value) throws CFException {
-      work.setException(value);
-   } 
-
-	/**
 	 *	Returns the value of trdExchange
 	 *	@return trdExchange
 	 */
@@ -11597,6 +11278,158 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
       trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
+
+
+        public Trdpb000Ctx getTrdpb000Ctx() {
+            return Trdpb000Ctx.this;
+        }
+
+        public SellerSecAccountOutCtx getSellerSecAccountOutCtx() {
+            return new SellerSecAccountOutCtx();
+        }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) return false;
+        return this.hashCode() == o.hashCode();
+    }
+
+    @Override
+    public int hashCode() {
+        String str = "";
+        str += sqlca.hashCode();
+        str += trdOrderPair.hashCode();
+        str += work.hashCode();
+        str += dcltbtrdsac.hashCode();
+        str += dcltbtrdord.hashCode();
+       return str.hashCode();
+    }
+
+    public SellerSecAccountInCtx clone() {
+        SellerSecAccountInCtx cloneObj = new SellerSecAccountInCtx();
+        cloneObj.sqlca = new Sqlca();
+        cloneObj.sqlca.set(sqlca.getClonedField());
+        cloneObj.trdOrderPair = new TrdOrderPair();
+        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        cloneObj.dcltbtrdsac = new Dcltbtrdsac();
+        cloneObj.dcltbtrdsac.set(dcltbtrdsac.getClonedField());
+        cloneObj.dcltbtrdord = new Dcltbtrdord();
+        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
+        return cloneObj;
+    }
+
+    }
+
+    public SellerSecAccountInCtx getSellerSecAccountInCtx() {
+            return new SellerSecAccountInCtx();
+    }
+     public class SellerSecAccountOutCtx implements Cloneable {
+     Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
+     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
+     Work work = Trdpb000Ctx.this.getWork();
+     Dcltbtrdsac dcltbtrdsac = Trdpb000Ctx.this.getDcltbtrdsac();
+     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
+
+	/**
+	 *	Returns the value of ordBuySellInd
+	 *	@return ordBuySellInd
+	 */
+   public char[] getOrdBuySellInd() throws CFException  {              
+   		return dcltbtrdord.getOrdBuySellInd();
+   }
+
+  
+	/**
+	*  set variable ordBuySellInd
+	*  @param value
+	**/
+   public void setOrdBuySellInd(char[] value) throws CFException {
+      dcltbtrdord.setOrdBuySellInd(value);
+   } 
+
+     /**
+	 * 	Update OrdBuySellInd 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdBuySellInd(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdBuySellInd 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdBuySellInd with another Field
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(Field source) {
+      dcltbtrdord.setOrdBuySellInd(source);
+   }  
+   
+     /**
+	 * 	Update OrdBuySellInd 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdBuySellInd 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sacNumber
+	 *	@return sacNumber
+	 */
+	public int getSacNumber() throws CFException {        
+   		return dcltbtrdsac.getSacNumber();
+	}
+	
+	/**
+	 * 	Update SacNumber with the passed value
+	 *	@param number
+	 */
+	public void setSacNumber(int number)  throws CFException{
+		dcltbtrdsac.setSacNumber(number);
+	}
+
+
+	public void setSacNumber(long number)  throws CFException{
+		dcltbtrdsac.setSacNumber((int)number);
+	}
+
+
+	/**
+	 *	Returns the value of dcltbtrdsac
+	 *	@return dcltbtrdsac
+	 */   
+	 public Dcltbtrdsac getDcltbtrdsac() {
+   	return dcltbtrdsac;
+   }
+
 
 	/**
 	 *	Returns the value of sacCustomerId
@@ -11667,12 +11500,311 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of sqlca
-	 *	@return sqlca
-	 */   
-	 public Sqlca getSqlca() {
-   	return sqlca;
+	 *	Returns the value of ordStatus
+	 *	@return ordStatus
+	 */
+   public char[] getOrdStatus() throws CFException  {              
+   		return dcltbtrdord.getOrdStatus();
    }
+
+  
+	/**
+	*  set variable ordStatus
+	*  @param value
+	**/
+   public void setOrdStatus(char[] value) throws CFException {
+      dcltbtrdord.setOrdStatus(value);
+   } 
+
+     /**
+	 * 	Update OrdStatus 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdStatus(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdStatus(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdStatus(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdStatus 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdStatus(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdStatus with another Field
+	 *	@param value
+	 */
+   public void setOrdStatus(Field source) {
+      dcltbtrdord.setOrdStatus(source);
+   }  
+   
+     /**
+	 * 	Update OrdStatus 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdStatus(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdStatus 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdStatus(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of trdCurrency
+	 *	@return trdCurrency
+	 */
+   public char[] getTrdCurrency() throws CFException  {              
+   		return trdOrderPair.getTrdCurrency();
+   }
+
+  
+	/**
+	*  set variable trdCurrency
+	*  @param value
+	**/
+   public void setTrdCurrency(char[] value) throws CFException {
+      trdOrderPair.setTrdCurrency(value);
+   } 
+
+     /**
+	 * 	Update TrdCurrency 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdCurrency(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdCurrency(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdCurrency 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdCurrency with another Field
+	 *	@param value
+	 */
+   public void setTrdCurrency(Field source) {
+      trdOrderPair.setTrdCurrency(source);
+   }  
+   
+     /**
+	 * 	Update TrdCurrency 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdCurrency 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sacCurrency
+	 *	@return sacCurrency
+	 */
+   public char[] getSacCurrency() throws CFException  {              
+   		return dcltbtrdsac.getSacCurrency();
+   }
+
+  
+	/**
+	*  set variable sacCurrency
+	*  @param value
+	**/
+   public void setSacCurrency(char[] value) throws CFException {
+      dcltbtrdsac.setSacCurrency(value);
+   } 
+
+     /**
+	 * 	Update SacCurrency 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setSacCurrency(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdsac.setSacCurrency(source, sourceIndex);
+   	
+   }
+   
+   public void setSacCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdsac.setSacCurrency(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update SacCurrency 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setSacCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsac.setSacCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update SacCurrency with another Field
+	 *	@param value
+	 */
+   public void setSacCurrency(Field source) {
+      dcltbtrdsac.setSacCurrency(source);
+   }  
+   
+     /**
+	 * 	Update SacCurrency 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setSacCurrency(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdsac.setSacCurrency(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update SacCurrency 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setSacCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsac.setSacCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of ordFigi
+	 *	@return ordFigi
+	 */
+   public char[] getOrdFigi() throws CFException  {              
+   		return dcltbtrdord.getOrdFigi();
+   }
+
+  
+	/**
+	*  set variable ordFigi
+	*  @param value
+	**/
+   public void setOrdFigi(char[] value) throws CFException {
+      dcltbtrdord.setOrdFigi(value);
+   } 
+
+     /**
+	 * 	Update OrdFigi 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdFigi(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdFigi(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdFigi with another Field
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source) {
+      dcltbtrdord.setOrdFigi(source);
+   }  
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Test condition "D" for isDataException()
+	 *	@return  Returns true if isDataException() is "D"
+	 */
+   public boolean isDataException() throws CFException {
+      return work.isDataException();
+   }
+
+	/**
+	*  set values "D"
+	*/
+   	public void setDataExceptionTrue()  throws CFException{  			
+    	work.setDataExceptionTrue();
+   	}
+	/**
+	 *	Returns the value of trdSellerSecAccNum
+	 *	@return trdSellerSecAccNum
+	 */
+	public int getTrdSellerSecAccNum() throws CFException {        
+   		return trdOrderPair.getTrdSellerSecAccNum();
+	}
+	
+	/**
+	 * 	Update TrdSellerSecAccNum with the passed value
+	 *	@param number
+	 */
+	public void setTrdSellerSecAccNum(int number)  throws CFException{
+		trdOrderPair.setTrdSellerSecAccNum(number);
+	}
+
+
+	public void setTrdSellerSecAccNum(long number)  throws CFException{
+		trdOrderPair.setTrdSellerSecAccNum((int)number);
+	}
 
 
 	/**
@@ -11744,72 +11876,81 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of ordCurrency
-	 *	@return ordCurrency
+	 *	Returns the value of trdFigi
+	 *	@return trdFigi
 	 */
-   public char[] getOrdCurrency() throws CFException  {              
-   		return dcltbtrdord.getOrdCurrency();
+   public char[] getTrdFigi() throws CFException  {              
+   		return trdOrderPair.getTrdFigi();
    }
 
   
 	/**
-	*  set variable ordCurrency
+	*  set variable trdFigi
 	*  @param value
 	**/
-   public void setOrdCurrency(char[] value) throws CFException {
-      dcltbtrdord.setOrdCurrency(value);
+   public void setTrdFigi(char[] value) throws CFException {
+      trdOrderPair.setTrdFigi(value);
    } 
 
      /**
-	 * 	Update OrdCurrency 
+	 * 	Update TrdFigi 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdCurrency(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex);
+   public void setTrdFigi(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdFigi(source, sourceIndex);
    	
    }
    
-   public void setOrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);
+   public void setTrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdCurrency 
+	 * 	Update TrdFigi 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdCurrency with another Field
+	 * 	Update TrdFigi with another Field
 	 *	@param value
 	 */
-   public void setOrdCurrency(Field source) {
-      dcltbtrdord.setOrdCurrency(source);
+   public void setTrdFigi(Field source) {
+      trdOrderPair.setTrdFigi(source);
    }  
    
      /**
-	 * 	Update OrdCurrency 
+	 * 	Update TrdFigi 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);   	
+   public void setTrdFigi(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdCurrency 
+	 * 	Update TrdFigi 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
+
+	/**
+	 *	Returns the value of sqlca
+	 *	@return sqlca
+	 */   
+	 public Sqlca getSqlca() {
+   	return sqlca;
+   }
+
 
 	/**
 	 *	Returns the value of sqlcode
@@ -11834,262 +11975,87 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
 
 
 	/**
-	 *	Returns the value of trdCurrency
-	 *	@return trdCurrency
+	 *	Test condition "305" for isOverdueSellerAcInvld()
+	 *	@return  Returns true if isOverdueSellerAcInvld() is "305"
 	 */
-   public char[] getTrdCurrency() throws CFException  {              
-   		return trdOrderPair.getTrdCurrency();
-   }
-
-  
-	/**
-	*  set variable trdCurrency
-	*  @param value
-	**/
-   public void setTrdCurrency(char[] value) throws CFException {
-      trdOrderPair.setTrdCurrency(value);
-   } 
-
-     /**
-	 * 	Update TrdCurrency 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdCurrency(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdCurrency(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdCurrency with another Field
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source) {
-      trdOrderPair.setTrdCurrency(source);
-   }  
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public boolean isOverdueSellerAcInvld() throws CFException {
+      return work.isOverdueSellerAcInvld();
    }
 
 	/**
-	 *	Returns the value of sacNumber
-	 *	@return sacNumber
-	 */
-	public int getSacNumber() throws CFException {        
-   		return dcltbtrdsac.getSacNumber();
-	}
-	
-	/**
-	 * 	Update SacNumber with the passed value
-	 *	@param number
-	 */
-	public void setSacNumber(int number)  throws CFException{
-		dcltbtrdsac.setSacNumber(number);
-	}
-
-
-	public void setSacNumber(long number)  throws CFException{
-		dcltbtrdsac.setSacNumber((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of orderStatus
-	 *	@return orderStatus
-	 */
-   public char[] getOrderStatus() throws CFException  {              
-   		return work.getOrderStatus();
-   }
-
-  
-	/**
-	*  set variable orderStatus
-	*  @param value
-	**/
-   public void setOrderStatus(char[] value) throws CFException {
-      work.setOrderStatus(value);
-   } 
-
-	/**
-	 *	Returns the value of ordStatus
-	 *	@return ordStatus
-	 */
-   public char[] getOrdStatus() throws CFException  {              
-   		return dcltbtrdord.getOrdStatus();
-   }
-
-  
-	/**
-	*  set variable ordStatus
-	*  @param value
-	**/
-   public void setOrdStatus(char[] value) throws CFException {
-      dcltbtrdord.setOrdStatus(value);
-   } 
-
-     /**
-	 * 	Update OrdStatus 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdStatus(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdStatus(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdStatus(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdStatus 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdStatus(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdStatus with another Field
-	 *	@param value
-	 */
-   public void setOrdStatus(Field source) {
-      dcltbtrdord.setOrdStatus(source);
-   }  
-   
-     /**
-	 * 	Update OrdStatus 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdStatus(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdStatus 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdStatus(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of ordTradeid
-	 *	@return ordTradeid
-	 */
-   public char[] getOrdTradeid() throws CFException  {              
-   		return dcltbtrdord.getOrdTradeid();
-   }
-
-  
-	/**
-	*  set variable ordTradeid
-	*  @param value
-	**/
-   public void setOrdTradeid(char[] value) throws CFException {
-      dcltbtrdord.setOrdTradeid(value);
-   } 
-
-     /**
-	 * 	Update OrdTradeid 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdTradeid 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdTradeid with another Field
-	 *	@param value
-	 */
-   public void setOrdTradeid(Field source) {
-      dcltbtrdord.setOrdTradeid(source);
-   }  
-   
-     /**
-	 * 	Update OrdTradeid 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdTradeid 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Test condition "A" for isApplException()
-	 *	@return  Returns true if isApplException() is "A"
-	 */
-   public boolean isApplException() throws CFException {
-      return work.isApplException();
-   }
-
-	/**
-	*  set values "A"
+	*  set values "305"
 	*/
-   	public void setApplExceptionTrue()  throws CFException{  			
-    	work.setApplExceptionTrue();
+   	public void setOverdueSellerAcInvldTrue()  throws CFException{  			
+    	work.setOverdueSellerAcInvldTrue();
    	}
+	/**
+	 *	Returns the value of accDisp
+	 *	@return accDisp
+	 */
+   public char[] getAccDisp() throws CFException  {              
+   		return work.getAccDisp();
+   }
+
+  
+	/**
+	*  set variable accDisp
+	*  @param value
+	**/
+   public void setAccDisp(char[] value) throws CFException {
+      work.setAccDisp(value);
+   } 
+
+     /**
+	 * 	Update AccDisp 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setAccDisp(char[] source, int sourceIndex) throws CFException {
+      work.setAccDisp(source, sourceIndex);
+   	
+   }
+   
+   public void setAccDisp(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      work.setAccDisp(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update AccDisp 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setAccDisp(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      work.setAccDisp(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update AccDisp with another Field
+	 *	@param value
+	 */
+   public void setAccDisp(Field source) {
+      work.setAccDisp(source);
+   }  
+   
+     /**
+	 * 	Update AccDisp 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setAccDisp(Field source, int sourceIndex,int sourceLen) {
+      work.setAccDisp(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update AccDisp 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setAccDisp(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      work.setAccDisp(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
 	/**
 	 *	Returns the value of trdOrderId
 	 *	@return trdOrderId
@@ -12159,139 +12125,119 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of trdFigi
-	 *	@return trdFigi
+	 *	Test condition "A" for isApplException()
+	 *	@return  Returns true if isApplException() is "A"
 	 */
-   public char[] getTrdFigi() throws CFException  {              
-   		return trdOrderPair.getTrdFigi();
+   public boolean isApplException() throws CFException {
+      return work.isApplException();
+   }
+
+	/**
+	*  set values "A"
+	*/
+   	public void setApplExceptionTrue()  throws CFException{  			
+    	work.setApplExceptionTrue();
+   	}
+	/**
+	 *	Returns the value of orderStatus
+	 *	@return orderStatus
+	 */
+   public char[] getOrderStatus() throws CFException  {              
+   		return work.getOrderStatus();
    }
 
   
 	/**
-	*  set variable trdFigi
+	*  set variable orderStatus
 	*  @param value
 	**/
-   public void setTrdFigi(char[] value) throws CFException {
-      trdOrderPair.setTrdFigi(value);
+   public void setOrderStatus(char[] value) throws CFException {
+      work.setOrderStatus(value);
    } 
 
-     /**
-	 * 	Update TrdFigi 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdFigi(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdFigi(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdFigi 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdFigi with another Field
-	 *	@param value
-	 */
-   public void setTrdFigi(Field source) {
-      trdOrderPair.setTrdFigi(source);
-   }  
-   
-     /**
-	 * 	Update TrdFigi 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdFigi(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdFigi 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
 	/**
-	 *	Returns the value of ordBuySellInd
-	 *	@return ordBuySellInd
+	 *	Returns the value of exception
+	 *	@return exception
 	 */
-   public char[] getOrdBuySellInd() throws CFException  {              
-   		return dcltbtrdord.getOrdBuySellInd();
+   public char[] getException() throws CFException  {              
+   		return work.getException();
    }
 
   
 	/**
-	*  set variable ordBuySellInd
+	*  set variable exception
 	*  @param value
 	**/
-   public void setOrdBuySellInd(char[] value) throws CFException {
-      dcltbtrdord.setOrdBuySellInd(value);
+   public void setException(char[] value) throws CFException {
+      work.setException(value);
+   } 
+
+	/**
+	 *	Returns the value of ordCurrency
+	 *	@return ordCurrency
+	 */
+   public char[] getOrdCurrency() throws CFException  {              
+   		return dcltbtrdord.getOrdCurrency();
+   }
+
+  
+	/**
+	*  set variable ordCurrency
+	*  @param value
+	**/
+   public void setOrdCurrency(char[] value) throws CFException {
+      dcltbtrdord.setOrdCurrency(value);
    } 
 
      /**
-	 * 	Update OrdBuySellInd 
+	 * 	Update OrdCurrency 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex);
+   public void setOrdCurrency(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex);
    	
    }
    
-   public void setOrdBuySellInd(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);
+   public void setOrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdBuySellInd 
+	 * 	Update OrdCurrency 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdBuySellInd with another Field
+	 * 	Update OrdCurrency with another Field
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(Field source) {
-      dcltbtrdord.setOrdBuySellInd(source);
+   public void setOrdCurrency(Field source) {
+      dcltbtrdord.setOrdCurrency(source);
    }  
    
      /**
-	 * 	Update OrdBuySellInd 
+	 * 	Update OrdCurrency 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);   	
+   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdBuySellInd 
+	 * 	Update OrdCurrency 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -12363,6 +12309,74 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
+	 *	Returns the value of ordTradeid
+	 *	@return ordTradeid
+	 */
+   public char[] getOrdTradeid() throws CFException  {              
+   		return dcltbtrdord.getOrdTradeid();
+   }
+
+  
+	/**
+	*  set variable ordTradeid
+	*  @param value
+	**/
+   public void setOrdTradeid(char[] value) throws CFException {
+      dcltbtrdord.setOrdTradeid(value);
+   } 
+
+     /**
+	 * 	Update OrdTradeid 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdTradeid 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdTradeid with another Field
+	 *	@param value
+	 */
+   public void setOrdTradeid(Field source) {
+      dcltbtrdord.setOrdTradeid(source);
+   }  
+   
+     /**
+	 * 	Update OrdTradeid 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdTradeid 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
 	 *	Returns the value of trdSellerId
 	 *	@return trdSellerId
 	 */
@@ -12431,85 +12445,71 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Test condition "D" for isDataException()
-	 *	@return  Returns true if isDataException() is "D"
+	 *	Returns the value of trdExchange
+	 *	@return trdExchange
 	 */
-   public boolean isDataException() throws CFException {
-      return work.isDataException();
-   }
-
-	/**
-	*  set values "D"
-	*/
-   	public void setDataExceptionTrue()  throws CFException{  			
-    	work.setDataExceptionTrue();
-   	}
-	/**
-	 *	Returns the value of ordFigi
-	 *	@return ordFigi
-	 */
-   public char[] getOrdFigi() throws CFException  {              
-   		return dcltbtrdord.getOrdFigi();
+   public char[] getTrdExchange() throws CFException  {              
+   		return trdOrderPair.getTrdExchange();
    }
 
   
 	/**
-	*  set variable ordFigi
+	*  set variable trdExchange
 	*  @param value
 	**/
-   public void setOrdFigi(char[] value) throws CFException {
-      dcltbtrdord.setOrdFigi(value);
+   public void setTrdExchange(char[] value) throws CFException {
+      trdOrderPair.setTrdExchange(value);
    } 
 
      /**
-	 * 	Update OrdFigi 
+	 * 	Update TrdExchange 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdFigi(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdFigi(source, sourceIndex);
+   public void setTrdExchange(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdExchange(source, sourceIndex);
    	
    }
    
-   public void setOrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);
+   public void setTrdExchange(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdFigi 
+	 * 	Update TrdExchange 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdExchange(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdFigi with another Field
+	 * 	Update TrdExchange with another Field
 	 *	@param value
 	 */
-   public void setOrdFigi(Field source) {
-      dcltbtrdord.setOrdFigi(source);
+   public void setTrdExchange(Field source) {
+      trdOrderPair.setTrdExchange(source);
    }  
    
      /**
-	 * 	Update OrdFigi 
+	 * 	Update TrdExchange 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdFigi(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);   	
+   public void setTrdExchange(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdFigi 
+	 * 	Update TrdExchange 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 
@@ -12527,26 +12527,26 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += dcltbtrdord.hashCode();
-        str += work.hashCode();
-        str += dcltbtrdsac.hashCode();
         str += sqlca.hashCode();
         str += trdOrderPair.hashCode();
+        str += work.hashCode();
+        str += dcltbtrdsac.hashCode();
+        str += dcltbtrdord.hashCode();
        return str.hashCode();
     }
 
     public SellerSecAccountOutCtx clone() {
         SellerSecAccountOutCtx cloneObj = new SellerSecAccountOutCtx();
-        cloneObj.dcltbtrdord = new Dcltbtrdord();
-        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
-        cloneObj.dcltbtrdsac = new Dcltbtrdsac();
-        cloneObj.dcltbtrdsac.set(dcltbtrdsac.getClonedField());
         cloneObj.sqlca = new Sqlca();
         cloneObj.sqlca.set(sqlca.getClonedField());
         cloneObj.trdOrderPair = new TrdOrderPair();
         cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        cloneObj.dcltbtrdsac = new Dcltbtrdsac();
+        cloneObj.dcltbtrdsac.set(dcltbtrdsac.getClonedField());
+        cloneObj.dcltbtrdord = new Dcltbtrdord();
+        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
         return cloneObj;
     }
 
@@ -12556,155 +12556,177 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
             return new SellerSecAccountOutCtx();
     }
      public class BuyerMoneyAccountInCtx implements Cloneable {
-     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
-     Work work = Trdpb000Ctx.this.getWork();
-     Dcltbtrdmac dcltbtrdmac = Trdpb000Ctx.this.getDcltbtrdmac();
      Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
      TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
+     Work work = Trdpb000Ctx.this.getWork();
+     Dcltbtrdmac dcltbtrdmac = Trdpb000Ctx.this.getDcltbtrdmac();
+     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
 
 	/**
-	 *	Returns the value of trdCurrency
-	 *	@return trdCurrency
+	 *	Returns the value of trdFigi
+	 *	@return trdFigi
 	 */
-   public char[] getTrdCurrency() throws CFException  {              
-   		return trdOrderPair.getTrdCurrency();
+   public char[] getTrdFigi() throws CFException  {              
+   		return trdOrderPair.getTrdFigi();
    }
 
   
 	/**
-	*  set variable trdCurrency
+	*  set variable trdFigi
 	*  @param value
 	**/
-   public void setTrdCurrency(char[] value) throws CFException {
-      trdOrderPair.setTrdCurrency(value);
+   public void setTrdFigi(char[] value) throws CFException {
+      trdOrderPair.setTrdFigi(value);
    } 
 
      /**
-	 * 	Update TrdCurrency 
+	 * 	Update TrdFigi 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setTrdCurrency(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdCurrency(source, sourceIndex);
+   public void setTrdFigi(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdFigi(source, sourceIndex);
    	
    }
    
-   public void setTrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);
+   public void setTrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update TrdCurrency 
+	 * 	Update TrdFigi 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update TrdCurrency with another Field
+	 * 	Update TrdFigi with another Field
 	 *	@param value
 	 */
-   public void setTrdCurrency(Field source) {
-      trdOrderPair.setTrdCurrency(source);
+   public void setTrdFigi(Field source) {
+      trdOrderPair.setTrdFigi(source);
    }  
    
      /**
-	 * 	Update TrdCurrency 
+	 * 	Update TrdFigi 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);   	
+   public void setTrdFigi(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update TrdCurrency 
+	 * 	Update TrdFigi 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
-	 *	Returns the value of sqlerrmc
-	 *	@return sqlerrmc
-	 */
-   public char[] getSqlerrmc() throws CFException  {              
-   		return sqlca.getSqlerrm().getSqlerrmc();
-   }
-
-  
-	/**
-	*  set variable sqlerrmc
-	*  @param value
-	**/
-   public void setSqlerrmc(char[] value) throws CFException {
-      sqlca.getSqlerrm().setSqlerrmc(value);
-   } 
-
-     /**
-	 * 	Update Sqlerrmc 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setSqlerrmc(char[] source, int sourceIndex) throws CFException {
-      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex);
-   	
-   }
-   
-   public void setSqlerrmc(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update Sqlerrmc 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setSqlerrmc(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update Sqlerrmc with another Field
-	 *	@param value
-	 */
-   public void setSqlerrmc(Field source) {
-      sqlca.getSqlerrm().setSqlerrmc(source);
-   }  
-   
-     /**
-	 * 	Update Sqlerrmc 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setSqlerrmc(Field source, int sourceIndex,int sourceLen) {
-      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update Sqlerrmc 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setSqlerrmc(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of dcltbtrdmac
-	 *	@return dcltbtrdmac
+	 *	Returns the value of sqlca
+	 *	@return sqlca
 	 */   
-	 public Dcltbtrdmac getDcltbtrdmac() {
-   	return dcltbtrdmac;
+	 public Sqlca getSqlca() {
+   	return sqlca;
    }
+
+
+	/**
+	 *	Returns the value of trdBuyerId
+	 *	@return trdBuyerId
+	 */
+   public char[] getTrdBuyerId() throws CFException  {              
+   		return trdOrderPair.getTrdBuyerId();
+   }
+
+  
+	/**
+	*  set variable trdBuyerId
+	*  @param value
+	**/
+   public void setTrdBuyerId(char[] value) throws CFException {
+      trdOrderPair.setTrdBuyerId(value);
+   } 
+
+     /**
+	 * 	Update TrdBuyerId 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdBuyerId(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdBuyerId(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdBuyerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdBuyerId 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdBuyerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdBuyerId with another Field
+	 *	@param value
+	 */
+   public void setTrdBuyerId(Field source) {
+      trdOrderPair.setTrdBuyerId(source);
+   }  
+   
+     /**
+	 * 	Update TrdBuyerId 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdBuyerId(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdBuyerId 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdBuyerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sqlcode
+	 *	@return sqlcode
+	 */
+	public int getSqlcode() throws CFException {        
+   		return sqlca.getSqlcode();
+	}
+	
+	/**
+	 * 	Update Sqlcode with the passed value
+	 *	@param number
+	 */
+	public void setSqlcode(int number)  throws CFException{
+		sqlca.setSqlcode(number);
+	}
+
+
+	public void setSqlcode(long number)  throws CFException{
+		sqlca.setSqlcode((int)number);
+	}
 
 
 	/**
@@ -12752,210 +12774,207 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
 
 
 	/**
-	 *	Returns the value of sqlwarn
-	 *	@return sqlwarn
-	 */   
-	 public Sqlwarn getSqlwarn() {
-   	return sqlca.getSqlwarn();
-   }
-
-   /**
-	* 	Update Sqlwarn with the passed value
-	*	@param value
-	*/
-   public void setSqlwarn(char[] value) throws CFException {
-      sqlca.setSqlwarn(value);
-   }   
-
-     /**
-	 * 	Update Sqlwarn 
-	 *     with a String from an offset and length             
-	 *	@param value
+	 *	Returns the value of trdCurrency
+	 *	@return trdCurrency
 	 */
-   public void setSqlwarn(char[] source, int sourceIndex,int sourceLen) throws CFException {
-   	sqlca.setSqlwarn(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update Sqlwarn 
-	 *     with a String from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setSqlwarn(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-   	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update Sqlwarn with another Field
-	 *	@param value
-	 */
-   public void setSqlwarn(Field source) {
-   	sqlca.setSqlwarn(source);
-   }  
-   
-     /**
-	 * 	Update Sqlwarn 
-	 *     with another Field from an offset and length             
-	 *	@param value
-	 */
-   public void setSqlwarn(Field source, int sourceIndex,int sourceLen) {
-   	sqlca.setSqlwarn(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update Sqlwarn 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setSqlwarn(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-   	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of trdExchange
-	 *	@return trdExchange
-	 */
-   public char[] getTrdExchange() throws CFException  {              
-   		return trdOrderPair.getTrdExchange();
+   public char[] getTrdCurrency() throws CFException  {              
+   		return trdOrderPair.getTrdCurrency();
    }
 
   
 	/**
-	*  set variable trdExchange
+	*  set variable trdCurrency
 	*  @param value
 	**/
-   public void setTrdExchange(char[] value) throws CFException {
-      trdOrderPair.setTrdExchange(value);
+   public void setTrdCurrency(char[] value) throws CFException {
+      trdOrderPair.setTrdCurrency(value);
    } 
 
      /**
-	 * 	Update TrdExchange 
+	 * 	Update TrdCurrency 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setTrdExchange(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdExchange(source, sourceIndex);
+   public void setTrdCurrency(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdCurrency(source, sourceIndex);
    	
    }
    
-   public void setTrdExchange(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);
+   public void setTrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update TrdExchange 
+	 * 	Update TrdCurrency 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdExchange(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update TrdExchange with another Field
+	 * 	Update TrdCurrency with another Field
 	 *	@param value
 	 */
-   public void setTrdExchange(Field source) {
-      trdOrderPair.setTrdExchange(source);
+   public void setTrdCurrency(Field source) {
+      trdOrderPair.setTrdCurrency(source);
    }  
    
      /**
-	 * 	Update TrdExchange 
+	 * 	Update TrdCurrency 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setTrdExchange(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);   	
+   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update TrdExchange 
+	 * 	Update TrdCurrency 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
-	 *	Returns the value of sqlca
-	 *	@return sqlca
-	 */   
-	 public Sqlca getSqlca() {
-   	return sqlca;
-   }
-
-
-	/**
-	 *	Returns the value of trdBuyerId
-	 *	@return trdBuyerId
+	 *	Returns the value of sqlerrmc
+	 *	@return sqlerrmc
 	 */
-   public char[] getTrdBuyerId() throws CFException  {              
-   		return trdOrderPair.getTrdBuyerId();
+   public char[] getSqlerrmc() throws CFException  {              
+   		return sqlca.getSqlerrm().getSqlerrmc();
    }
 
   
 	/**
-	*  set variable trdBuyerId
+	*  set variable sqlerrmc
 	*  @param value
 	**/
-   public void setTrdBuyerId(char[] value) throws CFException {
-      trdOrderPair.setTrdBuyerId(value);
+   public void setSqlerrmc(char[] value) throws CFException {
+      sqlca.getSqlerrm().setSqlerrmc(value);
    } 
 
      /**
-	 * 	Update TrdBuyerId 
+	 * 	Update Sqlerrmc 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setTrdBuyerId(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdBuyerId(source, sourceIndex);
+   public void setSqlerrmc(char[] source, int sourceIndex) throws CFException {
+      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex);
    	
    }
    
-   public void setTrdBuyerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen);
+   public void setSqlerrmc(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update TrdBuyerId 
+	 * 	Update Sqlerrmc 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdBuyerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setSqlerrmc(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update TrdBuyerId with another Field
+	 * 	Update Sqlerrmc with another Field
 	 *	@param value
 	 */
-   public void setTrdBuyerId(Field source) {
-      trdOrderPair.setTrdBuyerId(source);
+   public void setSqlerrmc(Field source) {
+      sqlca.getSqlerrm().setSqlerrmc(source);
    }  
    
      /**
-	 * 	Update TrdBuyerId 
+	 * 	Update Sqlerrmc 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setTrdBuyerId(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen);   	
+   public void setSqlerrmc(Field source, int sourceIndex,int sourceLen) {
+      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update TrdBuyerId 
+	 * 	Update Sqlerrmc 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdBuyerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setSqlerrmc(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of trdOrderId
+	 *	@return trdOrderId
+	 */
+   public char[] getTrdOrderId() throws CFException  {              
+   		return trdOrderPair.getTrdOrderId();
+   }
+
+  
+	/**
+	*  set variable trdOrderId
+	*  @param value
+	**/
+   public void setTrdOrderId(char[] value) throws CFException {
+      trdOrderPair.setTrdOrderId(value);
+   } 
+
+     /**
+	 * 	Update TrdOrderId 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdOrderId(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdOrderId(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdOrderId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdOrderId 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdOrderId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdOrderId with another Field
+	 *	@param value
+	 */
+   public void setTrdOrderId(Field source) {
+      trdOrderPair.setTrdOrderId(source);
+   }  
+   
+     /**
+	 * 	Update TrdOrderId 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdOrderId 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -13027,161 +13046,12 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of trdOrderId
-	 *	@return trdOrderId
-	 */
-   public char[] getTrdOrderId() throws CFException  {              
-   		return trdOrderPair.getTrdOrderId();
+	 *	Returns the value of dcltbtrdmac
+	 *	@return dcltbtrdmac
+	 */   
+	 public Dcltbtrdmac getDcltbtrdmac() {
+   	return dcltbtrdmac;
    }
-
-  
-	/**
-	*  set variable trdOrderId
-	*  @param value
-	**/
-   public void setTrdOrderId(char[] value) throws CFException {
-      trdOrderPair.setTrdOrderId(value);
-   } 
-
-     /**
-	 * 	Update TrdOrderId 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdOrderId(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdOrderId(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdOrderId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdOrderId 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdOrderId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdOrderId with another Field
-	 *	@param value
-	 */
-   public void setTrdOrderId(Field source) {
-      trdOrderPair.setTrdOrderId(source);
-   }  
-   
-     /**
-	 * 	Update TrdOrderId 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdOrderId 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of trdFigi
-	 *	@return trdFigi
-	 */
-   public char[] getTrdFigi() throws CFException  {              
-   		return trdOrderPair.getTrdFigi();
-   }
-
-  
-	/**
-	*  set variable trdFigi
-	*  @param value
-	**/
-   public void setTrdFigi(char[] value) throws CFException {
-      trdOrderPair.setTrdFigi(value);
-   } 
-
-     /**
-	 * 	Update TrdFigi 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdFigi(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdFigi(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdFigi 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdFigi with another Field
-	 *	@param value
-	 */
-   public void setTrdFigi(Field source) {
-      trdOrderPair.setTrdFigi(source);
-   }  
-   
-     /**
-	 * 	Update TrdFigi 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdFigi(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdFigi 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of sqlcode
-	 *	@return sqlcode
-	 */
-	public int getSqlcode() throws CFException {        
-   		return sqlca.getSqlcode();
-	}
-	
-	/**
-	 * 	Update Sqlcode with the passed value
-	 *	@param number
-	 */
-	public void setSqlcode(int number)  throws CFException{
-		sqlca.setSqlcode(number);
-	}
-
-
-	public void setSqlcode(long number)  throws CFException{
-		sqlca.setSqlcode((int)number);
-	}
 
 
 	/**
@@ -13236,174 +13106,67 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
 		work.setTradeid(value);
 	}	
 
-
-        public Trdpb000Ctx getTrdpb000Ctx() {
-            return Trdpb000Ctx.this;
-        }
-
-        public BuyerMoneyAccountOutCtx getBuyerMoneyAccountOutCtx() {
-            return new BuyerMoneyAccountOutCtx();
-        }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null) return false;
-        return this.hashCode() == o.hashCode();
-    }
-
-    @Override
-    public int hashCode() {
-        String str = "";
-        str += dcltbtrdord.hashCode();
-        str += work.hashCode();
-        str += dcltbtrdmac.hashCode();
-        str += sqlca.hashCode();
-        str += trdOrderPair.hashCode();
-       return str.hashCode();
-    }
-
-    public BuyerMoneyAccountInCtx clone() {
-        BuyerMoneyAccountInCtx cloneObj = new BuyerMoneyAccountInCtx();
-        cloneObj.dcltbtrdord = new Dcltbtrdord();
-        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
-        cloneObj.dcltbtrdmac = new Dcltbtrdmac();
-        cloneObj.dcltbtrdmac.set(dcltbtrdmac.getClonedField());
-        cloneObj.sqlca = new Sqlca();
-        cloneObj.sqlca.set(sqlca.getClonedField());
-        cloneObj.trdOrderPair = new TrdOrderPair();
-        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
-        return cloneObj;
-    }
-
-    }
-
-    public BuyerMoneyAccountInCtx getBuyerMoneyAccountInCtx() {
-            return new BuyerMoneyAccountInCtx();
-    }
-     public class BuyerMoneyAccountOutCtx implements Cloneable {
-     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
-     Work work = Trdpb000Ctx.this.getWork();
-     Dcltbtrdmac dcltbtrdmac = Trdpb000Ctx.this.getDcltbtrdmac();
-     Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
-     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
-
 	/**
-	 *	Returns the value of dcltbtrdmac
-	 *	@return dcltbtrdmac
+	 *	Returns the value of sqlwarn
+	 *	@return sqlwarn
 	 */   
-	 public Dcltbtrdmac getDcltbtrdmac() {
-   	return dcltbtrdmac;
+	 public Sqlwarn getSqlwarn() {
+   	return sqlca.getSqlwarn();
    }
 
-
-	/**
-	 *	Returns the value of macNumber
-	 *	@return macNumber
-	 */
-	public int getMacNumber() throws CFException {        
-   		return dcltbtrdmac.getMacNumber();
-	}
-	
-	/**
-	 * 	Update MacNumber with the passed value
-	 *	@param number
-	 */
-	public void setMacNumber(int number)  throws CFException{
-		dcltbtrdmac.setMacNumber(number);
-	}
-
-
-	public void setMacNumber(long number)  throws CFException{
-		dcltbtrdmac.setMacNumber((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of accDisp
-	 *	@return accDisp
-	 */
-   public char[] getAccDisp() throws CFException  {              
-   		return work.getAccDisp();
-   }
-
-  
-	/**
-	*  set variable accDisp
-	*  @param value
-	**/
-   public void setAccDisp(char[] value) throws CFException {
-      work.setAccDisp(value);
-   } 
+   /**
+	* 	Update Sqlwarn with the passed value
+	*	@param value
+	*/
+   public void setSqlwarn(char[] value) throws CFException {
+      sqlca.setSqlwarn(value);
+   }   
 
      /**
-	 * 	Update AccDisp 
-	 *     with a char[] from an offset and length             
+	 * 	Update Sqlwarn 
+	 *     with a String from an offset and length             
 	 *	@param value
 	 */
-   public void setAccDisp(char[] source, int sourceIndex) throws CFException {
-      work.setAccDisp(source, sourceIndex);
-   	
-   }
-   
-   public void setAccDisp(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      work.setAccDisp(source, sourceIndex, sourceLen);
+   public void setSqlwarn(char[] source, int sourceIndex,int sourceLen) throws CFException {
+   	sqlca.setSqlwarn(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update AccDisp 
-	 *     with a char[] from an offset and length  
+	 * 	Update Sqlwarn 
+	 *     with a String from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setAccDisp(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      work.setAccDisp(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setSqlwarn(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+   	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update AccDisp with another Field
+	 * 	Update Sqlwarn with another Field
 	 *	@param value
 	 */
-   public void setAccDisp(Field source) {
-      work.setAccDisp(source);
+   public void setSqlwarn(Field source) {
+   	sqlca.setSqlwarn(source);
    }  
    
      /**
-	 * 	Update AccDisp 
-	 *     with another Field from an offset and length          
+	 * 	Update Sqlwarn 
+	 *     with another Field from an offset and length             
 	 *	@param value
 	 */
-   public void setAccDisp(Field source, int sourceIndex,int sourceLen) {
-      work.setAccDisp(source, sourceIndex, sourceLen);   	
+   public void setSqlwarn(Field source, int sourceIndex,int sourceLen) {
+   	sqlca.setSqlwarn(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update AccDisp 
+	 * 	Update Sqlwarn 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setAccDisp(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      work.setAccDisp(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setSqlwarn(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+   	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
-
-	/**
-	 *	Returns the value of exception
-	 *	@return exception
-	 */
-   public char[] getException() throws CFException  {              
-   		return work.getException();
-   }
-
-  
-	/**
-	*  set variable exception
-	*  @param value
-	**/
-   public void setException(char[] value) throws CFException {
-      work.setException(value);
-   } 
 
 	/**
 	 *	Returns the value of trdExchange
@@ -13473,163 +13236,215 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
       trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
+
+        public Trdpb000Ctx getTrdpb000Ctx() {
+            return Trdpb000Ctx.this;
+        }
+
+        public BuyerMoneyAccountOutCtx getBuyerMoneyAccountOutCtx() {
+            return new BuyerMoneyAccountOutCtx();
+        }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) return false;
+        return this.hashCode() == o.hashCode();
+    }
+
+    @Override
+    public int hashCode() {
+        String str = "";
+        str += sqlca.hashCode();
+        str += trdOrderPair.hashCode();
+        str += work.hashCode();
+        str += dcltbtrdmac.hashCode();
+        str += dcltbtrdord.hashCode();
+       return str.hashCode();
+    }
+
+    public BuyerMoneyAccountInCtx clone() {
+        BuyerMoneyAccountInCtx cloneObj = new BuyerMoneyAccountInCtx();
+        cloneObj.sqlca = new Sqlca();
+        cloneObj.sqlca.set(sqlca.getClonedField());
+        cloneObj.trdOrderPair = new TrdOrderPair();
+        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        cloneObj.dcltbtrdmac = new Dcltbtrdmac();
+        cloneObj.dcltbtrdmac.set(dcltbtrdmac.getClonedField());
+        cloneObj.dcltbtrdord = new Dcltbtrdord();
+        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
+        return cloneObj;
+    }
+
+    }
+
+    public BuyerMoneyAccountInCtx getBuyerMoneyAccountInCtx() {
+            return new BuyerMoneyAccountInCtx();
+    }
+     public class BuyerMoneyAccountOutCtx implements Cloneable {
+     Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
+     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
+     Work work = Trdpb000Ctx.this.getWork();
+     Dcltbtrdmac dcltbtrdmac = Trdpb000Ctx.this.getDcltbtrdmac();
+     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
+
 	/**
-	 *	Test condition "304" for isOverdueBuyerAcInvld()
-	 *	@return  Returns true if isOverdueBuyerAcInvld() is "304"
+	 *	Returns the value of ordBuySellInd
+	 *	@return ordBuySellInd
 	 */
-   public boolean isOverdueBuyerAcInvld() throws CFException {
-      return work.isOverdueBuyerAcInvld();
-   }
-
-	/**
-	*  set values "304"
-	*/
-   	public void setOverdueBuyerAcInvldTrue()  throws CFException{  			
-    	work.setOverdueBuyerAcInvldTrue();
-   	}
-	/**
-	 *	Returns the value of sqlca
-	 *	@return sqlca
-	 */   
-	 public Sqlca getSqlca() {
-   	return sqlca;
-   }
-
-
-	/**
-	 *	Returns the value of ordTradingXchng
-	 *	@return ordTradingXchng
-	 */
-   public char[] getOrdTradingXchng() throws CFException  {              
-   		return dcltbtrdord.getOrdTradingXchng();
+   public char[] getOrdBuySellInd() throws CFException  {              
+   		return dcltbtrdord.getOrdBuySellInd();
    }
 
   
 	/**
-	*  set variable ordTradingXchng
+	*  set variable ordBuySellInd
 	*  @param value
 	**/
-   public void setOrdTradingXchng(char[] value) throws CFException {
-      dcltbtrdord.setOrdTradingXchng(value);
+   public void setOrdBuySellInd(char[] value) throws CFException {
+      dcltbtrdord.setOrdBuySellInd(value);
    } 
 
      /**
-	 * 	Update OrdTradingXchng 
+	 * 	Update OrdBuySellInd 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdTradingXchng(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex);
+   public void setOrdBuySellInd(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex);
    	
    }
    
-   public void setOrdTradingXchng(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen);
+   public void setOrdBuySellInd(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdTradingXchng 
+	 * 	Update OrdBuySellInd 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdTradingXchng(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdBuySellInd(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdTradingXchng with another Field
+	 * 	Update OrdBuySellInd with another Field
 	 *	@param value
 	 */
-   public void setOrdTradingXchng(Field source) {
-      dcltbtrdord.setOrdTradingXchng(source);
+   public void setOrdBuySellInd(Field source) {
+      dcltbtrdord.setOrdBuySellInd(source);
    }  
    
      /**
-	 * 	Update OrdTradingXchng 
+	 * 	Update OrdBuySellInd 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen);   	
+   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdTradingXchng 
+	 * 	Update OrdBuySellInd 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
-	 *	Returns the value of ordCurrency
-	 *	@return ordCurrency
+	 *	Returns the value of macNumber
+	 *	@return macNumber
 	 */
-   public char[] getOrdCurrency() throws CFException  {              
-   		return dcltbtrdord.getOrdCurrency();
+	public int getMacNumber() throws CFException {        
+   		return dcltbtrdmac.getMacNumber();
+	}
+	
+	/**
+	 * 	Update MacNumber with the passed value
+	 *	@param number
+	 */
+	public void setMacNumber(int number)  throws CFException{
+		dcltbtrdmac.setMacNumber(number);
+	}
+
+
+	public void setMacNumber(long number)  throws CFException{
+		dcltbtrdmac.setMacNumber((int)number);
+	}
+
+
+	/**
+	 *	Returns the value of macCurrency
+	 *	@return macCurrency
+	 */
+   public char[] getMacCurrency() throws CFException  {              
+   		return dcltbtrdmac.getMacCurrency();
    }
 
   
 	/**
-	*  set variable ordCurrency
+	*  set variable macCurrency
 	*  @param value
 	**/
-   public void setOrdCurrency(char[] value) throws CFException {
-      dcltbtrdord.setOrdCurrency(value);
+   public void setMacCurrency(char[] value) throws CFException {
+      dcltbtrdmac.setMacCurrency(value);
    } 
 
      /**
-	 * 	Update OrdCurrency 
+	 * 	Update MacCurrency 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdCurrency(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex);
+   public void setMacCurrency(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdmac.setMacCurrency(source, sourceIndex);
    	
    }
    
-   public void setOrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);
+   public void setMacCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdmac.setMacCurrency(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdCurrency 
+	 * 	Update MacCurrency 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setMacCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdmac.setMacCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdCurrency with another Field
+	 * 	Update MacCurrency with another Field
 	 *	@param value
 	 */
-   public void setOrdCurrency(Field source) {
-      dcltbtrdord.setOrdCurrency(source);
+   public void setMacCurrency(Field source) {
+      dcltbtrdmac.setMacCurrency(source);
    }  
    
      /**
-	 * 	Update OrdCurrency 
+	 * 	Update MacCurrency 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);   	
+   public void setMacCurrency(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdmac.setMacCurrency(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdCurrency 
+	 * 	Update MacCurrency 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setMacCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdmac.setMacCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -13655,93 +13470,71 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
 
 
 	/**
-	 *	Returns the value of sqlcode
-	 *	@return sqlcode
+	 *	Returns the value of ordStatus
+	 *	@return ordStatus
 	 */
-	public int getSqlcode() throws CFException {        
-   		return sqlca.getSqlcode();
-	}
-	
-	/**
-	 * 	Update Sqlcode with the passed value
-	 *	@param number
-	 */
-	public void setSqlcode(int number)  throws CFException{
-		sqlca.setSqlcode(number);
-	}
-
-
-	public void setSqlcode(long number)  throws CFException{
-		sqlca.setSqlcode((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of macCurrency
-	 *	@return macCurrency
-	 */
-   public char[] getMacCurrency() throws CFException  {              
-   		return dcltbtrdmac.getMacCurrency();
+   public char[] getOrdStatus() throws CFException  {              
+   		return dcltbtrdord.getOrdStatus();
    }
 
   
 	/**
-	*  set variable macCurrency
+	*  set variable ordStatus
 	*  @param value
 	**/
-   public void setMacCurrency(char[] value) throws CFException {
-      dcltbtrdmac.setMacCurrency(value);
+   public void setOrdStatus(char[] value) throws CFException {
+      dcltbtrdord.setOrdStatus(value);
    } 
 
      /**
-	 * 	Update MacCurrency 
+	 * 	Update OrdStatus 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setMacCurrency(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdmac.setMacCurrency(source, sourceIndex);
+   public void setOrdStatus(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdStatus(source, sourceIndex);
    	
    }
    
-   public void setMacCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdmac.setMacCurrency(source, sourceIndex, sourceLen);
+   public void setOrdStatus(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update MacCurrency 
+	 * 	Update OrdStatus 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setMacCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdmac.setMacCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdStatus(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update MacCurrency with another Field
+	 * 	Update OrdStatus with another Field
 	 *	@param value
 	 */
-   public void setMacCurrency(Field source) {
-      dcltbtrdmac.setMacCurrency(source);
+   public void setOrdStatus(Field source) {
+      dcltbtrdord.setOrdStatus(source);
    }  
    
      /**
-	 * 	Update MacCurrency 
+	 * 	Update OrdStatus 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setMacCurrency(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdmac.setMacCurrency(source, sourceIndex, sourceLen);   	
+   public void setOrdStatus(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update MacCurrency 
+	 * 	Update OrdStatus 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setMacCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdmac.setMacCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdStatus(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -13813,306 +13606,221 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of orderStatus
-	 *	@return orderStatus
+	 *	Returns the value of ordFigi
+	 *	@return ordFigi
 	 */
-   public char[] getOrderStatus() throws CFException  {              
-   		return work.getOrderStatus();
+   public char[] getOrdFigi() throws CFException  {              
+   		return dcltbtrdord.getOrdFigi();
    }
 
   
 	/**
-	*  set variable orderStatus
+	*  set variable ordFigi
 	*  @param value
 	**/
-   public void setOrderStatus(char[] value) throws CFException {
-      work.setOrderStatus(value);
-   } 
-
-	/**
-	 *	Returns the value of ordStatus
-	 *	@return ordStatus
-	 */
-   public char[] getOrdStatus() throws CFException  {              
-   		return dcltbtrdord.getOrdStatus();
-   }
-
-  
-	/**
-	*  set variable ordStatus
-	*  @param value
-	**/
-   public void setOrdStatus(char[] value) throws CFException {
-      dcltbtrdord.setOrdStatus(value);
+   public void setOrdFigi(char[] value) throws CFException {
+      dcltbtrdord.setOrdFigi(value);
    } 
 
      /**
-	 * 	Update OrdStatus 
+	 * 	Update OrdFigi 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdStatus(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdStatus(source, sourceIndex);
+   public void setOrdFigi(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdFigi(source, sourceIndex);
    	
    }
    
-   public void setOrdStatus(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);
+   public void setOrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdStatus 
+	 * 	Update OrdFigi 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdStatus(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdStatus with another Field
+	 * 	Update OrdFigi with another Field
 	 *	@param value
 	 */
-   public void setOrdStatus(Field source) {
-      dcltbtrdord.setOrdStatus(source);
+   public void setOrdFigi(Field source) {
+      dcltbtrdord.setOrdFigi(source);
    }  
    
      /**
-	 * 	Update OrdStatus 
+	 * 	Update OrdFigi 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdStatus(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);   	
+   public void setOrdFigi(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdStatus 
+	 * 	Update OrdFigi 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdStatus(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
-	 *	Returns the value of ordTradeid
-	 *	@return ordTradeid
+	 *	Returns the value of macCustomerId
+	 *	@return macCustomerId
 	 */
-   public char[] getOrdTradeid() throws CFException  {              
-   		return dcltbtrdord.getOrdTradeid();
+   public char[] getMacCustomerId() throws CFException  {              
+   		return dcltbtrdmac.getMacCustomerId();
    }
 
   
 	/**
-	*  set variable ordTradeid
+	*  set variable macCustomerId
 	*  @param value
 	**/
-   public void setOrdTradeid(char[] value) throws CFException {
-      dcltbtrdord.setOrdTradeid(value);
+   public void setMacCustomerId(char[] value) throws CFException {
+      dcltbtrdmac.setMacCustomerId(value);
    } 
 
      /**
-	 * 	Update OrdTradeid 
+	 * 	Update MacCustomerId 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex);
+   public void setMacCustomerId(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdmac.setMacCustomerId(source, sourceIndex);
    	
    }
    
-   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
+   public void setMacCustomerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdmac.setMacCustomerId(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdTradeid 
+	 * 	Update MacCustomerId 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setMacCustomerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdmac.setMacCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdTradeid with another Field
+	 * 	Update MacCustomerId with another Field
 	 *	@param value
 	 */
-   public void setOrdTradeid(Field source) {
-      dcltbtrdord.setOrdTradeid(source);
+   public void setMacCustomerId(Field source) {
+      dcltbtrdmac.setMacCustomerId(source);
    }  
    
      /**
-	 * 	Update OrdTradeid 
+	 * 	Update MacCustomerId 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
+   public void setMacCustomerId(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdmac.setMacCustomerId(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdTradeid 
+	 * 	Update MacCustomerId 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setMacCustomerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdmac.setMacCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
-	 *	Test condition "A" for isApplException()
-	 *	@return  Returns true if isApplException() is "A"
+	 *	Test condition "D" for isDataException()
+	 *	@return  Returns true if isDataException() is "D"
 	 */
-   public boolean isApplException() throws CFException {
-      return work.isApplException();
+   public boolean isDataException() throws CFException {
+      return work.isDataException();
    }
 
 	/**
-	*  set values "A"
+	*  set values "D"
 	*/
-   	public void setApplExceptionTrue()  throws CFException{  			
-    	work.setApplExceptionTrue();
+   	public void setDataExceptionTrue()  throws CFException{  			
+    	work.setDataExceptionTrue();
    	}
 	/**
-	 *	Returns the value of trdBuyerId
-	 *	@return trdBuyerId
+	 *	Returns the value of ordTradingXchng
+	 *	@return ordTradingXchng
 	 */
-   public char[] getTrdBuyerId() throws CFException  {              
-   		return trdOrderPair.getTrdBuyerId();
+   public char[] getOrdTradingXchng() throws CFException  {              
+   		return dcltbtrdord.getOrdTradingXchng();
    }
 
   
 	/**
-	*  set variable trdBuyerId
+	*  set variable ordTradingXchng
 	*  @param value
 	**/
-   public void setTrdBuyerId(char[] value) throws CFException {
-      trdOrderPair.setTrdBuyerId(value);
+   public void setOrdTradingXchng(char[] value) throws CFException {
+      dcltbtrdord.setOrdTradingXchng(value);
    } 
 
      /**
-	 * 	Update TrdBuyerId 
+	 * 	Update OrdTradingXchng 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setTrdBuyerId(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdBuyerId(source, sourceIndex);
+   public void setOrdTradingXchng(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex);
    	
    }
    
-   public void setTrdBuyerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen);
+   public void setOrdTradingXchng(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update TrdBuyerId 
+	 * 	Update OrdTradingXchng 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdBuyerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdTradingXchng(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update TrdBuyerId with another Field
+	 * 	Update OrdTradingXchng with another Field
 	 *	@param value
 	 */
-   public void setTrdBuyerId(Field source) {
-      trdOrderPair.setTrdBuyerId(source);
+   public void setOrdTradingXchng(Field source) {
+      dcltbtrdord.setOrdTradingXchng(source);
    }  
    
      /**
-	 * 	Update TrdBuyerId 
+	 * 	Update OrdTradingXchng 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setTrdBuyerId(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen);   	
+   public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update TrdBuyerId 
+	 * 	Update OrdTradingXchng 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdBuyerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of trdOrderId
-	 *	@return trdOrderId
-	 */
-   public char[] getTrdOrderId() throws CFException  {              
-   		return trdOrderPair.getTrdOrderId();
-   }
-
-  
-	/**
-	*  set variable trdOrderId
-	*  @param value
-	**/
-   public void setTrdOrderId(char[] value) throws CFException {
-      trdOrderPair.setTrdOrderId(value);
-   } 
-
-     /**
-	 * 	Update TrdOrderId 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdOrderId(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdOrderId(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdOrderId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdOrderId 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdOrderId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdOrderId with another Field
-	 *	@param value
-	 */
-   public void setTrdOrderId(Field source) {
-      trdOrderPair.setTrdOrderId(source);
-   }  
-   
-     /**
-	 * 	Update TrdOrderId 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdOrderId 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -14184,71 +13892,363 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of ordBuySellInd
-	 *	@return ordBuySellInd
+	 *	Returns the value of sqlca
+	 *	@return sqlca
+	 */   
+	 public Sqlca getSqlca() {
+   	return sqlca;
+   }
+
+
+	/**
+	 *	Returns the value of trdBuyerId
+	 *	@return trdBuyerId
 	 */
-   public char[] getOrdBuySellInd() throws CFException  {              
-   		return dcltbtrdord.getOrdBuySellInd();
+   public char[] getTrdBuyerId() throws CFException  {              
+   		return trdOrderPair.getTrdBuyerId();
    }
 
   
 	/**
-	*  set variable ordBuySellInd
+	*  set variable trdBuyerId
 	*  @param value
 	**/
-   public void setOrdBuySellInd(char[] value) throws CFException {
-      dcltbtrdord.setOrdBuySellInd(value);
+   public void setTrdBuyerId(char[] value) throws CFException {
+      trdOrderPair.setTrdBuyerId(value);
    } 
 
      /**
-	 * 	Update OrdBuySellInd 
+	 * 	Update TrdBuyerId 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex);
+   public void setTrdBuyerId(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdBuyerId(source, sourceIndex);
    	
    }
    
-   public void setOrdBuySellInd(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);
+   public void setTrdBuyerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdBuySellInd 
+	 * 	Update TrdBuyerId 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdBuyerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdBuySellInd with another Field
+	 * 	Update TrdBuyerId with another Field
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(Field source) {
-      dcltbtrdord.setOrdBuySellInd(source);
+   public void setTrdBuyerId(Field source) {
+      trdOrderPair.setTrdBuyerId(source);
    }  
    
      /**
-	 * 	Update OrdBuySellInd 
+	 * 	Update TrdBuyerId 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);   	
+   public void setTrdBuyerId(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdBuySellInd 
+	 * 	Update TrdBuyerId 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdBuyerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdBuyerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sqlcode
+	 *	@return sqlcode
+	 */
+	public int getSqlcode() throws CFException {        
+   		return sqlca.getSqlcode();
+	}
+	
+	/**
+	 * 	Update Sqlcode with the passed value
+	 *	@param number
+	 */
+	public void setSqlcode(int number)  throws CFException{
+		sqlca.setSqlcode(number);
+	}
+
+
+	public void setSqlcode(long number)  throws CFException{
+		sqlca.setSqlcode((int)number);
+	}
+
+
+	/**
+	 *	Returns the value of accDisp
+	 *	@return accDisp
+	 */
+   public char[] getAccDisp() throws CFException  {              
+   		return work.getAccDisp();
+   }
+
+  
+	/**
+	*  set variable accDisp
+	*  @param value
+	**/
+   public void setAccDisp(char[] value) throws CFException {
+      work.setAccDisp(value);
+   } 
+
+     /**
+	 * 	Update AccDisp 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setAccDisp(char[] source, int sourceIndex) throws CFException {
+      work.setAccDisp(source, sourceIndex);
+   	
+   }
+   
+   public void setAccDisp(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      work.setAccDisp(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update AccDisp 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setAccDisp(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      work.setAccDisp(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update AccDisp with another Field
+	 *	@param value
+	 */
+   public void setAccDisp(Field source) {
+      work.setAccDisp(source);
+   }  
+   
+     /**
+	 * 	Update AccDisp 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setAccDisp(Field source, int sourceIndex,int sourceLen) {
+      work.setAccDisp(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update AccDisp 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setAccDisp(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      work.setAccDisp(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of trdOrderId
+	 *	@return trdOrderId
+	 */
+   public char[] getTrdOrderId() throws CFException  {              
+   		return trdOrderPair.getTrdOrderId();
+   }
+
+  
+	/**
+	*  set variable trdOrderId
+	*  @param value
+	**/
+   public void setTrdOrderId(char[] value) throws CFException {
+      trdOrderPair.setTrdOrderId(value);
+   } 
+
+     /**
+	 * 	Update TrdOrderId 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdOrderId(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdOrderId(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdOrderId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdOrderId 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdOrderId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdOrderId with another Field
+	 *	@param value
+	 */
+   public void setTrdOrderId(Field source) {
+      trdOrderPair.setTrdOrderId(source);
+   }  
+   
+     /**
+	 * 	Update TrdOrderId 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdOrderId 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Test condition "A" for isApplException()
+	 *	@return  Returns true if isApplException() is "A"
+	 */
+   public boolean isApplException() throws CFException {
+      return work.isApplException();
+   }
+
+	/**
+	*  set values "A"
+	*/
+   	public void setApplExceptionTrue()  throws CFException{  			
+    	work.setApplExceptionTrue();
+   	}
+	/**
+	 *	Returns the value of orderStatus
+	 *	@return orderStatus
+	 */
+   public char[] getOrderStatus() throws CFException  {              
+   		return work.getOrderStatus();
+   }
+
+  
+	/**
+	*  set variable orderStatus
+	*  @param value
+	**/
+   public void setOrderStatus(char[] value) throws CFException {
+      work.setOrderStatus(value);
+   } 
+
+	/**
+	 *	Returns the value of dcltbtrdmac
+	 *	@return dcltbtrdmac
+	 */   
+	 public Dcltbtrdmac getDcltbtrdmac() {
+   	return dcltbtrdmac;
+   }
+
+
+	/**
+	 *	Returns the value of exception
+	 *	@return exception
+	 */
+   public char[] getException() throws CFException  {              
+   		return work.getException();
+   }
+
+  
+	/**
+	*  set variable exception
+	*  @param value
+	**/
+   public void setException(char[] value) throws CFException {
+      work.setException(value);
+   } 
+
+	/**
+	 *	Returns the value of ordCurrency
+	 *	@return ordCurrency
+	 */
+   public char[] getOrdCurrency() throws CFException  {              
+   		return dcltbtrdord.getOrdCurrency();
+   }
+
+  
+	/**
+	*  set variable ordCurrency
+	*  @param value
+	**/
+   public void setOrdCurrency(char[] value) throws CFException {
+      dcltbtrdord.setOrdCurrency(value);
+   } 
+
+     /**
+	 * 	Update OrdCurrency 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdCurrency(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdCurrency 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdCurrency with another Field
+	 *	@param value
+	 */
+   public void setOrdCurrency(Field source) {
+      dcltbtrdord.setOrdCurrency(source);
+   }  
+   
+     /**
+	 * 	Update OrdCurrency 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdCurrency 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -14320,153 +14320,153 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Test condition "D" for isDataException()
-	 *	@return  Returns true if isDataException() is "D"
+	 *	Test condition "304" for isOverdueBuyerAcInvld()
+	 *	@return  Returns true if isOverdueBuyerAcInvld() is "304"
 	 */
-   public boolean isDataException() throws CFException {
-      return work.isDataException();
+   public boolean isOverdueBuyerAcInvld() throws CFException {
+      return work.isOverdueBuyerAcInvld();
    }
 
 	/**
-	*  set values "D"
+	*  set values "304"
 	*/
-   	public void setDataExceptionTrue()  throws CFException{  			
-    	work.setDataExceptionTrue();
+   	public void setOverdueBuyerAcInvldTrue()  throws CFException{  			
+    	work.setOverdueBuyerAcInvldTrue();
    	}
 	/**
-	 *	Returns the value of macCustomerId
-	 *	@return macCustomerId
+	 *	Returns the value of ordTradeid
+	 *	@return ordTradeid
 	 */
-   public char[] getMacCustomerId() throws CFException  {              
-   		return dcltbtrdmac.getMacCustomerId();
+   public char[] getOrdTradeid() throws CFException  {              
+   		return dcltbtrdord.getOrdTradeid();
    }
 
   
 	/**
-	*  set variable macCustomerId
+	*  set variable ordTradeid
 	*  @param value
 	**/
-   public void setMacCustomerId(char[] value) throws CFException {
-      dcltbtrdmac.setMacCustomerId(value);
+   public void setOrdTradeid(char[] value) throws CFException {
+      dcltbtrdord.setOrdTradeid(value);
    } 
 
      /**
-	 * 	Update MacCustomerId 
+	 * 	Update OrdTradeid 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setMacCustomerId(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdmac.setMacCustomerId(source, sourceIndex);
+   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex);
    	
    }
    
-   public void setMacCustomerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdmac.setMacCustomerId(source, sourceIndex, sourceLen);
+   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update MacCustomerId 
+	 * 	Update OrdTradeid 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setMacCustomerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdmac.setMacCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update MacCustomerId with another Field
+	 * 	Update OrdTradeid with another Field
 	 *	@param value
 	 */
-   public void setMacCustomerId(Field source) {
-      dcltbtrdmac.setMacCustomerId(source);
+   public void setOrdTradeid(Field source) {
+      dcltbtrdord.setOrdTradeid(source);
    }  
    
      /**
-	 * 	Update MacCustomerId 
+	 * 	Update OrdTradeid 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setMacCustomerId(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdmac.setMacCustomerId(source, sourceIndex, sourceLen);   	
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update MacCustomerId 
+	 * 	Update OrdTradeid 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setMacCustomerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdmac.setMacCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
-	 *	Returns the value of ordFigi
-	 *	@return ordFigi
+	 *	Returns the value of trdExchange
+	 *	@return trdExchange
 	 */
-   public char[] getOrdFigi() throws CFException  {              
-   		return dcltbtrdord.getOrdFigi();
+   public char[] getTrdExchange() throws CFException  {              
+   		return trdOrderPair.getTrdExchange();
    }
 
   
 	/**
-	*  set variable ordFigi
+	*  set variable trdExchange
 	*  @param value
 	**/
-   public void setOrdFigi(char[] value) throws CFException {
-      dcltbtrdord.setOrdFigi(value);
+   public void setTrdExchange(char[] value) throws CFException {
+      trdOrderPair.setTrdExchange(value);
    } 
 
      /**
-	 * 	Update OrdFigi 
+	 * 	Update TrdExchange 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdFigi(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdFigi(source, sourceIndex);
+   public void setTrdExchange(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdExchange(source, sourceIndex);
    	
    }
    
-   public void setOrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);
+   public void setTrdExchange(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdFigi 
+	 * 	Update TrdExchange 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdExchange(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdFigi with another Field
+	 * 	Update TrdExchange with another Field
 	 *	@param value
 	 */
-   public void setOrdFigi(Field source) {
-      dcltbtrdord.setOrdFigi(source);
+   public void setTrdExchange(Field source) {
+      trdOrderPair.setTrdExchange(source);
    }  
    
      /**
-	 * 	Update OrdFigi 
+	 * 	Update TrdExchange 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdFigi(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);   	
+   public void setTrdExchange(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdFigi 
+	 * 	Update TrdExchange 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 
@@ -14484,26 +14484,26 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += dcltbtrdord.hashCode();
-        str += work.hashCode();
-        str += dcltbtrdmac.hashCode();
         str += sqlca.hashCode();
         str += trdOrderPair.hashCode();
+        str += work.hashCode();
+        str += dcltbtrdmac.hashCode();
+        str += dcltbtrdord.hashCode();
        return str.hashCode();
     }
 
     public BuyerMoneyAccountOutCtx clone() {
         BuyerMoneyAccountOutCtx cloneObj = new BuyerMoneyAccountOutCtx();
-        cloneObj.dcltbtrdord = new Dcltbtrdord();
-        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
-        cloneObj.dcltbtrdmac = new Dcltbtrdmac();
-        cloneObj.dcltbtrdmac.set(dcltbtrdmac.getClonedField());
         cloneObj.sqlca = new Sqlca();
         cloneObj.sqlca.set(sqlca.getClonedField());
         cloneObj.trdOrderPair = new TrdOrderPair();
         cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        cloneObj.dcltbtrdmac = new Dcltbtrdmac();
+        cloneObj.dcltbtrdmac.set(dcltbtrdmac.getClonedField());
+        cloneObj.dcltbtrdord = new Dcltbtrdord();
+        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
         return cloneObj;
     }
 
@@ -14513,11 +14513,154 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
             return new BuyerMoneyAccountOutCtx();
     }
      public class SellerMoneyAccountInCtx implements Cloneable {
-     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
-     Work work = Trdpb000Ctx.this.getWork();
-     Dcltbtrdmac dcltbtrdmac = Trdpb000Ctx.this.getDcltbtrdmac();
      Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
      TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
+     Work work = Trdpb000Ctx.this.getWork();
+     Dcltbtrdmac dcltbtrdmac = Trdpb000Ctx.this.getDcltbtrdmac();
+     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
+
+	/**
+	 *	Returns the value of trdFigi
+	 *	@return trdFigi
+	 */
+   public char[] getTrdFigi() throws CFException  {              
+   		return trdOrderPair.getTrdFigi();
+   }
+
+  
+	/**
+	*  set variable trdFigi
+	*  @param value
+	**/
+   public void setTrdFigi(char[] value) throws CFException {
+      trdOrderPair.setTrdFigi(value);
+   } 
+
+     /**
+	 * 	Update TrdFigi 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdFigi(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdFigi(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdFigi 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdFigi with another Field
+	 *	@param value
+	 */
+   public void setTrdFigi(Field source) {
+      trdOrderPair.setTrdFigi(source);
+   }  
+   
+     /**
+	 * 	Update TrdFigi 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdFigi(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdFigi 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sqlca
+	 *	@return sqlca
+	 */   
+	 public Sqlca getSqlca() {
+   	return sqlca;
+   }
+
+
+	/**
+	 *	Returns the value of sqlcode
+	 *	@return sqlcode
+	 */
+	public int getSqlcode() throws CFException {        
+   		return sqlca.getSqlcode();
+	}
+	
+	/**
+	 * 	Update Sqlcode with the passed value
+	 *	@param number
+	 */
+	public void setSqlcode(int number)  throws CFException{
+		sqlca.setSqlcode(number);
+	}
+
+
+	public void setSqlcode(long number)  throws CFException{
+		sqlca.setSqlcode((int)number);
+	}
+
+
+	/**
+	 *	Returns the value of macNumber
+	 *	@return macNumber
+	 */
+	public int getMacNumber() throws CFException {        
+   		return dcltbtrdmac.getMacNumber();
+	}
+	
+	/**
+	 * 	Update MacNumber with the passed value
+	 *	@param number
+	 */
+	public void setMacNumber(int number)  throws CFException{
+		dcltbtrdmac.setMacNumber(number);
+	}
+
+
+	public void setMacNumber(long number)  throws CFException{
+		dcltbtrdmac.setMacNumber((int)number);
+	}
+
+
+	/**
+	 *	Returns the value of sqlerrd
+	 *	@return sqlerrd
+	 */
+	public int getSqlerrd(int index) throws CFException {        
+   		return sqlca.getSqlerrd((index));
+	}
+	
+	/**
+	 * 	Update Sqlerrd with the passed value
+	 *	@param number
+	 */
+	public void setSqlerrd(int index,int number)  throws CFException{
+		sqlca.setSqlerrd((index),number);
+	}
+
+
+	public void setSqlerrd(int index,long number)  throws CFException{
+		sqlca.setSqlerrd((index),(int)number);
+	}
+
 
 	/**
 	 *	Returns the value of trdCurrency
@@ -14656,196 +14799,72 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of dcltbtrdmac
-	 *	@return dcltbtrdmac
-	 */   
-	 public Dcltbtrdmac getDcltbtrdmac() {
-   	return dcltbtrdmac;
-   }
-
-
-	/**
-	 *	Returns the value of macNumber
-	 *	@return macNumber
+	 *	Returns the value of trdOrderId
+	 *	@return trdOrderId
 	 */
-	public int getMacNumber() throws CFException {        
-   		return dcltbtrdmac.getMacNumber();
-	}
-	
-	/**
-	 * 	Update MacNumber with the passed value
-	 *	@param number
-	 */
-	public void setMacNumber(int number)  throws CFException{
-		dcltbtrdmac.setMacNumber(number);
-	}
-
-
-	public void setMacNumber(long number)  throws CFException{
-		dcltbtrdmac.setMacNumber((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of sqlerrd
-	 *	@return sqlerrd
-	 */
-	public int getSqlerrd(int index) throws CFException {        
-   		return sqlca.getSqlerrd((index));
-	}
-	
-	/**
-	 * 	Update Sqlerrd with the passed value
-	 *	@param number
-	 */
-	public void setSqlerrd(int index,int number)  throws CFException{
-		sqlca.setSqlerrd((index),number);
-	}
-
-
-	public void setSqlerrd(int index,long number)  throws CFException{
-		sqlca.setSqlerrd((index),(int)number);
-	}
-
-
-	/**
-	 *	Returns the value of sqlwarn
-	 *	@return sqlwarn
-	 */   
-	 public Sqlwarn getSqlwarn() {
-   	return sqlca.getSqlwarn();
-   }
-
-   /**
-	* 	Update Sqlwarn with the passed value
-	*	@param value
-	*/
-   public void setSqlwarn(char[] value) throws CFException {
-      sqlca.setSqlwarn(value);
-   }   
-
-     /**
-	 * 	Update Sqlwarn 
-	 *     with a String from an offset and length             
-	 *	@param value
-	 */
-   public void setSqlwarn(char[] source, int sourceIndex,int sourceLen) throws CFException {
-   	sqlca.setSqlwarn(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update Sqlwarn 
-	 *     with a String from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setSqlwarn(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-   	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update Sqlwarn with another Field
-	 *	@param value
-	 */
-   public void setSqlwarn(Field source) {
-   	sqlca.setSqlwarn(source);
-   }  
-   
-     /**
-	 * 	Update Sqlwarn 
-	 *     with another Field from an offset and length             
-	 *	@param value
-	 */
-   public void setSqlwarn(Field source, int sourceIndex,int sourceLen) {
-   	sqlca.setSqlwarn(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update Sqlwarn 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setSqlwarn(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-   	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of trdExchange
-	 *	@return trdExchange
-	 */
-   public char[] getTrdExchange() throws CFException  {              
-   		return trdOrderPair.getTrdExchange();
+   public char[] getTrdOrderId() throws CFException  {              
+   		return trdOrderPair.getTrdOrderId();
    }
 
   
 	/**
-	*  set variable trdExchange
+	*  set variable trdOrderId
 	*  @param value
 	**/
-   public void setTrdExchange(char[] value) throws CFException {
-      trdOrderPair.setTrdExchange(value);
+   public void setTrdOrderId(char[] value) throws CFException {
+      trdOrderPair.setTrdOrderId(value);
    } 
 
      /**
-	 * 	Update TrdExchange 
+	 * 	Update TrdOrderId 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setTrdExchange(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdExchange(source, sourceIndex);
+   public void setTrdOrderId(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdOrderId(source, sourceIndex);
    	
    }
    
-   public void setTrdExchange(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);
+   public void setTrdOrderId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update TrdExchange 
+	 * 	Update TrdOrderId 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdExchange(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdOrderId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update TrdExchange with another Field
+	 * 	Update TrdOrderId with another Field
 	 *	@param value
 	 */
-   public void setTrdExchange(Field source) {
-      trdOrderPair.setTrdExchange(source);
+   public void setTrdOrderId(Field source) {
+      trdOrderPair.setTrdOrderId(source);
    }  
    
      /**
-	 * 	Update TrdExchange 
+	 * 	Update TrdOrderId 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setTrdExchange(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);   	
+   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update TrdExchange 
+	 * 	Update TrdOrderId 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
-
-	/**
-	 *	Returns the value of sqlca
-	 *	@return sqlca
-	 */   
-	 public Sqlca getSqlca() {
-   	return sqlca;
-   }
-
 
 	/**
 	 *	Returns the value of macStatus
@@ -14916,139 +14935,126 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of trdOrderId
-	 *	@return trdOrderId
-	 */
-   public char[] getTrdOrderId() throws CFException  {              
-   		return trdOrderPair.getTrdOrderId();
+	 *	Returns the value of dcltbtrdmac
+	 *	@return dcltbtrdmac
+	 */   
+	 public Dcltbtrdmac getDcltbtrdmac() {
+   	return dcltbtrdmac;
    }
 
-  
+
 	/**
-	*  set variable trdOrderId
-	*  @param value
-	**/
-   public void setTrdOrderId(char[] value) throws CFException {
-      trdOrderPair.setTrdOrderId(value);
-   } 
+	 *	Returns the value of tradeid
+	 *	@return tradeid
+	 */
+	public long getTradeid() throws CFException {
+   		return work.getTradeid();
+	}
+
+
+	/**
+	 *	Returns String value of tradeid
+	 *	@return tradeid
+	 */
+	public char[]  getTradeidString() throws CFException {
+	     return String.valueOf(work.getTradeidString()).toCharArray();
+	}
+
+	 /**
+	 *  This method allows testing if there is a numeric value stored in the serialized String
+	 *	@return true if numeric value is stored in the string
+	 */
+	public boolean tradeidIsNumeric()  throws CFException{
+	    return work.tradeidIsNumeric();
+	}
+
+	/**
+	 * 	Update Tradeid with the passed value
+	 *	@param number
+	 */
+	public void setTradeid(long number)  throws CFException{
+		work.setTradeid(number);
+	}
+	
+
+	
+	/**
+	 * 	Update Tradeid with the passed value
+	 *	@param value (String or char[])
+	 */
+	public void setTradeid(char[] value)  throws CFException {
+		work.setTradeid(value);
+	}
+	
+	/**
+	 * 	Update Tradeid with the passed value 
+	 *
+	 *	@param value (String or char[])
+	 */
+	public void setTradeidString(char[] value)  throws CFException{
+		work.setTradeid(value);
+	}	
+
+	/**
+	 *	Returns the value of sqlwarn
+	 *	@return sqlwarn
+	 */   
+	 public Sqlwarn getSqlwarn() {
+   	return sqlca.getSqlwarn();
+   }
+
+   /**
+	* 	Update Sqlwarn with the passed value
+	*	@param value
+	*/
+   public void setSqlwarn(char[] value) throws CFException {
+      sqlca.setSqlwarn(value);
+   }   
 
      /**
-	 * 	Update TrdOrderId 
-	 *     with a char[] from an offset and length             
+	 * 	Update Sqlwarn 
+	 *     with a String from an offset and length             
 	 *	@param value
 	 */
-   public void setTrdOrderId(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdOrderId(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdOrderId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);
+   public void setSqlwarn(char[] source, int sourceIndex,int sourceLen) throws CFException {
+   	sqlca.setSqlwarn(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update TrdOrderId 
-	 *     with a char[] from an offset and length  
+	 * 	Update Sqlwarn 
+	 *     with a String from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdOrderId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setSqlwarn(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+   	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update TrdOrderId with another Field
+	 * 	Update Sqlwarn with another Field
 	 *	@param value
 	 */
-   public void setTrdOrderId(Field source) {
-      trdOrderPair.setTrdOrderId(source);
+   public void setSqlwarn(Field source) {
+   	sqlca.setSqlwarn(source);
    }  
    
      /**
-	 * 	Update TrdOrderId 
-	 *     with another Field from an offset and length          
+	 * 	Update Sqlwarn 
+	 *     with another Field from an offset and length             
 	 *	@param value
 	 */
-   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);   	
+   public void setSqlwarn(Field source, int sourceIndex,int sourceLen) {
+   	sqlca.setSqlwarn(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update TrdOrderId 
+	 * 	Update Sqlwarn 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of trdFigi
-	 *	@return trdFigi
-	 */
-   public char[] getTrdFigi() throws CFException  {              
-   		return trdOrderPair.getTrdFigi();
-   }
-
-  
-	/**
-	*  set variable trdFigi
-	*  @param value
-	**/
-   public void setTrdFigi(char[] value) throws CFException {
-      trdOrderPair.setTrdFigi(value);
-   } 
-
-     /**
-	 * 	Update TrdFigi 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdFigi(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdFigi(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdFigi 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdFigi with another Field
-	 *	@param value
-	 */
-   public void setTrdFigi(Field source) {
-      trdOrderPair.setTrdFigi(source);
-   }  
-   
-     /**
-	 * 	Update TrdFigi 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdFigi(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdFigi 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setSqlwarn(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+   	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -15120,78 +15126,72 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of sqlcode
-	 *	@return sqlcode
+	 *	Returns the value of trdExchange
+	 *	@return trdExchange
 	 */
-	public int getSqlcode() throws CFException {        
-   		return sqlca.getSqlcode();
-	}
-	
+   public char[] getTrdExchange() throws CFException  {              
+   		return trdOrderPair.getTrdExchange();
+   }
+
+  
 	/**
-	 * 	Update Sqlcode with the passed value
-	 *	@param number
+	*  set variable trdExchange
+	*  @param value
+	**/
+   public void setTrdExchange(char[] value) throws CFException {
+      trdOrderPair.setTrdExchange(value);
+   } 
+
+     /**
+	 * 	Update TrdExchange 
+	 *     with a char[] from an offset and length             
+	 *	@param value
 	 */
-	public void setSqlcode(int number)  throws CFException{
-		sqlca.setSqlcode(number);
-	}
-
-
-	public void setSqlcode(long number)  throws CFException{
-		sqlca.setSqlcode((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of tradeid
-	 *	@return tradeid
+   public void setTrdExchange(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdExchange(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdExchange(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdExchange 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
 	 */
-	public long getTradeid() throws CFException {
-   		return work.getTradeid();
-	}
-
-
-	/**
-	 *	Returns String value of tradeid
-	 *	@return tradeid
+   public void setTrdExchange(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdExchange with another Field
+	 *	@param value
 	 */
-	public char[]  getTradeidString() throws CFException {
-	     return String.valueOf(work.getTradeidString()).toCharArray();
-	}
-
-	 /**
-	 *  This method allows testing if there is a numeric value stored in the serialized String
-	 *	@return true if numeric value is stored in the string
+   public void setTrdExchange(Field source) {
+      trdOrderPair.setTrdExchange(source);
+   }  
+   
+     /**
+	 * 	Update TrdExchange 
+	 *     with another Field from an offset and length          
+	 *	@param value
 	 */
-	public boolean tradeidIsNumeric()  throws CFException{
-	    return work.tradeidIsNumeric();
-	}
-
-	/**
-	 * 	Update Tradeid with the passed value
-	 *	@param number
+   public void setTrdExchange(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdExchange 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
 	 */
-	public void setTradeid(long number)  throws CFException{
-		work.setTradeid(number);
-	}
-	
-
-	
-	/**
-	 * 	Update Tradeid with the passed value
-	 *	@param value (String or char[])
-	 */
-	public void setTradeid(char[] value)  throws CFException {
-		work.setTradeid(value);
-	}
-	
-	/**
-	 * 	Update Tradeid with the passed value 
-	 *
-	 *	@param value (String or char[])
-	 */
-	public void setTradeidString(char[] value)  throws CFException{
-		work.setTradeid(value);
-	}	
+   public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
 
 
         public Trdpb000Ctx getTrdpb000Ctx() {
@@ -15211,26 +15211,26 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += dcltbtrdord.hashCode();
-        str += work.hashCode();
-        str += dcltbtrdmac.hashCode();
         str += sqlca.hashCode();
         str += trdOrderPair.hashCode();
+        str += work.hashCode();
+        str += dcltbtrdmac.hashCode();
+        str += dcltbtrdord.hashCode();
        return str.hashCode();
     }
 
     public SellerMoneyAccountInCtx clone() {
         SellerMoneyAccountInCtx cloneObj = new SellerMoneyAccountInCtx();
-        cloneObj.dcltbtrdord = new Dcltbtrdord();
-        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
-        cloneObj.dcltbtrdmac = new Dcltbtrdmac();
-        cloneObj.dcltbtrdmac.set(dcltbtrdmac.getClonedField());
         cloneObj.sqlca = new Sqlca();
         cloneObj.sqlca.set(sqlca.getClonedField());
         cloneObj.trdOrderPair = new TrdOrderPair();
         cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        cloneObj.dcltbtrdmac = new Dcltbtrdmac();
+        cloneObj.dcltbtrdmac.set(dcltbtrdmac.getClonedField());
+        cloneObj.dcltbtrdord = new Dcltbtrdord();
+        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
         return cloneObj;
     }
 
@@ -15240,20 +15240,79 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
             return new SellerMoneyAccountInCtx();
     }
      public class SellerMoneyAccountOutCtx implements Cloneable {
-     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
-     Work work = Trdpb000Ctx.this.getWork();
-     Dcltbtrdmac dcltbtrdmac = Trdpb000Ctx.this.getDcltbtrdmac();
      Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
      TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
+     Work work = Trdpb000Ctx.this.getWork();
+     Dcltbtrdmac dcltbtrdmac = Trdpb000Ctx.this.getDcltbtrdmac();
+     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
 
 	/**
-	 *	Returns the value of dcltbtrdmac
-	 *	@return dcltbtrdmac
-	 */   
-	 public Dcltbtrdmac getDcltbtrdmac() {
-   	return dcltbtrdmac;
+	 *	Returns the value of ordBuySellInd
+	 *	@return ordBuySellInd
+	 */
+   public char[] getOrdBuySellInd() throws CFException  {              
+   		return dcltbtrdord.getOrdBuySellInd();
    }
 
+  
+	/**
+	*  set variable ordBuySellInd
+	*  @param value
+	**/
+   public void setOrdBuySellInd(char[] value) throws CFException {
+      dcltbtrdord.setOrdBuySellInd(value);
+   } 
+
+     /**
+	 * 	Update OrdBuySellInd 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdBuySellInd(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdBuySellInd 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdBuySellInd with another Field
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(Field source) {
+      dcltbtrdord.setOrdBuySellInd(source);
+   }  
+   
+     /**
+	 * 	Update OrdBuySellInd 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdBuySellInd 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
 
 	/**
 	 *	Returns the value of macNumber
@@ -15274,6 +15333,549 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
 
 	public void setMacNumber(long number)  throws CFException{
 		dcltbtrdmac.setMacNumber((int)number);
+	}
+
+
+	/**
+	 *	Returns the value of macCurrency
+	 *	@return macCurrency
+	 */
+   public char[] getMacCurrency() throws CFException  {              
+   		return dcltbtrdmac.getMacCurrency();
+   }
+
+  
+	/**
+	*  set variable macCurrency
+	*  @param value
+	**/
+   public void setMacCurrency(char[] value) throws CFException {
+      dcltbtrdmac.setMacCurrency(value);
+   } 
+
+     /**
+	 * 	Update MacCurrency 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setMacCurrency(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdmac.setMacCurrency(source, sourceIndex);
+   	
+   }
+   
+   public void setMacCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdmac.setMacCurrency(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update MacCurrency 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setMacCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdmac.setMacCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update MacCurrency with another Field
+	 *	@param value
+	 */
+   public void setMacCurrency(Field source) {
+      dcltbtrdmac.setMacCurrency(source);
+   }  
+   
+     /**
+	 * 	Update MacCurrency 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setMacCurrency(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdmac.setMacCurrency(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update MacCurrency 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setMacCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdmac.setMacCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of ordStatus
+	 *	@return ordStatus
+	 */
+   public char[] getOrdStatus() throws CFException  {              
+   		return dcltbtrdord.getOrdStatus();
+   }
+
+  
+	/**
+	*  set variable ordStatus
+	*  @param value
+	**/
+   public void setOrdStatus(char[] value) throws CFException {
+      dcltbtrdord.setOrdStatus(value);
+   } 
+
+     /**
+	 * 	Update OrdStatus 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdStatus(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdStatus(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdStatus(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdStatus 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdStatus(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdStatus with another Field
+	 *	@param value
+	 */
+   public void setOrdStatus(Field source) {
+      dcltbtrdord.setOrdStatus(source);
+   }  
+   
+     /**
+	 * 	Update OrdStatus 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdStatus(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdStatus 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdStatus(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of trdCurrency
+	 *	@return trdCurrency
+	 */
+   public char[] getTrdCurrency() throws CFException  {              
+   		return trdOrderPair.getTrdCurrency();
+   }
+
+  
+	/**
+	*  set variable trdCurrency
+	*  @param value
+	**/
+   public void setTrdCurrency(char[] value) throws CFException {
+      trdOrderPair.setTrdCurrency(value);
+   } 
+
+     /**
+	 * 	Update TrdCurrency 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdCurrency(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdCurrency(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdCurrency 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdCurrency with another Field
+	 *	@param value
+	 */
+   public void setTrdCurrency(Field source) {
+      trdOrderPair.setTrdCurrency(source);
+   }  
+   
+     /**
+	 * 	Update TrdCurrency 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdCurrency 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of ordFigi
+	 *	@return ordFigi
+	 */
+   public char[] getOrdFigi() throws CFException  {              
+   		return dcltbtrdord.getOrdFigi();
+   }
+
+  
+	/**
+	*  set variable ordFigi
+	*  @param value
+	**/
+   public void setOrdFigi(char[] value) throws CFException {
+      dcltbtrdord.setOrdFigi(value);
+   } 
+
+     /**
+	 * 	Update OrdFigi 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdFigi(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdFigi(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdFigi with another Field
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source) {
+      dcltbtrdord.setOrdFigi(source);
+   }  
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of macCustomerId
+	 *	@return macCustomerId
+	 */
+   public char[] getMacCustomerId() throws CFException  {              
+   		return dcltbtrdmac.getMacCustomerId();
+   }
+
+  
+	/**
+	*  set variable macCustomerId
+	*  @param value
+	**/
+   public void setMacCustomerId(char[] value) throws CFException {
+      dcltbtrdmac.setMacCustomerId(value);
+   } 
+
+     /**
+	 * 	Update MacCustomerId 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setMacCustomerId(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdmac.setMacCustomerId(source, sourceIndex);
+   	
+   }
+   
+   public void setMacCustomerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdmac.setMacCustomerId(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update MacCustomerId 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setMacCustomerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdmac.setMacCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update MacCustomerId with another Field
+	 *	@param value
+	 */
+   public void setMacCustomerId(Field source) {
+      dcltbtrdmac.setMacCustomerId(source);
+   }  
+   
+     /**
+	 * 	Update MacCustomerId 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setMacCustomerId(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdmac.setMacCustomerId(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update MacCustomerId 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setMacCustomerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdmac.setMacCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Test condition "D" for isDataException()
+	 *	@return  Returns true if isDataException() is "D"
+	 */
+   public boolean isDataException() throws CFException {
+      return work.isDataException();
+   }
+
+	/**
+	*  set values "D"
+	*/
+   	public void setDataExceptionTrue()  throws CFException{  			
+    	work.setDataExceptionTrue();
+   	}
+	/**
+	 *	Returns the value of ordTradingXchng
+	 *	@return ordTradingXchng
+	 */
+   public char[] getOrdTradingXchng() throws CFException  {              
+   		return dcltbtrdord.getOrdTradingXchng();
+   }
+
+  
+	/**
+	*  set variable ordTradingXchng
+	*  @param value
+	**/
+   public void setOrdTradingXchng(char[] value) throws CFException {
+      dcltbtrdord.setOrdTradingXchng(value);
+   } 
+
+     /**
+	 * 	Update OrdTradingXchng 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdTradingXchng(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdTradingXchng(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdTradingXchng 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdTradingXchng(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdTradingXchng with another Field
+	 *	@param value
+	 */
+   public void setOrdTradingXchng(Field source) {
+      dcltbtrdord.setOrdTradingXchng(source);
+   }  
+   
+     /**
+	 * 	Update OrdTradingXchng 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdTradingXchng 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of trdSellerMoneyAccNum
+	 *	@return trdSellerMoneyAccNum
+	 */
+	public int getTrdSellerMoneyAccNum() throws CFException {        
+   		return trdOrderPair.getTrdSellerMoneyAccNum();
+	}
+	
+	/**
+	 * 	Update TrdSellerMoneyAccNum with the passed value
+	 *	@param number
+	 */
+	public void setTrdSellerMoneyAccNum(int number)  throws CFException{
+		trdOrderPair.setTrdSellerMoneyAccNum(number);
+	}
+
+
+	public void setTrdSellerMoneyAccNum(long number)  throws CFException{
+		trdOrderPair.setTrdSellerMoneyAccNum((int)number);
+	}
+
+
+	/**
+	 *	Returns the value of trdFigi
+	 *	@return trdFigi
+	 */
+   public char[] getTrdFigi() throws CFException  {              
+   		return trdOrderPair.getTrdFigi();
+   }
+
+  
+	/**
+	*  set variable trdFigi
+	*  @param value
+	**/
+   public void setTrdFigi(char[] value) throws CFException {
+      trdOrderPair.setTrdFigi(value);
+   } 
+
+     /**
+	 * 	Update TrdFigi 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdFigi(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdFigi(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdFigi 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdFigi with another Field
+	 *	@param value
+	 */
+   public void setTrdFigi(Field source) {
+      trdOrderPair.setTrdFigi(source);
+   }  
+   
+     /**
+	 * 	Update TrdFigi 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdFigi(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdFigi 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sqlca
+	 *	@return sqlca
+	 */   
+	 public Sqlca getSqlca() {
+   	return sqlca;
+   }
+
+
+	/**
+	 *	Returns the value of sqlcode
+	 *	@return sqlcode
+	 */
+	public int getSqlcode() throws CFException {        
+   		return sqlca.getSqlcode();
+	}
+	
+	/**
+	 * 	Update Sqlcode with the passed value
+	 *	@param number
+	 */
+	public void setSqlcode(int number)  throws CFException{
+		sqlca.setSqlcode(number);
+	}
+
+
+	public void setSqlcode(long number)  throws CFException{
+		sqlca.setSqlcode((int)number);
 	}
 
 
@@ -15360,583 +15962,6 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of trdSellerMoneyAccNum
-	 *	@return trdSellerMoneyAccNum
-	 */
-	public int getTrdSellerMoneyAccNum() throws CFException {        
-   		return trdOrderPair.getTrdSellerMoneyAccNum();
-	}
-	
-	/**
-	 * 	Update TrdSellerMoneyAccNum with the passed value
-	 *	@param number
-	 */
-	public void setTrdSellerMoneyAccNum(int number)  throws CFException{
-		trdOrderPair.setTrdSellerMoneyAccNum(number);
-	}
-
-
-	public void setTrdSellerMoneyAccNum(long number)  throws CFException{
-		trdOrderPair.setTrdSellerMoneyAccNum((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of exception
-	 *	@return exception
-	 */
-   public char[] getException() throws CFException  {              
-   		return work.getException();
-   }
-
-  
-	/**
-	*  set variable exception
-	*  @param value
-	**/
-   public void setException(char[] value) throws CFException {
-      work.setException(value);
-   } 
-
-	/**
-	 *	Returns the value of trdExchange
-	 *	@return trdExchange
-	 */
-   public char[] getTrdExchange() throws CFException  {              
-   		return trdOrderPair.getTrdExchange();
-   }
-
-  
-	/**
-	*  set variable trdExchange
-	*  @param value
-	**/
-   public void setTrdExchange(char[] value) throws CFException {
-      trdOrderPair.setTrdExchange(value);
-   } 
-
-     /**
-	 * 	Update TrdExchange 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdExchange(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdExchange(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdExchange(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdExchange 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdExchange(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdExchange with another Field
-	 *	@param value
-	 */
-   public void setTrdExchange(Field source) {
-      trdOrderPair.setTrdExchange(source);
-   }  
-   
-     /**
-	 * 	Update TrdExchange 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdExchange(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdExchange 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of sqlca
-	 *	@return sqlca
-	 */   
-	 public Sqlca getSqlca() {
-   	return sqlca;
-   }
-
-
-	/**
-	 *	Returns the value of ordTradingXchng
-	 *	@return ordTradingXchng
-	 */
-   public char[] getOrdTradingXchng() throws CFException  {              
-   		return dcltbtrdord.getOrdTradingXchng();
-   }
-
-  
-	/**
-	*  set variable ordTradingXchng
-	*  @param value
-	**/
-   public void setOrdTradingXchng(char[] value) throws CFException {
-      dcltbtrdord.setOrdTradingXchng(value);
-   } 
-
-     /**
-	 * 	Update OrdTradingXchng 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdTradingXchng(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdTradingXchng 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdTradingXchng with another Field
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(Field source) {
-      dcltbtrdord.setOrdTradingXchng(source);
-   }  
-   
-     /**
-	 * 	Update OrdTradingXchng 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdTradingXchng 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of ordCurrency
-	 *	@return ordCurrency
-	 */
-   public char[] getOrdCurrency() throws CFException  {              
-   		return dcltbtrdord.getOrdCurrency();
-   }
-
-  
-	/**
-	*  set variable ordCurrency
-	*  @param value
-	**/
-   public void setOrdCurrency(char[] value) throws CFException {
-      dcltbtrdord.setOrdCurrency(value);
-   } 
-
-     /**
-	 * 	Update OrdCurrency 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdCurrency(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdCurrency 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdCurrency with another Field
-	 *	@param value
-	 */
-   public void setOrdCurrency(Field source) {
-      dcltbtrdord.setOrdCurrency(source);
-   }  
-   
-     /**
-	 * 	Update OrdCurrency 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdCurrency 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of sqlcode
-	 *	@return sqlcode
-	 */
-	public int getSqlcode() throws CFException {        
-   		return sqlca.getSqlcode();
-	}
-	
-	/**
-	 * 	Update Sqlcode with the passed value
-	 *	@param number
-	 */
-	public void setSqlcode(int number)  throws CFException{
-		sqlca.setSqlcode(number);
-	}
-
-
-	public void setSqlcode(long number)  throws CFException{
-		sqlca.setSqlcode((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of macCurrency
-	 *	@return macCurrency
-	 */
-   public char[] getMacCurrency() throws CFException  {              
-   		return dcltbtrdmac.getMacCurrency();
-   }
-
-  
-	/**
-	*  set variable macCurrency
-	*  @param value
-	**/
-   public void setMacCurrency(char[] value) throws CFException {
-      dcltbtrdmac.setMacCurrency(value);
-   } 
-
-     /**
-	 * 	Update MacCurrency 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setMacCurrency(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdmac.setMacCurrency(source, sourceIndex);
-   	
-   }
-   
-   public void setMacCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdmac.setMacCurrency(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update MacCurrency 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setMacCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdmac.setMacCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update MacCurrency with another Field
-	 *	@param value
-	 */
-   public void setMacCurrency(Field source) {
-      dcltbtrdmac.setMacCurrency(source);
-   }  
-   
-     /**
-	 * 	Update MacCurrency 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setMacCurrency(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdmac.setMacCurrency(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update MacCurrency 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setMacCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdmac.setMacCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of trdCurrency
-	 *	@return trdCurrency
-	 */
-   public char[] getTrdCurrency() throws CFException  {              
-   		return trdOrderPair.getTrdCurrency();
-   }
-
-  
-	/**
-	*  set variable trdCurrency
-	*  @param value
-	**/
-   public void setTrdCurrency(char[] value) throws CFException {
-      trdOrderPair.setTrdCurrency(value);
-   } 
-
-     /**
-	 * 	Update TrdCurrency 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdCurrency(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdCurrency(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdCurrency with another Field
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source) {
-      trdOrderPair.setTrdCurrency(source);
-   }  
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of orderStatus
-	 *	@return orderStatus
-	 */
-   public char[] getOrderStatus() throws CFException  {              
-   		return work.getOrderStatus();
-   }
-
-  
-	/**
-	*  set variable orderStatus
-	*  @param value
-	**/
-   public void setOrderStatus(char[] value) throws CFException {
-      work.setOrderStatus(value);
-   } 
-
-	/**
-	 *	Returns the value of ordStatus
-	 *	@return ordStatus
-	 */
-   public char[] getOrdStatus() throws CFException  {              
-   		return dcltbtrdord.getOrdStatus();
-   }
-
-  
-	/**
-	*  set variable ordStatus
-	*  @param value
-	**/
-   public void setOrdStatus(char[] value) throws CFException {
-      dcltbtrdord.setOrdStatus(value);
-   } 
-
-     /**
-	 * 	Update OrdStatus 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdStatus(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdStatus(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdStatus(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdStatus 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdStatus(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdStatus with another Field
-	 *	@param value
-	 */
-   public void setOrdStatus(Field source) {
-      dcltbtrdord.setOrdStatus(source);
-   }  
-   
-     /**
-	 * 	Update OrdStatus 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdStatus(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdStatus 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdStatus(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of ordTradeid
-	 *	@return ordTradeid
-	 */
-   public char[] getOrdTradeid() throws CFException  {              
-   		return dcltbtrdord.getOrdTradeid();
-   }
-
-  
-	/**
-	*  set variable ordTradeid
-	*  @param value
-	**/
-   public void setOrdTradeid(char[] value) throws CFException {
-      dcltbtrdord.setOrdTradeid(value);
-   } 
-
-     /**
-	 * 	Update OrdTradeid 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdTradeid 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdTradeid with another Field
-	 *	@param value
-	 */
-   public void setOrdTradeid(Field source) {
-      dcltbtrdord.setOrdTradeid(source);
-   }  
-   
-     /**
-	 * 	Update OrdTradeid 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdTradeid 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Test condition "A" for isApplException()
-	 *	@return  Returns true if isApplException() is "A"
-	 */
-   public boolean isApplException() throws CFException {
-      return work.isApplException();
-   }
-
-	/**
-	*  set values "A"
-	*/
-   	public void setApplExceptionTrue()  throws CFException{  			
-    	work.setApplExceptionTrue();
-   	}
-	/**
 	 *	Returns the value of trdOrderId
 	 *	@return trdOrderId
 	 */
@@ -16005,139 +16030,128 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of trdFigi
-	 *	@return trdFigi
+	 *	Test condition "A" for isApplException()
+	 *	@return  Returns true if isApplException() is "A"
 	 */
-   public char[] getTrdFigi() throws CFException  {              
-   		return trdOrderPair.getTrdFigi();
+   public boolean isApplException() throws CFException {
+      return work.isApplException();
+   }
+
+	/**
+	*  set values "A"
+	*/
+   	public void setApplExceptionTrue()  throws CFException{  			
+    	work.setApplExceptionTrue();
+   	}
+	/**
+	 *	Returns the value of orderStatus
+	 *	@return orderStatus
+	 */
+   public char[] getOrderStatus() throws CFException  {              
+   		return work.getOrderStatus();
    }
 
   
 	/**
-	*  set variable trdFigi
+	*  set variable orderStatus
 	*  @param value
 	**/
-   public void setTrdFigi(char[] value) throws CFException {
-      trdOrderPair.setTrdFigi(value);
+   public void setOrderStatus(char[] value) throws CFException {
+      work.setOrderStatus(value);
    } 
 
-     /**
-	 * 	Update TrdFigi 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdFigi(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdFigi(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdFigi 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdFigi with another Field
-	 *	@param value
-	 */
-   public void setTrdFigi(Field source) {
-      trdOrderPair.setTrdFigi(source);
-   }  
-   
-     /**
-	 * 	Update TrdFigi 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdFigi(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdFigi 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+	/**
+	 *	Returns the value of dcltbtrdmac
+	 *	@return dcltbtrdmac
+	 */   
+	 public Dcltbtrdmac getDcltbtrdmac() {
+   	return dcltbtrdmac;
    }
 
+
 	/**
-	 *	Returns the value of ordBuySellInd
-	 *	@return ordBuySellInd
+	 *	Returns the value of exception
+	 *	@return exception
 	 */
-   public char[] getOrdBuySellInd() throws CFException  {              
-   		return dcltbtrdord.getOrdBuySellInd();
+   public char[] getException() throws CFException  {              
+   		return work.getException();
    }
 
   
 	/**
-	*  set variable ordBuySellInd
+	*  set variable exception
 	*  @param value
 	**/
-   public void setOrdBuySellInd(char[] value) throws CFException {
-      dcltbtrdord.setOrdBuySellInd(value);
+   public void setException(char[] value) throws CFException {
+      work.setException(value);
+   } 
+
+	/**
+	 *	Returns the value of ordCurrency
+	 *	@return ordCurrency
+	 */
+   public char[] getOrdCurrency() throws CFException  {              
+   		return dcltbtrdord.getOrdCurrency();
+   }
+
+  
+	/**
+	*  set variable ordCurrency
+	*  @param value
+	**/
+   public void setOrdCurrency(char[] value) throws CFException {
+      dcltbtrdord.setOrdCurrency(value);
    } 
 
      /**
-	 * 	Update OrdBuySellInd 
+	 * 	Update OrdCurrency 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex);
+   public void setOrdCurrency(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex);
    	
    }
    
-   public void setOrdBuySellInd(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);
+   public void setOrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdBuySellInd 
+	 * 	Update OrdCurrency 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdBuySellInd with another Field
+	 * 	Update OrdCurrency with another Field
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(Field source) {
-      dcltbtrdord.setOrdBuySellInd(source);
+   public void setOrdCurrency(Field source) {
+      dcltbtrdord.setOrdCurrency(source);
    }  
    
      /**
-	 * 	Update OrdBuySellInd 
+	 * 	Update OrdCurrency 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);   	
+   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdBuySellInd 
+	 * 	Update OrdCurrency 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -16209,6 +16223,74 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
+	 *	Returns the value of ordTradeid
+	 *	@return ordTradeid
+	 */
+   public char[] getOrdTradeid() throws CFException  {              
+   		return dcltbtrdord.getOrdTradeid();
+   }
+
+  
+	/**
+	*  set variable ordTradeid
+	*  @param value
+	**/
+   public void setOrdTradeid(char[] value) throws CFException {
+      dcltbtrdord.setOrdTradeid(value);
+   } 
+
+     /**
+	 * 	Update OrdTradeid 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdTradeid 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdTradeid with another Field
+	 *	@param value
+	 */
+   public void setOrdTradeid(Field source) {
+      dcltbtrdord.setOrdTradeid(source);
+   }  
+   
+     /**
+	 * 	Update OrdTradeid 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdTradeid 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
 	 *	Returns the value of trdSellerId
 	 *	@return trdSellerId
 	 */
@@ -16277,153 +16359,71 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Test condition "D" for isDataException()
-	 *	@return  Returns true if isDataException() is "D"
+	 *	Returns the value of trdExchange
+	 *	@return trdExchange
 	 */
-   public boolean isDataException() throws CFException {
-      return work.isDataException();
-   }
-
-	/**
-	*  set values "D"
-	*/
-   	public void setDataExceptionTrue()  throws CFException{  			
-    	work.setDataExceptionTrue();
-   	}
-	/**
-	 *	Returns the value of macCustomerId
-	 *	@return macCustomerId
-	 */
-   public char[] getMacCustomerId() throws CFException  {              
-   		return dcltbtrdmac.getMacCustomerId();
+   public char[] getTrdExchange() throws CFException  {              
+   		return trdOrderPair.getTrdExchange();
    }
 
   
 	/**
-	*  set variable macCustomerId
+	*  set variable trdExchange
 	*  @param value
 	**/
-   public void setMacCustomerId(char[] value) throws CFException {
-      dcltbtrdmac.setMacCustomerId(value);
+   public void setTrdExchange(char[] value) throws CFException {
+      trdOrderPair.setTrdExchange(value);
    } 
 
      /**
-	 * 	Update MacCustomerId 
+	 * 	Update TrdExchange 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setMacCustomerId(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdmac.setMacCustomerId(source, sourceIndex);
+   public void setTrdExchange(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdExchange(source, sourceIndex);
    	
    }
    
-   public void setMacCustomerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdmac.setMacCustomerId(source, sourceIndex, sourceLen);
+   public void setTrdExchange(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update MacCustomerId 
+	 * 	Update TrdExchange 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setMacCustomerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdmac.setMacCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdExchange(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update MacCustomerId with another Field
+	 * 	Update TrdExchange with another Field
 	 *	@param value
 	 */
-   public void setMacCustomerId(Field source) {
-      dcltbtrdmac.setMacCustomerId(source);
+   public void setTrdExchange(Field source) {
+      trdOrderPair.setTrdExchange(source);
    }  
    
      /**
-	 * 	Update MacCustomerId 
+	 * 	Update TrdExchange 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setMacCustomerId(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdmac.setMacCustomerId(source, sourceIndex, sourceLen);   	
+   public void setTrdExchange(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update MacCustomerId 
+	 * 	Update TrdExchange 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setMacCustomerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdmac.setMacCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of ordFigi
-	 *	@return ordFigi
-	 */
-   public char[] getOrdFigi() throws CFException  {              
-   		return dcltbtrdord.getOrdFigi();
-   }
-
-  
-	/**
-	*  set variable ordFigi
-	*  @param value
-	**/
-   public void setOrdFigi(char[] value) throws CFException {
-      dcltbtrdord.setOrdFigi(value);
-   } 
-
-     /**
-	 * 	Update OrdFigi 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdFigi(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdFigi(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdFigi 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdFigi with another Field
-	 *	@param value
-	 */
-   public void setOrdFigi(Field source) {
-      dcltbtrdord.setOrdFigi(source);
-   }  
-   
-     /**
-	 * 	Update OrdFigi 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdFigi(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdFigi 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 
@@ -16441,26 +16441,26 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += dcltbtrdord.hashCode();
-        str += work.hashCode();
-        str += dcltbtrdmac.hashCode();
         str += sqlca.hashCode();
         str += trdOrderPair.hashCode();
+        str += work.hashCode();
+        str += dcltbtrdmac.hashCode();
+        str += dcltbtrdord.hashCode();
        return str.hashCode();
     }
 
     public SellerMoneyAccountOutCtx clone() {
         SellerMoneyAccountOutCtx cloneObj = new SellerMoneyAccountOutCtx();
-        cloneObj.dcltbtrdord = new Dcltbtrdord();
-        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
-        cloneObj.dcltbtrdmac = new Dcltbtrdmac();
-        cloneObj.dcltbtrdmac.set(dcltbtrdmac.getClonedField());
         cloneObj.sqlca = new Sqlca();
         cloneObj.sqlca.set(sqlca.getClonedField());
         cloneObj.trdOrderPair = new TrdOrderPair();
         cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        cloneObj.dcltbtrdmac = new Dcltbtrdmac();
+        cloneObj.dcltbtrdmac.set(dcltbtrdmac.getClonedField());
+        cloneObj.dcltbtrdord = new Dcltbtrdord();
+        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
         return cloneObj;
     }
 
@@ -16470,9 +16470,9 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
             return new SellerMoneyAccountOutCtx();
     }
      public class UpdateOrderMatchedInCtx implements Cloneable {
-     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
-     Work work = Trdpb000Ctx.this.getWork();
      TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
+     Work work = Trdpb000Ctx.this.getWork();
+     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
 
 	/**
 	 *	Returns the value of trdCurrency
@@ -16543,74 +16543,6 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of trdOrderId
-	 *	@return trdOrderId
-	 */
-   public char[] getTrdOrderId() throws CFException  {              
-   		return trdOrderPair.getTrdOrderId();
-   }
-
-  
-	/**
-	*  set variable trdOrderId
-	*  @param value
-	**/
-   public void setTrdOrderId(char[] value) throws CFException {
-      trdOrderPair.setTrdOrderId(value);
-   } 
-
-     /**
-	 * 	Update TrdOrderId 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdOrderId(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdOrderId(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdOrderId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdOrderId 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdOrderId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdOrderId with another Field
-	 *	@param value
-	 */
-   public void setTrdOrderId(Field source) {
-      trdOrderPair.setTrdOrderId(source);
-   }  
-   
-     /**
-	 * 	Update TrdOrderId 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdOrderId 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
 	 *	Returns the value of trdFigi
 	 *	@return trdFigi
 	 */
@@ -16676,6 +16608,74 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
 	 */
    public void setTrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
       trdOrderPair.setTrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of trdOrderId
+	 *	@return trdOrderId
+	 */
+   public char[] getTrdOrderId() throws CFException  {              
+   		return trdOrderPair.getTrdOrderId();
+   }
+
+  
+	/**
+	*  set variable trdOrderId
+	*  @param value
+	**/
+   public void setTrdOrderId(char[] value) throws CFException {
+      trdOrderPair.setTrdOrderId(value);
+   } 
+
+     /**
+	 * 	Update TrdOrderId 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdOrderId(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdOrderId(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdOrderId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdOrderId 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdOrderId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdOrderId with another Field
+	 *	@param value
+	 */
+   public void setTrdOrderId(Field source) {
+      trdOrderPair.setTrdOrderId(source);
+   }  
+   
+     /**
+	 * 	Update TrdOrderId 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdOrderId 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -16764,20 +16764,20 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += dcltbtrdord.hashCode();
-        str += work.hashCode();
         str += trdOrderPair.hashCode();
+        str += work.hashCode();
+        str += dcltbtrdord.hashCode();
        return str.hashCode();
     }
 
     public UpdateOrderMatchedInCtx clone() {
         UpdateOrderMatchedInCtx cloneObj = new UpdateOrderMatchedInCtx();
-        cloneObj.dcltbtrdord = new Dcltbtrdord();
-        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
         cloneObj.trdOrderPair = new TrdOrderPair();
         cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        cloneObj.dcltbtrdord = new Dcltbtrdord();
+        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
         return cloneObj;
     }
 
@@ -16787,10 +16787,24 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
             return new UpdateOrderMatchedInCtx();
     }
      public class UpdateOrderMatchedOutCtx implements Cloneable {
-     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
-     Work work = Trdpb000Ctx.this.getWork();
      TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
+     Work work = Trdpb000Ctx.this.getWork();
+     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
 
+	/**
+	 *	Test condition "201" for isMatched()
+	 *	@return  Returns true if isMatched() is "201"
+	 */
+   public boolean isMatched() throws CFException {
+      return work.isMatched();
+   }
+
+	/**
+	*  set values "201"
+	*/
+   	public void setMatchedTrue()  throws CFException{  			
+    	work.setMatchedTrue();
+   	}
 	/**
 	 *	Returns the value of trdCurrency
 	 *	@return trdCurrency
@@ -16860,74 +16874,6 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of ordTradeid
-	 *	@return ordTradeid
-	 */
-   public char[] getOrdTradeid() throws CFException  {              
-   		return dcltbtrdord.getOrdTradeid();
-   }
-
-  
-	/**
-	*  set variable ordTradeid
-	*  @param value
-	**/
-   public void setOrdTradeid(char[] value) throws CFException {
-      dcltbtrdord.setOrdTradeid(value);
-   } 
-
-     /**
-	 * 	Update OrdTradeid 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdTradeid 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdTradeid with another Field
-	 *	@param value
-	 */
-   public void setOrdTradeid(Field source) {
-      dcltbtrdord.setOrdTradeid(source);
-   }  
-   
-     /**
-	 * 	Update OrdTradeid 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdTradeid 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
 	 *	Returns the value of ordTradingXchng
 	 *	@return ordTradingXchng
 	 */
@@ -16993,173 +16939,6 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
 	 */
    public void setOrdTradingXchng(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
       dcltbtrdord.setOrdTradingXchng(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Test condition "201" for isMatched()
-	 *	@return  Returns true if isMatched() is "201"
-	 */
-   public boolean isMatched() throws CFException {
-      return work.isMatched();
-   }
-
-	/**
-	*  set values "201"
-	*/
-   	public void setMatchedTrue()  throws CFException{  			
-    	work.setMatchedTrue();
-   	}
-	/**
-	 *	Returns the value of orderStatus
-	 *	@return orderStatus
-	 */
-   public char[] getOrderStatus() throws CFException  {              
-   		return work.getOrderStatus();
-   }
-
-  
-	/**
-	*  set variable orderStatus
-	*  @param value
-	**/
-   public void setOrderStatus(char[] value) throws CFException {
-      work.setOrderStatus(value);
-   } 
-
-	/**
-	 *	Returns the value of ordCurrency
-	 *	@return ordCurrency
-	 */
-   public char[] getOrdCurrency() throws CFException  {              
-   		return dcltbtrdord.getOrdCurrency();
-   }
-
-  
-	/**
-	*  set variable ordCurrency
-	*  @param value
-	**/
-   public void setOrdCurrency(char[] value) throws CFException {
-      dcltbtrdord.setOrdCurrency(value);
-   } 
-
-     /**
-	 * 	Update OrdCurrency 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdCurrency(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdCurrency 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdCurrency with another Field
-	 *	@param value
-	 */
-   public void setOrdCurrency(Field source) {
-      dcltbtrdord.setOrdCurrency(source);
-   }  
-   
-     /**
-	 * 	Update OrdCurrency 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdCurrency 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of trdOrderId
-	 *	@return trdOrderId
-	 */
-   public char[] getTrdOrderId() throws CFException  {              
-   		return trdOrderPair.getTrdOrderId();
-   }
-
-  
-	/**
-	*  set variable trdOrderId
-	*  @param value
-	**/
-   public void setTrdOrderId(char[] value) throws CFException {
-      trdOrderPair.setTrdOrderId(value);
-   } 
-
-     /**
-	 * 	Update TrdOrderId 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdOrderId(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdOrderId(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdOrderId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdOrderId 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdOrderId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdOrderId with another Field
-	 *	@param value
-	 */
-   public void setTrdOrderId(Field source) {
-      trdOrderPair.setTrdOrderId(source);
-   }  
-   
-     /**
-	 * 	Update TrdOrderId 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdOrderId 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -17231,207 +17010,71 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of ordStatus
-	 *	@return ordStatus
+	 *	Returns the value of trdOrderId
+	 *	@return trdOrderId
 	 */
-   public char[] getOrdStatus() throws CFException  {              
-   		return dcltbtrdord.getOrdStatus();
+   public char[] getTrdOrderId() throws CFException  {              
+   		return trdOrderPair.getTrdOrderId();
    }
 
   
 	/**
-	*  set variable ordStatus
+	*  set variable trdOrderId
 	*  @param value
 	**/
-   public void setOrdStatus(char[] value) throws CFException {
-      dcltbtrdord.setOrdStatus(value);
+   public void setTrdOrderId(char[] value) throws CFException {
+      trdOrderPair.setTrdOrderId(value);
    } 
 
      /**
-	 * 	Update OrdStatus 
+	 * 	Update TrdOrderId 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdStatus(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdStatus(source, sourceIndex);
+   public void setTrdOrderId(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdOrderId(source, sourceIndex);
    	
    }
    
-   public void setOrdStatus(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);
+   public void setTrdOrderId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdStatus 
+	 * 	Update TrdOrderId 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdStatus(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdOrderId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdStatus with another Field
+	 * 	Update TrdOrderId with another Field
 	 *	@param value
 	 */
-   public void setOrdStatus(Field source) {
-      dcltbtrdord.setOrdStatus(source);
+   public void setTrdOrderId(Field source) {
+      trdOrderPair.setTrdOrderId(source);
    }  
    
      /**
-	 * 	Update OrdStatus 
+	 * 	Update TrdOrderId 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdStatus(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);   	
+   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdStatus 
+	 * 	Update TrdOrderId 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdStatus(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of ordBuySellInd
-	 *	@return ordBuySellInd
-	 */
-   public char[] getOrdBuySellInd() throws CFException  {              
-   		return dcltbtrdord.getOrdBuySellInd();
-   }
-
-  
-	/**
-	*  set variable ordBuySellInd
-	*  @param value
-	**/
-   public void setOrdBuySellInd(char[] value) throws CFException {
-      dcltbtrdord.setOrdBuySellInd(value);
-   } 
-
-     /**
-	 * 	Update OrdBuySellInd 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdBuySellInd(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdBuySellInd(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdBuySellInd 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdBuySellInd(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdBuySellInd with another Field
-	 *	@param value
-	 */
-   public void setOrdBuySellInd(Field source) {
-      dcltbtrdord.setOrdBuySellInd(source);
-   }  
-   
-     /**
-	 * 	Update OrdBuySellInd 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdBuySellInd 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of trdExchange
-	 *	@return trdExchange
-	 */
-   public char[] getTrdExchange() throws CFException  {              
-   		return trdOrderPair.getTrdExchange();
-   }
-
-  
-	/**
-	*  set variable trdExchange
-	*  @param value
-	**/
-   public void setTrdExchange(char[] value) throws CFException {
-      trdOrderPair.setTrdExchange(value);
-   } 
-
-     /**
-	 * 	Update TrdExchange 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdExchange(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdExchange(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdExchange(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdExchange 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdExchange(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdExchange with another Field
-	 *	@param value
-	 */
-   public void setTrdExchange(Field source) {
-      trdOrderPair.setTrdExchange(source);
-   }  
-   
-     /**
-	 * 	Update TrdExchange 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdExchange(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdExchange 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setTrdOrderId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdOrderId(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -17502,851 +17145,225 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
       dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
-
-        public Trdpb000Ctx getTrdpb000Ctx() {
-            return Trdpb000Ctx.this;
-        }
-
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null) return false;
-        return this.hashCode() == o.hashCode();
-    }
-
-    @Override
-    public int hashCode() {
-        String str = "";
-        str += dcltbtrdord.hashCode();
-        str += work.hashCode();
-        str += trdOrderPair.hashCode();
-       return str.hashCode();
-    }
-
-    public UpdateOrderMatchedOutCtx clone() {
-        UpdateOrderMatchedOutCtx cloneObj = new UpdateOrderMatchedOutCtx();
-        cloneObj.dcltbtrdord = new Dcltbtrdord();
-        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
-        cloneObj.trdOrderPair = new TrdOrderPair();
-        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
-        return cloneObj;
-    }
-
-    }
-
-    public UpdateOrderMatchedOutCtx getUpdateOrderMatchedOutCtx() {
-            return new UpdateOrderMatchedOutCtx();
-    }
-     public class WriteToStlmtQueueInCtx implements Cloneable {
-     SettlmentQueueTable settlmentQueueTable = Trdpb000Ctx.this.getSettlmentQueueTable();
-     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
-
 	/**
-	 *	Returns the value of stqIndex
-	 *	@return stqIndex
+	 *	Returns the value of orderStatus
+	 *	@return orderStatus
 	 */
-	public short getStqIndex() throws CFException {        
-   		return settlmentQueueTable.getStqIndex();
-	}
-	
-	/**
-	 * 	Update StqIndex with the passed value
-	 *	@param number
-	 */
-	public void setStqIndex(short number)  throws CFException{
-		settlmentQueueTable.setStqIndex(number);
-	}
-
-	public void setStqIndex(int number)  throws CFException{
-		settlmentQueueTable.setStqIndex((short)number);
-	}
-
-	public void setStqIndex(long number)  throws CFException{
-		settlmentQueueTable.setStqIndex((short)number);
-	}
-
-
-
-	/**
-	 *	Returns the value of trdOrderPair
-	 *	@return trdOrderPair
-	 */   
-	 public TrdOrderPair getTrdOrderPair() {
-   	return trdOrderPair;
-   }
-
-
-
-        public Trdpb000Ctx getTrdpb000Ctx() {
-            return Trdpb000Ctx.this;
-        }
-
-        public WriteToStlmtQueueOutCtx getWriteToStlmtQueueOutCtx() {
-            return new WriteToStlmtQueueOutCtx();
-        }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null) return false;
-        return this.hashCode() == o.hashCode();
-    }
-
-    @Override
-    public int hashCode() {
-        String str = "";
-        str += settlmentQueueTable.hashCode();
-        str += trdOrderPair.hashCode();
-       return str.hashCode();
-    }
-
-    public WriteToStlmtQueueInCtx clone() {
-        WriteToStlmtQueueInCtx cloneObj = new WriteToStlmtQueueInCtx();
-        cloneObj.settlmentQueueTable = new SettlmentQueueTable();
-        cloneObj.settlmentQueueTable.set(settlmentQueueTable.getClonedField());
-        cloneObj.trdOrderPair = new TrdOrderPair();
-        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
-        return cloneObj;
-    }
-
-    }
-
-    public WriteToStlmtQueueInCtx getWriteToStlmtQueueInCtx() {
-            return new WriteToStlmtQueueInCtx();
-    }
-     public class WriteToStlmtQueueOutCtx implements Cloneable {
-     SettlmentQueueTable settlmentQueueTable = Trdpb000Ctx.this.getSettlmentQueueTable();
-     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
-
-	/**
-	 *	Returns the value of stqIndex
-	 *	@return stqIndex
-	 */
-	public short getStqIndex() throws CFException {        
-   		return settlmentQueueTable.getStqIndex();
-	}
-	
-	/**
-	 * 	Update StqIndex with the passed value
-	 *	@param number
-	 */
-	public void setStqIndex(short number)  throws CFException{
-		settlmentQueueTable.setStqIndex(number);
-	}
-
-	public void setStqIndex(int number)  throws CFException{
-		settlmentQueueTable.setStqIndex((short)number);
-	}
-
-	public void setStqIndex(long number)  throws CFException{
-		settlmentQueueTable.setStqIndex((short)number);
-	}
-
-
-
-	/**
-	 *	Returns the value of trdOrderPair
-	 *	@return trdOrderPair
-	 */   
-	 public TrdOrderPair getTrdOrderPair() {
-   	return trdOrderPair;
-   }
-
-
-	/**
-	 *	Returns the value of stqTrdpair
-	 *	@return stqTrdpair
-	 */
-   public char[] getStqTrdpair(int index) throws CFException  {              
-   		return settlmentQueueTable.getStqTrdpair(index);
+   public char[] getOrderStatus() throws CFException  {              
+   		return work.getOrderStatus();
    }
 
   
 	/**
-	*  set variable stqTrdpair
+	*  set variable orderStatus
 	*  @param value
 	**/
-   public void setStqTrdpair(int index,char[] value) throws CFException {
-      settlmentQueueTable.setStqTrdpair((index),value);
+   public void setOrderStatus(char[] value) throws CFException {
+      work.setOrderStatus(value);
    } 
 
-
-        public Trdpb000Ctx getTrdpb000Ctx() {
-            return Trdpb000Ctx.this;
-        }
-
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null) return false;
-        return this.hashCode() == o.hashCode();
-    }
-
-    @Override
-    public int hashCode() {
-        String str = "";
-        str += settlmentQueueTable.hashCode();
-        str += trdOrderPair.hashCode();
-       return str.hashCode();
-    }
-
-    public WriteToStlmtQueueOutCtx clone() {
-        WriteToStlmtQueueOutCtx cloneObj = new WriteToStlmtQueueOutCtx();
-        cloneObj.settlmentQueueTable = new SettlmentQueueTable();
-        cloneObj.settlmentQueueTable.set(settlmentQueueTable.getClonedField());
-        cloneObj.trdOrderPair = new TrdOrderPair();
-        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
-        return cloneObj;
-    }
-
-    }
-
-    public WriteToStlmtQueueOutCtx getWriteToStlmtQueueOutCtx() {
-            return new WriteToStlmtQueueOutCtx();
-    }
-     public class InsertToStqInCtx implements Cloneable {
-     SettlmentQueueTable settlmentQueueTable = Trdpb000Ctx.this.getSettlmentQueueTable();
-     Work work = Trdpb000Ctx.this.getWork();
-     Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
-
 	/**
-	 *	Returns the value of settlmentQueueTable
-	 *	@return settlmentQueueTable
-	 */   
-	 public SettlmentQueueTable getSettlmentQueueTable() {
-   	return settlmentQueueTable;
-   }
-
-
-	/**
-	 *	Returns the value of sqlerrmc
-	 *	@return sqlerrmc
+	 *	Returns the value of ordBuySellInd
+	 *	@return ordBuySellInd
 	 */
-   public char[] getSqlerrmc() throws CFException  {              
-   		return sqlca.getSqlerrm().getSqlerrmc();
+   public char[] getOrdBuySellInd() throws CFException  {              
+   		return dcltbtrdord.getOrdBuySellInd();
    }
 
   
 	/**
-	*  set variable sqlerrmc
+	*  set variable ordBuySellInd
 	*  @param value
 	**/
-   public void setSqlerrmc(char[] value) throws CFException {
-      sqlca.getSqlerrm().setSqlerrmc(value);
+   public void setOrdBuySellInd(char[] value) throws CFException {
+      dcltbtrdord.setOrdBuySellInd(value);
    } 
 
      /**
-	 * 	Update Sqlerrmc 
+	 * 	Update OrdBuySellInd 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setSqlerrmc(char[] source, int sourceIndex) throws CFException {
-      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex);
+   public void setOrdBuySellInd(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex);
    	
    }
    
-   public void setSqlerrmc(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen);
+   public void setOrdBuySellInd(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update Sqlerrmc 
+	 * 	Update OrdBuySellInd 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setSqlerrmc(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdBuySellInd(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update Sqlerrmc with another Field
+	 * 	Update OrdBuySellInd with another Field
 	 *	@param value
 	 */
-   public void setSqlerrmc(Field source) {
-      sqlca.getSqlerrm().setSqlerrmc(source);
+   public void setOrdBuySellInd(Field source) {
+      dcltbtrdord.setOrdBuySellInd(source);
    }  
    
      /**
-	 * 	Update Sqlerrmc 
+	 * 	Update OrdBuySellInd 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setSqlerrmc(Field source, int sourceIndex,int sourceLen) {
-      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen);   	
+   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update Sqlerrmc 
+	 * 	Update OrdBuySellInd 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setSqlerrmc(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
-	 *	Returns the value of stqIndex
-	 *	@return stqIndex
+	 *	Returns the value of ordCurrency
+	 *	@return ordCurrency
 	 */
-	public short getStqIndex() throws CFException {        
-   		return settlmentQueueTable.getStqIndex();
-	}
-	
-	/**
-	 * 	Update StqIndex with the passed value
-	 *	@param number
-	 */
-	public void setStqIndex(short number)  throws CFException{
-		settlmentQueueTable.setStqIndex(number);
-	}
-
-	public void setStqIndex(int number)  throws CFException{
-		settlmentQueueTable.setStqIndex((short)number);
-	}
-
-	public void setStqIndex(long number)  throws CFException{
-		settlmentQueueTable.setStqIndex((short)number);
-	}
-
-
-
-	/**
-	 *	Returns the value of sqlca
-	 *	@return sqlca
-	 */   
-	 public Sqlca getSqlca() {
-   	return sqlca;
-   }
-
-
-	/**
-	 *	Returns the value of stqCurrency
-	 *	@return stqCurrency
-	 */
-   public char[] getStqCurrency(int index) throws CFException  {              
-   		return settlmentQueueTable.getStqCurrency(index);
+   public char[] getOrdCurrency() throws CFException  {              
+   		return dcltbtrdord.getOrdCurrency();
    }
 
   
 	/**
-	*  set variable stqCurrency
+	*  set variable ordCurrency
 	*  @param value
 	**/
-   public void setStqCurrency(int index,char[] value) throws CFException {
-      settlmentQueueTable.setStqCurrency((index),value);
-   } 
-
-	/**
-	 *	Returns the value of sqlerrd
-	 *	@return sqlerrd
-	 */
-	public int getSqlerrd(int index) throws CFException {        
-   		return sqlca.getSqlerrd((index));
-	}
-	
-	/**
-	 * 	Update Sqlerrd with the passed value
-	 *	@param number
-	 */
-	public void setSqlerrd(int index,int number)  throws CFException{
-		sqlca.setSqlerrd((index),number);
-	}
-
-
-	public void setSqlerrd(int index,long number)  throws CFException{
-		sqlca.setSqlerrd((index),(int)number);
-	}
-
-
-	/**
-	 *	Returns the value of sqlwarn
-	 *	@return sqlwarn
-	 */   
-	 public Sqlwarn getSqlwarn() {
-   	return sqlca.getSqlwarn();
-   }
-
-   /**
-	* 	Update Sqlwarn with the passed value
-	*	@param value
-	*/
-   public void setSqlwarn(char[] value) throws CFException {
-      sqlca.setSqlwarn(value);
-   }   
-
-     /**
-	 * 	Update Sqlwarn 
-	 *     with a String from an offset and length             
-	 *	@param value
-	 */
-   public void setSqlwarn(char[] source, int sourceIndex,int sourceLen) throws CFException {
-   	sqlca.setSqlwarn(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update Sqlwarn 
-	 *     with a String from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setSqlwarn(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-   	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update Sqlwarn with another Field
-	 *	@param value
-	 */
-   public void setSqlwarn(Field source) {
-   	sqlca.setSqlwarn(source);
-   }  
-   
-     /**
-	 * 	Update Sqlwarn 
-	 *     with another Field from an offset and length             
-	 *	@param value
-	 */
-   public void setSqlwarn(Field source, int sourceIndex,int sourceLen) {
-   	sqlca.setSqlwarn(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update Sqlwarn 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setSqlwarn(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-   	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of sqlcode
-	 *	@return sqlcode
-	 */
-	public int getSqlcode() throws CFException {        
-   		return sqlca.getSqlcode();
-	}
-	
-	/**
-	 * 	Update Sqlcode with the passed value
-	 *	@param number
-	 */
-	public void setSqlcode(int number)  throws CFException{
-		sqlca.setSqlcode(number);
-	}
-
-
-	public void setSqlcode(long number)  throws CFException{
-		sqlca.setSqlcode((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of stqTrdpair
-	 *	@return stqTrdpair
-	 */
-   public char[] getStqTrdpair(int index) throws CFException  {              
-   		return settlmentQueueTable.getStqTrdpair(index);
-   }
-
-  
-	/**
-	*  set variable stqTrdpair
-	*  @param value
-	**/
-   public void setStqTrdpair(int index,char[] value) throws CFException {
-      settlmentQueueTable.setStqTrdpair((index),value);
-   } 
-
-
-        public Trdpb000Ctx getTrdpb000Ctx() {
-            return Trdpb000Ctx.this;
-        }
-
-        public InsertToStqOutCtx getInsertToStqOutCtx() {
-            return new InsertToStqOutCtx();
-        }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null) return false;
-        return this.hashCode() == o.hashCode();
-    }
-
-    @Override
-    public int hashCode() {
-        String str = "";
-        str += settlmentQueueTable.hashCode();
-        str += work.hashCode();
-        str += sqlca.hashCode();
-       return str.hashCode();
-    }
-
-    public InsertToStqInCtx clone() {
-        InsertToStqInCtx cloneObj = new InsertToStqInCtx();
-        cloneObj.settlmentQueueTable = new SettlmentQueueTable();
-        cloneObj.settlmentQueueTable.set(settlmentQueueTable.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
-        cloneObj.sqlca = new Sqlca();
-        cloneObj.sqlca.set(sqlca.getClonedField());
-        return cloneObj;
-    }
-
-    }
-
-    public InsertToStqInCtx getInsertToStqInCtx() {
-            return new InsertToStqInCtx();
-    }
-     public class InsertToStqOutCtx implements Cloneable {
-     SettlmentQueueTable settlmentQueueTable = Trdpb000Ctx.this.getSettlmentQueueTable();
-     Work work = Trdpb000Ctx.this.getWork();
-     Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
-
-	/**
-	 *	Test condition "A" for isApplException()
-	 *	@return  Returns true if isApplException() is "A"
-	 */
-   public boolean isApplException() throws CFException {
-      return work.isApplException();
-   }
-
-	/**
-	*  set values "A"
-	*/
-   	public void setApplExceptionTrue()  throws CFException{  			
-    	work.setApplExceptionTrue();
-   	}
-	/**
-	 *	Returns the value of sqlca
-	 *	@return sqlca
-	 */   
-	 public Sqlca getSqlca() {
-   	return sqlca;
-   }
-
-
-	/**
-	 *	Returns the value of sqlcode_Ws
-	 *	@return sqlcode_Ws
-	 */
-   public char[] getSqlcode_Ws() throws CFException  {              
-   		return work.getSqlcode_Ws();
-   }
-
-  
-	/**
-	*  set variable sqlcode_Ws
-	*  @param value
-	**/
-   public void setSqlcode_Ws(char[] value) throws CFException {
-      work.setSqlcode_Ws(value);
+   public void setOrdCurrency(char[] value) throws CFException {
+      dcltbtrdord.setOrdCurrency(value);
    } 
 
      /**
-	 * 	Update Sqlcode_Ws 
+	 * 	Update OrdCurrency 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setSqlcode_Ws(char[] source, int sourceIndex) throws CFException {
-      work.setSqlcode_Ws(source, sourceIndex);
+   public void setOrdCurrency(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex);
    	
    }
    
-   public void setSqlcode_Ws(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      work.setSqlcode_Ws(source, sourceIndex, sourceLen);
+   public void setOrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update Sqlcode_Ws 
+	 * 	Update OrdCurrency 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setSqlcode_Ws(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      work.setSqlcode_Ws(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update Sqlcode_Ws with another Field
+	 * 	Update OrdCurrency with another Field
 	 *	@param value
 	 */
-   public void setSqlcode_Ws(Field source) {
-      work.setSqlcode_Ws(source);
+   public void setOrdCurrency(Field source) {
+      dcltbtrdord.setOrdCurrency(source);
    }  
    
      /**
-	 * 	Update Sqlcode_Ws 
+	 * 	Update OrdCurrency 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setSqlcode_Ws(Field source, int sourceIndex,int sourceLen) {
-      work.setSqlcode_Ws(source, sourceIndex, sourceLen);   	
+   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update Sqlcode_Ws 
+	 * 	Update OrdCurrency 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setSqlcode_Ws(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      work.setSqlcode_Ws(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
-	 *	Returns the value of exception
-	 *	@return exception
+	 *	Returns the value of ordTradeid
+	 *	@return ordTradeid
 	 */
-   public char[] getException() throws CFException  {              
-   		return work.getException();
-   }
-
-  
-	/**
-	*  set variable exception
-	*  @param value
-	**/
-   public void setException(char[] value) throws CFException {
-      work.setException(value);
-   } 
-
-	/**
-	 *	Returns the value of sqlcode
-	 *	@return sqlcode
-	 */
-	public int getSqlcode() throws CFException {        
-   		return sqlca.getSqlcode();
-	}
-	
-	/**
-	 * 	Update Sqlcode with the passed value
-	 *	@param number
-	 */
-	public void setSqlcode(int number)  throws CFException{
-		sqlca.setSqlcode(number);
-	}
-
-
-	public void setSqlcode(long number)  throws CFException{
-		sqlca.setSqlcode((int)number);
-	}
-
-
-
-        public Trdpb000Ctx getTrdpb000Ctx() {
-            return Trdpb000Ctx.this;
-        }
-
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null) return false;
-        return this.hashCode() == o.hashCode();
-    }
-
-    @Override
-    public int hashCode() {
-        String str = "";
-        str += settlmentQueueTable.hashCode();
-        str += work.hashCode();
-        str += sqlca.hashCode();
-       return str.hashCode();
-    }
-
-    public InsertToStqOutCtx clone() {
-        InsertToStqOutCtx cloneObj = new InsertToStqOutCtx();
-        cloneObj.settlmentQueueTable = new SettlmentQueueTable();
-        cloneObj.settlmentQueueTable.set(settlmentQueueTable.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
-        cloneObj.sqlca = new Sqlca();
-        cloneObj.sqlca.set(sqlca.getClonedField());
-        return cloneObj;
-    }
-
-    }
-
-    public InsertToStqOutCtx getInsertToStqOutCtx() {
-            return new InsertToStqOutCtx();
-    }
-     public class UpdateOrderInCtx implements Cloneable {
-     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
-     Work work = Trdpb000Ctx.this.getWork();
-     Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
-     CustomerSummaryRec customerSummaryRec = Trdpb000Ctx.this.getCustomerSummaryRec();
-     Parm parm = Trdpb000Ctx.this.getParm();
-     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
-
-	/**
-	 *	Returns the value of dcltbtrdord
-	 *	@return dcltbtrdord
-	 */   
-	 public Dcltbtrdord getDcltbtrdord() {
-   	return dcltbtrdord;
-   }
-
-
-	/**
-	 *	Returns the value of sqlerrmc
-	 *	@return sqlerrmc
-	 */
-   public char[] getSqlerrmc() throws CFException  {              
-   		return sqlca.getSqlerrm().getSqlerrmc();
+   public char[] getOrdTradeid() throws CFException  {              
+   		return dcltbtrdord.getOrdTradeid();
    }
 
   
 	/**
-	*  set variable sqlerrmc
+	*  set variable ordTradeid
 	*  @param value
 	**/
-   public void setSqlerrmc(char[] value) throws CFException {
-      sqlca.getSqlerrm().setSqlerrmc(value);
+   public void setOrdTradeid(char[] value) throws CFException {
+      dcltbtrdord.setOrdTradeid(value);
    } 
 
      /**
-	 * 	Update Sqlerrmc 
+	 * 	Update OrdTradeid 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setSqlerrmc(char[] source, int sourceIndex) throws CFException {
-      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex);
+   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex);
    	
    }
    
-   public void setSqlerrmc(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen);
+   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update Sqlerrmc 
+	 * 	Update OrdTradeid 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setSqlerrmc(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update Sqlerrmc with another Field
+	 * 	Update OrdTradeid with another Field
 	 *	@param value
 	 */
-   public void setSqlerrmc(Field source) {
-      sqlca.getSqlerrm().setSqlerrmc(source);
+   public void setOrdTradeid(Field source) {
+      dcltbtrdord.setOrdTradeid(source);
    }  
    
      /**
-	 * 	Update Sqlerrmc 
+	 * 	Update OrdTradeid 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setSqlerrmc(Field source, int sourceIndex,int sourceLen) {
-      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen);   	
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update Sqlerrmc 
+	 * 	Update OrdTradeid 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setSqlerrmc(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of sqlerrd
-	 *	@return sqlerrd
-	 */
-	public int getSqlerrd(int index) throws CFException {        
-   		return sqlca.getSqlerrd((index));
-	}
-	
-	/**
-	 * 	Update Sqlerrd with the passed value
-	 *	@param number
-	 */
-	public void setSqlerrd(int index,int number)  throws CFException{
-		sqlca.setSqlerrd((index),number);
-	}
-
-
-	public void setSqlerrd(int index,long number)  throws CFException{
-		sqlca.setSqlerrd((index),(int)number);
-	}
-
-
-	/**
-	 *	Returns the value of currency01
-	 *	@return currency01
-	 */
-   public char[] getCurrency01() throws CFException  {              
-   		return parm.getCurrency01();
-   }
-
-  
-	/**
-	*  set variable currency01
-	*  @param value
-	**/
-   public void setCurrency01(char[] value) throws CFException {
-      parm.setCurrency01(value);
-   } 
-
-     /**
-	 * 	Update Currency01 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setCurrency01(char[] source, int sourceIndex) throws CFException {
-      parm.setCurrency01(source, sourceIndex);
-   	
-   }
-   
-   public void setCurrency01(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      parm.setCurrency01(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update Currency01 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setCurrency01(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      parm.setCurrency01(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update Currency01 with another Field
-	 *	@param value
-	 */
-   public void setCurrency01(Field source) {
-      parm.setCurrency01(source);
-   }  
-   
-     /**
-	 * 	Update Currency01 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setCurrency01(Field source, int sourceIndex,int sourceLen) {
-      parm.setCurrency01(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update Currency01 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setCurrency01(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      parm.setCurrency01(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -18418,6 +17435,424 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
+	 *	Returns the value of trdExchange
+	 *	@return trdExchange
+	 */
+   public char[] getTrdExchange() throws CFException  {              
+   		return trdOrderPair.getTrdExchange();
+   }
+
+  
+	/**
+	*  set variable trdExchange
+	*  @param value
+	**/
+   public void setTrdExchange(char[] value) throws CFException {
+      trdOrderPair.setTrdExchange(value);
+   } 
+
+     /**
+	 * 	Update TrdExchange 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdExchange(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdExchange(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdExchange(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdExchange 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdExchange(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdExchange with another Field
+	 *	@param value
+	 */
+   public void setTrdExchange(Field source) {
+      trdOrderPair.setTrdExchange(source);
+   }  
+   
+     /**
+	 * 	Update TrdExchange 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdExchange(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdExchange 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdExchange(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdExchange(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+
+        public Trdpb000Ctx getTrdpb000Ctx() {
+            return Trdpb000Ctx.this;
+        }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) return false;
+        return this.hashCode() == o.hashCode();
+    }
+
+    @Override
+    public int hashCode() {
+        String str = "";
+        str += trdOrderPair.hashCode();
+        str += work.hashCode();
+        str += dcltbtrdord.hashCode();
+       return str.hashCode();
+    }
+
+    public UpdateOrderMatchedOutCtx clone() {
+        UpdateOrderMatchedOutCtx cloneObj = new UpdateOrderMatchedOutCtx();
+        cloneObj.trdOrderPair = new TrdOrderPair();
+        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        cloneObj.dcltbtrdord = new Dcltbtrdord();
+        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
+        return cloneObj;
+    }
+
+    }
+
+    public UpdateOrderMatchedOutCtx getUpdateOrderMatchedOutCtx() {
+            return new UpdateOrderMatchedOutCtx();
+    }
+     public class WriteToStlmtQueueInCtx implements Cloneable {
+     SettlmentQueueTable settlmentQueueTable = Trdpb000Ctx.this.getSettlmentQueueTable();
+     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
+
+	/**
+	 *	Returns the value of trdOrderPair
+	 *	@return trdOrderPair
+	 */   
+	 public TrdOrderPair getTrdOrderPair() {
+   	return trdOrderPair;
+   }
+
+
+	/**
+	 *	Returns the value of stqIndex
+	 *	@return stqIndex
+	 */
+	public short getStqIndex() throws CFException {        
+   		return settlmentQueueTable.getStqIndex();
+	}
+	
+	/**
+	 * 	Update StqIndex with the passed value
+	 *	@param number
+	 */
+	public void setStqIndex(short number)  throws CFException{
+		settlmentQueueTable.setStqIndex(number);
+	}
+
+	public void setStqIndex(int number)  throws CFException{
+		settlmentQueueTable.setStqIndex((short)number);
+	}
+
+	public void setStqIndex(long number)  throws CFException{
+		settlmentQueueTable.setStqIndex((short)number);
+	}
+
+
+
+
+        public Trdpb000Ctx getTrdpb000Ctx() {
+            return Trdpb000Ctx.this;
+        }
+
+        public WriteToStlmtQueueOutCtx getWriteToStlmtQueueOutCtx() {
+            return new WriteToStlmtQueueOutCtx();
+        }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) return false;
+        return this.hashCode() == o.hashCode();
+    }
+
+    @Override
+    public int hashCode() {
+        String str = "";
+        str += settlmentQueueTable.hashCode();
+        str += trdOrderPair.hashCode();
+       return str.hashCode();
+    }
+
+    public WriteToStlmtQueueInCtx clone() {
+        WriteToStlmtQueueInCtx cloneObj = new WriteToStlmtQueueInCtx();
+        cloneObj.settlmentQueueTable = new SettlmentQueueTable();
+        cloneObj.settlmentQueueTable.set(settlmentQueueTable.getClonedField());
+        cloneObj.trdOrderPair = new TrdOrderPair();
+        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        return cloneObj;
+    }
+
+    }
+
+    public WriteToStlmtQueueInCtx getWriteToStlmtQueueInCtx() {
+            return new WriteToStlmtQueueInCtx();
+    }
+     public class WriteToStlmtQueueOutCtx implements Cloneable {
+     SettlmentQueueTable settlmentQueueTable = Trdpb000Ctx.this.getSettlmentQueueTable();
+     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
+
+	/**
+	 *	Returns the value of trdOrderPair
+	 *	@return trdOrderPair
+	 */   
+	 public TrdOrderPair getTrdOrderPair() {
+   	return trdOrderPair;
+   }
+
+
+	/**
+	 *	Returns the value of stqTrdpair
+	 *	@return stqTrdpair
+	 */
+   public char[] getStqTrdpair(int index) throws CFException  {              
+   		return settlmentQueueTable.getStqTrdpair(index);
+   }
+
+  
+	/**
+	*  set variable stqTrdpair
+	*  @param value
+	**/
+   public void setStqTrdpair(int index,char[] value) throws CFException {
+      settlmentQueueTable.setStqTrdpair((index),value);
+   } 
+
+	/**
+	 *	Returns the value of stqIndex
+	 *	@return stqIndex
+	 */
+	public short getStqIndex() throws CFException {        
+   		return settlmentQueueTable.getStqIndex();
+	}
+	
+	/**
+	 * 	Update StqIndex with the passed value
+	 *	@param number
+	 */
+	public void setStqIndex(short number)  throws CFException{
+		settlmentQueueTable.setStqIndex(number);
+	}
+
+	public void setStqIndex(int number)  throws CFException{
+		settlmentQueueTable.setStqIndex((short)number);
+	}
+
+	public void setStqIndex(long number)  throws CFException{
+		settlmentQueueTable.setStqIndex((short)number);
+	}
+
+
+
+
+        public Trdpb000Ctx getTrdpb000Ctx() {
+            return Trdpb000Ctx.this;
+        }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) return false;
+        return this.hashCode() == o.hashCode();
+    }
+
+    @Override
+    public int hashCode() {
+        String str = "";
+        str += settlmentQueueTable.hashCode();
+        str += trdOrderPair.hashCode();
+       return str.hashCode();
+    }
+
+    public WriteToStlmtQueueOutCtx clone() {
+        WriteToStlmtQueueOutCtx cloneObj = new WriteToStlmtQueueOutCtx();
+        cloneObj.settlmentQueueTable = new SettlmentQueueTable();
+        cloneObj.settlmentQueueTable.set(settlmentQueueTable.getClonedField());
+        cloneObj.trdOrderPair = new TrdOrderPair();
+        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        return cloneObj;
+    }
+
+    }
+
+    public WriteToStlmtQueueOutCtx getWriteToStlmtQueueOutCtx() {
+            return new WriteToStlmtQueueOutCtx();
+    }
+     public class InsertToStqInCtx implements Cloneable {
+     SettlmentQueueTable settlmentQueueTable = Trdpb000Ctx.this.getSettlmentQueueTable();
+     Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
+     Work work = Trdpb000Ctx.this.getWork();
+
+	/**
+	 *	Returns the value of settlmentQueueTable
+	 *	@return settlmentQueueTable
+	 */   
+	 public SettlmentQueueTable getSettlmentQueueTable() {
+   	return settlmentQueueTable;
+   }
+
+
+	/**
+	 *	Returns the value of sqlca
+	 *	@return sqlca
+	 */   
+	 public Sqlca getSqlca() {
+   	return sqlca;
+   }
+
+
+	/**
+	 *	Returns the value of sqlerrmc
+	 *	@return sqlerrmc
+	 */
+   public char[] getSqlerrmc() throws CFException  {              
+   		return sqlca.getSqlerrm().getSqlerrmc();
+   }
+
+  
+	/**
+	*  set variable sqlerrmc
+	*  @param value
+	**/
+   public void setSqlerrmc(char[] value) throws CFException {
+      sqlca.getSqlerrm().setSqlerrmc(value);
+   } 
+
+     /**
+	 * 	Update Sqlerrmc 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setSqlerrmc(char[] source, int sourceIndex) throws CFException {
+      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex);
+   	
+   }
+   
+   public void setSqlerrmc(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update Sqlerrmc 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setSqlerrmc(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update Sqlerrmc with another Field
+	 *	@param value
+	 */
+   public void setSqlerrmc(Field source) {
+      sqlca.getSqlerrm().setSqlerrmc(source);
+   }  
+   
+     /**
+	 * 	Update Sqlerrmc 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setSqlerrmc(Field source, int sourceIndex,int sourceLen) {
+      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update Sqlerrmc 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setSqlerrmc(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sqlcode
+	 *	@return sqlcode
+	 */
+	public int getSqlcode() throws CFException {        
+   		return sqlca.getSqlcode();
+	}
+	
+	/**
+	 * 	Update Sqlcode with the passed value
+	 *	@param number
+	 */
+	public void setSqlcode(int number)  throws CFException{
+		sqlca.setSqlcode(number);
+	}
+
+
+	public void setSqlcode(long number)  throws CFException{
+		sqlca.setSqlcode((int)number);
+	}
+
+
+	/**
+	 *	Returns the value of stqCurrency
+	 *	@return stqCurrency
+	 */
+   public char[] getStqCurrency(int index) throws CFException  {              
+   		return settlmentQueueTable.getStqCurrency(index);
+   }
+
+  
+	/**
+	*  set variable stqCurrency
+	*  @param value
+	**/
+   public void setStqCurrency(int index,char[] value) throws CFException {
+      settlmentQueueTable.setStqCurrency((index),value);
+   } 
+
+	/**
+	 *	Returns the value of stqTrdpair
+	 *	@return stqTrdpair
+	 */
+   public char[] getStqTrdpair(int index) throws CFException  {              
+   		return settlmentQueueTable.getStqTrdpair(index);
+   }
+
+  
+	/**
+	*  set variable stqTrdpair
+	*  @param value
+	**/
+   public void setStqTrdpair(int index,char[] value) throws CFException {
+      settlmentQueueTable.setStqTrdpair((index),value);
+   } 
+
+	/**
 	 *	Returns the value of sqlwarn
 	 *	@return sqlwarn
 	 */   
@@ -18480,72 +17915,272 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of ordTradeid
-	 *	@return ordTradeid
+	 *	Returns the value of sqlerrd
+	 *	@return sqlerrd
 	 */
-   public char[] getOrdTradeid() throws CFException  {              
-   		return dcltbtrdord.getOrdTradeid();
+	public int getSqlerrd(int index) throws CFException {        
+   		return sqlca.getSqlerrd((index));
+	}
+	
+	/**
+	 * 	Update Sqlerrd with the passed value
+	 *	@param number
+	 */
+	public void setSqlerrd(int index,int number)  throws CFException{
+		sqlca.setSqlerrd((index),number);
+	}
+
+
+	public void setSqlerrd(int index,long number)  throws CFException{
+		sqlca.setSqlerrd((index),(int)number);
+	}
+
+
+	/**
+	 *	Returns the value of stqIndex
+	 *	@return stqIndex
+	 */
+	public short getStqIndex() throws CFException {        
+   		return settlmentQueueTable.getStqIndex();
+	}
+	
+	/**
+	 * 	Update StqIndex with the passed value
+	 *	@param number
+	 */
+	public void setStqIndex(short number)  throws CFException{
+		settlmentQueueTable.setStqIndex(number);
+	}
+
+	public void setStqIndex(int number)  throws CFException{
+		settlmentQueueTable.setStqIndex((short)number);
+	}
+
+	public void setStqIndex(long number)  throws CFException{
+		settlmentQueueTable.setStqIndex((short)number);
+	}
+
+
+
+
+        public Trdpb000Ctx getTrdpb000Ctx() {
+            return Trdpb000Ctx.this;
+        }
+
+        public InsertToStqOutCtx getInsertToStqOutCtx() {
+            return new InsertToStqOutCtx();
+        }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) return false;
+        return this.hashCode() == o.hashCode();
+    }
+
+    @Override
+    public int hashCode() {
+        String str = "";
+        str += settlmentQueueTable.hashCode();
+        str += sqlca.hashCode();
+        str += work.hashCode();
+       return str.hashCode();
+    }
+
+    public InsertToStqInCtx clone() {
+        InsertToStqInCtx cloneObj = new InsertToStqInCtx();
+        cloneObj.settlmentQueueTable = new SettlmentQueueTable();
+        cloneObj.settlmentQueueTable.set(settlmentQueueTable.getClonedField());
+        cloneObj.sqlca = new Sqlca();
+        cloneObj.sqlca.set(sqlca.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        return cloneObj;
+    }
+
+    }
+
+    public InsertToStqInCtx getInsertToStqInCtx() {
+            return new InsertToStqInCtx();
+    }
+     public class InsertToStqOutCtx implements Cloneable {
+     SettlmentQueueTable settlmentQueueTable = Trdpb000Ctx.this.getSettlmentQueueTable();
+     Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
+     Work work = Trdpb000Ctx.this.getWork();
+
+	/**
+	 *	Returns the value of sqlca
+	 *	@return sqlca
+	 */   
+	 public Sqlca getSqlca() {
+   	return sqlca;
+   }
+
+
+	/**
+	 *	Test condition "A" for isApplException()
+	 *	@return  Returns true if isApplException() is "A"
+	 */
+   public boolean isApplException() throws CFException {
+      return work.isApplException();
+   }
+
+	/**
+	*  set values "A"
+	*/
+   	public void setApplExceptionTrue()  throws CFException{  			
+    	work.setApplExceptionTrue();
+   	}
+	/**
+	 *	Returns the value of sqlcode
+	 *	@return sqlcode
+	 */
+	public int getSqlcode() throws CFException {        
+   		return sqlca.getSqlcode();
+	}
+	
+	/**
+	 * 	Update Sqlcode with the passed value
+	 *	@param number
+	 */
+	public void setSqlcode(int number)  throws CFException{
+		sqlca.setSqlcode(number);
+	}
+
+
+	public void setSqlcode(long number)  throws CFException{
+		sqlca.setSqlcode((int)number);
+	}
+
+
+	/**
+	 *	Returns the value of exception
+	 *	@return exception
+	 */
+   public char[] getException() throws CFException  {              
+   		return work.getException();
    }
 
   
 	/**
-	*  set variable ordTradeid
+	*  set variable exception
 	*  @param value
 	**/
-   public void setOrdTradeid(char[] value) throws CFException {
-      dcltbtrdord.setOrdTradeid(value);
+   public void setException(char[] value) throws CFException {
+      work.setException(value);
+   } 
+
+	/**
+	 *	Returns the value of sqlcode_Ws
+	 *	@return sqlcode_Ws
+	 */
+   public char[] getSqlcode_Ws() throws CFException  {              
+   		return work.getSqlcode_Ws();
+   }
+
+  
+	/**
+	*  set variable sqlcode_Ws
+	*  @param value
+	**/
+   public void setSqlcode_Ws(char[] value) throws CFException {
+      work.setSqlcode_Ws(value);
    } 
 
      /**
-	 * 	Update OrdTradeid 
+	 * 	Update Sqlcode_Ws 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex);
+   public void setSqlcode_Ws(char[] source, int sourceIndex) throws CFException {
+      work.setSqlcode_Ws(source, sourceIndex);
    	
    }
    
-   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
+   public void setSqlcode_Ws(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      work.setSqlcode_Ws(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdTradeid 
+	 * 	Update Sqlcode_Ws 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setSqlcode_Ws(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      work.setSqlcode_Ws(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdTradeid with another Field
+	 * 	Update Sqlcode_Ws with another Field
 	 *	@param value
 	 */
-   public void setOrdTradeid(Field source) {
-      dcltbtrdord.setOrdTradeid(source);
+   public void setSqlcode_Ws(Field source) {
+      work.setSqlcode_Ws(source);
    }  
    
      /**
-	 * 	Update OrdTradeid 
+	 * 	Update Sqlcode_Ws 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
+   public void setSqlcode_Ws(Field source, int sourceIndex,int sourceLen) {
+      work.setSqlcode_Ws(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update OrdTradeid 
+	 * 	Update Sqlcode_Ws 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setSqlcode_Ws(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      work.setSqlcode_Ws(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
+
+
+        public Trdpb000Ctx getTrdpb000Ctx() {
+            return Trdpb000Ctx.this;
+        }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) return false;
+        return this.hashCode() == o.hashCode();
+    }
+
+    @Override
+    public int hashCode() {
+        String str = "";
+        str += settlmentQueueTable.hashCode();
+        str += sqlca.hashCode();
+        str += work.hashCode();
+       return str.hashCode();
+    }
+
+    public InsertToStqOutCtx clone() {
+        InsertToStqOutCtx cloneObj = new InsertToStqOutCtx();
+        cloneObj.settlmentQueueTable = new SettlmentQueueTable();
+        cloneObj.settlmentQueueTable.set(settlmentQueueTable.getClonedField());
+        cloneObj.sqlca = new Sqlca();
+        cloneObj.sqlca.set(sqlca.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        return cloneObj;
+    }
+
+    }
+
+    public InsertToStqOutCtx getInsertToStqOutCtx() {
+            return new InsertToStqOutCtx();
+    }
+     public class UpdateOrderInCtx implements Cloneable {
+     Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
+     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
+     Work work = Trdpb000Ctx.this.getWork();
+     Parm parm = Trdpb000Ctx.this.getParm();
+     CustomerSummaryRec customerSummaryRec = Trdpb000Ctx.this.getCustomerSummaryRec();
+     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
 
 	/**
 	 *	Returns the value of ordTradingXchng
@@ -18693,6 +18328,390 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
+	 *	Returns the value of sqlcode
+	 *	@return sqlcode
+	 */
+	public int getSqlcode() throws CFException {        
+   		return sqlca.getSqlcode();
+	}
+	
+	/**
+	 * 	Update Sqlcode with the passed value
+	 *	@param number
+	 */
+	public void setSqlcode(int number)  throws CFException{
+		sqlca.setSqlcode(number);
+	}
+
+
+	public void setSqlcode(long number)  throws CFException{
+		sqlca.setSqlcode((int)number);
+	}
+
+
+	/**
+	 *	Returns the value of ordBuySellInd
+	 *	@return ordBuySellInd
+	 */
+   public char[] getOrdBuySellInd() throws CFException  {              
+   		return dcltbtrdord.getOrdBuySellInd();
+   }
+
+  
+	/**
+	*  set variable ordBuySellInd
+	*  @param value
+	**/
+   public void setOrdBuySellInd(char[] value) throws CFException {
+      dcltbtrdord.setOrdBuySellInd(value);
+   } 
+
+     /**
+	 * 	Update OrdBuySellInd 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdBuySellInd(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdBuySellInd 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdBuySellInd with another Field
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(Field source) {
+      dcltbtrdord.setOrdBuySellInd(source);
+   }  
+   
+     /**
+	 * 	Update OrdBuySellInd 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdBuySellInd 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of currency01
+	 *	@return currency01
+	 */
+   public char[] getCurrency01() throws CFException  {              
+   		return parm.getCurrency01();
+   }
+
+  
+	/**
+	*  set variable currency01
+	*  @param value
+	**/
+   public void setCurrency01(char[] value) throws CFException {
+      parm.setCurrency01(value);
+   } 
+
+     /**
+	 * 	Update Currency01 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setCurrency01(char[] source, int sourceIndex) throws CFException {
+      parm.setCurrency01(source, sourceIndex);
+   	
+   }
+   
+   public void setCurrency01(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      parm.setCurrency01(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update Currency01 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setCurrency01(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      parm.setCurrency01(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update Currency01 with another Field
+	 *	@param value
+	 */
+   public void setCurrency01(Field source) {
+      parm.setCurrency01(source);
+   }  
+   
+     /**
+	 * 	Update Currency01 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setCurrency01(Field source, int sourceIndex,int sourceLen) {
+      parm.setCurrency01(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update Currency01 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setCurrency01(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      parm.setCurrency01(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sqlerrd
+	 *	@return sqlerrd
+	 */
+	public int getSqlerrd(int index) throws CFException {        
+   		return sqlca.getSqlerrd((index));
+	}
+	
+	/**
+	 * 	Update Sqlerrd with the passed value
+	 *	@param number
+	 */
+	public void setSqlerrd(int index,int number)  throws CFException{
+		sqlca.setSqlerrd((index),number);
+	}
+
+
+	public void setSqlerrd(int index,long number)  throws CFException{
+		sqlca.setSqlerrd((index),(int)number);
+	}
+
+
+	/**
+	 *	Returns the value of ordStatus
+	 *	@return ordStatus
+	 */
+   public char[] getOrdStatus() throws CFException  {              
+   		return dcltbtrdord.getOrdStatus();
+   }
+
+  
+	/**
+	*  set variable ordStatus
+	*  @param value
+	**/
+   public void setOrdStatus(char[] value) throws CFException {
+      dcltbtrdord.setOrdStatus(value);
+   } 
+
+     /**
+	 * 	Update OrdStatus 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdStatus(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdStatus(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdStatus(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdStatus 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdStatus(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdStatus with another Field
+	 *	@param value
+	 */
+   public void setOrdStatus(Field source) {
+      dcltbtrdord.setOrdStatus(source);
+   }  
+   
+     /**
+	 * 	Update OrdStatus 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdStatus(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdStatus 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdStatus(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of sqlerrmc
+	 *	@return sqlerrmc
+	 */
+   public char[] getSqlerrmc() throws CFException  {              
+   		return sqlca.getSqlerrm().getSqlerrmc();
+   }
+
+  
+	/**
+	*  set variable sqlerrmc
+	*  @param value
+	**/
+   public void setSqlerrmc(char[] value) throws CFException {
+      sqlca.getSqlerrm().setSqlerrmc(value);
+   } 
+
+     /**
+	 * 	Update Sqlerrmc 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setSqlerrmc(char[] source, int sourceIndex) throws CFException {
+      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex);
+   	
+   }
+   
+   public void setSqlerrmc(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update Sqlerrmc 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setSqlerrmc(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update Sqlerrmc with another Field
+	 *	@param value
+	 */
+   public void setSqlerrmc(Field source) {
+      sqlca.getSqlerrm().setSqlerrmc(source);
+   }  
+   
+     /**
+	 * 	Update Sqlerrmc 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setSqlerrmc(Field source, int sourceIndex,int sourceLen) {
+      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update Sqlerrmc 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setSqlerrmc(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of ordFigi
+	 *	@return ordFigi
+	 */
+   public char[] getOrdFigi() throws CFException  {              
+   		return dcltbtrdord.getOrdFigi();
+   }
+
+  
+	/**
+	*  set variable ordFigi
+	*  @param value
+	**/
+   public void setOrdFigi(char[] value) throws CFException {
+      dcltbtrdord.setOrdFigi(value);
+   } 
+
+     /**
+	 * 	Update OrdFigi 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdFigi(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdFigi(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdFigi with another Field
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source) {
+      dcltbtrdord.setOrdFigi(source);
+   }  
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdFigi 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
 	 *	Returns the value of ordCurrency
 	 *	@return ordCurrency
 	 */
@@ -18761,71 +18780,133 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of ordBuySellInd
-	 *	@return ordBuySellInd
-	 */
-   public char[] getOrdBuySellInd() throws CFException  {              
-   		return dcltbtrdord.getOrdBuySellInd();
+	 *	Returns the value of sqlwarn
+	 *	@return sqlwarn
+	 */   
+	 public Sqlwarn getSqlwarn() {
+   	return sqlca.getSqlwarn();
    }
 
-  
-	/**
-	*  set variable ordBuySellInd
-	*  @param value
-	**/
-   public void setOrdBuySellInd(char[] value) throws CFException {
-      dcltbtrdord.setOrdBuySellInd(value);
-   } 
+   /**
+	* 	Update Sqlwarn with the passed value
+	*	@param value
+	*/
+   public void setSqlwarn(char[] value) throws CFException {
+      sqlca.setSqlwarn(value);
+   }   
 
      /**
-	 * 	Update OrdBuySellInd 
-	 *     with a char[] from an offset and length             
+	 * 	Update Sqlwarn 
+	 *     with a String from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdBuySellInd(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);
+   public void setSqlwarn(char[] source, int sourceIndex,int sourceLen) throws CFException {
+   	sqlca.setSqlwarn(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdBuySellInd 
-	 *     with a char[] from an offset and length  
+	 * 	Update Sqlwarn 
+	 *     with a String from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setSqlwarn(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+   	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update OrdBuySellInd with another Field
+	 * 	Update Sqlwarn with another Field
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(Field source) {
-      dcltbtrdord.setOrdBuySellInd(source);
+   public void setSqlwarn(Field source) {
+   	sqlca.setSqlwarn(source);
    }  
    
      /**
-	 * 	Update OrdBuySellInd 
-	 *     with another Field from an offset and length          
+	 * 	Update Sqlwarn 
+	 *     with another Field from an offset and length             
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen);   	
+   public void setSqlwarn(Field source, int sourceIndex,int sourceLen) {
+   	sqlca.setSqlwarn(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update OrdBuySellInd 
+	 * 	Update Sqlwarn 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setOrdBuySellInd(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdBuySellInd(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setSqlwarn(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+   	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of ordTradeid
+	 *	@return ordTradeid
+	 */
+   public char[] getOrdTradeid() throws CFException  {              
+   		return dcltbtrdord.getOrdTradeid();
+   }
+
+  
+	/**
+	*  set variable ordTradeid
+	*  @param value
+	**/
+   public void setOrdTradeid(char[] value) throws CFException {
+      dcltbtrdord.setOrdTradeid(value);
+   } 
+
+     /**
+	 * 	Update OrdTradeid 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdTradeid(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdTradeid(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdTradeid 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdTradeid(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdTradeid with another Field
+	 *	@param value
+	 */
+   public void setOrdTradeid(Field source) {
+      dcltbtrdord.setOrdTradeid(source);
+   }  
+   
+     /**
+	 * 	Update OrdTradeid 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdTradeid 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdTradeid(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdTradeid(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -18897,94 +18978,13 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of sqlcode
-	 *	@return sqlcode
-	 */
-	public int getSqlcode() throws CFException {        
-   		return sqlca.getSqlcode();
-	}
-	
-	/**
-	 * 	Update Sqlcode with the passed value
-	 *	@param number
-	 */
-	public void setSqlcode(int number)  throws CFException{
-		sqlca.setSqlcode(number);
-	}
-
-
-	public void setSqlcode(long number)  throws CFException{
-		sqlca.setSqlcode((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of ordFigi
-	 *	@return ordFigi
-	 */
-   public char[] getOrdFigi() throws CFException  {              
-   		return dcltbtrdord.getOrdFigi();
+	 *	Returns the value of dcltbtrdord
+	 *	@return dcltbtrdord
+	 */   
+	 public Dcltbtrdord getDcltbtrdord() {
+   	return dcltbtrdord;
    }
 
-  
-	/**
-	*  set variable ordFigi
-	*  @param value
-	**/
-   public void setOrdFigi(char[] value) throws CFException {
-      dcltbtrdord.setOrdFigi(value);
-   } 
-
-     /**
-	 * 	Update OrdFigi 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdFigi(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdFigi(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdFigi(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdFigi 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdFigi(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdFigi with another Field
-	 *	@param value
-	 */
-   public void setOrdFigi(Field source) {
-      dcltbtrdord.setOrdFigi(source);
-   }  
-   
-     /**
-	 * 	Update OrdFigi 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdFigi(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdFigi 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdFigi(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdFigi(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
 
 
         public Trdpb000Ctx getTrdpb000Ctx() {
@@ -19004,29 +19004,29 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += dcltbtrdord.hashCode();
-        str += work.hashCode();
         str += sqlca.hashCode();
-        str += customerSummaryRec.hashCode();
-        str += parm.hashCode();
         str += trdOrderPair.hashCode();
+        str += work.hashCode();
+        str += parm.hashCode();
+        str += customerSummaryRec.hashCode();
+        str += dcltbtrdord.hashCode();
        return str.hashCode();
     }
 
     public UpdateOrderInCtx clone() {
         UpdateOrderInCtx cloneObj = new UpdateOrderInCtx();
-        cloneObj.dcltbtrdord = new Dcltbtrdord();
-        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
         cloneObj.sqlca = new Sqlca();
         cloneObj.sqlca.set(sqlca.getClonedField());
-        cloneObj.customerSummaryRec = new CustomerSummaryRec();
-        cloneObj.customerSummaryRec.set(customerSummaryRec.getClonedField());
-        cloneObj.parm = new Parm();
-        cloneObj.parm.set(parm.getClonedField());
         cloneObj.trdOrderPair = new TrdOrderPair();
         cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        cloneObj.parm = new Parm();
+        cloneObj.parm.set(parm.getClonedField());
+        cloneObj.customerSummaryRec = new CustomerSummaryRec();
+        cloneObj.customerSummaryRec.set(customerSummaryRec.getClonedField());
+        cloneObj.dcltbtrdord = new Dcltbtrdord();
+        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
         return cloneObj;
     }
 
@@ -19036,13 +19036,27 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
             return new UpdateOrderInCtx();
     }
      public class UpdateOrderOutCtx implements Cloneable {
-     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
-     Work work = Trdpb000Ctx.this.getWork();
      Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
-     CustomerSummaryRec customerSummaryRec = Trdpb000Ctx.this.getCustomerSummaryRec();
-     Parm parm = Trdpb000Ctx.this.getParm();
      TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
+     Work work = Trdpb000Ctx.this.getWork();
+     Parm parm = Trdpb000Ctx.this.getParm();
+     CustomerSummaryRec customerSummaryRec = Trdpb000Ctx.this.getCustomerSummaryRec();
+     Dcltbtrdord dcltbtrdord = Trdpb000Ctx.this.getDcltbtrdord();
 
+	/**
+	 *	Test condition "D" for isDoSql()
+	 *	@return  Returns true if isDoSql() is "D"
+	 */
+   public boolean isDoSql() throws CFException {
+      return work.isDoSql();
+   }
+
+	/**
+	*  set values "D"
+	*/
+   	public void setDoSqlTrue()  throws CFException{  			
+    	work.setDoSqlTrue();
+   	}
 	/**
 	 *	Returns the value of summaryCustomerId
 	 *	@return summaryCustomerId
@@ -19111,323 +19125,6 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
       customerSummaryRec.setSummaryCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
-	/**
-	 *	Returns the value of orderStatus
-	 *	@return orderStatus
-	 */
-   public char[] getOrderStatus() throws CFException  {              
-   		return work.getOrderStatus();
-   }
-
-  
-	/**
-	*  set variable orderStatus
-	*  @param value
-	**/
-   public void setOrderStatus(char[] value) throws CFException {
-      work.setOrderStatus(value);
-   } 
-
-	/**
-	 *	Returns the value of customerSummaryRec
-	 *	@return customerSummaryRec
-	 */   
-	 public CustomerSummaryRec getCustomerSummaryRec() {
-   	return customerSummaryRec;
-   }
-
-
-	/**
-	 *	Returns the value of currency01
-	 *	@return currency01
-	 */
-   public char[] getCurrency01() throws CFException  {              
-   		return parm.getCurrency01();
-   }
-
-  
-	/**
-	*  set variable currency01
-	*  @param value
-	**/
-   public void setCurrency01(char[] value) throws CFException {
-      parm.setCurrency01(value);
-   } 
-
-     /**
-	 * 	Update Currency01 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setCurrency01(char[] source, int sourceIndex) throws CFException {
-      parm.setCurrency01(source, sourceIndex);
-   	
-   }
-   
-   public void setCurrency01(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      parm.setCurrency01(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update Currency01 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setCurrency01(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      parm.setCurrency01(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update Currency01 with another Field
-	 *	@param value
-	 */
-   public void setCurrency01(Field source) {
-      parm.setCurrency01(source);
-   }  
-   
-     /**
-	 * 	Update Currency01 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setCurrency01(Field source, int sourceIndex,int sourceLen) {
-      parm.setCurrency01(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update Currency01 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setCurrency01(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      parm.setCurrency01(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of ordStatus
-	 *	@return ordStatus
-	 */
-   public char[] getOrdStatus() throws CFException  {              
-   		return dcltbtrdord.getOrdStatus();
-   }
-
-  
-	/**
-	*  set variable ordStatus
-	*  @param value
-	**/
-   public void setOrdStatus(char[] value) throws CFException {
-      dcltbtrdord.setOrdStatus(value);
-   } 
-
-     /**
-	 * 	Update OrdStatus 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setOrdStatus(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdord.setOrdStatus(source, sourceIndex);
-   	
-   }
-   
-   public void setOrdStatus(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update OrdStatus 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdStatus(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update OrdStatus with another Field
-	 *	@param value
-	 */
-   public void setOrdStatus(Field source) {
-      dcltbtrdord.setOrdStatus(source);
-   }  
-   
-     /**
-	 * 	Update OrdStatus 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setOrdStatus(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update OrdStatus 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setOrdStatus(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of summaryCurrency
-	 *	@return summaryCurrency
-	 */
-   public char[] getSummaryCurrency() throws CFException  {              
-   		return customerSummaryRec.getSummaryCurrency();
-   }
-
-  
-	/**
-	*  set variable summaryCurrency
-	*  @param value
-	**/
-   public void setSummaryCurrency(char[] value) throws CFException {
-      customerSummaryRec.setSummaryCurrency(value);
-   } 
-
-     /**
-	 * 	Update SummaryCurrency 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setSummaryCurrency(char[] source, int sourceIndex) throws CFException {
-      customerSummaryRec.setSummaryCurrency(source, sourceIndex);
-   	
-   }
-   
-   public void setSummaryCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      customerSummaryRec.setSummaryCurrency(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update SummaryCurrency 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setSummaryCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      customerSummaryRec.setSummaryCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update SummaryCurrency with another Field
-	 *	@param value
-	 */
-   public void setSummaryCurrency(Field source) {
-      customerSummaryRec.setSummaryCurrency(source);
-   }  
-   
-     /**
-	 * 	Update SummaryCurrency 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setSummaryCurrency(Field source, int sourceIndex,int sourceLen) {
-      customerSummaryRec.setSummaryCurrency(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update SummaryCurrency 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setSummaryCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      customerSummaryRec.setSummaryCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Test condition "S" for isSqlDone()
-	 *	@return  Returns true if isSqlDone() is "S"
-	 */
-   public boolean isSqlDone() throws CFException {
-      return work.isSqlDone();
-   }
-
-	/**
-	*  set values "S"
-	*/
-   	public void setSqlDoneTrue()  throws CFException{  			
-    	work.setSqlDoneTrue();
-   	}
-	/**
-	 *	Returns the value of exception
-	 *	@return exception
-	 */
-   public char[] getException() throws CFException  {              
-   		return work.getException();
-   }
-
-  
-	/**
-	*  set variable exception
-	*  @param value
-	**/
-   public void setException(char[] value) throws CFException {
-      work.setException(value);
-   } 
-
-	/**
-	 *	Test condition "N" for isSummaryNoBooking88()
-	 *	@return  Returns true if isSummaryNoBooking88() is "N"
-	 */
-   public boolean isSummaryNoBooking88() throws CFException {
-      return work.isSummaryNoBooking88();
-   }
-
-	/**
-	*  set values "N"
-	*/
-   	public void setSummaryNoBooking88True()  throws CFException{  			
-    	work.setSummaryNoBooking88True();
-   	}
-	/**
-	 *	Test condition "R" for isRetrySql()
-	 *	@return  Returns true if isRetrySql() is "R"
-	 */
-   public boolean isRetrySql() throws CFException {
-      return work.isRetrySql();
-   }
-
-	/**
-	*  set values "R"
-	*/
-   	public void setRetrySqlTrue()  throws CFException{  			
-    	work.setRetrySqlTrue();
-   	}
-	/**
-	 *	Test condition "D" for isDoSql()
-	 *	@return  Returns true if isDoSql() is "D"
-	 */
-   public boolean isDoSql() throws CFException {
-      return work.isDoSql();
-   }
-
-	/**
-	*  set values "D"
-	*/
-   	public void setDoSqlTrue()  throws CFException{  			
-    	work.setDoSqlTrue();
-   	}
-	/**
-	 *	Test condition "A" for isApplException()
-	 *	@return  Returns true if isApplException() is "A"
-	 */
-   public boolean isApplException() throws CFException {
-      return work.isApplException();
-   }
-
-	/**
-	*  set values "A"
-	*/
-   	public void setApplExceptionTrue()  throws CFException{  			
-    	work.setApplExceptionTrue();
-   	}
 	/**
 	 *	Returns the value of sqlca
 	 *	@return sqlca
@@ -19506,6 +19203,331 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
+	 *	Returns the value of sqlcode
+	 *	@return sqlcode
+	 */
+	public int getSqlcode() throws CFException {        
+   		return sqlca.getSqlcode();
+	}
+	
+	/**
+	 * 	Update Sqlcode with the passed value
+	 *	@param number
+	 */
+	public void setSqlcode(int number)  throws CFException{
+		sqlca.setSqlcode(number);
+	}
+
+
+	public void setSqlcode(long number)  throws CFException{
+		sqlca.setSqlcode((int)number);
+	}
+
+
+	/**
+	 *	Returns the value of currency01
+	 *	@return currency01
+	 */
+   public char[] getCurrency01() throws CFException  {              
+   		return parm.getCurrency01();
+   }
+
+  
+	/**
+	*  set variable currency01
+	*  @param value
+	**/
+   public void setCurrency01(char[] value) throws CFException {
+      parm.setCurrency01(value);
+   } 
+
+     /**
+	 * 	Update Currency01 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setCurrency01(char[] source, int sourceIndex) throws CFException {
+      parm.setCurrency01(source, sourceIndex);
+   	
+   }
+   
+   public void setCurrency01(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      parm.setCurrency01(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update Currency01 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setCurrency01(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      parm.setCurrency01(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update Currency01 with another Field
+	 *	@param value
+	 */
+   public void setCurrency01(Field source) {
+      parm.setCurrency01(source);
+   }  
+   
+     /**
+	 * 	Update Currency01 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setCurrency01(Field source, int sourceIndex,int sourceLen) {
+      parm.setCurrency01(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update Currency01 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setCurrency01(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      parm.setCurrency01(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Test condition "301" "302" "303" "304" "305" "306" "307" "308" for isOverdue()
+	 *	@return  Returns true if isOverdue() is "301" "302" "303" "304" "305" "306" "307" "308"
+	 */
+   public boolean isOverdue() throws CFException {
+      return work.isOverdue();
+   }
+
+	/**
+	*  set values "301" "302" "303" "304" "305" "306" "307" "308"
+	*/
+   	public void setOverdueTrue()  throws CFException{  			
+    	work.setOverdueTrue();
+   	}
+	/**
+	 *	Test condition "R" for isRetrySql()
+	 *	@return  Returns true if isRetrySql() is "R"
+	 */
+   public boolean isRetrySql() throws CFException {
+      return work.isRetrySql();
+   }
+
+	/**
+	*  set values "R"
+	*/
+   	public void setRetrySqlTrue()  throws CFException{  			
+    	work.setRetrySqlTrue();
+   	}
+	/**
+	 *	Returns the value of summaryCurrency
+	 *	@return summaryCurrency
+	 */
+   public char[] getSummaryCurrency() throws CFException  {              
+   		return customerSummaryRec.getSummaryCurrency();
+   }
+
+  
+	/**
+	*  set variable summaryCurrency
+	*  @param value
+	**/
+   public void setSummaryCurrency(char[] value) throws CFException {
+      customerSummaryRec.setSummaryCurrency(value);
+   } 
+
+     /**
+	 * 	Update SummaryCurrency 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setSummaryCurrency(char[] source, int sourceIndex) throws CFException {
+      customerSummaryRec.setSummaryCurrency(source, sourceIndex);
+   	
+   }
+   
+   public void setSummaryCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      customerSummaryRec.setSummaryCurrency(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update SummaryCurrency 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setSummaryCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      customerSummaryRec.setSummaryCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update SummaryCurrency with another Field
+	 *	@param value
+	 */
+   public void setSummaryCurrency(Field source) {
+      customerSummaryRec.setSummaryCurrency(source);
+   }  
+   
+     /**
+	 * 	Update SummaryCurrency 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setSummaryCurrency(Field source, int sourceIndex,int sourceLen) {
+      customerSummaryRec.setSummaryCurrency(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update SummaryCurrency 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setSummaryCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      customerSummaryRec.setSummaryCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of ordStatus
+	 *	@return ordStatus
+	 */
+   public char[] getOrdStatus() throws CFException  {              
+   		return dcltbtrdord.getOrdStatus();
+   }
+
+  
+	/**
+	*  set variable ordStatus
+	*  @param value
+	**/
+   public void setOrdStatus(char[] value) throws CFException {
+      dcltbtrdord.setOrdStatus(value);
+   } 
+
+     /**
+	 * 	Update OrdStatus 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setOrdStatus(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdord.setOrdStatus(source, sourceIndex);
+   	
+   }
+   
+   public void setOrdStatus(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update OrdStatus 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdStatus(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update OrdStatus with another Field
+	 *	@param value
+	 */
+   public void setOrdStatus(Field source) {
+      dcltbtrdord.setOrdStatus(source);
+   }  
+   
+     /**
+	 * 	Update OrdStatus 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setOrdStatus(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update OrdStatus 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setOrdStatus(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdord.setOrdStatus(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Test condition "N" for isSummaryNoBooking88()
+	 *	@return  Returns true if isSummaryNoBooking88() is "N"
+	 */
+   public boolean isSummaryNoBooking88() throws CFException {
+      return work.isSummaryNoBooking88();
+   }
+
+	/**
+	*  set values "N"
+	*/
+   	public void setSummaryNoBooking88True()  throws CFException{  			
+    	work.setSummaryNoBooking88True();
+   	}
+	/**
+	 *	Test condition "A" for isApplException()
+	 *	@return  Returns true if isApplException() is "A"
+	 */
+   public boolean isApplException() throws CFException {
+      return work.isApplException();
+   }
+
+	/**
+	*  set values "A"
+	*/
+   	public void setApplExceptionTrue()  throws CFException{  			
+    	work.setApplExceptionTrue();
+   	}
+	/**
+	 *	Returns the value of orderStatus
+	 *	@return orderStatus
+	 */
+   public char[] getOrderStatus() throws CFException  {              
+   		return work.getOrderStatus();
+   }
+
+  
+	/**
+	*  set variable orderStatus
+	*  @param value
+	**/
+   public void setOrderStatus(char[] value) throws CFException {
+      work.setOrderStatus(value);
+   } 
+
+	/**
+	 *	Returns the value of exception
+	 *	@return exception
+	 */
+   public char[] getException() throws CFException  {              
+   		return work.getException();
+   }
+
+  
+	/**
+	*  set variable exception
+	*  @param value
+	**/
+   public void setException(char[] value) throws CFException {
+      work.setException(value);
+   } 
+
+	/**
+	 *	Returns the value of customerSummaryRec
+	 *	@return customerSummaryRec
+	 */   
+	 public CustomerSummaryRec getCustomerSummaryRec() {
+   	return customerSummaryRec;
+   }
+
+
+	/**
 	 *	Returns the value of sqlcode_Ws
 	 *	@return sqlcode_Ws
 	 */
@@ -19573,20 +19595,6 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
       work.setSqlcode_Ws(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
-	/**
-	 *	Test condition "301" "302" "303" "304" "305" "306" "307" "308" for isOverdue()
-	 *	@return  Returns true if isOverdue() is "301" "302" "303" "304" "305" "306" "307" "308"
-	 */
-   public boolean isOverdue() throws CFException {
-      return work.isOverdue();
-   }
-
-	/**
-	*  set values "301" "302" "303" "304" "305" "306" "307" "308"
-	*/
-   	public void setOverdueTrue()  throws CFException{  			
-    	work.setOverdueTrue();
-   	}
 	/**
 	 *	Returns the value of trdSellerId
 	 *	@return trdSellerId
@@ -19656,27 +19664,19 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of sqlcode
-	 *	@return sqlcode
+	 *	Test condition "S" for isSqlDone()
+	 *	@return  Returns true if isSqlDone() is "S"
 	 */
-	public int getSqlcode() throws CFException {        
-   		return sqlca.getSqlcode();
-	}
-	
+   public boolean isSqlDone() throws CFException {
+      return work.isSqlDone();
+   }
+
 	/**
-	 * 	Update Sqlcode with the passed value
-	 *	@param number
-	 */
-	public void setSqlcode(int number)  throws CFException{
-		sqlca.setSqlcode(number);
-	}
-
-
-	public void setSqlcode(long number)  throws CFException{
-		sqlca.setSqlcode((int)number);
-	}
-
-
+	*  set values "S"
+	*/
+   	public void setSqlDoneTrue()  throws CFException{  			
+    	work.setSqlDoneTrue();
+   	}
 
         public Trdpb000Ctx getTrdpb000Ctx() {
             return Trdpb000Ctx.this;
@@ -19692,29 +19692,29 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += dcltbtrdord.hashCode();
-        str += work.hashCode();
         str += sqlca.hashCode();
-        str += customerSummaryRec.hashCode();
-        str += parm.hashCode();
         str += trdOrderPair.hashCode();
+        str += work.hashCode();
+        str += parm.hashCode();
+        str += customerSummaryRec.hashCode();
+        str += dcltbtrdord.hashCode();
        return str.hashCode();
     }
 
     public UpdateOrderOutCtx clone() {
         UpdateOrderOutCtx cloneObj = new UpdateOrderOutCtx();
-        cloneObj.dcltbtrdord = new Dcltbtrdord();
-        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
         cloneObj.sqlca = new Sqlca();
         cloneObj.sqlca.set(sqlca.getClonedField());
-        cloneObj.customerSummaryRec = new CustomerSummaryRec();
-        cloneObj.customerSummaryRec.set(customerSummaryRec.getClonedField());
-        cloneObj.parm = new Parm();
-        cloneObj.parm.set(parm.getClonedField());
         cloneObj.trdOrderPair = new TrdOrderPair();
         cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
+        cloneObj.parm = new Parm();
+        cloneObj.parm.set(parm.getClonedField());
+        cloneObj.customerSummaryRec = new CustomerSummaryRec();
+        cloneObj.customerSummaryRec.set(customerSummaryRec.getClonedField());
+        cloneObj.dcltbtrdord = new Dcltbtrdord();
+        cloneObj.dcltbtrdord.set(dcltbtrdord.getClonedField());
         return cloneObj;
     }
 
@@ -19752,20 +19752,6 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
 
 
 	/**
-	 *	Test condition "S" for isSystemException()
-	 *	@return  Returns true if isSystemException() is "S"
-	 */
-   public boolean isSystemException() throws CFException {
-      return work.isSystemException();
-   }
-
-	/**
-	*  set values "S"
-	*/
-   	public void setSystemExceptionTrue()  throws CFException{  			
-    	work.setSystemExceptionTrue();
-   	}
-	/**
 	 *	Returns the value of exception
 	 *	@return exception
 	 */
@@ -19783,15 +19769,6 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    } 
 
 	/**
-	 *	Returns the value of exceptionRecordLenGroup
-	 *	@return exceptionRecordLenGroup
-	 */   
-	 public ExceptionRecordLenGroup getExceptionRecordLenGroup() {
-   	return exceptionRecordLenGroup;
-   }
-
-
-	/**
 	 *	Test condition "D" for isDataException()
 	 *	@return  Returns true if isDataException() is "D"
 	 */
@@ -19804,6 +19781,20 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
 	*/
    	public void setDataExceptionTrue()  throws CFException{  			
     	work.setDataExceptionTrue();
+   	}
+	/**
+	 *	Test condition "S" for isSystemException()
+	 *	@return  Returns true if isSystemException() is "S"
+	 */
+   public boolean isSystemException() throws CFException {
+      return work.isSystemException();
+   }
+
+	/**
+	*  set values "S"
+	*/
+   	public void setSystemExceptionTrue()  throws CFException{  			
+    	work.setSystemExceptionTrue();
    	}
 	/**
 	 *	Returns the value of exceptionHandler
@@ -19821,6 +19812,15 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    public void setExceptionHandler(char[] value) throws CFException {
       work.setExceptionHandler(value);
    } 
+
+	/**
+	 *	Returns the value of exceptionRecordLenGroup
+	 *	@return exceptionRecordLenGroup
+	 */   
+	 public ExceptionRecordLenGroup getExceptionRecordLenGroup() {
+   	return exceptionRecordLenGroup;
+   }
+
 
 
         public Trdpb000Ctx getTrdpb000Ctx() {
@@ -19866,67 +19866,6 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
      Work work = Trdpb000Ctx.this.getWork();
      ExceptionRecord exceptionRecord = Trdpb000Ctx.this.getExceptionRecord();
      ExceptionRecordLenGroup exceptionRecordLenGroup = Trdpb000Ctx.this.getExceptionRecordLenGroup();
-
-	/**
-	 *	Returns the value of exceptionRecord
-	 *	@return exceptionRecord
-	 */   
-	 public ExceptionRecord getExceptionRecord() {
-   	return exceptionRecord;
-   }
-
-
-	/**
-	 *	Returns the value of exceptionRecordLen
-	 *	@return exceptionRecordLen
-	 */
-	public short getExceptionRecordLen() throws CFException {        
-   		return exceptionRecordLenGroup.getExceptionRecordLen();
-	}
-	
-	/**
-	 * 	Update ExceptionRecordLen with the passed value
-	 *	@param number
-	 */
-	public void setExceptionRecordLen(short number)  throws CFException{
-		exceptionRecordLenGroup.setExceptionRecordLen(number);
-	}
-
-	public void setExceptionRecordLen(int number)  throws CFException{
-		exceptionRecordLenGroup.setExceptionRecordLen((short)number);
-	}
-
-	public void setExceptionRecordLen(long number)  throws CFException{
-		exceptionRecordLenGroup.setExceptionRecordLen((short)number);
-	}
-
-
-
-	/**
-	 *	Returns the value of exception
-	 *	@return exception
-	 */
-   public char[] getException() throws CFException  {              
-   		return work.getException();
-   }
-
-  
-	/**
-	*  set variable exception
-	*  @param value
-	**/
-   public void setException(char[] value) throws CFException {
-      work.setException(value);
-   } 
-
-	/**
-	 *	Returns the value of exceptionRecordLenGroup
-	 *	@return exceptionRecordLenGroup
-	 */   
-	 public ExceptionRecordLenGroup getExceptionRecordLenGroup() {
-   	return exceptionRecordLenGroup;
-   }
-
 
 	/**
 	 *	Returns the value of exceptionDesc
@@ -20064,6 +20003,67 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
       exceptionRecord.setExceptionType(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
+	/**
+	 *	Returns the value of exceptionRecord
+	 *	@return exceptionRecord
+	 */   
+	 public ExceptionRecord getExceptionRecord() {
+   	return exceptionRecord;
+   }
+
+
+	/**
+	 *	Returns the value of exception
+	 *	@return exception
+	 */
+   public char[] getException() throws CFException  {              
+   		return work.getException();
+   }
+
+  
+	/**
+	*  set variable exception
+	*  @param value
+	**/
+   public void setException(char[] value) throws CFException {
+      work.setException(value);
+   } 
+
+	/**
+	 *	Returns the value of exceptionRecordLen
+	 *	@return exceptionRecordLen
+	 */
+	public short getExceptionRecordLen() throws CFException {        
+   		return exceptionRecordLenGroup.getExceptionRecordLen();
+	}
+	
+	/**
+	 * 	Update ExceptionRecordLen with the passed value
+	 *	@param number
+	 */
+	public void setExceptionRecordLen(short number)  throws CFException{
+		exceptionRecordLenGroup.setExceptionRecordLen(number);
+	}
+
+	public void setExceptionRecordLen(int number)  throws CFException{
+		exceptionRecordLenGroup.setExceptionRecordLen((short)number);
+	}
+
+	public void setExceptionRecordLen(long number)  throws CFException{
+		exceptionRecordLenGroup.setExceptionRecordLen((short)number);
+	}
+
+
+
+	/**
+	 *	Returns the value of exceptionRecordLenGroup
+	 *	@return exceptionRecordLenGroup
+	 */   
+	 public ExceptionRecordLenGroup getExceptionRecordLenGroup() {
+   	return exceptionRecordLenGroup;
+   }
+
+
 
         public Trdpb000Ctx getTrdpb000Ctx() {
             return Trdpb000Ctx.this;
@@ -20102,157 +20102,12 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
             return new ReportExceptionOutCtx();
     }
      public class LogSummaryInCtx implements Cloneable {
+     Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
+     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
      Work work = Trdpb000Ctx.this.getWork();
      Dcltbtrdmac dcltbtrdmac = Trdpb000Ctx.this.getDcltbtrdmac();
-     Dcltbtrdsum dcltbtrdsum = Trdpb000Ctx.this.getDcltbtrdsum();
-     Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
      CustomerSummaryRec customerSummaryRec = Trdpb000Ctx.this.getCustomerSummaryRec();
-     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
-
-	/**
-	 *	Returns the value of trdCurrency
-	 *	@return trdCurrency
-	 */
-   public char[] getTrdCurrency() throws CFException  {              
-   		return trdOrderPair.getTrdCurrency();
-   }
-
-  
-	/**
-	*  set variable trdCurrency
-	*  @param value
-	**/
-   public void setTrdCurrency(char[] value) throws CFException {
-      trdOrderPair.setTrdCurrency(value);
-   } 
-
-     /**
-	 * 	Update TrdCurrency 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdCurrency(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdCurrency(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdCurrency with another Field
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source) {
-      trdOrderPair.setTrdCurrency(source);
-   }  
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of sqlerrmc
-	 *	@return sqlerrmc
-	 */
-   public char[] getSqlerrmc() throws CFException  {              
-   		return sqlca.getSqlerrm().getSqlerrmc();
-   }
-
-  
-	/**
-	*  set variable sqlerrmc
-	*  @param value
-	**/
-   public void setSqlerrmc(char[] value) throws CFException {
-      sqlca.getSqlerrm().setSqlerrmc(value);
-   } 
-
-     /**
-	 * 	Update Sqlerrmc 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setSqlerrmc(char[] source, int sourceIndex) throws CFException {
-      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex);
-   	
-   }
-   
-   public void setSqlerrmc(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update Sqlerrmc 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setSqlerrmc(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update Sqlerrmc with another Field
-	 *	@param value
-	 */
-   public void setSqlerrmc(Field source) {
-      sqlca.getSqlerrm().setSqlerrmc(source);
-   }  
-   
-     /**
-	 * 	Update Sqlerrmc 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setSqlerrmc(Field source, int sourceIndex,int sourceLen) {
-      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update Sqlerrmc 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setSqlerrmc(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
-	 *	Returns the value of dcltbtrdmac
-	 *	@return dcltbtrdmac
-	 */   
-	 public Dcltbtrdmac getDcltbtrdmac() {
-   	return dcltbtrdmac;
-   }
-
+     Dcltbtrdsum dcltbtrdsum = Trdpb000Ctx.this.getDcltbtrdsum();
 
 	/**
 	 *	Returns the value of summaryCustomerId
@@ -20323,143 +20178,6 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Test condition "C" for isSummaryCredit88()
-	 *	@return  Returns true if isSummaryCredit88() is "C"
-	 */
-   public boolean isSummaryCredit88() throws CFException {
-      return work.isSummaryCredit88();
-   }
-
-	/**
-	*  set values "C"
-	*/
-   	public void setSummaryCredit88True()  throws CFException{  			
-    	work.setSummaryCredit88True();
-   	}
-	/**
-	 *	Returns the value of sqlerrd
-	 *	@return sqlerrd
-	 */
-	public int getSqlerrd(int index) throws CFException {        
-   		return sqlca.getSqlerrd((index));
-	}
-	
-	/**
-	 * 	Update Sqlerrd with the passed value
-	 *	@param number
-	 */
-	public void setSqlerrd(int index,int number)  throws CFException{
-		sqlca.setSqlerrd((index),number);
-	}
-
-
-	public void setSqlerrd(int index,long number)  throws CFException{
-		sqlca.setSqlerrd((index),(int)number);
-	}
-
-
-	/**
-	 *	Test condition "D" for isSummaryDebit88()
-	 *	@return  Returns true if isSummaryDebit88() is "D"
-	 */
-   public boolean isSummaryDebit88() throws CFException {
-      return work.isSummaryDebit88();
-   }
-
-	/**
-	*  set values "D"
-	*/
-   	public void setSummaryDebit88True()  throws CFException{  			
-    	work.setSummaryDebit88True();
-   	}
-	public BigDecimal getMacBalance() throws CFException{      
-   		return dcltbtrdmac.getMacBalance();
-	}
-
-    public char[] getMacBalanceString() throws CFException {
-          return  dcltbtrdmac.getMacBalance().toPlainString().toCharArray();
-    }
-	
-	/**
-	 * 	Update MacBalance with the passed number
-	 *	@param number
-	 */
-	public void setMacBalance(BigDecimal number)  throws CFException{
-		dcltbtrdmac.setMacBalance(number);
-   }
-
-	/**
-	 *	Returns the value of customerSummaryRec
-	 *	@return customerSummaryRec
-	 */   
-	 public CustomerSummaryRec getCustomerSummaryRec() {
-   	return customerSummaryRec;
-   }
-
-
-	/**
-	 *	Returns the value of sqlwarn
-	 *	@return sqlwarn
-	 */   
-	 public Sqlwarn getSqlwarn() {
-   	return sqlca.getSqlwarn();
-   }
-
-   /**
-	* 	Update Sqlwarn with the passed value
-	*	@param value
-	*/
-   public void setSqlwarn(char[] value) throws CFException {
-      sqlca.setSqlwarn(value);
-   }   
-
-     /**
-	 * 	Update Sqlwarn 
-	 *     with a String from an offset and length             
-	 *	@param value
-	 */
-   public void setSqlwarn(char[] source, int sourceIndex,int sourceLen) throws CFException {
-   	sqlca.setSqlwarn(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update Sqlwarn 
-	 *     with a String from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setSqlwarn(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-   	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update Sqlwarn with another Field
-	 *	@param value
-	 */
-   public void setSqlwarn(Field source) {
-   	sqlca.setSqlwarn(source);
-   }  
-   
-     /**
-	 * 	Update Sqlwarn 
-	 *     with another Field from an offset and length             
-	 *	@param value
-	 */
-   public void setSqlwarn(Field source, int sourceIndex,int sourceLen) {
-   	sqlca.setSqlwarn(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update Sqlwarn 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setSqlwarn(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-   	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	/**
 	 *	Returns the value of trdSellerMoneyAccNum
 	 *	@return trdSellerMoneyAccNum
 	 */
@@ -20479,59 +20197,6 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
 	public void setTrdSellerMoneyAccNum(long number)  throws CFException{
 		trdOrderPair.setTrdSellerMoneyAccNum((int)number);
 	}
-
-
-	/**
-	 *	Test condition "601" for isSettled()
-	 *	@return  Returns true if isSettled() is "601"
-	 */
-   public boolean isSettled() throws CFException {
-      return work.isSettled();
-   }
-
-	/**
-	*  set values "601"
-	*/
-   	public void setSettledTrue()  throws CFException{  			
-    	work.setSettledTrue();
-   	}
-	/**
-	 *	Test condition "N" for isSummaryNoBooking88()
-	 *	@return  Returns true if isSummaryNoBooking88() is "N"
-	 */
-   public boolean isSummaryNoBooking88() throws CFException {
-      return work.isSummaryNoBooking88();
-   }
-
-	/**
-	*  set values "N"
-	*/
-   	public void setSummaryNoBooking88True()  throws CFException{  			
-    	work.setSummaryNoBooking88True();
-   	}
-	public BigDecimal getTrdOrderAmount() throws CFException{      
-   		return trdOrderPair.getTrdOrderAmount();
-	}
-
-    public char[] getTrdOrderAmountString() throws CFException {
-          return  trdOrderPair.getTrdOrderAmount().toPlainString().toCharArray();
-    }
-	
-	/**
-	 * 	Update TrdOrderAmount with the passed number
-	 *	@param number
-	 */
-	public void setTrdOrderAmount(BigDecimal number)  throws CFException{
-		trdOrderPair.setTrdOrderAmount(number);
-   }
-
-	/**
-	 *	Returns the value of dcltbtrdsum
-	 *	@return dcltbtrdsum
-	 */   
-	 public Dcltbtrdsum getDcltbtrdsum() {
-   	return dcltbtrdsum;
-   }
 
 
 	/**
@@ -20626,42 +20291,6 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     	work.setRejectedTrue();
    	}
 	/**
-	 *	Returns the value of trdBuyerMoneyAccNum
-	 *	@return trdBuyerMoneyAccNum
-	 */
-	public int getTrdBuyerMoneyAccNum() throws CFException {        
-   		return trdOrderPair.getTrdBuyerMoneyAccNum();
-	}
-	
-	/**
-	 * 	Update TrdBuyerMoneyAccNum with the passed value
-	 *	@param number
-	 */
-	public void setTrdBuyerMoneyAccNum(int number)  throws CFException{
-		trdOrderPair.setTrdBuyerMoneyAccNum(number);
-	}
-
-
-	public void setTrdBuyerMoneyAccNum(long number)  throws CFException{
-		trdOrderPair.setTrdBuyerMoneyAccNum((int)number);
-	}
-
-
-	/**
-	 *	Test condition "301" "302" "303" "304" "305" "306" "307" "308" for isOverdue()
-	 *	@return  Returns true if isOverdue() is "301" "302" "303" "304" "305" "306" "307" "308"
-	 */
-   public boolean isOverdue() throws CFException {
-      return work.isOverdue();
-   }
-
-	/**
-	*  set values "301" "302" "303" "304" "305" "306" "307" "308"
-	*/
-   	public void setOverdueTrue()  throws CFException{  			
-    	work.setOverdueTrue();
-   	}
-	/**
 	 *	Returns the value of sqlcode
 	 *	@return sqlcode
 	 */
@@ -20683,6 +20312,22 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
 	}
 
 
+	public BigDecimal getMacBalance() throws CFException{      
+   		return dcltbtrdmac.getMacBalance();
+	}
+
+    public char[] getMacBalanceString() throws CFException {
+          return  dcltbtrdmac.getMacBalance().toPlainString().toCharArray();
+    }
+	
+	/**
+	 * 	Update MacBalance with the passed number
+	 *	@param number
+	 */
+	public void setMacBalance(BigDecimal number)  throws CFException{
+		dcltbtrdmac.setMacBalance(number);
+   }
+
 	public BigDecimal getSumOpenBalance() throws CFException{      
    		return dcltbtrdsum.getSumOpenBalance();
 	}
@@ -20699,6 +20344,361 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
 		dcltbtrdsum.setSumOpenBalance(number);
    }
 
+	/**
+	 *	Test condition "C" for isSummaryCredit88()
+	 *	@return  Returns true if isSummaryCredit88() is "C"
+	 */
+   public boolean isSummaryCredit88() throws CFException {
+      return work.isSummaryCredit88();
+   }
+
+	/**
+	*  set values "C"
+	*/
+   	public void setSummaryCredit88True()  throws CFException{  			
+    	work.setSummaryCredit88True();
+   	}
+	/**
+	 *	Returns the value of dcltbtrdsum
+	 *	@return dcltbtrdsum
+	 */   
+	 public Dcltbtrdsum getDcltbtrdsum() {
+   	return dcltbtrdsum;
+   }
+
+
+	/**
+	 *	Returns the value of trdBuyerMoneyAccNum
+	 *	@return trdBuyerMoneyAccNum
+	 */
+	public int getTrdBuyerMoneyAccNum() throws CFException {        
+   		return trdOrderPair.getTrdBuyerMoneyAccNum();
+	}
+	
+	/**
+	 * 	Update TrdBuyerMoneyAccNum with the passed value
+	 *	@param number
+	 */
+	public void setTrdBuyerMoneyAccNum(int number)  throws CFException{
+		trdOrderPair.setTrdBuyerMoneyAccNum(number);
+	}
+
+
+	public void setTrdBuyerMoneyAccNum(long number)  throws CFException{
+		trdOrderPair.setTrdBuyerMoneyAccNum((int)number);
+	}
+
+
+	public BigDecimal getTrdOrderAmount() throws CFException{      
+   		return trdOrderPair.getTrdOrderAmount();
+	}
+
+    public char[] getTrdOrderAmountString() throws CFException {
+          return  trdOrderPair.getTrdOrderAmount().toPlainString().toCharArray();
+    }
+	
+	/**
+	 * 	Update TrdOrderAmount with the passed number
+	 *	@param number
+	 */
+	public void setTrdOrderAmount(BigDecimal number)  throws CFException{
+		trdOrderPair.setTrdOrderAmount(number);
+   }
+
+	/**
+	 *	Test condition "301" "302" "303" "304" "305" "306" "307" "308" for isOverdue()
+	 *	@return  Returns true if isOverdue() is "301" "302" "303" "304" "305" "306" "307" "308"
+	 */
+   public boolean isOverdue() throws CFException {
+      return work.isOverdue();
+   }
+
+	/**
+	*  set values "301" "302" "303" "304" "305" "306" "307" "308"
+	*/
+   	public void setOverdueTrue()  throws CFException{  			
+    	work.setOverdueTrue();
+   	}
+	/**
+	 *	Returns the value of sqlerrd
+	 *	@return sqlerrd
+	 */
+	public int getSqlerrd(int index) throws CFException {        
+   		return sqlca.getSqlerrd((index));
+	}
+	
+	/**
+	 * 	Update Sqlerrd with the passed value
+	 *	@param number
+	 */
+	public void setSqlerrd(int index,int number)  throws CFException{
+		sqlca.setSqlerrd((index),number);
+	}
+
+
+	public void setSqlerrd(int index,long number)  throws CFException{
+		sqlca.setSqlerrd((index),(int)number);
+	}
+
+
+	/**
+	 *	Returns the value of trdCurrency
+	 *	@return trdCurrency
+	 */
+   public char[] getTrdCurrency() throws CFException  {              
+   		return trdOrderPair.getTrdCurrency();
+   }
+
+  
+	/**
+	*  set variable trdCurrency
+	*  @param value
+	**/
+   public void setTrdCurrency(char[] value) throws CFException {
+      trdOrderPair.setTrdCurrency(value);
+   } 
+
+     /**
+	 * 	Update TrdCurrency 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdCurrency(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdCurrency(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdCurrency 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdCurrency with another Field
+	 *	@param value
+	 */
+   public void setTrdCurrency(Field source) {
+      trdOrderPair.setTrdCurrency(source);
+   }  
+   
+     /**
+	 * 	Update TrdCurrency 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdCurrency 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Test condition "N" for isSummaryNoBooking88()
+	 *	@return  Returns true if isSummaryNoBooking88() is "N"
+	 */
+   public boolean isSummaryNoBooking88() throws CFException {
+      return work.isSummaryNoBooking88();
+   }
+
+	/**
+	*  set values "N"
+	*/
+   	public void setSummaryNoBooking88True()  throws CFException{  			
+    	work.setSummaryNoBooking88True();
+   	}
+	/**
+	 *	Returns the value of sqlerrmc
+	 *	@return sqlerrmc
+	 */
+   public char[] getSqlerrmc() throws CFException  {              
+   		return sqlca.getSqlerrm().getSqlerrmc();
+   }
+
+  
+	/**
+	*  set variable sqlerrmc
+	*  @param value
+	**/
+   public void setSqlerrmc(char[] value) throws CFException {
+      sqlca.getSqlerrm().setSqlerrmc(value);
+   } 
+
+     /**
+	 * 	Update Sqlerrmc 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setSqlerrmc(char[] source, int sourceIndex) throws CFException {
+      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex);
+   	
+   }
+   
+   public void setSqlerrmc(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update Sqlerrmc 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setSqlerrmc(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update Sqlerrmc with another Field
+	 *	@param value
+	 */
+   public void setSqlerrmc(Field source) {
+      sqlca.getSqlerrm().setSqlerrmc(source);
+   }  
+   
+     /**
+	 * 	Update Sqlerrmc 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setSqlerrmc(Field source, int sourceIndex,int sourceLen) {
+      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update Sqlerrmc 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setSqlerrmc(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      sqlca.getSqlerrm().setSqlerrmc(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of dcltbtrdmac
+	 *	@return dcltbtrdmac
+	 */   
+	 public Dcltbtrdmac getDcltbtrdmac() {
+   	return dcltbtrdmac;
+   }
+
+
+	/**
+	 *	Returns the value of customerSummaryRec
+	 *	@return customerSummaryRec
+	 */   
+	 public CustomerSummaryRec getCustomerSummaryRec() {
+   	return customerSummaryRec;
+   }
+
+
+	/**
+	 *	Returns the value of sqlwarn
+	 *	@return sqlwarn
+	 */   
+	 public Sqlwarn getSqlwarn() {
+   	return sqlca.getSqlwarn();
+   }
+
+   /**
+	* 	Update Sqlwarn with the passed value
+	*	@param value
+	*/
+   public void setSqlwarn(char[] value) throws CFException {
+      sqlca.setSqlwarn(value);
+   }   
+
+     /**
+	 * 	Update Sqlwarn 
+	 *     with a String from an offset and length             
+	 *	@param value
+	 */
+   public void setSqlwarn(char[] source, int sourceIndex,int sourceLen) throws CFException {
+   	sqlca.setSqlwarn(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update Sqlwarn 
+	 *     with a String from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setSqlwarn(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+   	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update Sqlwarn with another Field
+	 *	@param value
+	 */
+   public void setSqlwarn(Field source) {
+   	sqlca.setSqlwarn(source);
+   }  
+   
+     /**
+	 * 	Update Sqlwarn 
+	 *     with another Field from an offset and length             
+	 *	@param value
+	 */
+   public void setSqlwarn(Field source, int sourceIndex,int sourceLen) {
+   	sqlca.setSqlwarn(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update Sqlwarn 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setSqlwarn(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+   	sqlca.setSqlwarn(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Test condition "601" for isSettled()
+	 *	@return  Returns true if isSettled() is "601"
+	 */
+   public boolean isSettled() throws CFException {
+      return work.isSettled();
+   }
+
+	/**
+	*  set values "601"
+	*/
+   	public void setSettledTrue()  throws CFException{  			
+    	work.setSettledTrue();
+   	}
+	/**
+	 *	Test condition "D" for isSummaryDebit88()
+	 *	@return  Returns true if isSummaryDebit88() is "D"
+	 */
+   public boolean isSummaryDebit88() throws CFException {
+      return work.isSummaryDebit88();
+   }
+
+	/**
+	*  set values "D"
+	*/
+   	public void setSummaryDebit88True()  throws CFException{  			
+    	work.setSummaryDebit88True();
+   	}
 
         public Trdpb000Ctx getTrdpb000Ctx() {
             return Trdpb000Ctx.this;
@@ -20717,29 +20717,29 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
+        str += sqlca.hashCode();
+        str += trdOrderPair.hashCode();
         str += work.hashCode();
         str += dcltbtrdmac.hashCode();
-        str += dcltbtrdsum.hashCode();
-        str += sqlca.hashCode();
         str += customerSummaryRec.hashCode();
-        str += trdOrderPair.hashCode();
+        str += dcltbtrdsum.hashCode();
        return str.hashCode();
     }
 
     public LogSummaryInCtx clone() {
         LogSummaryInCtx cloneObj = new LogSummaryInCtx();
+        cloneObj.sqlca = new Sqlca();
+        cloneObj.sqlca.set(sqlca.getClonedField());
+        cloneObj.trdOrderPair = new TrdOrderPair();
+        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
         cloneObj.work = new Work();
         cloneObj.work.set(work.getClonedField());
         cloneObj.dcltbtrdmac = new Dcltbtrdmac();
         cloneObj.dcltbtrdmac.set(dcltbtrdmac.getClonedField());
-        cloneObj.dcltbtrdsum = new Dcltbtrdsum();
-        cloneObj.dcltbtrdsum.set(dcltbtrdsum.getClonedField());
-        cloneObj.sqlca = new Sqlca();
-        cloneObj.sqlca.set(sqlca.getClonedField());
         cloneObj.customerSummaryRec = new CustomerSummaryRec();
         cloneObj.customerSummaryRec.set(customerSummaryRec.getClonedField());
-        cloneObj.trdOrderPair = new TrdOrderPair();
-        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        cloneObj.dcltbtrdsum = new Dcltbtrdsum();
+        cloneObj.dcltbtrdsum.set(dcltbtrdsum.getClonedField());
         return cloneObj;
     }
 
@@ -20749,88 +20749,79 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
             return new LogSummaryInCtx();
     }
      public class LogSummaryOutCtx implements Cloneable {
+     Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
+     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
      Work work = Trdpb000Ctx.this.getWork();
      Dcltbtrdmac dcltbtrdmac = Trdpb000Ctx.this.getDcltbtrdmac();
-     Dcltbtrdsum dcltbtrdsum = Trdpb000Ctx.this.getDcltbtrdsum();
-     Sqlca sqlca = Trdpb000Ctx.this.getSqlca();
      CustomerSummaryRec customerSummaryRec = Trdpb000Ctx.this.getCustomerSummaryRec();
-     TrdOrderPair trdOrderPair = Trdpb000Ctx.this.getTrdOrderPair();
+     Dcltbtrdsum dcltbtrdsum = Trdpb000Ctx.this.getDcltbtrdsum();
 
 	/**
-	 *	Returns the value of dcltbtrdmac
-	 *	@return dcltbtrdmac
-	 */   
-	 public Dcltbtrdmac getDcltbtrdmac() {
-   	return dcltbtrdmac;
-   }
-
-
-	/**
-	 *	Returns the value of summaryCustomerId
-	 *	@return summaryCustomerId
+	 *	Returns the value of sumCurrency
+	 *	@return sumCurrency
 	 */
-   public char[] getSummaryCustomerId() throws CFException  {              
-   		return customerSummaryRec.getSummaryCustomerId();
+   public char[] getSumCurrency() throws CFException  {              
+   		return dcltbtrdsum.getSumCurrency();
    }
 
   
 	/**
-	*  set variable summaryCustomerId
+	*  set variable sumCurrency
 	*  @param value
 	**/
-   public void setSummaryCustomerId(char[] value) throws CFException {
-      customerSummaryRec.setSummaryCustomerId(value);
+   public void setSumCurrency(char[] value) throws CFException {
+      dcltbtrdsum.setSumCurrency(value);
    } 
 
      /**
-	 * 	Update SummaryCustomerId 
+	 * 	Update SumCurrency 
 	 *     with a char[] from an offset and length             
 	 *	@param value
 	 */
-   public void setSummaryCustomerId(char[] source, int sourceIndex) throws CFException {
-      customerSummaryRec.setSummaryCustomerId(source, sourceIndex);
+   public void setSumCurrency(char[] source, int sourceIndex) throws CFException {
+      dcltbtrdsum.setSumCurrency(source, sourceIndex);
    	
    }
    
-   public void setSummaryCustomerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      customerSummaryRec.setSummaryCustomerId(source, sourceIndex, sourceLen);
+   public void setSumCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      dcltbtrdsum.setSumCurrency(source, sourceIndex, sourceLen);
    }
    
      /**
-	 * 	Update SummaryCustomerId 
+	 * 	Update SumCurrency 
 	 *     with a char[] from an offset and length  
 	 *                     to  an offset and length         
 	 *	@param value
 	 */
-   public void setSummaryCustomerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      customerSummaryRec.setSummaryCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setSumCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsum.setSumCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
    
     /**
-	 * 	Update SummaryCustomerId with another Field
+	 * 	Update SumCurrency with another Field
 	 *	@param value
 	 */
-   public void setSummaryCustomerId(Field source) {
-      customerSummaryRec.setSummaryCustomerId(source);
+   public void setSumCurrency(Field source) {
+      dcltbtrdsum.setSumCurrency(source);
    }  
    
      /**
-	 * 	Update SummaryCustomerId 
+	 * 	Update SumCurrency 
 	 *     with another Field from an offset and length          
 	 *	@param value
 	 */
-   public void setSummaryCustomerId(Field source, int sourceIndex,int sourceLen) {
-      customerSummaryRec.setSummaryCustomerId(source, sourceIndex, sourceLen);   	
+   public void setSumCurrency(Field source, int sourceIndex,int sourceLen) {
+      dcltbtrdsum.setSumCurrency(source, sourceIndex, sourceLen);   	
    }
    
      /**
-	 * 	Update SummaryCustomerId 
+	 * 	Update SumCurrency 
 	 *     with another Field from an offset and length  
 	 *                         to  an offset and length         
 	 *	@param value
 	 */
-   public void setSummaryCustomerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      customerSummaryRec.setSummaryCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   public void setSumCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      dcltbtrdsum.setSumCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
@@ -20854,206 +20845,6 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
 		dcltbtrdmac.setMacNumber((int)number);
 	}
 
-
-	/**
-	 *	Returns the value of customerSummaryRec
-	 *	@return customerSummaryRec
-	 */   
-	 public CustomerSummaryRec getCustomerSummaryRec() {
-   	return customerSummaryRec;
-   }
-
-
-	/**
-	 *	Returns the value of exception
-	 *	@return exception
-	 */
-   public char[] getException() throws CFException  {              
-   		return work.getException();
-   }
-
-  
-	/**
-	*  set variable exception
-	*  @param value
-	**/
-   public void setException(char[] value) throws CFException {
-      work.setException(value);
-   } 
-
-	/**
-	 *	Test condition "R" for isCustomerSummaryRewrite88()
-	 *	@return  Returns true if isCustomerSummaryRewrite88() is "R"
-	 */
-   public boolean isCustomerSummaryRewrite88() throws CFException {
-      return work.isCustomerSummaryRewrite88();
-   }
-
-	/**
-	*  set values "R"
-	*/
-   	public void setCustomerSummaryRewrite88True()  throws CFException{  			
-    	work.setCustomerSummaryRewrite88True();
-   	}
-	/**
-	 *	Returns the value of trdSellerMoneyAccNum
-	 *	@return trdSellerMoneyAccNum
-	 */
-	public int getTrdSellerMoneyAccNum() throws CFException {        
-   		return trdOrderPair.getTrdSellerMoneyAccNum();
-	}
-	
-	/**
-	 * 	Update TrdSellerMoneyAccNum with the passed value
-	 *	@param number
-	 */
-	public void setTrdSellerMoneyAccNum(int number)  throws CFException{
-		trdOrderPair.setTrdSellerMoneyAccNum(number);
-	}
-
-
-	public void setTrdSellerMoneyAccNum(long number)  throws CFException{
-		trdOrderPair.setTrdSellerMoneyAccNum((int)number);
-	}
-
-
-	public BigDecimal getSumTotalCredit() throws CFException{      
-   		return dcltbtrdsum.getSumTotalCredit();
-	}
-
-    public char[] getSumTotalCreditString() throws CFException {
-          return  dcltbtrdsum.getSumTotalCredit().toPlainString().toCharArray();
-    }
-	
-	/**
-	 * 	Update SumTotalCredit with the passed number
-	 *	@param number
-	 */
-	public void setSumTotalCredit(BigDecimal number)  throws CFException{
-		dcltbtrdsum.setSumTotalCredit(number);
-   }
-
-	/**
-	 *	Returns the value of sumRejected
-	 *	@return sumRejected
-	 */
-	public int getSumRejected() throws CFException {        
-   		return dcltbtrdsum.getSumRejected();
-	}
-	
-	/**
-	 * 	Update SumRejected with the passed value
-	 *	@param number
-	 */
-	public void setSumRejected(int number)  throws CFException{
-		dcltbtrdsum.setSumRejected(number);
-	}
-
-
-	public void setSumRejected(long number)  throws CFException{
-		dcltbtrdsum.setSumRejected((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of dcltbtrdsum
-	 *	@return dcltbtrdsum
-	 */   
-	 public Dcltbtrdsum getDcltbtrdsum() {
-   	return dcltbtrdsum;
-   }
-
-
-	/**
-	 *	Returns the value of sqlca
-	 *	@return sqlca
-	 */   
-	 public Sqlca getSqlca() {
-   	return sqlca;
-   }
-
-
-	/**
-	 *	Returns the value of trdBuyerMoneyAccNum
-	 *	@return trdBuyerMoneyAccNum
-	 */
-	public int getTrdBuyerMoneyAccNum() throws CFException {        
-   		return trdOrderPair.getTrdBuyerMoneyAccNum();
-	}
-	
-	/**
-	 * 	Update TrdBuyerMoneyAccNum with the passed value
-	 *	@param number
-	 */
-	public void setTrdBuyerMoneyAccNum(int number)  throws CFException{
-		trdOrderPair.setTrdBuyerMoneyAccNum(number);
-	}
-
-
-	public void setTrdBuyerMoneyAccNum(long number)  throws CFException{
-		trdOrderPair.setTrdBuyerMoneyAccNum((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of sumOverdue
-	 *	@return sumOverdue
-	 */
-	public int getSumOverdue() throws CFException {        
-   		return dcltbtrdsum.getSumOverdue();
-	}
-	
-	/**
-	 * 	Update SumOverdue with the passed value
-	 *	@param number
-	 */
-	public void setSumOverdue(int number)  throws CFException{
-		dcltbtrdsum.setSumOverdue(number);
-	}
-
-
-	public void setSumOverdue(long number)  throws CFException{
-		dcltbtrdsum.setSumOverdue((int)number);
-	}
-
-
-	/**
-	 *	Returns the value of sqlcode
-	 *	@return sqlcode
-	 */
-	public int getSqlcode() throws CFException {        
-   		return sqlca.getSqlcode();
-	}
-	
-	/**
-	 * 	Update Sqlcode with the passed value
-	 *	@param number
-	 */
-	public void setSqlcode(int number)  throws CFException{
-		sqlca.setSqlcode(number);
-	}
-
-
-	public void setSqlcode(long number)  throws CFException{
-		sqlca.setSqlcode((int)number);
-	}
-
-
-	public BigDecimal getSumOpenBalance() throws CFException{      
-   		return dcltbtrdsum.getSumOpenBalance();
-	}
-
-    public char[] getSumOpenBalanceString() throws CFException {
-          return  dcltbtrdsum.getSumOpenBalance().toPlainString().toCharArray();
-    }
-	
-	/**
-	 * 	Update SumOpenBalance with the passed number
-	 *	@param number
-	 */
-	public void setSumOpenBalance(BigDecimal number)  throws CFException{
-		dcltbtrdsum.setSumOpenBalance(number);
-   }
 
 	/**
 	 *	Returns the value of macCurrency
@@ -21124,88 +20915,26 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
    }
 
 	/**
-	 *	Returns the value of trdCurrency
-	 *	@return trdCurrency
+	 *	Returns the value of trdBuyerMoneyAccNum
+	 *	@return trdBuyerMoneyAccNum
 	 */
-   public char[] getTrdCurrency() throws CFException  {              
-   		return trdOrderPair.getTrdCurrency();
-   }
-
-  
-	/**
-	*  set variable trdCurrency
-	*  @param value
-	**/
-   public void setTrdCurrency(char[] value) throws CFException {
-      trdOrderPair.setTrdCurrency(value);
-   } 
-
-     /**
-	 * 	Update TrdCurrency 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setTrdCurrency(char[] source, int sourceIndex) throws CFException {
-      trdOrderPair.setTrdCurrency(source, sourceIndex);
-   	
-   }
-   
-   public void setTrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update TrdCurrency with another Field
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source) {
-      trdOrderPair.setTrdCurrency(source);
-   }  
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update TrdCurrency 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-
-	public BigDecimal getSumCloseBalance() throws CFException{      
-   		return dcltbtrdsum.getSumCloseBalance();
+	public int getTrdBuyerMoneyAccNum() throws CFException {        
+   		return trdOrderPair.getTrdBuyerMoneyAccNum();
 	}
-
-    public char[] getSumCloseBalanceString() throws CFException {
-          return  dcltbtrdsum.getSumCloseBalance().toPlainString().toCharArray();
-    }
 	
 	/**
-	 * 	Update SumCloseBalance with the passed number
+	 * 	Update TrdBuyerMoneyAccNum with the passed value
 	 *	@param number
 	 */
-	public void setSumCloseBalance(BigDecimal number)  throws CFException{
-		dcltbtrdsum.setSumCloseBalance(number);
-   }
+	public void setTrdBuyerMoneyAccNum(int number)  throws CFException{
+		trdOrderPair.setTrdBuyerMoneyAccNum(number);
+	}
+
+
+	public void setTrdBuyerMoneyAccNum(long number)  throws CFException{
+		trdOrderPair.setTrdBuyerMoneyAccNum((int)number);
+	}
+
 
 	/**
 	 *	Returns the value of sumCustomerId
@@ -21275,6 +21004,22 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
       dcltbtrdsum.setSumCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
+	public BigDecimal getSumTotalDebit() throws CFException{      
+   		return dcltbtrdsum.getSumTotalDebit();
+	}
+
+    public char[] getSumTotalDebitString() throws CFException {
+          return  dcltbtrdsum.getSumTotalDebit().toPlainString().toCharArray();
+    }
+	
+	/**
+	 * 	Update SumTotalDebit with the passed number
+	 *	@param number
+	 */
+	public void setSumTotalDebit(BigDecimal number)  throws CFException{
+		dcltbtrdsum.setSumTotalDebit(number);
+   }
+
 	/**
 	 *	Returns the value of sumSettled
 	 *	@return sumSettled
@@ -21298,19 +21043,251 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
 
 
 	/**
-	 *	Test condition "W" for isCustomerSummaryWrite88()
-	 *	@return  Returns true if isCustomerSummaryWrite88() is "W"
+	 *	Returns the value of trdCurrency
+	 *	@return trdCurrency
 	 */
-   public boolean isCustomerSummaryWrite88() throws CFException {
-      return work.isCustomerSummaryWrite88();
+   public char[] getTrdCurrency() throws CFException  {              
+   		return trdOrderPair.getTrdCurrency();
+   }
+
+  
+	/**
+	*  set variable trdCurrency
+	*  @param value
+	**/
+   public void setTrdCurrency(char[] value) throws CFException {
+      trdOrderPair.setTrdCurrency(value);
+   } 
+
+     /**
+	 * 	Update TrdCurrency 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setTrdCurrency(char[] source, int sourceIndex) throws CFException {
+      trdOrderPair.setTrdCurrency(source, sourceIndex);
+   	
+   }
+   
+   public void setTrdCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update TrdCurrency 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update TrdCurrency with another Field
+	 *	@param value
+	 */
+   public void setTrdCurrency(Field source) {
+      trdOrderPair.setTrdCurrency(source);
+   }  
+   
+     /**
+	 * 	Update TrdCurrency 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update TrdCurrency 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setTrdCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      trdOrderPair.setTrdCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
 	/**
-	*  set values "W"
-	*/
-   	public void setCustomerSummaryWrite88True()  throws CFException{  			
-    	work.setCustomerSummaryWrite88True();
-   	}
+	 *	Returns the value of summaryCustomerId
+	 *	@return summaryCustomerId
+	 */
+   public char[] getSummaryCustomerId() throws CFException  {              
+   		return customerSummaryRec.getSummaryCustomerId();
+   }
+
+  
+	/**
+	*  set variable summaryCustomerId
+	*  @param value
+	**/
+   public void setSummaryCustomerId(char[] value) throws CFException {
+      customerSummaryRec.setSummaryCustomerId(value);
+   } 
+
+     /**
+	 * 	Update SummaryCustomerId 
+	 *     with a char[] from an offset and length             
+	 *	@param value
+	 */
+   public void setSummaryCustomerId(char[] source, int sourceIndex) throws CFException {
+      customerSummaryRec.setSummaryCustomerId(source, sourceIndex);
+   	
+   }
+   
+   public void setSummaryCustomerId(char[] source, int sourceIndex , int sourceLen) throws CFException  {
+      customerSummaryRec.setSummaryCustomerId(source, sourceIndex, sourceLen);
+   }
+   
+     /**
+	 * 	Update SummaryCustomerId 
+	 *     with a char[] from an offset and length  
+	 *                     to  an offset and length         
+	 *	@param value
+	 */
+   public void setSummaryCustomerId(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      customerSummaryRec.setSummaryCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+   
+    /**
+	 * 	Update SummaryCustomerId with another Field
+	 *	@param value
+	 */
+   public void setSummaryCustomerId(Field source) {
+      customerSummaryRec.setSummaryCustomerId(source);
+   }  
+   
+     /**
+	 * 	Update SummaryCustomerId 
+	 *     with another Field from an offset and length          
+	 *	@param value
+	 */
+   public void setSummaryCustomerId(Field source, int sourceIndex,int sourceLen) {
+      customerSummaryRec.setSummaryCustomerId(source, sourceIndex, sourceLen);   	
+   }
+   
+     /**
+	 * 	Update SummaryCustomerId 
+	 *     with another Field from an offset and length  
+	 *                         to  an offset and length         
+	 *	@param value
+	 */
+   public void setSummaryCustomerId(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
+      customerSummaryRec.setSummaryCustomerId(source, sourceIndex, sourceLen, targetIndex, targetLen);
+   }
+
+	/**
+	 *	Returns the value of trdSellerMoneyAccNum
+	 *	@return trdSellerMoneyAccNum
+	 */
+	public int getTrdSellerMoneyAccNum() throws CFException {        
+   		return trdOrderPair.getTrdSellerMoneyAccNum();
+	}
+	
+	/**
+	 * 	Update TrdSellerMoneyAccNum with the passed value
+	 *	@param number
+	 */
+	public void setTrdSellerMoneyAccNum(int number)  throws CFException{
+		trdOrderPair.setTrdSellerMoneyAccNum(number);
+	}
+
+
+	public void setTrdSellerMoneyAccNum(long number)  throws CFException{
+		trdOrderPair.setTrdSellerMoneyAccNum((int)number);
+	}
+
+
+	/**
+	 *	Returns the value of sqlca
+	 *	@return sqlca
+	 */   
+	 public Sqlca getSqlca() {
+   	return sqlca;
+   }
+
+
+	/**
+	 *	Returns the value of sqlcode
+	 *	@return sqlcode
+	 */
+	public int getSqlcode() throws CFException {        
+   		return sqlca.getSqlcode();
+	}
+	
+	/**
+	 * 	Update Sqlcode with the passed value
+	 *	@param number
+	 */
+	public void setSqlcode(int number)  throws CFException{
+		sqlca.setSqlcode(number);
+	}
+
+
+	public void setSqlcode(long number)  throws CFException{
+		sqlca.setSqlcode((int)number);
+	}
+
+
+	public BigDecimal getSumOpenBalance() throws CFException{      
+   		return dcltbtrdsum.getSumOpenBalance();
+	}
+
+    public char[] getSumOpenBalanceString() throws CFException {
+          return  dcltbtrdsum.getSumOpenBalance().toPlainString().toCharArray();
+    }
+	
+	/**
+	 * 	Update SumOpenBalance with the passed number
+	 *	@param number
+	 */
+	public void setSumOpenBalance(BigDecimal number)  throws CFException{
+		dcltbtrdsum.setSumOpenBalance(number);
+   }
+
+	/**
+	 *	Returns the value of dcltbtrdsum
+	 *	@return dcltbtrdsum
+	 */   
+	 public Dcltbtrdsum getDcltbtrdsum() {
+   	return dcltbtrdsum;
+   }
+
+
+	public BigDecimal getSumCloseBalance() throws CFException{      
+   		return dcltbtrdsum.getSumCloseBalance();
+	}
+
+    public char[] getSumCloseBalanceString() throws CFException {
+          return  dcltbtrdsum.getSumCloseBalance().toPlainString().toCharArray();
+    }
+	
+	/**
+	 * 	Update SumCloseBalance with the passed number
+	 *	@param number
+	 */
+	public void setSumCloseBalance(BigDecimal number)  throws CFException{
+		dcltbtrdsum.setSumCloseBalance(number);
+   }
+
+	public BigDecimal getSumTotalCredit() throws CFException{      
+   		return dcltbtrdsum.getSumTotalCredit();
+	}
+
+    public char[] getSumTotalCreditString() throws CFException {
+          return  dcltbtrdsum.getSumTotalCredit().toPlainString().toCharArray();
+    }
+	
+	/**
+	 * 	Update SumTotalCredit with the passed number
+	 *	@param number
+	 */
+	public void setSumTotalCredit(BigDecimal number)  throws CFException{
+		dcltbtrdsum.setSumTotalCredit(number);
+   }
+
 	/**
 	 *	Test condition "A" for isApplException()
 	 *	@return  Returns true if isApplException() is "A"
@@ -21326,72 +21303,53 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     	work.setApplExceptionTrue();
    	}
 	/**
-	 *	Returns the value of sumCurrency
-	 *	@return sumCurrency
+	 *	Test condition "W" for isCustomerSummaryWrite88()
+	 *	@return  Returns true if isCustomerSummaryWrite88() is "W"
 	 */
-   public char[] getSumCurrency() throws CFException  {              
-   		return dcltbtrdsum.getSumCurrency();
+   public boolean isCustomerSummaryWrite88() throws CFException {
+      return work.isCustomerSummaryWrite88();
+   }
+
+	/**
+	*  set values "W"
+	*/
+   	public void setCustomerSummaryWrite88True()  throws CFException{  			
+    	work.setCustomerSummaryWrite88True();
+   	}
+	/**
+	 *	Returns the value of dcltbtrdmac
+	 *	@return dcltbtrdmac
+	 */   
+	 public Dcltbtrdmac getDcltbtrdmac() {
+   	return dcltbtrdmac;
+   }
+
+
+	/**
+	 *	Returns the value of exception
+	 *	@return exception
+	 */
+   public char[] getException() throws CFException  {              
+   		return work.getException();
    }
 
   
 	/**
-	*  set variable sumCurrency
+	*  set variable exception
 	*  @param value
 	**/
-   public void setSumCurrency(char[] value) throws CFException {
-      dcltbtrdsum.setSumCurrency(value);
+   public void setException(char[] value) throws CFException {
+      work.setException(value);
    } 
 
-     /**
-	 * 	Update SumCurrency 
-	 *     with a char[] from an offset and length             
-	 *	@param value
-	 */
-   public void setSumCurrency(char[] source, int sourceIndex) throws CFException {
-      dcltbtrdsum.setSumCurrency(source, sourceIndex);
-   	
+	/**
+	 *	Returns the value of customerSummaryRec
+	 *	@return customerSummaryRec
+	 */   
+	 public CustomerSummaryRec getCustomerSummaryRec() {
+   	return customerSummaryRec;
    }
-   
-   public void setSumCurrency(char[] source, int sourceIndex , int sourceLen) throws CFException  {
-      dcltbtrdsum.setSumCurrency(source, sourceIndex, sourceLen);
-   }
-   
-     /**
-	 * 	Update SumCurrency 
-	 *     with a char[] from an offset and length  
-	 *                     to  an offset and length         
-	 *	@param value
-	 */
-   public void setSumCurrency(char[] source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsum.setSumCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
-   
-    /**
-	 * 	Update SumCurrency with another Field
-	 *	@param value
-	 */
-   public void setSumCurrency(Field source) {
-      dcltbtrdsum.setSumCurrency(source);
-   }  
-   
-     /**
-	 * 	Update SumCurrency 
-	 *     with another Field from an offset and length          
-	 *	@param value
-	 */
-   public void setSumCurrency(Field source, int sourceIndex,int sourceLen) {
-      dcltbtrdsum.setSumCurrency(source, sourceIndex, sourceLen);   	
-   }
-   
-     /**
-	 * 	Update SumCurrency 
-	 *     with another Field from an offset and length  
-	 *                         to  an offset and length         
-	 *	@param value
-	 */
-   public void setSumCurrency(Field source, int sourceIndex,int sourceLen, int targetIndex,int targetLen) {
-      dcltbtrdsum.setSumCurrency(source, sourceIndex, sourceLen, targetIndex, targetLen);
-   }
+
 
 	/**
 	 *	Returns the value of sqlcode_Ws
@@ -21461,21 +21419,63 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
       work.setSqlcode_Ws(source, sourceIndex, sourceLen, targetIndex, targetLen);
    }
 
-	public BigDecimal getSumTotalDebit() throws CFException{      
-   		return dcltbtrdsum.getSumTotalDebit();
-	}
+	/**
+	 *	Test condition "R" for isCustomerSummaryRewrite88()
+	 *	@return  Returns true if isCustomerSummaryRewrite88() is "R"
+	 */
+   public boolean isCustomerSummaryRewrite88() throws CFException {
+      return work.isCustomerSummaryRewrite88();
+   }
 
-    public char[] getSumTotalDebitString() throws CFException {
-          return  dcltbtrdsum.getSumTotalDebit().toPlainString().toCharArray();
-    }
+	/**
+	*  set values "R"
+	*/
+   	public void setCustomerSummaryRewrite88True()  throws CFException{  			
+    	work.setCustomerSummaryRewrite88True();
+   	}
+	/**
+	 *	Returns the value of sumRejected
+	 *	@return sumRejected
+	 */
+	public int getSumRejected() throws CFException {        
+   		return dcltbtrdsum.getSumRejected();
+	}
 	
 	/**
-	 * 	Update SumTotalDebit with the passed number
+	 * 	Update SumRejected with the passed value
 	 *	@param number
 	 */
-	public void setSumTotalDebit(BigDecimal number)  throws CFException{
-		dcltbtrdsum.setSumTotalDebit(number);
-   }
+	public void setSumRejected(int number)  throws CFException{
+		dcltbtrdsum.setSumRejected(number);
+	}
+
+
+	public void setSumRejected(long number)  throws CFException{
+		dcltbtrdsum.setSumRejected((int)number);
+	}
+
+
+	/**
+	 *	Returns the value of sumOverdue
+	 *	@return sumOverdue
+	 */
+	public int getSumOverdue() throws CFException {        
+   		return dcltbtrdsum.getSumOverdue();
+	}
+	
+	/**
+	 * 	Update SumOverdue with the passed value
+	 *	@param number
+	 */
+	public void setSumOverdue(int number)  throws CFException{
+		dcltbtrdsum.setSumOverdue(number);
+	}
+
+
+	public void setSumOverdue(long number)  throws CFException{
+		dcltbtrdsum.setSumOverdue((int)number);
+	}
+
 
 
         public Trdpb000Ctx getTrdpb000Ctx() {
@@ -21492,29 +21492,29 @@ public class Trdpb000Ctx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
+        str += sqlca.hashCode();
+        str += trdOrderPair.hashCode();
         str += work.hashCode();
         str += dcltbtrdmac.hashCode();
-        str += dcltbtrdsum.hashCode();
-        str += sqlca.hashCode();
         str += customerSummaryRec.hashCode();
-        str += trdOrderPair.hashCode();
+        str += dcltbtrdsum.hashCode();
        return str.hashCode();
     }
 
     public LogSummaryOutCtx clone() {
         LogSummaryOutCtx cloneObj = new LogSummaryOutCtx();
+        cloneObj.sqlca = new Sqlca();
+        cloneObj.sqlca.set(sqlca.getClonedField());
+        cloneObj.trdOrderPair = new TrdOrderPair();
+        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
         cloneObj.work = new Work();
         cloneObj.work.set(work.getClonedField());
         cloneObj.dcltbtrdmac = new Dcltbtrdmac();
         cloneObj.dcltbtrdmac.set(dcltbtrdmac.getClonedField());
-        cloneObj.dcltbtrdsum = new Dcltbtrdsum();
-        cloneObj.dcltbtrdsum.set(dcltbtrdsum.getClonedField());
-        cloneObj.sqlca = new Sqlca();
-        cloneObj.sqlca.set(sqlca.getClonedField());
         cloneObj.customerSummaryRec = new CustomerSummaryRec();
         cloneObj.customerSummaryRec.set(customerSummaryRec.getClonedField());
-        cloneObj.trdOrderPair = new TrdOrderPair();
-        cloneObj.trdOrderPair.set(trdOrderPair.getClonedField());
+        cloneObj.dcltbtrdsum = new Dcltbtrdsum();
+        cloneObj.dcltbtrdsum.set(dcltbtrdsum.getClonedField());
         return cloneObj;
     }
 
